@@ -1,12 +1,10 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
-<%@page contentType="text/html;charset=UTF-8"  language="java" %>
-<%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>首页 | 软盛</title>
+<title>精彩促销列表页 | 软盛</title>
 <link href="/css/global.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -19,9 +17,9 @@
         </div>
         <div class="other"><b class="MyRunsn">My runsn</b><a href="#" target="_blank">注册</a> | <a href="#" target="_blank">登录</a> | <a href="#" target="_blank">员工之家</a></div>
       </div>
-      <a href="index.jsp" class="logo" title="runsn软盛">runsn软盛</a> </div>
+      <a href="index.html" class="logo" title="runsn软盛">runsn软盛</a> </div>
     <ul class="nav">
-      <li class="num1"><a href="service.html">服务</a> 
+      <li class="num1"><a href="service_1.html">服务</a> 
       <span class="menu m1"> 
       <b>&gt;&gt;服务</b> 
       <a href="service_1.html">企业私有云服务</a> 
@@ -115,7 +113,7 @@
       <a href="#">INFORMATICA</a> 
       <a href="#">IMATION</a> 
       <a href="#">综合产品线</a> </span> </li>
-      <li class="num4"><a href="activity.html">主题活动</a> 
+      <li class="num4 active"><a href="activity.html">主题活动</a> 
       <span class="menu m4"> 
       <b>&gt;&gt;主题活动</b> 
       <a href="activity.html">精彩促销</a> 
@@ -145,38 +143,14 @@
   </div>
 </div>
 <div class="w948">
-  <div class="slide">
-    <div class="slidebox">
-      <ul>
-        <li class="active">1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>7</li>
-      </ul>
-      <div class="fouce"> <a href="#" class="active"><img src="/img/slide/01.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/02.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/03.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/04.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/05.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/06.jpg" width="928" height="370" /></a> </div>
-    </div>
-  </div>
   <div class="p25">
-    <div class="recent">
-      <h2>RECENT WORKS</h2>
-      <ul>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_1.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_2.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li class="mr0"><a href="#" target="_blank" title=""><img src="/img/pre_3.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_4.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_5.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li class="mr0"><a href="#" target="_blank" title=""><img src="/img/pre_6.jpg" width="270" height="182" alt="" border="0" /></a></li>
-      </ul>
+    <div class="caption caption4">
     </div>
-    <div class="clear_float"></div>
-    <div class="homead">
-    <div class="ad"><br /><b class="f18">瞩目软盛 未来之选</b>
-从虚拟化到大数据再到云，软盛特有IT服务联盟，让您的企业IT环境闪耀业界。<br />
-高瞻远瞩，我们真正正视IT技术变革；细致入微，我们使您的需求触手可及。<br />
-跻身软盛视角，实现您最高级别的效率、可操作性和灵活管理，惊艳您的IT效果。</div>
+    <div class="sermain sPage1 proPage actmain3">
+      <div class="path"><a href="activity.html">主题活动</a> &gt; <a href="activity.html">精彩促销</a> &gt; Acrobat夸版本升级</div>
+      <div class="center"><img src="/img/act_16.jpg" width="848" height="901" /></div>
     </div>
+    
     <div class="q_menu">
       <dl>
         <dt>软盛特色</dt>

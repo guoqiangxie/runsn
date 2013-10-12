@@ -5,16 +5,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Created with IntelliJ IDEA.
- * Title: IndexController
+ * Title: ActivityController
  * Description:
  * User: xieguoqiang
  *
  * @version 1.0
  */
 @Controller
-public class IndexController {
-    @RequestMapping("")
-    public String index() {
-        return "index";
+public class ActivityController {
+    @RequestMapping("activity.html")
+    public String activity() {
+        return "activity";
     }
 }

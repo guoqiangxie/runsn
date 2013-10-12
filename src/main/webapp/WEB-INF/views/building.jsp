@@ -1,12 +1,10 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
-<%@page contentType="text/html;charset=UTF-8"  language="java" %>
-<%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>首页 | 软盛</title>
+<title>建设中 | 软盛</title>
 <link href="/css/global.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -19,9 +17,9 @@
         </div>
         <div class="other"><b class="MyRunsn">My runsn</b><a href="#" target="_blank">注册</a> | <a href="#" target="_blank">登录</a> | <a href="#" target="_blank">员工之家</a></div>
       </div>
-      <a href="index.jsp" class="logo" title="runsn软盛">runsn软盛</a> </div>
+      <a href="index.html" class="logo" title="runsn软盛">runsn软盛</a> </div>
     <ul class="nav">
-      <li class="num1"><a href="service.html">服务</a> 
+      <li class="num1"><a href="service_1.html">服务</a> 
       <span class="menu m1"> 
       <b>&gt;&gt;服务</b> 
       <a href="service_1.html">企业私有云服务</a> 
@@ -130,82 +128,66 @@
       <a href="#">培训课程表</a> 
       <a href="#">明星讲师</a> </span> </li>
       <li class="num6"><a href="#">I Partner</a></li>
-      <li class="num7"><a href="company.html">公司</a> 
+      <li class="num7 active"><a href="company.html">公司</a> 
       <span class="menu m7"> 
       <b>&gt;&gt;公司</b> 
-      <a href="#">为何选择runsn</a> 
-      <a href="#">关于软盛</a> 
-      <a href="#">成功用户</a> 
+      <a href="company_1.html">为何选择runsn</a> 
+      <a href="company_2.html">关于软盛</a> 
+      <a href="company_3.html">成功用户</a> 
       <a href="#">荣誉资质</a> 
       <a href="#">活动</a> 
-      <a href="#">构建企业智慧云</a> 
-      <a href="#">职业发展</a> 
-      <a href="#">联系我们</a> </span> </li>
+      <a href="company_5.html">构建企业智慧云</a> 
+      <a href="company_6.html">职业发展</a> 
+      <a href="company_8.html">联系我们</a> </span> </li>
     </ul>
   </div>
 </div>
 <div class="w948">
-  <div class="slide">
-    <div class="slidebox">
-      <ul>
-        <li class="active">1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>7</li>
-      </ul>
-      <div class="fouce"> <a href="#" class="active"><img src="/img/slide/01.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/02.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/03.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/04.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/05.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/06.jpg" width="928" height="370" /></a> </div>
-    </div>
-  </div>
   <div class="p25">
-    <div class="recent">
-      <h2>RECENT WORKS</h2>
-      <ul>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_1.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_2.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li class="mr0"><a href="#" target="_blank" title=""><img src="/img/pre_3.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_4.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_5.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li class="mr0"><a href="#" target="_blank" title=""><img src="/img/pre_6.jpg" width="270" height="182" alt="" border="0" /></a></li>
-      </ul>
+    <div class="caption compre3">
+      <h2>需求至上，挑战未来，一站式IT服务旗舰平台</h2>
+      <p style="line-height:18px;">荟萃个性化权威IT解决方案<br />强势大品牌云集，企业级正版软件朝圣地<br />旨在帮助客户提高生产效率和灵活性，创造出卓越价值，加速取得业务成功</p>
+    </div>
+    <div class="join">
+     <h1>分类名称</h1>
+	<div class="build">
+    <form action="" method="get" class="bd">
+    <input name="" type="text" class="inputText" title="Your E-Mail Address" /><input name="" type="button" class="btn" />
+    </form>
+    <a href="#">返回上一页</a>
+    </div>    
     </div>
     <div class="clear_float"></div>
-    <div class="homead">
-    <div class="ad"><br /><b class="f18">瞩目软盛 未来之选</b>
-从虚拟化到大数据再到云，软盛特有IT服务联盟，让您的企业IT环境闪耀业界。<br />
-高瞻远瞩，我们真正正视IT技术变革；细致入微，我们使您的需求触手可及。<br />
-跻身软盛视角，实现您最高级别的效率、可操作性和灵活管理，惊艳您的IT效果。</div>
-    </div>
+    <br /><br />
     <div class="q_menu">
       <dl>
-        <dt>软盛特色</dt>
-        <dd><a href="#">服务</a></dd>
-        <dd><a href="#">解决方案</a></dd>
-        <dd><a href="#">产品</a></dd>
-        <dd><a href="#">IPARTNER</a></dd>
+        <dt>虚拟化概述</dt>
+        <dd><a href="#">虚拟化简介</a></dd>
+        <dd><a href="#">为何选择VMware</a></dd>
+        <dd><a href="#">数据中心管理</a></dd>
+        <dd><a href="#">云社区</a></dd>
       </dl>
       <dl>
-        <dt>主题活动</dt>
-        <dd><a href="#">促销活动</a></dd>
-        <dd><a href="#">原厂信息</a></dd>
-        <dd><a href="#">电子期刊</a></dd>
+        <dt>如何获取VMware产品</dt>
+        <dd><a href="#">免费下载试用版</a></dd>
+        <dd><a href="#">查找代理商</a></dd>
+        <dd><a href="#">采购</a></dd>
+        <dd><a href="#">联系销售部门</a></dd>
       </dl>
-      <dl>
-        <dt>培训课堂</dt>
-        <dd><a href="#">新闻</a></dd>
-        <dd><a href="train_1.html">合作伙伴</a></dd>
-        <dd><a href="#">培训资质</a></dd>
-        <dd><a href="#">培训课程表</a></dd>
-        <dd><a href="#">明星讲师</a></dd>
+      <dl >
+        <dt>获取支持</dt>
+        <dd><a href="#">提取支持请求</a></dd>
+        <dd><a href="#">注册许可证</a></dd>
+        <dd><a href="#">搜索知识库</a></dd>
+        <dd><a href="#">访问vSphere支持中心</a></dd>
       </dl>
       <dl class="bnone">
-        <dt>公司</dt>
-        <dd><a href="#">为何选择RUNSN</a></dd>
-        <dd><a href="#">关于软盛</a></dd>
-        <dd><a href="#">成功用户</a></dd>
-        <dd><a href="#">荣誉资质</a></dd>
+        <dt>相关链接</dt>
         <dd><a href="#">联系我们</a></dd>
+        <dd><a href="#">VMware全球网站</a></dd>
+        <dd><a href="#">关于我们</a></dd>
+        <dd><a href="#">VMware活动</a></dd>
+        <dd><a href="#">客户成功案例</a></dd>
       </dl>
     </div>
   </div>

@@ -1,12 +1,10 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
-<%@page contentType="text/html;charset=UTF-8"  language="java" %>
-<%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>首页 | 软盛</title>
+<title>产品-硬件 | 软盛</title>
 <link href="/css/global.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -19,9 +17,9 @@
         </div>
         <div class="other"><b class="MyRunsn">My runsn</b><a href="#" target="_blank">注册</a> | <a href="#" target="_blank">登录</a> | <a href="#" target="_blank">员工之家</a></div>
       </div>
-      <a href="index.jsp" class="logo" title="runsn软盛">runsn软盛</a> </div>
+      <a href="index.html" class="logo" title="runsn软盛">runsn软盛</a> </div>
     <ul class="nav">
-      <li class="num1"><a href="service.html">服务</a> 
+      <li class="num1"><a href="service_1.html">服务</a> 
       <span class="menu m1"> 
       <b>&gt;&gt;服务</b> 
       <a href="service_1.html">企业私有云服务</a> 
@@ -91,7 +89,7 @@
       <span class="col">按公司规模分</span> 
       <a href="solution_1.html">中小企业</a> 
       <a href="solution_1.html">大型企业</a> </span> </span> </li>
-      <li class="num3"><a href="product.html">产品</a> 
+      <li class="num3 active"><a href="product.html">产品</a> 
       <span class="menu m3"> 
       <b>&gt;&gt;产品</b> 
       <span class="col">需求</span> 
@@ -145,38 +143,106 @@
   </div>
 </div>
 <div class="w948">
-  <div class="slide">
-    <div class="slidebox">
-      <ul>
-        <li class="active">1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>7</li>
-      </ul>
-      <div class="fouce"> <a href="#" class="active"><img src="/img/slide/01.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/02.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/03.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/04.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/05.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/06.jpg" width="928" height="370" /></a> </div>
-    </div>
-  </div>
   <div class="p25">
-    <div class="recent">
-      <h2>RECENT WORKS</h2>
-      <ul>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_1.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_2.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li class="mr0"><a href="#" target="_blank" title=""><img src="/img/pre_3.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_4.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_5.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li class="mr0"><a href="#" target="_blank" title=""><img src="/img/pre_6.jpg" width="270" height="182" alt="" border="0" /></a></li>
-      </ul>
+    <div class="caption caption3">
+      <h2>我们的产品渗透至企业级应用领域的各个层面</h2>
+      <p>全系列产品源自经典品牌，兼顾客户独有需求，领跑个性化IT产品市场 ...</p>
     </div>
-    <div class="clear_float"></div>
-    <div class="homead">
-    <div class="ad"><br /><b class="f18">瞩目软盛 未来之选</b>
-从虚拟化到大数据再到云，软盛特有IT服务联盟，让您的企业IT环境闪耀业界。<br />
-高瞻远瞩，我们真正正视IT技术变革；细致入微，我们使您的需求触手可及。<br />
-跻身软盛视角，实现您最高级别的效率、可操作性和灵活管理，惊艳您的IT效果。</div>
+    <div class="sermain sPage1 proPage">
+      <div class="sRight collapse">
+        <dl>
+          <dt><a href="#">数据存储</a></dt>
+        </dl>
+        <dl>
+          <dt><a href="#">企业网络基础硬件</a></dt>
+        </dl>
+        <dl>
+          <dt><a href="#">企业级无线覆盖交互</a></dt>
+        </dl>
+        <dl>
+          <dt><a href="#">企业级数据安全</a></dt>
+        </dl>
+        <dl>
+          <dt><a href="#">服务器及应用负载均衡</a></dt>
+        </dl>
+        <dl>
+          <dt><a href="#">主题活动</a></dt>
+        </dl>
+        <dl>
+          <dt><a href="#">培训课堂</a></dt>
+        </dl>
+        <div class="sAd"><img src="/img/promain_pre1.jpg" width="219" height="163" /></div>
+      </div>
+      <div class="sLeft">
+      <div class="center">传统IT厂商纷纷投身于虚拟化的热潮中。他们的远见在于：虚拟服务器、虚拟应用和虚拟桌面，都可以以更低的成本通过数据中心有效地进行管理。
+<br />虚拟化技术具有诸多短期优势。这不仅仅意味着用户可以节省不少硬件的开支，而且可以在更低成本、不需要太多空间的基础上实现增长。</div>
+      <div class="txtlist tl2">
+        <h3><a href="#">产品</a> &gt; 虚拟化基础</h3>
+        <div class="main">
+        <div class="m_l">
+        <div class="mbox">
+        <b>Vmware <span>全球桌面到数据中心虚拟化解决方案</span></b>
+        <a href="product_3.html">vSphere</a>
+        <a href="product_3.html">vCloud Suite</a>
+        <a href="product_3.html">vCloud Director</a>
+        <a href="product_3.html">vSphere Storage Appliance</a>
+        <a href="product_3.html">Fusion</a>
+        <a href="product_3.html">Workstation</a>
+        <a href="product_3.html">Horizon Suite</a>
+        <a href="product_3.html">Horizon Workspace</a>
+        <a href="product_3.html">Horizon View</a>
+        <a href="product_3.html">Horizon Mirage</a>
+        <a href="product_3.html">vCenter Operations Manager for View </a>
+        <a href="product_3.html">Zimbra </a>
+        <a href="product_3.html">Socialcast by VMware</a>
+        <a href="product_3.html">vCloud Networking & Security</a>
+        <a href="product_3.html">vFabric Application Director</a>
+        <a href="product_3.html">vFabric Application Performance Manager</a>
+        <a href="product_3.html">vCenter Application Discovery Manager</a>
+        <a href="product_3.html">vCenter AppSpeed</a>
+        <a href="product_3.html">Studio</a>
+        <a href="product_3.html">vFabric Hyperic</a>
+        <a href="product_3.html">vSphere Hypervisor</a>
+        <a href="product_3.html">Server</a>
+        <a href="product_3.html">Player </a>
+        <a href="product_3.html">vCenter Converter </a>
+        <a href="product_3.html">vSphere Hypervisor</a>
+        <a href="product_3.html">vFabric Suite</a>
+        <a href="product_3.html">vFabric tc Server </a>
+        <a href="product_3.html">vFabric RabbitMQ</a>
+        <a href="product_3.html">vFabric GemFire</a>
+        <a href="product_3.html">vFabric SQLFire</a>
+        <a href="product_3.html">vFabric Data Director </a>
+        <a href="product_3.html">vFabric Postgres </a>
+        <a href="product_3.html">vFabric Web Server</a>
+        <a href="product_3.html">vFabric Enterprise Ready Server</a>
+        <a href="product_3.html">IT Business Management Suite</a>
+        <a href="product_3.html">vCenter Chargeback Manager</a>
+        <a href="product_3.html">Service Manager</a>
+        <a href="product_3.html">VMmark </a>
+        <a href="product_3.html">Capacity Planner </a>
+        <a href="product_3.html">Cisco Nexus 1000V</a>
+        <a href="product_3.html">VMware Compliance Checker for PCI </a>
+        <a href="product_3.html">VMware Compliance Checker for vSphere</a>
+        <a href="product_3.html">SUSE Linux Enterprise Server for VMware</a></div>
+        <span class="more">More</span>
+        </div>
+        <div class="m_r">
+        <b>微软<span>全球桌面到数据中心虚拟化解决方案</span></b>
+        <a href="product_3.html">服务器应用软件</a>
+        <a href="product_3.html">应用软件</a>
+        <a href="product_3.html">操作系统</a>
+        <b>思杰<span>提供全球接入架构解决方案及服务</span></b>
+        <a href="product_3.html">应用虚拟化</a>
+        <a href="product_3.html">桌面虚拟化</a>
+        <a href="product_3.html">服务器虚拟化</a>
+        </div>
+        </div>
+        
+        </div>
+      </div>
     </div>
+    
     <div class="q_menu">
       <dl>
         <dt>软盛特色</dt>

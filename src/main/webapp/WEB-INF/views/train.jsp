@@ -1,12 +1,10 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
-<%@page contentType="text/html;charset=UTF-8"  language="java" %>
-<%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>首页 | 软盛</title>
+<title>培训课堂 | 软盛</title>
 <link href="/css/global.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -19,7 +17,7 @@
         </div>
         <div class="other"><b class="MyRunsn">My runsn</b><a href="#" target="_blank">注册</a> | <a href="#" target="_blank">登录</a> | <a href="#" target="_blank">员工之家</a></div>
       </div>
-      <a href="index.jsp" class="logo" title="runsn软盛">runsn软盛</a> </div>
+      <a href="index.html" class="logo" title="runsn软盛">runsn软盛</a> </div>
     <ul class="nav">
       <li class="num1"><a href="service.html">服务</a> 
       <span class="menu m1"> 
@@ -121,7 +119,7 @@
       <a href="activity.html">精彩促销</a> 
       <a href="activity_1.html">厂商&amp;活动</a> 
       <a href="activity_2.html">邀请函</a> </span> </li>
-      <li class="num5"><a href="train.html">培训课堂</a> 
+      <li class="num5 active"><a href="train.html">培训课堂</a> 
       <span class="menu m5"> 
       <b>&gt;&gt;培训课堂</b> 
       <a href="#">新闻</a> 
@@ -133,14 +131,14 @@
       <li class="num7"><a href="company.html">公司</a> 
       <span class="menu m7"> 
       <b>&gt;&gt;公司</b> 
-      <a href="#">为何选择runsn</a> 
-      <a href="#">关于软盛</a> 
-      <a href="#">成功用户</a> 
+      <a href="company_1.html">为何选择runsn</a> 
+      <a href="company_2.html">关于软盛</a> 
+      <a href="company_3.html">成功用户</a> 
       <a href="#">荣誉资质</a> 
       <a href="#">活动</a> 
-      <a href="#">构建企业智慧云</a> 
-      <a href="#">职业发展</a> 
-      <a href="#">联系我们</a> </span> </li>
+      <a href="company_5.html">构建企业智慧云</a> 
+      <a href="company_6.html">职业发展</a> 
+      <a href="company_8.html">联系我们</a> </span> </li>
     </ul>
   </div>
 </div>
@@ -153,29 +151,105 @@
         <li>3</li>
         <li>4</li>
         <li>5</li>
-        <li>7</li>
       </ul>
-      <div class="fouce"> <a href="#" class="active"><img src="/img/slide/01.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/02.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/03.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/04.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/05.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/06.jpg" width="928" height="370" /></a> </div>
+      <div class="fouce"><a href="#" class="active"><img src="/img/slide/05.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/01.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/02.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/03.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/04.jpg" width="928" height="370" /></a>  </div>
     </div>
   </div>
   <div class="p25">
-    <div class="recent">
-      <h2>RECENT WORKS</h2>
+    <div class="sermain sPage1 tramain">
+      <div class="sRight collapse">
+        <dl>
+          <dt><a href="#">解决方案</a></dt>
+        </dl>
+        
+        <dl>
+          <dt><a href="#">服务</a></dt>
+        </dl>
+        <dl>
+          <dt><a href="#">产品</a></dt>
+        </dl>
+        <dl>
+          <dt><a href="#">主题活动</a></dt>
+        </dl>
+        <dl>
+          <dt><a href="#">公司</a></dt>
+        </dl>
+        
+        <div class="newlist">
+        <h2>新闻列表</h2>
+        <ul>
+        <li><a href="train_2.html">虚拟投影：名人复活玩“穿越”背后玩法</a></li>
+        <li><a href="train_2.html">最发达的充电技术——特斯拉充电桩</a></li>
+        <li><a href="train_2.html">扎克伯格：I最怕人失 我的英雄</a></li>
+        <li><a href="train_2.html">梅耶尔：加盟雅，公司移动团队十倍</a></li>
+        <li><a href="train_2.html">手机导航进代风玻璃成显示屏</a></li>
+        <li><a href="train_2.html">麦当劳测试移高下售卖效率</a></li>
+        <li><a href="train_2.html">激进投资者伊当前够便宜 闭着眼买</a></li>
+        <li><a href="train_2.html">梅耶尔：加盟司移动团队十倍</a></li>
+        <li><a href="train_2.html">手机导航进入新时代：玻璃成显示屏</a></li>
+        <li><a href="train_2.html">麦当劳测试移动此提高线下售卖效率</a></li>
+        </ul>
+        <a href="#" class="more">&gt;MORE</a>
+        </div>
+        <div class="sAd"><img src="/img/tra_1.jpg" width="219" height="163" /></div>
+      </div>
+      <div class="sLeft">
+      <div class="tbox1 ">
+      <h4>合作伙伴</h4>
+      <div class="imgslide  ">
+    <div class="sly imgbox1">
       <ul>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_1.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_2.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li class="mr0"><a href="#" target="_blank" title=""><img src="/img/pre_3.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_4.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_5.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li class="mr0"><a href="#" target="_blank" title=""><img src="/img/pre_6.jpg" width="270" height="182" alt="" border="0" /></a></li>
+        <li><a href="#"><img src="/img/tra_2.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_3.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_4.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_5.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_2.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_3.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_4.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_2.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_3.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_4.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_5.jpg" width="110" height="89" /></a></li>
       </ul>
+    </div>      
+	<span class="prev btn_p1"></span>
+	<span class="next btn_n1"></span>
+      </div>
+      </div>
+      <div class="tbox1">
+      <h4>课程表</h4>
+      <div><img src="/img/kcb.jpg" width="555" height="442" /></div>
+      </div>
+      <div class="tbox1">
+      <h4>课程表</h4>
+      <div class="imgslide  ">
+    <div class="sly imgbox2">
+      <ul>
+        <li><a href="#"><img src="/img/tra_6.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_7.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_8.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_9.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_6.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_7.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_8.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_9.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_6.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_7.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_8.jpg" width="110" height="89" /></a></li>
+        <li><a href="#"><img src="/img/tra_9.jpg" width="110" height="89" /></a></li>
+      </ul>
+    </div>      
+	<span class="prev btn_p2"></span>
+	<span class="next btn_n2"></span>
+      </div>
+      </div>
+      </div>
     </div>
-    <div class="clear_float"></div>
-    <div class="homead">
-    <div class="ad"><br /><b class="f18">瞩目软盛 未来之选</b>
-从虚拟化到大数据再到云，软盛特有IT服务联盟，让您的企业IT环境闪耀业界。<br />
-高瞻远瞩，我们真正正视IT技术变革；细致入微，我们使您的需求触手可及。<br />
-跻身软盛视角，实现您最高级别的效率、可操作性和灵活管理，惊艳您的IT效果。</div>
+    <div class="star">
+    <h3>Runsn明星讲师</h3>
+    <div class="s_main">
+    <iframe frameborder="no" scrolling=”no” allowtransparency="no" width="100%" height="450" src="star.html"></iframe>
+    </div>
     </div>
     <div class="q_menu">
       <dl>
@@ -216,5 +290,25 @@
 <div class="floatbox" ><span><a href="#" class="n1" title="职业发展">职业发展</a><a href="#" class="n2" title="联系我们">联系我们</a><a href="#" class="n3" title="软盛微博">软盛微博</a></span></div>
 <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="/js/runsn.js"></script>
+<script type="text/javascript" src="/js/imgslide.js"></script>
+<script>
+$(function() {
+		   
+$(".imgbox1").jCarouselLite({
+btnNext: ".btn_n1",
+btnPrev: ".btn_p1"
+});
+
+$(".imgbox2").jCarouselLite({
+btnNext: ".btn_n2",
+btnPrev: ".btn_p2"
+});
+
+
+});
+
+			
+</script>
+
 </body>
 </html>

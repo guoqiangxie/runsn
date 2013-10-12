@@ -1,12 +1,10 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
-<%@page contentType="text/html;charset=UTF-8"  language="java" %>
-<%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>首页 | 软盛</title>
+<title>为何选择Runsn | 软盛</title>
 <link href="/css/global.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -19,9 +17,9 @@
         </div>
         <div class="other"><b class="MyRunsn">My runsn</b><a href="#" target="_blank">注册</a> | <a href="#" target="_blank">登录</a> | <a href="#" target="_blank">员工之家</a></div>
       </div>
-      <a href="index.jsp" class="logo" title="runsn软盛">runsn软盛</a> </div>
+      <a href="index.html" class="logo" title="runsn软盛">runsn软盛</a> </div>
     <ul class="nav">
-      <li class="num1"><a href="service.html">服务</a> 
+      <li class="num1"><a href="service_1.html">服务</a> 
       <span class="menu m1"> 
       <b>&gt;&gt;服务</b> 
       <a href="service_1.html">企业私有云服务</a> 
@@ -130,82 +128,80 @@
       <a href="#">培训课程表</a> 
       <a href="#">明星讲师</a> </span> </li>
       <li class="num6"><a href="#">I Partner</a></li>
-      <li class="num7"><a href="company.html">公司</a> 
+      <li class="num7 active"><a href="company.html">公司</a> 
       <span class="menu m7"> 
       <b>&gt;&gt;公司</b> 
-      <a href="#">为何选择runsn</a> 
-      <a href="#">关于软盛</a> 
-      <a href="#">成功用户</a> 
+      <a href="company_1.html">为何选择runsn</a> 
+      <a href="company_2.html">关于软盛</a> 
+      <a href="company_3.html">成功用户</a> 
       <a href="#">荣誉资质</a> 
       <a href="#">活动</a> 
-      <a href="#">构建企业智慧云</a> 
-      <a href="#">职业发展</a> 
-      <a href="#">联系我们</a> </span> </li>
+      <a href="company_5.html">构建企业智慧云</a> 
+      <a href="company_6.html">职业发展</a> 
+      <a href="company_8.html">联系我们</a> </span> </li>
     </ul>
   </div>
 </div>
 <div class="w948">
-  <div class="slide">
-    <div class="slidebox">
-      <ul>
-        <li class="active">1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>7</li>
-      </ul>
-      <div class="fouce"> <a href="#" class="active"><img src="/img/slide/01.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/02.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/03.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/04.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/05.jpg" width="928" height="370" /></a> <a href="#"><img src="/img/slide/06.jpg" width="928" height="370" /></a> </div>
-    </div>
-  </div>
   <div class="p25">
-    <div class="recent">
-      <h2>RECENT WORKS</h2>
-      <ul>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_1.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_2.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li class="mr0"><a href="#" target="_blank" title=""><img src="/img/pre_3.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_4.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_5.jpg" width="270" height="182" alt="" border="0" /></a></li>
-        <li class="mr0"><a href="#" target="_blank" title=""><img src="/img/pre_6.jpg" width="270" height="182" alt="" border="0" /></a></li>
-      </ul>
+    <div class="caption compre">
+      <h2>需求至上，挑战未来，一站式IT服务旗舰平台</h2>
+      <p style="line-height:18px;">荟萃个性化权威IT解决方案<br />
+强势大品牌云集，企业级正版软件朝圣地<br />
+旨在帮助客户提高生产效率和灵活性，创造出卓越价值，加速取得业务成功</p>
     </div>
-    <div class="clear_float"></div>
-    <div class="homead">
-    <div class="ad"><br /><b class="f18">瞩目软盛 未来之选</b>
-从虚拟化到大数据再到云，软盛特有IT服务联盟，让您的企业IT环境闪耀业界。<br />
-高瞻远瞩，我们真正正视IT技术变革；细致入微，我们使您的需求触手可及。<br />
-跻身软盛视角，实现您最高级别的效率、可操作性和灵活管理，惊艳您的IT效果。</div>
+    <div class="sermain commain">
+      <div class="sRight">
+        <div class="tip1">我们的客户<br />就是最好的证明</div><br /><br />
+        <p><span class="col">软盛</span>占据业界极高的成功部署率，我们的成功用户遍布全国。<br /><br />
+我们致力于使客户成功。事实上我们的客户也确实因此成功。<br /><br />
+对于我们而言，客户的成功与我们自己的成功是密不可分的。这是因为我们的工作成绩取决于他们的工作情况。强大的服务和支持——与我们提供的强大产品相结合——均着重于确保客户成功。<br /><br />
+<span class="col">在软盛</span>，我们深知为客户提供和支持集成的端到端解决方案的重要性。我们同时也理解，对于客户公司而言，不断增强这些解决方案是多么重要。<br /><br />
+更多合作伙伴，更多资源，业界领先的支持。我们已将您的成功列入计划内。<br /><br />
+<b class="col f16">我们确保您的成功，以及长期的成功。</b></p><br /><br />
+<div class="tip2">软盛占据业界<br />极高的成功部署率<br />我们的成功用户<br />遍布全国</div>
+      </div>
+      <div class="sLeft">
+        <h1>为何选择Runsn</h1>
+        <h3>度身打造 客户的需求就是我们的核心诉求</h3>
+        <p>软盛及其客户在未来IT服务中扮演着颇具影响力的角色。<br /><br />
+新世纪的头十年中，世界发生了革命性的变化，这变化深远而持久，日趋明显。互联网、云计算、虚拟化，技术更新劈头盖脸地砸过来，面对目前的宏观经济状况和竞争威胁，IT企业如何才能有效地找到、使用和信任数据对于企业的生存和发展至关重要。<br /><br />
+大数据时代，数据呈碎片形式遍布整个企业。数据锁定在各种企业应用程序中。其中，被视为非结构化的数据或电子数据表，PDF或Word文档中的数据经历了最大最快的增长。现在，关键数据通过“软件即服务”应用程序存于企业“云中”，这使情况更为复杂，往往会造成难以管理、易断开连接的混乱界面。<br /><br />
+现代企业的成功和IT技术的合理运用越来越密不可分。而IT基础架构的业务系统平台是推动企业业务发展战略和业务成功的重要力量。随着IT项目建设的不断深入和完善，IT软硬件系统的运行维护已经成为企业信息服务部门普遍关注的问题，很多企业选择将IT运维管理外包给专业服务商，通过专业服务商来实施IT运维服务，而企业则可充分发挥现有IT资产潜能、降低人员成本，从而提高投资回报率及管理效率。<br /><br />
+借助我们的平台，您可以确保您正在构建的数据集成基础结构能够支持多个项目和项目类型、促进跨项目复用、与您的现有系统及应用程序和技术标准兼容，并使您可以在将来随着IT环境其余部分的变化而灵活变化，从而提高跨团队的工作效率并确保IT成果与业务需求一致。</p><br />
+<b class="col f16">如果您希望拥有上述效果，请立即选择软盛</b>
+<br /><img src="/img/c_pre4.jpg" width="522" height="178" /><br /><br /> </div>
     </div>
+    
     <div class="q_menu">
       <dl>
-        <dt>软盛特色</dt>
-        <dd><a href="#">服务</a></dd>
-        <dd><a href="#">解决方案</a></dd>
-        <dd><a href="#">产品</a></dd>
-        <dd><a href="#">IPARTNER</a></dd>
+        <dt>虚拟化概述</dt>
+        <dd><a href="#">虚拟化简介</a></dd>
+        <dd><a href="#">为何选择VMware</a></dd>
+        <dd><a href="#">数据中心管理</a></dd>
+        <dd><a href="#">云社区</a></dd>
       </dl>
       <dl>
-        <dt>主题活动</dt>
-        <dd><a href="#">促销活动</a></dd>
-        <dd><a href="#">原厂信息</a></dd>
-        <dd><a href="#">电子期刊</a></dd>
+        <dt>如何获取VMware产品</dt>
+        <dd><a href="#">免费下载试用版</a></dd>
+        <dd><a href="#">查找代理商</a></dd>
+        <dd><a href="#">采购</a></dd>
+        <dd><a href="#">联系销售部门</a></dd>
       </dl>
-      <dl>
-        <dt>培训课堂</dt>
-        <dd><a href="#">新闻</a></dd>
-        <dd><a href="train_1.html">合作伙伴</a></dd>
-        <dd><a href="#">培训资质</a></dd>
-        <dd><a href="#">培训课程表</a></dd>
-        <dd><a href="#">明星讲师</a></dd>
+      <dl >
+        <dt>获取支持</dt>
+        <dd><a href="#">提取支持请求</a></dd>
+        <dd><a href="#">注册许可证</a></dd>
+        <dd><a href="#">搜索知识库</a></dd>
+        <dd><a href="#">访问vSphere支持中心</a></dd>
       </dl>
       <dl class="bnone">
-        <dt>公司</dt>
-        <dd><a href="#">为何选择RUNSN</a></dd>
-        <dd><a href="#">关于软盛</a></dd>
-        <dd><a href="#">成功用户</a></dd>
-        <dd><a href="#">荣誉资质</a></dd>
+        <dt>相关链接</dt>
         <dd><a href="#">联系我们</a></dd>
+        <dd><a href="#">VMware全球网站</a></dd>
+        <dd><a href="#">关于我们</a></dd>
+        <dd><a href="#">VMware活动</a></dd>
+        <dd><a href="#">客户成功案例</a></dd>
       </dl>
     </div>
   </div>
