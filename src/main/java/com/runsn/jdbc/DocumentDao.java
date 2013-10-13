@@ -1,8 +1,5 @@
 package com.runsn.jdbc;
 
-import com.runsn.dto.User;
-
-import java.lang.String;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,7 +20,7 @@ public class DocumentDao {
     public static void save(String name, String content) {
         conn = ConnectionUtil.getConnection();
         try {
-            String sql = "insert into documents (name, content, typeid, active) values('"+name+"', '"+content+"',1,1)";
+            String sql = "insert into documents (name, content, typeid, active) values('" + name + "', '" + content + "',1,1)";
             st = conn.createStatement();
 
             st.execute(sql);
