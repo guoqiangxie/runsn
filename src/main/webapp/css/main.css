@@ -1,0 +1,38 @@
+body,form,div,span,ul,ol,li,p,pre,dl,dt,dd,h1,h2,h3,h4,h5,h6,table,th,td,b,i{margin:0;padding:0;}img{border:0;}ul,li{list-style:none;}
+body{font:0.8em/2 'microsoft Yahei'; *font:12px/18px \5b8b\4f53;color:#222;background:#f0f0f0 url(../img/bg-body.png) left top repeat-y;}
+a{font:0.8em/2 'microsoft Yahei'; *font:12px/18px \5b8b\4f53;text-decoration:none;color:#222;}
+a:hover{text-decoration:none;color:#4ea6d6;outline:none;hide-focus:expression(this.hideFocus=true);}
+.en{ font-family:Arial, Helvetica, sans-serif; font-size:12px;}.fl{ float:left;}.fr{ float:right;}.red{ color:#850202;}.gray{ color:#222;}.f11{ font-size:14px;}
+.wrap{ background:url(../img/bg-radial-gradient.gif) no-repeat 230px 77px;}
+.sidebar{ width:230px; height:100%; position:absolute;left:0;top:0; background:url(../img/bg-sidebar.png) no-repeat;color:#fff;text-align:center; text-shadow:1px 2px 1px #000;}
+.content{ margin:0 0 0 230px; background:url(../img/head_bg.gif) repeat-x; padding:30px 30px 0 30px}
+.c_main{ min-height:550px; height:auto !important; height:550px; overflow:visible; overflow:hidden; padding:25px 0;}
+.c_main table{text-shadow:1px 1px 1px #999;}
+
+.sidebar span{ display:block; margin:84px 0 23px 0; padding-left:5px; font-size:12px; font-family:\5b8b\4f53; line-height:24px; height:24px; *height:30px;}
+.sidebar h2{ font-size:16px; width:230px; font-weight:normal; *font-weight:bold; height:25px; display:block;float:left;}
+.sidebar ul{ padding:30px 0;overflow:hidden; width:230px;}
+.sidebar li{ background:url(../img/menu.png) no-repeat; display:block; width:206px; height:33px; line-height:33px;  font-size:14px; margin-bottom:8px; color:#fff; margin-left:40px;text-align:right; cursor:pointer;}
+.sidebar li.hover,.sidebar li.on{ background-position:0 -33px; color:#000; font-weight:bold;text-shadow:1px 1px 2px #666; }
+.sidebar li.on{ padding-right:30px;width:176px;}
+.sidebar li a{ color:#fff;font-size:14px;display:block; width:176px; height:33px;padding-right:30px;line-height:33px;}
+.sidebar li a:hover,.sidebar li.hover a,.sidebar li.on a{ color:#000;}
+
+.c_top{ height:47px; overflow:hidden;text-shadow:1px 1px 2px #666;}
+.c_top h2{ font-size:24px; line-height:24px; color:#000; font-weight:normal;*font-weight:bold;}
+.c_top span{ float:right; margin-right:20px;}
+.c_top span a{ width:76px; height:27px; display:inline-block; margin-right:5px; text-align:center; line-height:22px; font-size:12px; }
+.c_top span a.on{ background:url(../img/btn.gif) no-repeat; color:#850901; font-weight:bold;font-size:14px;}
+
+.c_bottom{ border-top:1px solid #9e9e9e; padding:10px 0; height:30px;text-shadow:1px 1px 2px #666;}
+
+.tj{border-collapse:collapse;border:none; font-size:12px; margin-top:20px;}
+.tj td,.tj th{border:1px solid #a2b4ee; height:25px; line-height:25px; text-align:center;}
+.tj th{ font-size:16px; height:32px; line-height:32px;}
+.tj .tt{ font-size:14px;}
+.tj b{ text-decoration:underline;}
+
+.b10{border-radius:10px;-webkit-border-radius:10px;-moz-border-radius: 10px;}
+.b5{border-radius:5px;-webkit-border-radius:5px;-moz-border-radius: 5px;}
+
+.bjq{height:300px; width:100%; font-size:12px; border:1px solid #ccc;}

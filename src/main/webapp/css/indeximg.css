@@ -1,0 +1,21 @@
+body{text-shadow:1px 1px 1px #d1d1d1;}
+.box{ background:#e5e5e5; padding:20px 20px 10px 20px; margin-bottom:18px; margin-right:5px; display:block; position:relative;box-shadow: 3px 3px 3px #cacaca;-webkit-box-shadow: 3px 3px 3px #cacaca;}
+.main1 .boxinfo{ height:20px; margin-bottom:10px; display:block; width:100%;}
+.main1 .boxinfo span{ float:left; line-height:20px;}
+.main1 .name{ width:80px; padding-right:5px; text-align:right; color:#000;}
+.main1 .text{ width:420px; padding-right:20px;}
+.main1 .tips{ width:150px; color:#898989;text-shadow:0px 0px 0px;}
+.main1 .boxinfo span input{ width:100%; height:18px; border:1px solid #b4b4b4;}
+.main1 .close,.main1 .hover{ position:absolute; right:0;top:0px; width:38px; height:20px; line-height:20px; line-height:20px; text-align:center; display:block; color:#7f7f7f; cursor:pointer; background:#fff;}
+.main1 .hover{ background:#222; color:#fff;text-shadow:0px 0px 0px;}
+.main1 .boxinfo span input.btn{ width:51px; height:24px; background:url(../img/btn_1.png) no-repeat; color:#3c3c3c; text-align:center; cursor:pointer; border:0; line-height:24px; margin-right:3px;}
+.main1 .add{ border-top:1px solid #a3a3a3; padding:10px 0;}
+.main1 .add span{ width:60px; height:20px; display:block; overflow:hidden; float:right; cursor:pointer; color:#860204;text-shadow:1px 1px 2px #666;}
+.main1 .tipsinfo{ border:1px solid #E6DB55; padding:5px 0; margin:15px 0; color:#666452; background:#FFFBCC url(../img/tip.png) no-repeat 12px 8px; font-size:12px; position:relative; height:25px; line-height:25px;text-shadow:0 0 0;}
+.main1 .tipsinfo span{ padding-left:35px;}
+.main1 .tipsinfo b{ background:url(../img/close%20.png) no-repeat; width:7px; height:7px; position:absolute; right:5px; top:5px; cursor:pointer;}
+.main1 .sure input{ background:url(../img/btn_3.png) no-repeat; width:168px; height:42px; color:#fff; text-align:center; display:inline-block; border:0;*font:12px/18px \5b8b\4f53; font-size:18px; font-weight:bold; cursor:pointer;}
+.main1 .sure{ text-align:center; padding:15px 0;}
+.main1 .sure input.hoverbtn{ background-position:0 -42px;}
+.main1 .boxinfo span input[type="text"]{ color:#666; padding-left:5px;}
+.main1 .boxinfo span input.focus{ border:1px solid #E6DB55;color:#222;box-shadow:1px 1px 5px #cacaca;-webkit-box-shadow:1px 1px 5px #cacaca;}
