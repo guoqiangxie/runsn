@@ -14,6 +14,6 @@
         <li class="8"><a href="contact.html">联系我们</a></li>
         <!--<li <a href="job.html">>人才招聘</a></li>-->
         <li class="9"><a href="account.html">账号设置</a></li>
-        <li class="10"><a href="#">登出</a></li>
+        <li class="10"><a href="/logout">登出</a></li>
     </ul>
 </div>

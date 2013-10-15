@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,16 +24,25 @@ import java.util.Map;
 public class LoginController {
 
     @RequestMapping("login")
-    public String login() {
+         public String login() {
+        return "login";
+    }
+
+    @RequestMapping("logout")
+    public String logout(HttpServletRequest request) {
+        request.getSession().setAttribute("isLogin", null);
         return "login";
     }
 
     @ResponseBody
     @RequestMapping(value = "submit", method = RequestMethod.POST)
-    public String submit(@RequestBody String value) {
+    public String submit(@RequestBody String value, HttpServletRequest request) {
         Map user = stringToMap(value);
         User dbUser = UserDao.query((String) user.get("name"));
-        return dbUser.getId() != null && dbUser.getPassword().equals(user.get("password")) ? "T":"F";
+        if (dbUser.getId() != null && dbUser.getPassword().equals(user.get("password"))) {
+            request.getSession().setAttribute("isLogin", Boolean.TRUE);
+            return "T";
+        } else return "F";
     }
 
     public Map stringToMap(String value) {
