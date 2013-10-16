@@ -34,13 +34,13 @@ public class UserDao {
             st.close();
             conn.close();
         } catch (Exception e) {
-            System.out.println("查询数据失败。");
+            System.out.println("用户查询数据失败。");
         } finally {
             try {
                 st.close();
                 conn.close();
             } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
+                System.out.println("用户连接未正常关闭。");
             }
         }
         return user;
