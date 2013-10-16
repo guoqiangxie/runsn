@@ -20,7 +20,7 @@ ${document.content}
 <script type="text/javascript" src="/js/runsn.js"></script>
 <script type="text/javascript">
     $(function () {
-        $(".num${documentType.title1code}").addClass("active");
+        $(".num"+${documentType.title1code}).addClass("active");
     });
 </script>
 </body>
