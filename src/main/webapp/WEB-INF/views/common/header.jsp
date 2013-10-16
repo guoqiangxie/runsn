@@ -15,7 +15,7 @@
       <span class="menu m1">
       <b>&gt;&gt;服务</b>
       <c:forEach var="service" items="${services}">
-          <a href="${service.id}">${service.name}</a>
+          <a href="/template/${service.id}">${service.name}</a>
       </c:forEach>
       <a href="service_1.html">企业私有云服务</a>
       <a href="service_2.html">数据中心构建服务</a>
