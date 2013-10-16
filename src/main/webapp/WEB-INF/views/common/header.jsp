@@ -1,4 +1,5 @@
 <%@page pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="header">
     <div class="w940">
         <div class="topmain">
@@ -13,6 +14,9 @@
             <li class="num1"><a href="service.html">服务</a>
       <span class="menu m1">
       <b>&gt;&gt;服务</b>
+      <c:forEach var="service" items="${services}">
+          <a href="${service.id}">${service.name}</a>
+      </c:forEach>
       <a href="service_1.html">企业私有云服务</a>
       <a href="service_2.html">数据中心构建服务</a>
       <a href="service_3.html">数据备份/容灾服务</a>
