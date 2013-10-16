@@ -111,7 +111,7 @@ public class DocumentDao {
         conn = ConnectionUtil.getConnection();
         List<Document> result = new ArrayList<Document>();
         try {
-            String sql = "select d.* from documents d inner join type t on t.id=d.typeid where d.active=1 and t.active=2 and t.title1code = " + title1code;
+            String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -137,7 +137,7 @@ public class DocumentDao {
         conn = ConnectionUtil.getConnection();
         List<Document> result = new ArrayList<Document>();
         try {
-            String sql = "select d.* from documents d inner join type t on t.id=d.typeid where d.active=1 and t.active=2 and t.title2code = " + title2code;
+            String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title2code = " + title2code;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -163,7 +163,7 @@ public class DocumentDao {
         conn = ConnectionUtil.getConnection();
         List<Document> result = new ArrayList<Document>();
         try {
-            String sql = "select d.* from documents d inner join type t on t.id=d.typeid where d.active=1 and t.active=2 and t.title3code = " + title3code;
+            String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title3code = " + title3code;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);

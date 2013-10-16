@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @version 1.0
  */
-public class Type implements Serializable {
+public class DocumentType implements Serializable {
     private Integer id;
     private String title1;
     private Integer title1code;

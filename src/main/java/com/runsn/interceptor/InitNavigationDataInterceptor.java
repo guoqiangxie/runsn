@@ -1,12 +1,12 @@
 package com.runsn.interceptor;
 
 import com.runsn.dto.Document;
+import com.runsn.jdbc.DocumentDao;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,16 +25,11 @@ public class InitNavigationDataInterceptor implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
-        List<Document> services = new ArrayList<Document>();
-        Document document = new Document();
-        document.setId(1);
-        document.setName("CEO的崛起");
-        services.add(document);
+        List<Document> services = DocumentDao.queryByTitle1code(1);
         modelAndView.addObject("services", services);
     }
 
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-        //To change body of implemented methods use File | Settings | File Templates.
     }
 }

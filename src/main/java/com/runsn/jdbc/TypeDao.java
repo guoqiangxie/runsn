@@ -1,6 +1,6 @@
 package com.runsn.jdbc;
 
-import com.runsn.dto.Type;
+import com.runsn.dto.DocumentType;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,11 +22,11 @@ public class TypeDao {
     static Connection conn;
     static Statement st;
 
-    public static Type query(int id) {
+    public static DocumentType query(int id) {
         conn = ConnectionUtil.getConnection();
-        Type type = null;
+        DocumentType type = null;
         try {
-            String sql = "select * from type t where t.id = " + id;
+            String sql = "select * from document_type t where t.id = " + id;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -48,11 +48,11 @@ public class TypeDao {
         return type;
     }
 
-    public static List<Type> queryByTitle1code(int title1code) {
+    public static List<DocumentType> queryByTitle1code(int title1code) {
         conn = ConnectionUtil.getConnection();
-        List<Type> result = new ArrayList<Type>();
+        List<DocumentType> result = new ArrayList<DocumentType>();
         try {
-            String sql = "select * from type t where t.title1code = " + title1code;
+            String sql = "select * from document_type t where t.title1code = " + title1code;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -74,11 +74,11 @@ public class TypeDao {
         return result;
     }
 
-    public static List<Type> queryByTitle2code(int title2code) {
+    public static List<DocumentType> queryByTitle2code(int title2code) {
         conn = ConnectionUtil.getConnection();
-        List<Type> result = new ArrayList<Type>();
+        List<DocumentType> result = new ArrayList<DocumentType>();
         try {
-            String sql = "select * from type t where t.title2code = " + title2code;
+            String sql = "select * from document_type t where t.title2code = " + title2code;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -100,11 +100,11 @@ public class TypeDao {
         return result;
     }
 
-    public static List<Type> queryByTitle3code(int title3code) {
+    public static List<DocumentType> queryByTitle3code(int title3code) {
         conn = ConnectionUtil.getConnection();
-        List<Type> result = new ArrayList<Type>();
+        List<DocumentType> result = new ArrayList<DocumentType>();
         try {
-            String sql = "select * from type t where t.title3code = " + title3code;
+            String sql = "select * from document_type t where t.title3code = " + title3code;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -126,8 +126,8 @@ public class TypeDao {
         return result;
     }
 
-    private static Type createType(ResultSet rs) throws SQLException {
-        Type type = new Type();
+    private static DocumentType createType(ResultSet rs) throws SQLException {
+        DocumentType type = new DocumentType();
         type.setId(rs.getInt("id"));
         type.setActive(rs.getInt("active"));
         type.setTitle1(rs.getString("title1"));
