@@ -11,19 +11,20 @@
             </div>
             <a href="index.jsp" class="logo" title="runsn软盛">runsn软盛</a> </div>
         <ul class="nav">
-            <li class="num1"><a href="service.html">服务</a>
+            <li class="num1">
+                <c:forEach var="service1" items="${services}">
+                    <c:if test="${service1.mainLevel==1}">
+                        <a href="/template/${service1.id}">${service1.name}</a>
+                    </c:if>
+                </c:forEach>
       <span class="menu m1">
       <b>&gt;&gt;服务</b>
-      <c:forEach var="service" items="${services}">
-          <a href="/template/${service.id}">${service.name}</a>
+      <c:forEach var="service2" items="${services}">
+          <c:if test="${service2.mainLevel==0}">
+              <a href="/template/${service2.id}">${service2.name}</a>
+          </c:if>
       </c:forEach>
-      <a href="service_1.html">企业私有云服务</a>
-      <a href="service_2.html">数据中心构建服务</a>
-      <a href="service_3.html">数据备份/容灾服务</a>
-      <a href="service_4.html">网络安全服务</a>
-      <a href="service_5.html">数据防泄密服务</a>
-      <a href="service_6.html">软盛"贴心"IT外包服务</a>
-      <a href="service_7.html">Runsn工程师资质</a> </span> </li>
+      </span> </li>
             <li class="num2"><a href="solution.html">解决方案</a>
       <span class="menu m2">
       <span class="r_menu">

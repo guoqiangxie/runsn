@@ -21,9 +21,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "template")
 public class TemplateController {
 
-    @RequestMapping("/{ducumentId}")
-    public ModelAndView show(@PathVariable("ducumentId") int ducumentId, ModelAndView model) {
-        Document document = DocumentDao.query(ducumentId);
+    @RequestMapping("/{documentId}")
+    public ModelAndView show(@PathVariable("documentId") int documentId, ModelAndView model) {
+        Document document = DocumentDao.query(documentId);
         DocumentType documentType = TypeDao.query(document.getTypeid());
         model.addObject("document", document);
         model.addObject("documentType", documentType);

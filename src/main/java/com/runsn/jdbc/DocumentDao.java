@@ -104,6 +104,7 @@ public class DocumentDao {
         document.setName(rs.getString("name"));
         document.setTitle(rs.getString("title"));
         document.setTypeid(rs.getInt("typeid"));
+        document.setMainLevel(rs.getInt("mainLevel"));
         return document;
     }
 

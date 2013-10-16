@@ -1,7 +1,9 @@
 package com.runsn.interceptor;
 
 import com.runsn.dto.Document;
+import com.runsn.dto.DocumentType;
 import com.runsn.jdbc.DocumentDao;
+import com.runsn.jdbc.TypeDao;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 

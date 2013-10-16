@@ -19,6 +19,7 @@ public class Document implements Serializable {
     private String description;
     private Integer typeid;
     private Integer active;
+    private Integer mainLevel;
 
     public Integer getId() {
         return id;
@@ -82,5 +83,13 @@ public class Document implements Serializable {
 
     public void setActive(Integer active) {
         this.active = active;
+    }
+
+    public Integer getMainLevel() {
+        return mainLevel;
+    }
+
+    public void setMainLevel(Integer mainLevel) {
+        this.mainLevel = mainLevel;
     }
 }
