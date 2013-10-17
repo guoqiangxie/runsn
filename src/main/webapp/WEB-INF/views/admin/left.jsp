@@ -5,7 +5,7 @@
     </div>
     <ul>
         <li class="1"><a href="indeximg.html">首页幻灯片</a></li>
-        <li class="2"><a href="news.html">新闻中心</a></li>
+        <li class="2"><a href="news.html">服务</a></li>
         <li class="3"><a href="cases.html">项目案例</a></li>
         <li class="4"><a href="service.html">服务内容</a></li>
         <li class="5"><a href="about.html">关于软盛</a></li>

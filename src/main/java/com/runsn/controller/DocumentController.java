@@ -22,11 +22,11 @@ public class DocumentController {
         return "redirect:show";
     }
 
-    @RequestMapping("show")
-    public ModelAndView show() {
-        ModelAndView mav = new ModelAndView("show");
-        String content = DocumentDao.query(2);
-        mav.addObject("content", content);
-        return mav;
-    }
+//    @RequestMapping("show")
+//    public ModelAndView show() {
+//        ModelAndView mav = new ModelAndView("show");
+//        String content = DocumentDao.query(2);
+//        mav.addObject("content", content);
+//        return mav;
+//    }
 }

@@ -20,4 +20,19 @@ public class AdminController {
     public String admin() {
         return "admin/indeximg";
     }
+
+    @RequestMapping("news.html")
+    public String news() {
+        return "admin/news";
+    }
+
+    @RequestMapping("cases.html")
+    public String cases() {
+        return "admin/cases";
+    }
+
+    @RequestMapping("news_page.html")
+    public String newsPage() {
+        return "admin/news_page";
+    }
 }
