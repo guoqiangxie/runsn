@@ -14,10 +14,10 @@ import javax.servlet.http.HttpServletRequest;
  * @version 1.0
  */
 @Controller
+@RequestMapping(value = "admin")
 public class AdminController {
-    @RequestMapping("admin")
-    public String admin(HttpServletRequest request) {
-        if (request.getSession().getAttribute("isLogin") != null) return "admin/indeximg";
-        else return "login";
+    @RequestMapping("index")
+    public String admin() {
+        return "admin/indeximg";
     }
 }

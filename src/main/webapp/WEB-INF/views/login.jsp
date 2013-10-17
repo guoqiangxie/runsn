@@ -39,7 +39,7 @@
                     $("#error").html("用户名或密码错误。");
                     $("#error").show();
                 } else {
-                    window.location.href = "/admin";
+                    window.location.href = "/admin/index";
                 }
             }
         });
