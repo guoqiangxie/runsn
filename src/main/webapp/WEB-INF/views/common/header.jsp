@@ -37,6 +37,26 @@
                   </c:forEach>
               </span>
           </c:forEach>
+
+          <c:forEach var="bizSolution" items="${bizSolutions}">
+              <span class="submenu">
+                  <c:forEach var="document" items="${bizSolution}">
+                      <c:if test="${document.mainLevel==0}">
+                          <a href="/template/${document.id}">${document.name}</a>
+                      </c:if>
+                  </c:forEach>
+              </span>
+          </c:forEach>
+
+            <c:forEach var="sizeSolution" items="${sizeSolutions}">
+              <span class="submenu">
+                  <c:forEach var="document" items="${sizeSolution}">
+                      <c:if test="${document.mainLevel==0}">
+                          <a href="/template/${document.id}">${document.name}</a>
+                      </c:if>
+                  </c:forEach>
+              </span>
+            </c:forEach>
       <%--<span class="submenu">--%>
       <%--<a href="solution_1.html">思科大型企业解决方案</a>--%>
       <%--<a href="solution_1.html">思科中小型企业解决方案</a>--%>
@@ -79,29 +99,44 @@
                   </c:if>
               </c:forEach>
           </c:forEach>
-      <a href="solution_1.html">虚拟化基础架构建设</a>
-      <a href="solution_1.html">数据存储架构建设</a>
-      <a href="solution_1.html">企业网络基础硬件架构建设</a>
-      <a href="solution_1.html">企业级无线覆盖交互</a>
-      <a href="solution_1.html">企业级数据安全解决方案</a>
-      <a href="solution_1.html">服务器及应用负载均衡</a>
-      <a href="solution_1.html">企业基础应用搭建</a>
-      <a href="solution_1.html">桌面端应用发布</a>
-      <a href="solution_1.html">数据挖掘及分析</a>
+      <%--<a href="solution_1.html">虚拟化基础架构建设</a>--%>
+      <%--<a href="solution_1.html">数据存储架构建设</a>--%>
+      <%--<a href="solution_1.html">企业网络基础硬件架构建设</a>--%>
+      <%--<a href="solution_1.html">企业级无线覆盖交互</a>--%>
+      <%--<a href="solution_1.html">企业级数据安全解决方案</a>--%>
+      <%--<a href="solution_1.html">服务器及应用负载均衡</a>--%>
+      <%--<a href="solution_1.html">企业基础应用搭建</a>--%>
+      <%--<a href="solution_1.html">桌面端应用发布</a>--%>
+      <%--<a href="solution_1.html">数据挖掘及分析</a>--%>
       <span class="col">按行业分</span>
-      <a href="solution_1.html">教育</a>
-      <a href="solution_1.html">医疗</a>
-      <a href="solution_1.html">酒店</a>
-      <a href="solution_1.html">金融</a>
-      <a href="solution_1.html">制造业</a>
-      <a href="solution_1.html">房地产</a>
-      <a href="solution_1.html">物流运输</a>
-      <a href="solution_1.html">IT及通信</a>
-      <a href="solution_1.html">快消及零售</a>
-      <a href="solution_1.html">其他</a>
+          <c:forEach var="bizSolution" items="${bizSolutions}">
+              <c:forEach var="document" items="${bizSolution}">
+                  <c:if test="${document.mainLevel==3}">
+                      <a href="/template/${document.id}">${document.name}</a>
+                  </c:if>
+              </c:forEach>
+          </c:forEach>
+      <%--<a href="solution_1.html">教育</a>--%>
+      <%--<a href="solution_1.html">医疗</a>--%>
+      <%--<a href="solution_1.html">酒店</a>--%>
+      <%--<a href="solution_1.html">金融</a>--%>
+      <%--<a href="solution_1.html">制造业</a>--%>
+      <%--<a href="solution_1.html">房地产</a>--%>
+      <%--<a href="solution_1.html">物流运输</a>--%>
+      <%--<a href="solution_1.html">IT及通信</a>--%>
+      <%--<a href="solution_1.html">快消及零售</a>--%>
+      <%--<a href="solution_1.html">其他</a>--%>
       <span class="col">按公司规模分</span>
-      <a href="solution_1.html">中小企业</a>
-      <a href="solution_1.html">大型企业</a> </span> </span> </li>
+          <c:forEach var="sizeSolution" items="${sizeSolutions}">
+              <c:forEach var="document" items="${sizeSolution}">
+                  <c:if test="${document.mainLevel==3}">
+                      <a href="/template/${document.id}">${document.name}</a>
+                  </c:if>
+              </c:forEach>
+          </c:forEach>
+      <%--<a href="solution_1.html">中小企业</a>--%>
+      <%--<a href="solution_1.html">大型企业</a>--%>
+      </span> </span> </li>
             <li class="num3"><a href="product.html">产品</a>
       <span class="menu m3">
       <b>&gt;&gt;产品</b>
