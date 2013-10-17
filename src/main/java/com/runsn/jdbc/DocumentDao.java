@@ -134,11 +134,11 @@ public class DocumentDao {
         return result;
     }
 
-    public static List<Document> queryByTitle2code(int title2code) {
+    public static List<Document> queryByTitle2code(int title1code, int title2code) {
         conn = ConnectionUtil.getConnection();
         List<Document> result = new ArrayList<Document>();
         try {
-            String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title2code = " + title2code;
+            String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code + " and t.title2code = " + title2code;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -160,11 +160,11 @@ public class DocumentDao {
         return result;
     }
 
-    public static List<Document> queryByTitle3code(int title3code) {
+    public static List<Document> queryByTitle3code(int title1code, int title2code, int title3code) {
         conn = ConnectionUtil.getConnection();
         List<Document> result = new ArrayList<Document>();
         try {
-            String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title3code = " + title3code;
+            String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code + " and t.title2code = " + title2code + " and t.title3code = " + title3code;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);

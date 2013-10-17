@@ -28,40 +28,57 @@
             <li class="num2"><a href="solution.html">解决方案</a>
       <span class="menu m2">
       <span class="r_menu">
-      <span class="submenu">
-      <a href="solution_1.html">思科大型企业解决方案</a>
-      <a href="solution_1.html">思科中小型企业解决方案</a>
-      <a href="solution_1.html">A集团主机虚拟化项目解决方案</a>
-      <a href="solution_1.html">GJ香料集团存储整合项目解决方案</a>
-      <a href="solution_1.html">M服装集团IT基础架构升级解决方案</a>
-      <a href="solution_1.html">N理财机构存储改造项目解决方案</a>
-      <a href="solution_1.html">N餐饮集团虚拟化整合项目解决方案</a>
-      <a href="solution_1.html">上海S机械有限公司VMware虚拟化解决方案</a>
-      <a href="solution_1.html">YZ集团VMware虚拟化解决方案</a>
-      <a href="solution_1.html">AAA农业集团基础平台建设解决方案</a>
-      <a href="solution_1.html">ABC企业基础平台建设解决方案</a></span>
-      <span class="submenu">22222</span>
-      <span class="submenu">333333</span>
-      <span class="submenu">44444</span>
-      <span class="submenu">55555</span>
-      <span class="submenu">66666</span>
-      <span class="submenu">77777</span>
-      <span class="submenu">8888</span>
-      <span class="submenu">99999</span>
-      <span class="submenu">10</span>
-      <span class="submenu">11</span>
-      <span class="submenu">12</span>
-      <span class="submenu">13</span>
-      <span class="submenu">14</span>
-      <span class="submenu">15</span>
-      <span class="submenu">16</span>
-      <span class="submenu">17</span>
-      <span class="submenu">18</span>
-      <span class="submenu">19</span>
-      <span class="submenu">20</span>
-      <span class="submenu">21</span> </span>
+          <c:forEach var="requirementSolution" items="${requirementSolutions}">
+              <span class="submenu">
+                  <c:forEach var="document" items="${requirementSolution}">
+                      <c:if test="${document.mainLevel==0}">
+                          <a href="/template/${document.id}">${document.name}</a>
+                      </c:if>
+                  </c:forEach>
+              </span>
+          </c:forEach>
+      <%--<span class="submenu">--%>
+      <%--<a href="solution_1.html">思科大型企业解决方案</a>--%>
+      <%--<a href="solution_1.html">思科中小型企业解决方案</a>--%>
+      <%--<a href="solution_1.html">A集团主机虚拟化项目解决方案</a>--%>
+      <%--<a href="solution_1.html">GJ香料集团存储整合项目解决方案</a>--%>
+      <%--<a href="solution_1.html">M服装集团IT基础架构升级解决方案</a>--%>
+      <%--<a href="solution_1.html">N理财机构存储改造项目解决方案</a>--%>
+      <%--<a href="solution_1.html">N餐饮集团虚拟化整合项目解决方案</a>--%>
+      <%--<a href="solution_1.html">上海S机械有限公司VMware虚拟化解决方案</a>--%>
+      <%--<a href="solution_1.html">YZ集团VMware虚拟化解决方案</a>--%>
+      <%--<a href="solution_1.html">AAA农业集团基础平台建设解决方案</a>--%>
+      <%--<a href="solution_1.html">ABC企业基础平台建设解决方案</a></span>--%>
+      <%--<span class="submenu">22222</span>--%>
+      <%--<span class="submenu">333333</span>--%>
+      <%--<span class="submenu">44444</span>--%>
+      <%--<span class="submenu">55555</span>--%>
+      <%--<span class="submenu">66666</span>--%>
+      <%--<span class="submenu">77777</span>--%>
+      <%--<span class="submenu">8888</span>--%>
+      <%--<span class="submenu">99999</span>--%>
+      <%--<span class="submenu">10</span>--%>
+      <%--<span class="submenu">11</span>--%>
+      <%--<span class="submenu">12</span>--%>
+      <%--<span class="submenu">13</span>--%>
+      <%--<span class="submenu">14</span>--%>
+      <%--<span class="submenu">15</span>--%>
+      <%--<span class="submenu">16</span>--%>
+      <%--<span class="submenu">17</span>--%>
+      <%--<span class="submenu">18</span>--%>
+      <%--<span class="submenu">19</span>--%>
+      <%--<span class="submenu">20</span>--%>
+      <%--<span class="submenu">21</span> --%>
+      </span>
       <span class="m2body"><b>&gt;&gt;解决方案</b>
       <span class="col">按业务需求分</span>
+          <c:forEach var="requirementSolution" items="${requirementSolutions}">
+              <c:forEach var="document" items="${requirementSolution}">
+                  <c:if test="${document.mainLevel==3}">
+                      <a href="/template/${document.id}">${document.name}</a>
+                  </c:if>
+              </c:forEach>
+          </c:forEach>
       <a href="solution_1.html">虚拟化基础架构建设</a>
       <a href="solution_1.html">数据存储架构建设</a>
       <a href="solution_1.html">企业网络基础硬件架构建设</a>
