@@ -23,21 +23,22 @@
       
  <div class="main2">
   <div class="tit">
-    <h3>编辑新闻</h3>
+    <h3>编辑服务内容</h3>
     <span></span></div>
-  <div class="tmain b5 btop">
-    <div class="txt">新闻标题：
-      <input class="w500 b5" name="" type="text" />
-    </div>
-    <div class="txt">发布日期： <span class="date">2012-01-22</span> 
+     <form action="/admin/submitDocument" method="POST" id="serviceForm">
+        <div class="tmain b5 btop">
+    <div class="txt">标题：
+      <input class="w500 b5" id="title" name="title" type="text" value="${service.title}"/>
     </div>
      <div class="txt">
-    <textarea name="" cols="" rows="" class="bjq" >编辑器</textarea>
+    <textarea id="content" name="content" cols="" rows="" class="bjq" >${service.content}</textarea>
     </div>
     <div class="sure">
-      <input name="" type="button" value="立即发布" />
+        <input id="id" name="id" value="${service.id}" type="hidden" />
+      <input id="submitForm" type="button" value="立即发布" />
     </div>
   </div>
+    </form>
 </div>
       
     </div>
@@ -46,9 +47,34 @@
 </div>
 <script src="/js/jquery-1.7.1.min.js" type="text/javascript" charset="gb2312"></script>
 <script src="/js/yb.js" type="text/javascript" charset="gb2312"></script>
+<link rel="stylesheet" href="/js/kindedit/themes/default/default.css"/>
+<script charset="utf-8" src="/js/kindedit/kindeditor-min.js"></script>
+<script charset="utf-8" src="/js/kindedit/lang/zh_CN.js"></script>
 <script type="text/javascript">
     $(function () {
+        KindEditor.ready(function (K) {
+            K.create('textarea[name="content"]', {
+                autoHeightMode: true,
+                uploadJson: '/upload_json',
+                afterCreate: function () {
+                    this.loadPlugin('autoheight');
+                },
+                afterBlur: function() {
+                    this.sync();
+                }
+            });
+        });
+
         $(".2").addClass("on");
+
+        $("#submitForm").click(function() {
+            if ($("#title").val()==null || $("#title").val()=='' ||
+                    $("#content").val()==null || $("#content").val()=='') {
+                alert("标题和内容不能为空");
+                return;
+            }
+            $("#serviceForm").submit();
+        });
     });
 </script>
 </body>

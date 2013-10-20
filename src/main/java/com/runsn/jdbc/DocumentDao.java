@@ -21,10 +21,10 @@ public class DocumentDao {
     static Connection conn;
     static Statement st;
 
-    public static void save(String name, String content) {
+    public static void save(Document document) throws Exception {
         conn = ConnectionUtil.getConnection();
         try {
-            String sql = "insert into documents (name, content, typeid, active) values('" + name + "', '" + content + "',1,1)";
+            String sql = "insert into documents (name, content, title, keywords, description, typeid, active, mainLevel) values('" + document.getName() + "', '" + document.getContent() + "','" + document.getTitle() + "','" + document.getKeywords() + "','" + document.getDescription() + "'," + document.getTypeid() + "," + document.getActive() + "," + document.getMainLevel() + ")";
             st = conn.createStatement();
 
             st.execute(sql);
@@ -32,6 +32,37 @@ public class DocumentDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("插入页面数据失败。");
+            throw new Exception("插入页面数据失败.");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+    }
+
+    public static void update(Document document) throws Exception {
+        conn = ConnectionUtil.getConnection();
+        try {
+            String sql = "update documents set name='" + document.getName()
+                    + "',content='" + document.getContent()
+                    + "',title='" + document.getTitle()
+                    + "',keywords='" + document.getKeywords()
+                    + "',description='" + document.getDescription()
+                    + "',typeid=" + document.getTypeid()
+                    + ",active=" + document.getActive()
+                    + ",mainLevel=" + document.getMainLevel()
+                    + " where id=" + document.getId();
+            st = conn.createStatement();
+
+            st.execute(sql);
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("更新页面数据失败。");
+            throw new Exception("更新页面数据失败。");
         } finally {
             try {
                 st.close();
@@ -68,16 +99,37 @@ public class DocumentDao {
         return document;
     }
 
-    public static Document queryByTypeid(int typeid) {
+    public static void delete(int id) throws Exception {
         conn = ConnectionUtil.getConnection();
-        Document document = null;
+        try {
+            String sql = "delete from documents where id = " + id;
+            st = conn.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("删除数据失败。");
+            throw new Exception("删除数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+    }
+
+    public static List<Document> queryByTypeid(int typeid) {
+        conn = ConnectionUtil.getConnection();
+        List result = new ArrayList();
         try {
             String sql = "select * from documents d where d.typeid = " + typeid;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                document = createDocument(rs);
+                result.add(createDocument(rs));
             }
             st.close();
             conn.close();
@@ -91,7 +143,7 @@ public class DocumentDao {
                 System.out.println("连接未正常关闭。");
             }
         }
-        return document;
+        return result;
     }
 
     private static Document createDocument(ResultSet rs) throws SQLException {

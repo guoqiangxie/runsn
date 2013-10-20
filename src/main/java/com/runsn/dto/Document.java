@@ -11,10 +11,10 @@ import java.io.Serializable;
  * @version 1.0
  */
 public class Document implements Serializable {
-    private Integer id;
+    private Integer id = 0;
     private String name;
-    private String content;
-    private String title;
+    private String content = "";
+    private String title = "";
     private String keywords;
     private String description;
     private Integer typeid;
