@@ -34,8 +34,8 @@
             </tr>
               <c:forEach var="service" items="${services}">
                   <tr>
-                      <td><span class="info"><a href="/admin/news_page/${service.id}" target="_blank">${service.title}</a></span></td>
-                      <td align="center"><a href="/admin/news_page/${service.id}">修改</a> <a href="/admin/delete/${service.id}">删除</a></td>
+                      <td><span class="info"><a href="/admin/detail/${service.id}" target="_blank">${service.title}</a></span></td>
+                      <td align="center"><a href="/admin/detail/${service.id}">修改</a> <a href="/admin/delete/${service.id}">删除</a></td>
                   </tr>
               </c:forEach>
           </table>
@@ -55,7 +55,7 @@
     $(function () {
         $(".2").addClass("on");
         $("#addService").click(function() {
-            window.location.href = "/admin/news_page/0";
+            window.location.href = "/admin/detail/0";
         });
     });
 </script>

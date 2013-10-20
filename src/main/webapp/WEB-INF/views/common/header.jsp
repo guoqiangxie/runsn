@@ -12,11 +12,13 @@
             <a href="index.jsp" class="logo" title="runsn软盛">runsn软盛</a> </div>
         <ul class="nav">
             <li class="num1">
+                <c:set var="link" value="#" />
                 <c:forEach var="service1" items="${services}">
                     <c:if test="${service1.mainLevel==1}">
-                        <a href="/template/${service1.id}">${service1.name}</a>
+                        <c:set var="link" value="/template/${service1.id}" />
                     </c:if>
                 </c:forEach>
+                <a href="${link}">服务</a>
       <span class="menu m1">
       <b>&gt;&gt;服务</b>
       <c:forEach var="service2" items="${services}">

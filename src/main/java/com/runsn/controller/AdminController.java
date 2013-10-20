@@ -20,7 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdminController {
     @RequestMapping("index")
     public String admin() {
-        return "admin/indeximg";
+        return "redirect:services.html";
     }
 
     @RequestMapping("services.html")
@@ -35,12 +35,12 @@ public class AdminController {
         return "admin/cases";
     }
 
-    @RequestMapping("news_page/{documentId}")
+    @RequestMapping("detail/{documentId}")
     public ModelAndView newsPage(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
         Document document = DocumentDao.query(documentId);
         if (document == null) document = new Document();
         modelAndView.addObject("service", document);
-        modelAndView.setViewName("admin/news_page");
+        modelAndView.setViewName("admin/detail");
         return modelAndView;
     }
 
