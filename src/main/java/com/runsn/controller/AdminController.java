@@ -36,6 +36,30 @@ public class AdminController {
         return modelAndView;
     }
 
+    @RequestMapping("trains.html")
+    public ModelAndView trains(ModelAndView modelAndView) {
+        modelAndView.addObject("trains", DocumentDao.queryByTitle1code(4));
+        modelAndView.setViewName("admin/trains");
+        return modelAndView;
+    }
+
+    @RequestMapping("trainDetail/{documentId}")
+    public ModelAndView trainDetail(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
+        DocumentDetail documentDetail = new DocumentDetail();
+        Document document = DocumentDao.query(documentId);
+        if (document != null) {
+            DocumentType documentType = TypeDao.query(document.getTypeid());
+            documentDetail.setDocument(document);
+            documentDetail.setDocumentType(documentType);
+            documentDetail.setDocumentId(documentId);
+            documentDetail.setTypeid(documentType.getId());
+        }
+        modelAndView.addObject("documentDetail", documentDetail);
+        modelAndView.setViewName("admin/trainDetail");
+        return modelAndView;
+    }
+
+
     @RequestMapping("cases.html")
     public String cases() {
         return "admin/cases";

@@ -51,6 +51,34 @@ public class DocumentController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/admin/submitTrain", method = RequestMethod.POST)
+    public ModelAndView submitTrain(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, ModelAndView modelAndView) {
+        Document document = DocumentDao.query(id);
+        if (document == null) {
+            try {
+                DocumentDao.save(createDocument(title, content, 27, null));
+                modelAndView.addObject("result", "成功啦");
+                modelAndView.addObject("message", "您的信息已经添加成功");
+            } catch (Exception e) {
+                modelAndView.addObject("result", "失败啦");
+                modelAndView.addObject("message", "您的信息添加失败");
+            }
+        } else {
+            document.setTitle(title);
+            document.setName(title);
+            document.setContent(content);
+            try {
+                DocumentDao.update(document);
+                modelAndView.addObject("result", "成功啦");
+                modelAndView.addObject("message", "您的信息已经更新成功");
+            } catch (Exception e) {
+                modelAndView.addObject("result", "失败啦");
+                modelAndView.addObject("message", "您的信息更新失败");
+            }
+        }
+        modelAndView.setViewName("/admin/result");
+        return modelAndView;
+    }
 
     @RequestMapping(value = "/admin/submitSolution", method = RequestMethod.POST)
     public ModelAndView submitSolution(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, @RequestParam(value = "mainLevel", required = false) String mainLevel, @RequestParam(value = "mainLevelThree", required = false) String mainLevelThree, @RequestParam(value = "title2code", required = false) int title2code, @RequestParam(value = "title3code", required = false) int title3code, ModelAndView modelAndView) {

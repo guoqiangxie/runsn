@@ -37,6 +37,7 @@ public class InitNavigationDataInterceptor implements HandlerInterceptor {
         modelAndView.addObject("sizeSolutions", groupData(DocumentDao.queryByTitle2code(2, 3)));
         modelAndView.addObject("requirementProducts", DocumentDao.queryByTitle2code(3, 1));
         modelAndView.addObject("brandProducts", DocumentDao.queryByTitle2code(3, 2));
+        modelAndView.addObject("trains", DocumentDao.queryByTitle1code(4));
     }
 
     private List groupData(List<Document> requirementSolutions) {
