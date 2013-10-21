@@ -143,26 +143,33 @@
       <span class="menu m3">
       <b>&gt;&gt;产品</b>
       <span class="col">需求</span>
-      <a href="#">虚拟化基础架构建设</a>
-      <a href="#">数据存储架构建设</a>
-      <a href="#">企业网络基础硬件架构建设</a>
-      <a href="#">企业级无线覆盖交互</a>
-      <a href="#">企业级数据安全解决方案</a>
-      <a href="#">服务器及应用负载均衡</a>
+      <c:forEach var="requirementProduct" items="${requirementProducts}">
+              <a href="/template/${requirementProduct.id}">${requirementProduct.name}</a>
+      </c:forEach>
+      <%--<a href="#">虚拟化基础架构建设</a>--%>
+      <%--<a href="#">数据存储架构建设</a>--%>
+      <%--<a href="#">企业网络基础硬件架构建设</a>--%>
+      <%--<a href="#">企业级无线覆盖交互</a>--%>
+      <%--<a href="#">企业级数据安全解决方案</a>--%>
+      <%--<a href="#">服务器及应用负载均衡</a>--%>
       <span class="col">品牌</span>
-      <a href="#">Citrix</a>
-      <a href="#">HP</a>
-      <a href="#">Symantec</a>
-      <a href="#">Cisco</a>
-      <a href="#">Microsoft</a>
-      <a href="#">Vmware</a>
-      <a href="#">EMC</a>
-      <a href="#">Adobe</a>
-      <a href="#">Aruba</a>
-      <a href="#">Juniper</a>
-      <a href="#">INFORMATICA</a>
-      <a href="#">IMATION</a>
-      <a href="#">综合产品线</a> </span> </li>
+      <c:forEach var="brandProduct" items="${brandProducts}">
+          <a href="/template/${brandProduct.id}">${brandProduct.name}</a>
+      </c:forEach>
+      <%--<a href="#">Citrix</a>--%>
+      <%--<a href="#">HP</a>--%>
+      <%--<a href="#">Symantec</a>--%>
+      <%--<a href="#">Cisco</a>--%>
+      <%--<a href="#">Microsoft</a>--%>
+      <%--<a href="#">Vmware</a>--%>
+      <%--<a href="#">EMC</a>--%>
+      <%--<a href="#">Adobe</a>--%>
+      <%--<a href="#">Aruba</a>--%>
+      <%--<a href="#">Juniper</a>--%>
+      <%--<a href="#">INFORMATICA</a>--%>
+      <%--<a href="#">IMATION</a>--%>
+      <%--<a href="#">综合产品线</a> --%>
+      </span> </li>
             <li class="num4"><a href="activity.html">主题活动</a>
       <span class="menu m4">
       <b>&gt;&gt;主题活动</b>

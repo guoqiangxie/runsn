@@ -58,6 +58,7 @@
         KindEditor.ready(function (K) {
             K.create('textarea[name="content"]', {
                 autoHeightMode: true,
+    //            filterMode : false,
                 uploadJson: '/upload_json',
                 afterCreate: function () {
                     this.loadPlugin('autoheight');
