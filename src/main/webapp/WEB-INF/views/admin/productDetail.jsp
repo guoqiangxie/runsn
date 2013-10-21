@@ -25,19 +25,24 @@
   <div class="tit">
     <h3>编辑服务内容</h3>
     <span></span></div>
-     <form action="/admin/submitService" method="POST" id="serviceForm">
+     <form action="/admin/submitProduct" method="POST" id="serviceForm">
         <div class="tmain b5 btop">
     <div class="txt">标题：
       <input class="w500 b5" id="title" name="title" type="text" value="${documentDetail.document.title}"/>
     </div>
-    <div class="txt">是否为一级主页面：
-        <input id="mainLevel" name="mainLevel" type="checkbox" <c:if test="${documentDetail.document.mainLevel==1}">checked="checked"</c:if> <c:if test="${documentDetail.documentId!=0}">readonly="readonly" </c:if> />
+            <c:if test="${documentDetail.documentId==0}">
+    <div class="txt">二级分类：
+        <select id="title2code" name="title2code">
+            <option value ="25" selected="selected">需求</option>
+            <option value ="26">品牌</option>
+        </select>
     </div>
+            </c:if>
      <div class="txt">
     <textarea id="content" name="content" cols="" rows="" class="bjq" >${documentDetail.document.content}</textarea>
     </div>
     <div class="sure">
-        <input id="id" name="id" value="${documentDetail.document.id}" type="hidden" />
+        <input id="id" name="id" value="${documentDetail.documentId}" type="hidden" />
       <input id="submitForm" type="button" value="立即发布" />
     </div>
   </div>
@@ -67,7 +72,8 @@
                 }
             });
         });
-        $(".2").addClass("on");
+
+        $(".4").addClass("on");
 
         $("#submitForm").click(function() {
             if ($("#title").val()==null || $("#title").val()=='' ||

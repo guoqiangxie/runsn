@@ -94,6 +94,35 @@ public class DocumentController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/admin/submitProduct", method = RequestMethod.POST)
+    public ModelAndView submitProduct(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, @RequestParam(value = "title2code", required = false) Integer typeid, ModelAndView modelAndView) {
+        Document document = DocumentDao.query(id);
+        if (document == null) {
+            try {
+                DocumentDao.save(createDocument(title, content, typeid, null));
+                modelAndView.addObject("result", "成功啦");
+                modelAndView.addObject("message", "您的信息已经添加成功");
+            } catch (Exception e) {
+                modelAndView.addObject("result", "失败啦");
+                modelAndView.addObject("message", "您的信息添加失败");
+            }
+        } else {
+            document.setTitle(title);
+            document.setName(title);
+            document.setContent(content);
+            try {
+                DocumentDao.update(document);
+                modelAndView.addObject("result", "成功啦");
+                modelAndView.addObject("message", "您的信息已经更新成功");
+            } catch (Exception e) {
+                modelAndView.addObject("result", "失败啦");
+                modelAndView.addObject("message", "您的信息更新失败");
+            }
+        }
+        modelAndView.setViewName("/admin/result");
+        return modelAndView;
+    }
+
     private static Document createDocument(String title, String content, int typeid, Integer mainLevel) {
         Document document = new Document();
         document.setActive(1);

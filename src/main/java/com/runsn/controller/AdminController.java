@@ -104,4 +104,38 @@ public class AdminController {
         modelAndView.setViewName("admin/solutions");
         return modelAndView;
     }
+
+    @RequestMapping("products.html")
+    public ModelAndView products(ModelAndView modelAndView) {
+        List<Document> documentList = DocumentDao.queryByTitle1code(3);
+        List<DocumentDetail> documentDetailList = new ArrayList<DocumentDetail>();
+        for (Document document : documentList) {
+            DocumentDetail documentDetail = new DocumentDetail();
+            documentDetail.setDocument(document);
+            documentDetail.setDocumentId(document.getId());
+            documentDetail.setTypeid(document.getTypeid());
+            documentDetail.setDocumentType(TypeDao.query(document.getTypeid()));
+            documentDetailList.add(documentDetail);
+        }
+        modelAndView.addObject("products", documentDetailList);
+        modelAndView.setViewName("admin/products");
+        return modelAndView;
+    }
+
+    @RequestMapping("productDetail/{documentId}")
+    public ModelAndView productDetail(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
+        DocumentDetail documentDetail = new DocumentDetail();
+        Document document = DocumentDao.query(documentId);
+        if (document != null) {
+            DocumentType documentType = TypeDao.query(document.getTypeid());
+            documentDetail.setDocument(document);
+            documentDetail.setDocumentType(documentType);
+            documentDetail.setDocumentId(documentId);
+            documentDetail.setTypeid(documentType.getId());
+        }
+        modelAndView.addObject("documentDetail", documentDetail);
+        modelAndView.setViewName("admin/productDetail");
+        return modelAndView;
+    }
+
 }
