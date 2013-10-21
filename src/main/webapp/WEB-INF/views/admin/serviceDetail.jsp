@@ -1,5 +1,6 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,7 +8,6 @@
 <meta http-equiv="Page-Enter" content="blendTrans(Duration=1)" />
 <meta http-equiv="Page-Exit" content="blendTrans(Duration=1)" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<link rel="Shortcut Icon" href="1.ico">
 <title>新闻中心 | 网站后台管理系统</title>
 <link href="/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/css/news.css" rel="stylesheet" type="text/css" />
@@ -25,16 +25,19 @@
   <div class="tit">
     <h3>编辑服务内容</h3>
     <span></span></div>
-     <form action="/admin/submitDocument" method="POST" id="serviceForm">
+     <form action="/admin/submitService" method="POST" id="serviceForm">
         <div class="tmain b5 btop">
     <div class="txt">标题：
-      <input class="w500 b5" id="title" name="title" type="text" value="${service.title}"/>
+      <input class="w500 b5" id="title" name="title" type="text" value="${documentDetail.document.title}"/>
+    </div>
+    <div class="txt">是否为一级主页面：
+        <input id="mainLevel" name="mainLevel" type="checkbox" <c:if test="${documentDetail.document.mainLevel==1}">checked="checked"</c:if> <c:if test="${documentDetail.documentId!=0}">readonly="readonly" </c:if> />
     </div>
      <div class="txt">
-    <textarea id="content" name="content" cols="" rows="" class="bjq" >${service.content}</textarea>
+    <textarea id="content" name="content" cols="" rows="" class="bjq" >${documentDetail.document.content}</textarea>
     </div>
     <div class="sure">
-        <input id="id" name="id" value="${service.id}" type="hidden" />
+        <input id="id" name="id" value="${documentDetail.document.id}" type="hidden" />
       <input id="submitForm" type="button" value="立即发布" />
     </div>
   </div>

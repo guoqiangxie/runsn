@@ -1,11 +1,17 @@
 package com.runsn.controller;
 
 import com.runsn.dto.Document;
+import com.runsn.dto.DocumentDetail;
+import com.runsn.dto.DocumentType;
 import com.runsn.jdbc.DocumentDao;
+import com.runsn.jdbc.TypeDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,7 +31,7 @@ public class AdminController {
 
     @RequestMapping("services.html")
     public ModelAndView news(ModelAndView modelAndView) {
-        modelAndView.addObject("services", DocumentDao.queryByTypeid(1));
+        modelAndView.addObject("services", DocumentDao.queryByTitle1code(1));
         modelAndView.setViewName("admin/services");
         return modelAndView;
     }
@@ -35,12 +41,36 @@ public class AdminController {
         return "admin/cases";
     }
 
-    @RequestMapping("detail/{documentId}")
-    public ModelAndView newsPage(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
+    @RequestMapping("serviceDetail/{documentId}")
+    public ModelAndView serviceDetail(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
+        DocumentDetail documentDetail = new DocumentDetail();
         Document document = DocumentDao.query(documentId);
-        if (document == null) document = new Document();
-        modelAndView.addObject("service", document);
-        modelAndView.setViewName("admin/detail");
+        if (document != null) {
+            DocumentType documentType = TypeDao.query(document.getTypeid());
+            documentDetail.setDocument(document);
+            documentDetail.setDocumentType(documentType);
+            documentDetail.setDocumentId(documentId);
+            documentDetail.setTypeid(documentType.getId());
+        }
+        modelAndView.addObject("documentDetail", documentDetail);
+        modelAndView.setViewName("admin/serviceDetail");
+        return modelAndView;
+    }
+
+    @RequestMapping("solutionDetail/{documentId}")
+    public ModelAndView solutionDetail(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
+        DocumentDetail documentDetail = new DocumentDetail();
+        Document document = DocumentDao.query(documentId);
+        if (document != null) {
+            DocumentType documentType = TypeDao.query(document.getTypeid());
+            documentDetail.setDocument(document);
+            documentDetail.setDocumentType(documentType);
+            documentDetail.setDocumentId(documentId);
+            documentDetail.setTypeid(documentType.getId());
+        }
+        modelAndView.addObject("documentDetail", documentDetail);
+        modelAndView.addObject("types", TypeDao.queryByTitle1code(2));
+        modelAndView.setViewName("admin/solutionDetail");
         return modelAndView;
     }
 
@@ -55,6 +85,23 @@ public class AdminController {
             modelAndView.addObject("message", "您的信息删除失败");
         }
         modelAndView.setViewName("/admin/result");
+        return modelAndView;
+    }
+
+    @RequestMapping("solutions.html")
+    public ModelAndView solutions(ModelAndView modelAndView) {
+        List<Document> documentList = DocumentDao.queryByTitle1code(2);
+        List<DocumentDetail> documentDetailList = new ArrayList<DocumentDetail>();
+        for (Document document : documentList) {
+            DocumentDetail documentDetail = new DocumentDetail();
+            documentDetail.setDocument(document);
+            documentDetail.setDocumentId(document.getId());
+            documentDetail.setTypeid(document.getTypeid());
+            documentDetail.setDocumentType(TypeDao.query(document.getTypeid()));
+            documentDetailList.add(documentDetail);
+        }
+        modelAndView.addObject("solutions", documentDetailList);
+        modelAndView.setViewName("admin/solutions");
         return modelAndView;
     }
 }

@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @version 1.0
  */
 public class DocumentType implements Serializable {
-    private Integer id;
+    private Integer id = 0;
     private String title1;
     private Integer title1code;
     private String title2;

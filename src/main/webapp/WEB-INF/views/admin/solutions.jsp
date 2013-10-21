@@ -9,7 +9,7 @@
 <meta http-equiv="Page-Exit" content="blendTrans(Duration=1)" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <link rel="Shortcut Icon" href="1.ico">
-<title>服务 | 网站后台管理系统</title>
+<title>解决方案 | 网站后台管理系统</title>
 <link href="/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/css/news.css" rel="stylesheet" type="text/css" />
 </head>
@@ -24,26 +24,32 @@
     
       <div class="main2">
         <div class="tit">
-          <h3>服务列表</h3>
+          <h3>解决方案列表</h3>
           <span></span></div>
         <div class="tmain b5 btop">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-              <th width="59%" >标题</th>
+              <th width="30%" >标题</th>
+              <th width="15%" >二级分类</th>
+              <th width="20%" >三级分类</th>
               <th width="10%" >一级主页面</th>
+              <th width="10%" >三级主页面</th>
               <th width="12%" >操作</th>
             </tr>
-              <c:forEach var="service" items="${services}">
+              <c:forEach var="service" items="${solutions}">
                   <tr>
-                      <td><span class="info"><a href="/admin/serviceDetail/${service.id}" target="_blank">${service.title}</a></span></td>
-                      <td>${service.mainLevel==1?"是":""}</td>
-                      <td align="center"><a href="/admin/serviceDetail/${service.id}">修改</a> <a href="/admin/delete/${service.id}">删除</a></td>
+                      <td><span class="info"><a href="/admin/solutionDetail/${service.documentId}" target="_blank">${service.document.title}</a></span></td>
+                      <td>${service.documentType.title2}</td>
+                      <td>${service.documentType.title3}</td>
+                      <td>${service.document.mainLevel==1?"是":""}</td>
+                      <td>${service.document.mainLevel==3?"是":""}</td>
+                      <td align="center"><a href="/admin/solutionDetail/${service.documentId}">修改</a> <a href="/admin/delete/${service.documentId}">删除</a></td>
                   </tr>
               </c:forEach>
           </table>
         </div>
         <div class="newsure">
-          <input id="addService" name="input" type="button" value="添加服务" />
+          <input id="addService" name="input" type="button" value="添加解决方案" />
         </div>
       </div>
       
@@ -55,9 +61,9 @@
 <script src="/js/yb.js" type="text/javascript" charset="gb2312"></script>
 <script type="text/javascript">
     $(function () {
-        $(".2").addClass("on");
+        $(".3").addClass("on");
         $("#addService").click(function() {
-            window.location.href = "/admin/serviceDetail/0";
+            window.location.href = "/admin/solutionDetail/0";
         });
     });
 </script>
