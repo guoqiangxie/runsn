@@ -48,6 +48,40 @@ public class TypeDao {
         return type;
     }
 
+    public static Integer save(DocumentType documentType) {
+        conn = ConnectionUtil.getConnection();
+        Integer result = null;
+        try {
+            String sql = "insert into document_type(title1, title1code,title2, title2code,title3, title3code,active) values('"
+                    + documentType.getTitle1() + "','"
+                    + documentType.getTitle1code() + "','"
+                    + documentType.getTitle2() + "','"
+                    + documentType.getTitle2code() + "','"
+                    + documentType.getTitle3() + "','"
+                    + documentType.getTitle3code() + "',"
+                    + documentType.getActive()
+                    + ")";
+            st = conn.createStatement();
+            st.execute(sql);
+            ResultSet rs = st.getGeneratedKeys();
+            while (rs.next()) {
+                result = rs.getInt(1);
+            }
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("查询数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+        return result;
+    }
+
     public static List<DocumentType> queryByTitle1code(int title1code) {
         conn = ConnectionUtil.getConnection();
         List<DocumentType> result = new ArrayList<DocumentType>();
@@ -124,6 +158,32 @@ public class TypeDao {
             }
         }
         return result;
+    }
+
+    public static DocumentType queryMaxTitle3code(int title1code, int title2code) {
+        conn = ConnectionUtil.getConnection();
+        DocumentType documentType = new DocumentType();
+        try {
+            String sql = "select * from document_type where title1code=" + title1code + " and title2code=" + title2code + " and title3code=(select MAX(title3code) from document_type where title1code=" + title1code + " and title2code=" + title2code + ")";
+            st = conn.createStatement();
+
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                documentType = createType(rs);
+            }
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("查询数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+        return documentType;
     }
 
     private static DocumentType createType(ResultSet rs) throws SQLException {

@@ -1,7 +1,10 @@
 package com.runsn.controller;
 
 import com.runsn.dto.Document;
+import com.runsn.dto.DocumentType;
 import com.runsn.jdbc.DocumentDao;
+import com.runsn.jdbc.TypeDao;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,7 +27,7 @@ public class DocumentController {
         Document document = DocumentDao.query(id);
         if (document == null) {
             try {
-                DocumentDao.save(createDocument(title, content, 1, mainLevel));
+                DocumentDao.save(createDocument(title, content, 1, "on".equals(mainLevel) ? 1 : 0));
                 modelAndView.addObject("result", "成功啦");
                 modelAndView.addObject("message", "您的信息已经添加成功");
             } catch (Exception e) {
@@ -50,17 +53,24 @@ public class DocumentController {
 
 
     @RequestMapping(value = "/admin/submitSolution", method = RequestMethod.POST)
-    public ModelAndView submitSolution(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, @RequestParam(value = "mainLevel", required = false) String mainLevel,@RequestParam(value = "mainLevelThree", required = false) String mainLevelThree, @RequestParam(value = "title2code", required = false) String title2code, @RequestParam(value = "title3code", required = false) String title3code, ModelAndView modelAndView) {
+    public ModelAndView submitSolution(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, @RequestParam(value = "mainLevel", required = false) String mainLevel, @RequestParam(value = "mainLevelThree", required = false) String mainLevelThree, @RequestParam(value = "title2code", required = false) int title2code, @RequestParam(value = "title3code", required = false) int title3code, ModelAndView modelAndView) {
         Document document = DocumentDao.query(id);
         if (document == null) {
-            //xgqtodo 1. 如果mainLevel选中，则找到关联到一级主页  2. 如果mainLevelThree选中，则增加一条documenttype，增加一条mainLevel为3的记录
             try {
                 if ("on".equals(mainLevel)) {
-                    DocumentDao.save(createDocument(title, content, 23, mainLevel));
+                    DocumentDao.save(createDocument(title, content, 23, 1));
                 } else if ("on".equals(mainLevelThree)) {
-
+                    DocumentType maxType = TypeDao.queryMaxTitle3code(2, title2code);
+                    DocumentType documentType = new DocumentType();
+                    BeanUtils.copyProperties(maxType, documentType);
+                    documentType.setId(null);
+                    documentType.setTitle3(title);
+                    documentType.setTitle3code(maxType.getTitle3code() + 1);
+                    Integer typeid = TypeDao.save(documentType);
+                    DocumentDao.save(createDocument(title, content, typeid, 3));
+                } else {
+                    DocumentDao.save(createDocument(title, content, title3code, null));
                 }
-                DocumentDao.save(createDocument(title, content, mainLevel));
                 modelAndView.addObject("result", "成功啦");
                 modelAndView.addObject("message", "您的信息已经添加成功");
             } catch (Exception e) {
@@ -84,14 +94,14 @@ public class DocumentController {
         return modelAndView;
     }
 
-    private static Document createDocument(String title, String content, int typeid,  String mainLevel) {
+    private static Document createDocument(String title, String content, int typeid, Integer mainLevel) {
         Document document = new Document();
         document.setActive(1);
         document.setContent(content);
         document.setName(title);
         document.setTitle(title);
         document.setTypeid(typeid);
-        document.setMainLevel("on".equals(mainLevel)?1:0);
+        document.setMainLevel(mainLevel);
         return document;
     }
 }
