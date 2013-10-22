@@ -26,30 +26,24 @@
       <span class="r_menu">
           <c:forEach var="requirementSolution" items="${requirementSolutions}">
               <span class="submenu">
-                  <c:forEach var="document" items="${requirementSolution}">
-                      <c:if test="${document.mainLevel==0}">
-                          <a href="/template/${document.id}">${document.name}</a>
-                      </c:if>
+                  <c:forEach var="documentDetail" items="${requirementSolution}">
+                          <a href="/template/${documentDetail.document.id}">${documentDetail.document.name}</a>
                   </c:forEach>
               </span>
           </c:forEach>
 
           <c:forEach var="bizSolution" items="${bizSolutions}">
               <span class="submenu">
-                  <c:forEach var="document" items="${bizSolution}">
-                      <c:if test="${document.mainLevel==0}">
-                          <a href="/template/${document.id}">${document.name}</a>
-                      </c:if>
+                  <c:forEach var="documentDetail" items="${bizSolution}">
+                          <a href="/template/${documentDetail.document.id}">${documentDetail.document.name}</a>
                   </c:forEach>
               </span>
           </c:forEach>
 
             <c:forEach var="sizeSolution" items="${sizeSolutions}">
               <span class="submenu">
-                  <c:forEach var="document" items="${sizeSolution}">
-                      <c:if test="${document.mainLevel==0}">
-                          <a href="/template/${document.id}">${document.name}</a>
-                      </c:if>
+                  <c:forEach var="documentDetail" items="${sizeSolution}">
+                          <a href="/template/${documentDetail.document.id}">${documentDetail.document.name}</a>
                   </c:forEach>
               </span>
             </c:forEach>
@@ -89,8 +83,10 @@
       <span class="m2body"><b>解决方案</b>
       <span class="col">按业务需求分</span>
           <c:forEach var="requirementSolution" items="${requirementSolutions}">
-              <c:forEach var="document" items="${requirementSolution}">
-                      ${document.name}
+              <c:forEach var="documentDetail" items="${requirementSolution}" varStatus="status">
+                  <c:if test="${status.index==0}">
+                      <a>${documentDetail.documentType.title3}</a>
+                  </c:if>
               </c:forEach>
           </c:forEach>
       <%--<a href="solution_1.html">虚拟化基础架构建设</a>--%>
@@ -104,8 +100,10 @@
       <%--<a href="solution_1.html">数据挖掘及分析</a>--%>
       <span class="col">按行业分</span>
           <c:forEach var="bizSolution" items="${bizSolutions}">
-              <c:forEach var="document" items="${bizSolution}">
-                      ${document.name}
+              <c:forEach var="documentDetail" items="${bizSolution}" varStatus="status">
+                  <c:if test="${status.index==0}">
+                      <a>${documentDetail.documentType.title3}</a>
+                  </c:if>
               </c:forEach>
           </c:forEach>
       <%--<a href="solution_1.html">教育</a>--%>
@@ -120,8 +118,10 @@
       <%--<a href="solution_1.html">其他</a>--%>
       <span class="col">按公司规模分</span>
           <c:forEach var="sizeSolution" items="${sizeSolutions}">
-              <c:forEach var="document" items="${sizeSolution}">
-                      ${document.name}
+              <c:forEach var="documentDetail" items="${sizeSolution}" varStatus="status">
+                  <c:if test="${status.index==0}">
+                      <a>${documentDetail.documentType.title3}</a>
+                  </c:if>
               </c:forEach>
           </c:forEach>
       <%--<a href="solution_1.html">中小企业</a>--%>

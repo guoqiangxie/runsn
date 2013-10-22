@@ -1,7 +1,7 @@
 package com.runsn.interceptor;
 
 import com.runsn.dto.Document;
-import com.runsn.dto.DocumentType;
+import com.runsn.dto.DocumentDetail;
 import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.TypeDao;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -52,7 +52,10 @@ public class InitNavigationDataInterceptor implements HandlerInterceptor {
             List list = new ArrayList();
             for (Document document : requirementSolutions) {
                 if (document.getTypeid().equals(typeid)) {
-                    list.add(document);
+                    DocumentDetail documentDetail = new DocumentDetail();
+                    documentDetail.setDocument(document);
+                    documentDetail.setDocumentType(TypeDao.query(typeid));
+                    list.add(documentDetail);
                 }
             }
             result.add(list);
