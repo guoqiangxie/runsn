@@ -8,7 +8,7 @@
 <meta http-equiv="Page-Enter" content="blendTrans(Duration=1)" />
 <meta http-equiv="Page-Exit" content="blendTrans(Duration=1)" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>新闻中心 | 网站后台管理系统</title>
+<title>解决方案 | 网站后台管理系统</title>
 <link href="/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/css/news.css" rel="stylesheet" type="text/css" />
 </head>
@@ -30,6 +30,12 @@
     <div class="txt">标题：
       <input class="w500 b5" id="title" name="title" type="text" value="${documentDetail.document.title}"/>
     </div>
+            <div class="txt">Keywords：
+                <input class="w500 b5" id="keywords" name="keywords" type="text" value="${documentDetail.document.keywords}"/>
+            </div>
+            <div class="txt">Description：
+                <input class="w500 b5" id="description" name="description" type="text" value="${documentDetail.document.description}"/>
+            </div>
             <c:if test="${documentDetail.documentId==0}">
     <div class="txt">二级分类：
         <select id="title2code" name="title2code" onchange="change();">
@@ -44,12 +50,6 @@
                 <option value ="${type.id}" class="title3option title2code_${type.title2code}" <c:if test="${type.title2code!=1}">style="display: none;"</c:if> >${type.title3}</option>
             </c:forEach>
         </select>
-    </div>
-    <div class="txt">是否为一级主页面：
-        <input id="mainLevel" name="mainLevel" type="checkbox" <c:if test="${documentDetail.document.mainLevel==1}">checked="checked"</c:if> <c:if test="${documentDetail.documentId!=0}">readonly="readonly" </c:if>/>
-    </div>
-    <div class="txt">是否为三级主页面：
-        <input id="mainLevelThree" name="mainLevelThree" type="checkbox" <c:if test="${documentDetail.document.mainLevel==3}">checked="checked"</c:if> <c:if test="${documentDetail.documentId!=0}">readonly="readonly" </c:if>/>
     </div>
             </c:if>
      <div class="txt">

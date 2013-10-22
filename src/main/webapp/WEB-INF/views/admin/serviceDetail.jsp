@@ -30,10 +30,10 @@
     <div class="txt">标题：
       <input class="w500 b5" id="title" name="title" type="text" value="${documentDetail.document.title}"/>
     </div>
-            <div class="txt">keywords：
+            <div class="txt">Keywords：
                 <input class="w500 b5" id="keywords" name="keywords" type="text" value="${documentDetail.document.keywords}"/>
             </div>
-            <div class="txt">description：
+            <div class="txt">Description：
                 <input class="w500 b5" id="description" name="description" type="text" value="${documentDetail.document.description}"/>
             </div>
      <div class="txt">

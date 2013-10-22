@@ -84,7 +84,7 @@
             height        : 30,
             swf           : '/js/uploadify.swf',
             uploader      : '/uploadify/uploadify.php',
-            width         : 120
+            width         : 30
         });
     });
 </script>

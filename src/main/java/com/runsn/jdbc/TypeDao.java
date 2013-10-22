@@ -86,7 +86,7 @@ public class TypeDao {
         conn = ConnectionUtil.getConnection();
         List<DocumentType> result = new ArrayList<DocumentType>();
         try {
-            String sql = "select * from document_type t where t.title1code = " + title1code;
+            String sql = "select * from document_type t where t.active=1 and t.title1code = " + title1code;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -112,7 +112,7 @@ public class TypeDao {
         conn = ConnectionUtil.getConnection();
         List<DocumentType> result = new ArrayList<DocumentType>();
         try {
-            String sql = "select * from document_type t where t.title2code = " + title2code;
+            String sql = "select * from document_type t where t.active=1 and t.title2code = " + title2code;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -138,7 +138,7 @@ public class TypeDao {
         conn = ConnectionUtil.getConnection();
         List<DocumentType> result = new ArrayList<DocumentType>();
         try {
-            String sql = "select * from document_type t where t.title3code = " + title3code;
+            String sql = "select * from document_type t where t.active=1 and t.title3code = " + title3code;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);

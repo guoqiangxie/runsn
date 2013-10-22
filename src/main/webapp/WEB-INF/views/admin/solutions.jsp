@@ -32,8 +32,8 @@
               <th width="30%" >标题</th>
               <th width="15%" >二级分类</th>
               <th width="20%" >三级分类</th>
-              <th width="10%" >一级主页面</th>
-              <th width="10%" >三级主页面</th>
+              <th width="10%" >创建时间</th>
+              <th width="10%" >修改时间</th>
               <th width="12%" >操作</th>
             </tr>
               <c:forEach var="service" items="${solutions}">
@@ -41,8 +41,8 @@
                       <td><span class="info"><a href="/admin/solutionDetail/${service.documentId}" target="_blank">${service.document.title}</a></span></td>
                       <td>${service.documentType.title2}</td>
                       <td>${service.documentType.title3}</td>
-                      <td>${service.document.mainLevel==1?"是":""}</td>
-                      <td>${service.document.mainLevel==3?"是":""}</td>
+                      <td>${service.document.createDate}</td>
+                      <td>${service.document.updateDate}</td>
                       <td align="center"><a href="/admin/solutionDetail/${service.documentId}">修改</a> <a href="/admin/delete/${service.documentId}">删除</a></td>
                   </tr>
               </c:forEach>

@@ -1,15 +1,14 @@
 package com.runsn.controller;
 
 import com.runsn.dto.Document;
-import com.runsn.dto.DocumentType;
 import com.runsn.jdbc.DocumentDao;
-import com.runsn.jdbc.TypeDao;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,11 +22,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class DocumentController {
 
     @RequestMapping(value = "/admin/submitService", method = RequestMethod.POST)
-    public ModelAndView submitDocument(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, @RequestParam(value = "mainLevel", required = false) String mainLevel, ModelAndView modelAndView) {
+    public ModelAndView submitService(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "keywords", required = false) String keywords, @RequestParam(value = "description", required = false) String description, @RequestParam(value = "content") String content, ModelAndView modelAndView) {
         Document document = DocumentDao.query(id);
         if (document == null) {
             try {
-                DocumentDao.save(createDocument(title, content, 1, "on".equals(mainLevel) ? 1 : 0));
+                DocumentDao.save(createDocument(title, content, keywords, description, 1));
                 modelAndView.addObject("result", "成功啦");
                 modelAndView.addObject("message", "您的信息已经添加成功");
             } catch (Exception e) {
@@ -35,9 +34,7 @@ public class DocumentController {
                 modelAndView.addObject("message", "您的信息添加失败");
             }
         } else {
-            document.setTitle(title);
-            document.setName(title);
-            document.setContent(content);
+            resetDocument(title, keywords, description, content, document);
             try {
                 DocumentDao.update(document);
                 modelAndView.addObject("result", "成功啦");
@@ -51,12 +48,21 @@ public class DocumentController {
         return modelAndView;
     }
 
+    private void resetDocument(String title, String keywords, String description, String content, Document document) {
+        document.setTitle(title);
+        document.setName(title);
+        document.setKeywords(keywords);
+        document.setDescription(description);
+        document.setUpdateDate(new Date());
+        document.setContent(content);
+    }
+
     @RequestMapping(value = "/admin/submitTrain", method = RequestMethod.POST)
-    public ModelAndView submitTrain(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, ModelAndView modelAndView) {
+    public ModelAndView submitTrain(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "keywords", required = false) String keywords, @RequestParam(value = "description", required = false) String description, @RequestParam(value = "content") String content, ModelAndView modelAndView) {
         Document document = DocumentDao.query(id);
         if (document == null) {
             try {
-                DocumentDao.save(createDocument(title, content, 27, null));
+                DocumentDao.save(createDocument(title, content, keywords, description, 27));
                 modelAndView.addObject("result", "成功啦");
                 modelAndView.addObject("message", "您的信息已经添加成功");
             } catch (Exception e) {
@@ -64,9 +70,7 @@ public class DocumentController {
                 modelAndView.addObject("message", "您的信息添加失败");
             }
         } else {
-            document.setTitle(title);
-            document.setName(title);
-            document.setContent(content);
+            resetDocument(title, keywords, description, content, document);
             try {
                 DocumentDao.update(document);
                 modelAndView.addObject("result", "成功啦");
@@ -81,24 +85,11 @@ public class DocumentController {
     }
 
     @RequestMapping(value = "/admin/submitSolution", method = RequestMethod.POST)
-    public ModelAndView submitSolution(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, @RequestParam(value = "mainLevel", required = false) String mainLevel, @RequestParam(value = "mainLevelThree", required = false) String mainLevelThree, @RequestParam(value = "title2code", required = false) int title2code, @RequestParam(value = "title3code", required = false) int title3code, ModelAndView modelAndView) {
+    public ModelAndView submitSolution(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, @RequestParam(value = "keywords", required = false) String keywords, @RequestParam(value = "description", required = false) String description, @RequestParam(value = "title3code") int title3code, ModelAndView modelAndView) {
         Document document = DocumentDao.query(id);
         if (document == null) {
             try {
-                if ("on".equals(mainLevel)) {
-                    DocumentDao.save(createDocument(title, content, 23, 1));
-                } else if ("on".equals(mainLevelThree)) {
-                    DocumentType maxType = TypeDao.queryMaxTitle3code(2, title2code);
-                    DocumentType documentType = new DocumentType();
-                    BeanUtils.copyProperties(maxType, documentType);
-                    documentType.setId(null);
-                    documentType.setTitle3(title);
-                    documentType.setTitle3code(maxType.getTitle3code() + 1);
-                    Integer typeid = TypeDao.save(documentType);
-                    DocumentDao.save(createDocument(title, content, typeid, 3));
-                } else {
-                    DocumentDao.save(createDocument(title, content, title3code, null));
-                }
+                DocumentDao.save(createDocument(title, content, keywords, description, title3code));
                 modelAndView.addObject("result", "成功啦");
                 modelAndView.addObject("message", "您的信息已经添加成功");
             } catch (Exception e) {
@@ -106,9 +97,7 @@ public class DocumentController {
                 modelAndView.addObject("message", "您的信息添加失败");
             }
         } else {
-            document.setTitle(title);
-            document.setName(title);
-            document.setContent(content);
+            resetDocument(title, keywords, description, content, document);
             try {
                 DocumentDao.update(document);
                 modelAndView.addObject("result", "成功啦");
@@ -123,11 +112,11 @@ public class DocumentController {
     }
 
     @RequestMapping(value = "/admin/submitProduct", method = RequestMethod.POST)
-    public ModelAndView submitProduct(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, @RequestParam(value = "title2code", required = false) Integer typeid, ModelAndView modelAndView) {
+    public ModelAndView submitProduct(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "keywords", required = false) String keywords, @RequestParam(value = "description", required = false) String description, @RequestParam(value = "content") String content, @RequestParam(value = "title2code", required = false) Integer typeid, ModelAndView modelAndView) {
         Document document = DocumentDao.query(id);
         if (document == null) {
             try {
-                DocumentDao.save(createDocument(title, content, typeid, null));
+                DocumentDao.save(createDocument(title, content, keywords, description, typeid));
                 modelAndView.addObject("result", "成功啦");
                 modelAndView.addObject("message", "您的信息已经添加成功");
             } catch (Exception e) {
@@ -135,9 +124,7 @@ public class DocumentController {
                 modelAndView.addObject("message", "您的信息添加失败");
             }
         } else {
-            document.setTitle(title);
-            document.setName(title);
-            document.setContent(content);
+            resetDocument(title, keywords, description, content, document);
             try {
                 DocumentDao.update(document);
                 modelAndView.addObject("result", "成功啦");
@@ -151,14 +138,16 @@ public class DocumentController {
         return modelAndView;
     }
 
-    private static Document createDocument(String title, String content, int typeid, Integer mainLevel) {
+    private static Document createDocument(String title, String content, String keywords, String description, int typeid) {
         Document document = new Document();
         document.setActive(1);
         document.setContent(content);
         document.setName(title);
         document.setTitle(title);
+        document.setKeywords(keywords);
+        document.setDescription(description);
+        document.setCreateDate(new Date());
         document.setTypeid(typeid);
-        document.setMainLevel(mainLevel);
         return document;
     }
 }

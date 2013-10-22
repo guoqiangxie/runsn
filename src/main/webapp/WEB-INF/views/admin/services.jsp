@@ -37,7 +37,8 @@
               <c:forEach var="service" items="${services}">
                   <tr>
                       <td><span class="info"><a href="/admin/serviceDetail/${service.id}" target="_blank">${service.title}</a></span></td>
-                      <td>${service.mainLevel==1?"是":""}</td>
+                      <td>${service.createDate}</td>
+                      <td>${service.updateDate}</td>
                       <td align="center"><a href="/admin/serviceDetail/${service.id}">修改</a> <a href="/admin/delete/${service.id}">删除</a></td>
                   </tr>
               </c:forEach>

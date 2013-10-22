@@ -90,9 +90,7 @@
       <span class="col">按业务需求分</span>
           <c:forEach var="requirementSolution" items="${requirementSolutions}">
               <c:forEach var="document" items="${requirementSolution}">
-                  <c:if test="${document.mainLevel==3}">
                       ${document.name}
-                  </c:if>
               </c:forEach>
           </c:forEach>
       <%--<a href="solution_1.html">虚拟化基础架构建设</a>--%>
@@ -107,9 +105,7 @@
       <span class="col">按行业分</span>
           <c:forEach var="bizSolution" items="${bizSolutions}">
               <c:forEach var="document" items="${bizSolution}">
-                  <c:if test="${document.mainLevel==3}">
                       ${document.name}
-                  </c:if>
               </c:forEach>
           </c:forEach>
       <%--<a href="solution_1.html">教育</a>--%>
@@ -125,9 +121,7 @@
       <span class="col">按公司规模分</span>
           <c:forEach var="sizeSolution" items="${sizeSolutions}">
               <c:forEach var="document" items="${sizeSolution}">
-                  <c:if test="${document.mainLevel==3}">
                       ${document.name}
-                  </c:if>
               </c:forEach>
           </c:forEach>
       <%--<a href="solution_1.html">中小企业</a>--%>
