@@ -8,7 +8,7 @@
 <meta http-equiv="Page-Enter" content="blendTrans(Duration=1)" />
 <meta http-equiv="Page-Exit" content="blendTrans(Duration=1)" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>新闻中心 | 网站后台管理系统</title>
+<title>产品 | 网站后台管理系统</title>
 <link href="/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/css/news.css" rel="stylesheet" type="text/css" />
 </head>
@@ -27,7 +27,7 @@
     <span></span></div>
      <form action="/admin/submitProduct" method="POST" id="serviceForm">
         <div class="tmain b5 btop">
-    <div class="txt">标题：
+    <div class="txt">标题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
       <input class="w500 b5" id="title" name="title" type="text" value="${documentDetail.document.title}"/>
     </div>
             <c:if test="${documentDetail.documentId==0}">

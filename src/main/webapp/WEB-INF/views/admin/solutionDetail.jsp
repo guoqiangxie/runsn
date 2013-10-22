@@ -23,14 +23,14 @@
       
  <div class="main2">
   <div class="tit">
-    <h3>编辑服务内容</h3>
+    <h3>编辑解决方案内容</h3>
     <span></span></div>
      <form action="/admin/submitSolution" method="POST" id="serviceForm">
         <div class="tmain b5 btop">
-    <div class="txt">标题：
+    <div class="txt">标题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
       <input class="w500 b5" id="title" name="title" type="text" value="${documentDetail.document.title}"/>
     </div>
-            <div class="txt">Keywords：
+            <div class="txt">Keywords&nbsp;&nbsp;&nbsp;：
                 <input class="w500 b5" id="keywords" name="keywords" type="text" value="${documentDetail.document.keywords}"/>
             </div>
             <div class="txt">Description：

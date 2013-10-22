@@ -8,7 +8,7 @@
 <meta http-equiv="Page-Enter" content="blendTrans(Duration=1)" />
 <meta http-equiv="Page-Exit" content="blendTrans(Duration=1)" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>新闻中心 | 网站后台管理系统</title>
+<title>培训课堂 | 网站后台管理系统</title>
 <link href="/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/css/news.css" rel="stylesheet" type="text/css" />
 </head>
@@ -23,7 +23,7 @@
       
  <div class="main2">
   <div class="tit">
-    <h3>编辑培训内容</h3>
+    <h3>编辑培训课堂内容</h3>
     <span></span></div>
      <form action="/admin/submitTrain" method="POST" id="serviceForm">
         <div class="tmain b5 btop">
