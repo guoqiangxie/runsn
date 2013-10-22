@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -25,7 +25,7 @@ public class DocumentDao {
     public static void save(Document document) throws Exception {
         conn = ConnectionUtil.getConnection();
         try {
-            String sql = "insert into documents (name, content, title, keywords, description, typeid, active, mainLevel) values('" + document.getName() + "', '" + document.getContent() + "','" + document.getTitle() + "','" + document.getKeywords() + "','" + document.getDescription() + "'," + document.getTypeid() + "," + document.getActive() + "," + document.getMainLevel() + ")";
+            String sql = "insert into documents (name, content, title, keywords, description, typeid, active, mainLevel, createDate, updateDate) values('" + document.getName() + "', '" + document.getContent() + "','" + document.getTitle() + "','" + document.getKeywords() + "','" + document.getDescription() + "'," + document.getTypeid() + "," + document.getActive() + "," + document.getMainLevel() + ",'"+document.getCreateDate()+"','"+document.getUpdateDate()+"')";
             st = conn.createStatement();
 
             st.execute(sql);
@@ -55,7 +55,9 @@ public class DocumentDao {
                     + "',typeid=" + document.getTypeid()
                     + ",active=" + document.getActive()
                     + ",mainLevel=" + document.getMainLevel()
-                    + " where id=" + document.getId();
+                    + ",createDate='" + document.getCreateDate()
+                    + "',updateDate='" + document.getUpdateDate()
+                    + "' where id=" + document.getId();
             st = conn.createStatement();
 
             st.execute(sql);
@@ -159,8 +161,8 @@ public class DocumentDao {
         document.setTypeid(rs.getInt("typeid"));
         document.setMainLevel(rs.getInt("mainLevel"));
         //xgqtodo 时间转换
-        document.setCreateDate(new Date());
-        document.setUpdateDate(new Date());
+        document.setCreateDate(new Date(new java.util.Date().getTime()));
+        document.setUpdateDate(new Date(new java.util.Date().getTime()));
         return document;
     }
 

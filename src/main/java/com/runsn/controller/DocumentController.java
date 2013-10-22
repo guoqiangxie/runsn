@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -53,7 +53,7 @@ public class DocumentController {
         document.setName(title);
         document.setKeywords(keywords);
         document.setDescription(description);
-        document.setUpdateDate(new Date());
+        document.setUpdateDate(new Date(new java.util.Date().getTime()));
         document.setContent(content);
     }
 
@@ -146,7 +146,7 @@ public class DocumentController {
         document.setTitle(title);
         document.setKeywords(keywords);
         document.setDescription(description);
-        document.setCreateDate(new Date());
+        document.setCreateDate(new Date(new java.util.Date().getTime()));
         document.setTypeid(typeid);
         return document;
     }
