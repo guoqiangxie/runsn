@@ -11,6 +11,7 @@
 <title>首页幻灯片 | 网站后台管理系统</title>
 <link href="/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/css/indeximg.css" rel="stylesheet" type="text/css" />
+<link href="/css/uploadify.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="wrap">
@@ -25,9 +26,9 @@
   <div class="tipsinfo b5"><span>请至少上传2张以上的图片，并确保图片尺\链接正确。为保持网页浏览通畅，单张图片大小建议不超过1MB!</span><b></b></div>
   <div class="box b10">
     <div class="boxinfo"> <span class="name">图片上传：</span> <span class="text">
-      <input class="b5" name="" type="text" style="width:295px;"/>
-      <input name="浏览" type="button" class="btn" value="浏览" id="浏览" />
-      <input name="上传" type="button" class="btn" value="上传" id="上传" />
+      <input id="fileInput" class="b5" name="" type="text" style="width:295px;"/>
+      <input id="uploader" name="浏览" type="button" class="btn" value="浏览1" />
+      <input name="上传" type="button" class="btn" value="上传" />
       </span> <span class="tips">按尺寸上传960*120</span> </div>
     <div class="boxinfo"> <span class="name">图片标题：</span> <span class="text">
       <input class="b5" name="" type="text" />
@@ -74,9 +75,17 @@
 </div>
 <script src="/js/jquery-1.7.1.min.js" type="text/javascript" charset="gb2312"></script>
 <script src="/js/yb.js" type="text/javascript" charset="gb2312"></script>
+<script src="/js/jquery.uploadify.js" type="text/javascript" charset="gb2312"></script>
 <script type="text/javascript">
     $(function () {
         $(".1").addClass("on");
+
+        $("#uploader").uploadify({
+            height        : 30,
+            swf           : '/js/uploadify.swf',
+            uploader      : '/uploadify/uploadify.php',
+            width         : 120
+        });
     });
 </script>
 </body>

@@ -162,4 +162,9 @@ public class AdminController {
         return modelAndView;
     }
 
+    @RequestMapping("engineers.html")
+    public ModelAndView engineers(ModelAndView modelAndView) {
+        modelAndView.setViewName("admin/indeximg");
+        return modelAndView;
+    }
 }

@@ -4,7 +4,7 @@
         <h2>后台管理首页</h2>
     </div>
     <ul>
-        <%--<li class="1"><a href="/admin/indeximg.html">首页幻灯片</a></li>--%>
+        <li class="1"><a href="/admin/engineers.html">工程师资质</a></li>
         <li class="2"><a href="/admin/services.html">服务</a></li>
         <li class="3"><a href="/admin/solutions.html">解决方案</a></li>
         <li class="4"><a href="/admin/products.html">产品</a></li>
