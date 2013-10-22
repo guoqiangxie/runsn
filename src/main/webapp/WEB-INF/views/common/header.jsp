@@ -12,22 +12,16 @@
             <a href="index.jsp" class="logo" title="runsn软盛">runsn软盛</a> </div>
         <ul class="nav">
             <li class="num1">
-                <c:set var="link" value="#" />
-                <c:forEach var="service1" items="${services}">
-                    <c:if test="${service1.mainLevel==1}">
-                        <c:set var="link" value="/template/${service1.id}" />
-                    </c:if>
-                </c:forEach>
-                <a href="${link}">服务</a>
+                <a href="/service.html">服务</a>
       <span class="menu m1">
-      <b>&gt;&gt;服务</b>
+      <b>服务</b>
       <c:forEach var="service2" items="${services}">
           <c:if test="${service2.mainLevel==0}">
               <a href="/template/${service2.id}">${service2.name}</a>
           </c:if>
       </c:forEach>
       </span> </li>
-            <li class="num2"><a href="solution.html">解决方案</a>
+            <li class="num2"><a href="/solution.html">解决方案</a>
       <span class="menu m2">
       <span class="r_menu">
           <c:forEach var="requirementSolution" items="${requirementSolutions}">
@@ -92,12 +86,12 @@
       <%--<span class="submenu">20</span>--%>
       <%--<span class="submenu">21</span> --%>
       </span>
-      <span class="m2body"><b>&gt;&gt;解决方案</b>
+      <span class="m2body"><b>解决方案</b>
       <span class="col">按业务需求分</span>
           <c:forEach var="requirementSolution" items="${requirementSolutions}">
               <c:forEach var="document" items="${requirementSolution}">
                   <c:if test="${document.mainLevel==3}">
-                      <a href="/template/${document.id}">${document.name}</a>
+                      ${document.name}
                   </c:if>
               </c:forEach>
           </c:forEach>
@@ -114,7 +108,7 @@
           <c:forEach var="bizSolution" items="${bizSolutions}">
               <c:forEach var="document" items="${bizSolution}">
                   <c:if test="${document.mainLevel==3}">
-                      <a href="/template/${document.id}">${document.name}</a>
+                      ${document.name}
                   </c:if>
               </c:forEach>
           </c:forEach>
@@ -132,7 +126,7 @@
           <c:forEach var="sizeSolution" items="${sizeSolutions}">
               <c:forEach var="document" items="${sizeSolution}">
                   <c:if test="${document.mainLevel==3}">
-                      <a href="/template/${document.id}">${document.name}</a>
+                      ${document.name}
                   </c:if>
               </c:forEach>
           </c:forEach>
@@ -141,7 +135,7 @@
       </span> </span> </li>
             <li class="num3"><a href="product.html">产品</a>
       <span class="menu m3">
-      <b>&gt;&gt;产品</b>
+      <b>产品</b>
       <span class="col">需求</span>
       <c:forEach var="requirementProduct" items="${requirementProducts}">
               <a href="/template/${requirementProduct.id}">${requirementProduct.name}</a>
