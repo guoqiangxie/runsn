@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -77,7 +78,7 @@ public class DocumentDao {
         conn = ConnectionUtil.getConnection();
         Document document = null;
         try {
-            String sql = "select * from documents d where d.id = " + id;
+            String sql = "select * from documents where active=1 and id = " + id;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -124,7 +125,7 @@ public class DocumentDao {
         conn = ConnectionUtil.getConnection();
         List result = new ArrayList();
         try {
-            String sql = "select * from documents d where d.typeid = " + typeid;
+            String sql = "select * from documents where active=1 and typeid = " + typeid;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -157,6 +158,9 @@ public class DocumentDao {
         document.setTitle(rs.getString("title"));
         document.setTypeid(rs.getInt("typeid"));
         document.setMainLevel(rs.getInt("mainLevel"));
+        //xgqtodo 时间转换
+        document.setCreateDate(new Date());
+        document.setUpdateDate(new Date());
         return document;
     }
 

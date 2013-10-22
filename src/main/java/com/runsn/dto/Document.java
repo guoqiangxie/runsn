@@ -1,6 +1,7 @@
 package com.runsn.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,6 +21,8 @@ public class Document implements Serializable {
     private Integer typeid;
     private Integer active;
     private Integer mainLevel;
+    private Date createDate;
+    private Date updateDate;
 
     public Integer getId() {
         return id;
@@ -91,5 +94,21 @@ public class Document implements Serializable {
 
     public void setMainLevel(Integer mainLevel) {
         this.mainLevel = mainLevel;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
     }
 }

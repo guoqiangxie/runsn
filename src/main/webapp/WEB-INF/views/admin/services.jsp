@@ -30,7 +30,8 @@
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <th width="59%" >标题</th>
-              <th width="10%" >一级主页面</th>
+              <th width="15%" >创建时间</th>
+              <th width="15%" >修改时间</th>
               <th width="12%" >操作</th>
             </tr>
               <c:forEach var="service" items="${services}">
