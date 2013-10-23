@@ -44,58 +44,108 @@
         <h2>Runsn工程师资质</h2>
         <div class="tabBox">
           <ul class="tabs">
-            <li class="on">郑松</li>
-            <li>曹伟1</li>
-            <li>曹伟2</li>
-            <li>曹伟3</li>
-            <li>曹伟4</li>
-            <li>曹伟5</li>
-            <li>曹伟6</li>
-            <li>曹伟7</li>
+              <c:forEach var="engineer" items="${engineer}" varStatus="status">
+                  <c:if test="${status == 0}">
+                      <li class="on">${engineer.name}</li>
+                  </c:if>
+                  <c:if test="${status > 0 && status < 8}">
+                      <li>${engineer.name}</li>
+                  </c:if>
+              </c:forEach>
+            <%--<li class="on">郑松</li>--%>
+            <%--<li>曹伟1</li>--%>
+            <%--<li>曹伟2</li>--%>
+            <%--<li>曹伟3</li>--%>
+            <%--<li>曹伟4</li>--%>
+            <%--<li>曹伟5</li>--%>
+            <%--<li>曹伟6</li>--%>
+            <%--<li>曹伟7</li>--%>
           </ul>
-          <div class="tabmain" style="display:block;">
-            <div class="info"> <img src="/img/sermain_pre7.jpg" width="100" height="122" class="img" /> <b>郑松&nbsp;&nbsp;&nbsp;&nbsp;数据防泄密资深工程师</b> 年龄：27岁<br />
-              主要项目经历：<br />
-              ● 真诺(Zenner)仪器 PGP实施<br />
-              ● 协鑫 PGP实施</div>
-            <h3>工程师资质</h3>
-            <img src="/img/sermain_pre8.jpg" width="563" height="151" /><br />
-          </div>
-          <div class="tabmain">222222222222222</div>
-          <div class="tabmain">33333333333</div>
-          <div class="tabmain">4444</div>
-          <div class="tabmain">55555</div>
-          <div class="tabmain">66666</div>
-          <div class="tabmain">77777</div>
-          <div class="tabmain">8888</div>
+            <c:forEach var="engineer" items="${engineer}" varStatus="status">
+                <c:if test="${status == 0}">
+                    <div class="tabmain" style="display:block;">
+                        <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" /> <b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
+                            主要项目经历：${engineer.experiences}</div>
+                        <h3>工程师资质</h3>
+                        ${engineer.aptitude}
+                    </div>
+                </c:if>
+                <c:if test="${status > 0 && status < 8}">
+                    <div class="tabmain">
+                    <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" /> <b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
+                        主要项目经历：${engineer.experiences}</div>
+                    <h3>工程师资质</h3>
+                        ${engineer.aptitude}
+                </c:if>
+            </c:forEach>
+          <%--<div class="tabmain" style="display:block;">--%>
+            <%--<div class="info"> <img src="/img/sermain_pre7.jpg" width="100" height="122" class="img" /> <b>郑松&nbsp;&nbsp;&nbsp;&nbsp;数据防泄密资深工程师</b> 年龄：27岁<br />--%>
+              <%--主要项目经历：<br />--%>
+              <%--● 真诺(Zenner)仪器 PGP实施<br />--%>
+              <%--● 协鑫 PGP实施</div>--%>
+            <%--<h3>工程师资质</h3>--%>
+            <%--<img src="/img/sermain_pre8.jpg" width="563" height="151" /><br />--%>
+          <%--</div>--%>
+          <%--<div class="tabmain">222222222222222</div>--%>
+          <%--<div class="tabmain">33333333333</div>--%>
+          <%--<div class="tabmain">4444</div>--%>
+          <%--<div class="tabmain">55555</div>--%>
+          <%--<div class="tabmain">66666</div>--%>
+          <%--<div class="tabmain">77777</div>--%>
+          <%--<div class="tabmain">8888</div>--%>
         </div>
         <div class="tabBox">
           <ul class="tabs">
-            <li class="on">郑松</li>
-            <li>曹伟1</li>
-            <li>曹伟2</li>
-            <li>曹伟3</li>
-            <li>曹伟4</li>
-            <li>曹伟5</li>
-            <li>曹伟6</li>
-            <li>曹伟7</li>
+              <c:forEach var="engineer" items="${engineer}" varStatus="status">
+                  <c:if test="${status == 8}">
+                      <li class="on">${engineer.name}</li>
+                  </c:if>
+                  <c:if test="${status > 8 && status < 16}">
+                      <li>${engineer.name}</li>
+                  </c:if>
+              </c:forEach>
+            <%--<li class="on">郑松</li>--%>
+            <%--<li>曹伟1</li>--%>
+            <%--<li>曹伟2</li>--%>
+            <%--<li>曹伟3</li>--%>
+            <%--<li>曹伟4</li>--%>
+            <%--<li>曹伟5</li>--%>
+            <%--<li>曹伟6</li>--%>
+            <%--<li>曹伟7</li>--%>
           </ul>
-          <div class="tabmain" style="display:block;">
-            <div class="info"> <img src="/img/sermain_pre7.jpg" width="100" height="122" class="img" /> <b>曹斌&nbsp;&nbsp;&nbsp;&nbsp;数据备份资深工程师</b> 年龄：28岁<br />
-              主要项目经历：<br />
-              ● 林肯电气DR&nbsp;&nbsp;&nbsp;&nbsp;● 上汽制动NBU升级&nbsp;&nbsp;&nbsp;&nbsp; ● 中钞油墨NBU升级迁移<br />
-              ● 小南国NBU&nbsp;&nbsp;&nbsp;&nbsp;● 电力医院DR项目&nbsp;&nbsp;&nbsp;&nbsp; ● 李锦记Altiris+BE+SEP<br />
-              ● 华谊NBU5220</div>
-            <h3>工程师资质</h3>
-            MCP system center \ hyper-v、STS for NBU\DLP\SEP<br />
-          </div>
-          <div class="tabmain">222222222222222</div>
-          <div class="tabmain">33333333333</div>
-          <div class="tabmain">4444</div>
-          <div class="tabmain">55555</div>
-          <div class="tabmain">66666</div>
-          <div class="tabmain">77777</div>
-          <div class="tabmain">8888</div>
+            <c:forEach var="engineer" items="${engineer}" varStatus="status">
+            <c:if test="${status == 8}">
+                <div class="tabmain" style="display:block;">
+                    <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" /> <b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
+                        主要项目经历：${engineer.experiences}</div>
+                    <h3>工程师资质</h3>
+                        ${engineer.aptitude}
+                </div>
+            </c:if>
+            <c:if test="${status > 8 && status < 16}">
+            <div class="tabmain">
+                <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" /> <b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
+                    主要项目经历：${engineer.experiences}</div>
+                <h3>工程师资质</h3>
+                    ${engineer.aptitude}
+                </c:if>
+                </c:forEach>
+          <%--<div class="tabmain" style="display:block;">--%>
+            <%--<div class="info"> <img src="/img/sermain_pre7.jpg" width="100" height="122" class="img" /> <b>曹斌&nbsp;&nbsp;&nbsp;&nbsp;数据备份资深工程师</b> 年龄：28岁<br />--%>
+              <%--主要项目经历：<br />--%>
+              <%--● 林肯电气DR&nbsp;&nbsp;&nbsp;&nbsp;● 上汽制动NBU升级&nbsp;&nbsp;&nbsp;&nbsp; ● 中钞油墨NBU升级迁移<br />--%>
+              <%--● 小南国NBU&nbsp;&nbsp;&nbsp;&nbsp;● 电力医院DR项目&nbsp;&nbsp;&nbsp;&nbsp; ● 李锦记Altiris+BE+SEP<br />--%>
+              <%--● 华谊NBU5220</div>--%>
+            <%--<h3>工程师资质</h3>--%>
+            <%--MCP system center \ hyper-v、STS for NBU\DLP\SEP<br />--%>
+          <%--</div>--%>
+          <%--<div class="tabmain">222222222222222</div>--%>
+          <%--<div class="tabmain">33333333333</div>--%>
+          <%--<div class="tabmain">4444</div>--%>
+          <%--<div class="tabmain">55555</div>--%>
+          <%--<div class="tabmain">66666</div>--%>
+          <%--<div class="tabmain">77777</div>--%>
+          <%--<div class="tabmain">8888</div>--%>
         </div>
       </div>
     </div>

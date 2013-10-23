@@ -12,6 +12,15 @@
 <link href="/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/css/indeximg.css" rel="stylesheet" type="text/css" />
 <link href="/css/uploadify.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">    .uploadify-button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+    .uploadify:hover .uploadify-button {
+        background-color: transparent;
+    }
+    </style>
 </head>
 <body>
 <div class="wrap">
@@ -23,13 +32,12 @@
     <div class="c_main">
       
   <div class="main1">
-  <div class="tipsinfo b5"><span>请至少上传2张以上的图片，并确保图片尺\链接正确。为保持网页浏览通畅，单张图片大小建议不超过1MB!</span><b></b></div>
   <div class="box b10">
     <div class="boxinfo"> <span class="name">图片上传：</span> <span class="text">
-      <input id="fileInput" class="b5" name="" type="text" style="width:295px;"/>
-      <input id="uploader" name="浏览" type="button" class="btn" value="浏览1" />
-      <input name="上传" type="button" class="btn" value="上传" />
+      <input id="uploader" type="button" class="btn"/>
+      <input id="fileInput" type="text" name="file"/><br><br>
       </span> <span class="tips">按尺寸上传960*120</span> </div>
+      <div class="boxinfo"><img id="photos" src="" alt=""></div>
     <div class="boxinfo"> <span class="name">图片标题：</span> <span class="text">
       <input class="b5" name="" type="text" />
       </span> <span class="tips">不超过50个字</span></div>
@@ -37,33 +45,6 @@
       <input class="b5" name="" type="text" />
       </span> <span class="tips">填写正确的图片链接</span></div>
   </div>
-  <div class="box b10">
-    <div class="boxinfo"> <span class="name">图片上传：</span> <span class="text">
-      <input class="b5" name="" type="text" style="width:295px;"/>
-      <input name="浏览" type="button" class="btn" value="浏览"/>
-      <input name="上传" type="button" class="btn" value="上传" />
-      </span> <span class="tips">按尺寸上传960*120</span> </div>
-    <div class="boxinfo"> <span class="name">图片标题：</span> <span class="text">
-      <input class="b5" name="" type="text" />
-      </span> <span class="tips">不超过50个字</span></div>
-    <div class="boxinfo"> <span class="name">图片链接：</span> <span class="text">
-      <input class="b5" name="" type="text" />
-      </span> <span class="tips">填写正确的图片链接</span></div>
-  </div>
-  <div class="box b10"> <span class="close">删除</span>
-    <div class="boxinfo"> <span class="name">图片上传：</span> <span class="text">
-      <input class="b5" name="" type="text" style="width:295px;"/>
-      <input name="浏览" type="button" class="btn" value="浏览" />
-      <input name="上传" type="button" class="btn" value="上传" />
-      </span> <span class="tips">按尺寸上传960*120</span> </div>
-    <div class="boxinfo"> <span class="name">图片标题：</span> <span class="text">
-      <input class="b5" name="" type="text" />
-      </span> <span class="tips">不超过50个字</span></div>
-    <div class="boxinfo"> <span class="name">图片链接：</span> <span class="text">
-      <input class="b5" name="" type="text" />
-      </span> <span class="tips">填写正确的图片链接</span></div>
-  </div>
-  <div class="add"><span>增加图片</span></div>
   <div class="sure">
     <input name="" type="button" value="立即发布" />
   </div>
@@ -81,10 +62,17 @@
         $(".1").addClass("on");
 
         $("#uploader").uploadify({
-            height        : 30,
+            height        : 24,
             swf           : '/js/uploadify.swf',
-            uploader      : '/uploadify/uploadify.php',
-            width         : 30
+            uploader      : '/upload_json',
+            width         : 28,
+            buttonText : '上传',
+            onUploadSuccess:function(file, data, response) {
+                var data  = eval("(" + data + ")");
+                alert(data.url);
+                $("#photos").attr("src", data.url);
+//                alert("a"+fileObj.filePath);
+            }
         });
     });
 </script>
