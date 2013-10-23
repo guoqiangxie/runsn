@@ -160,9 +160,8 @@ public class DocumentDao {
         document.setTitle(rs.getString("title"));
         document.setTypeid(rs.getInt("typeid"));
         document.setMainLevel(rs.getInt("mainLevel"));
-        //xgqtodo 时间转换
-        document.setCreateDate(new Date(new java.util.Date().getTime()));
-        document.setUpdateDate(new Date(new java.util.Date().getTime()));
+        document.setCreateDate(rs.getDate("createDate"));
+        document.setUpdateDate(rs.getDate("updateDate"));
         return document;
     }
 

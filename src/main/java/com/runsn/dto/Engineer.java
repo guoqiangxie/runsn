@@ -1,6 +1,7 @@
 package com.runsn.dto;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,6 +19,8 @@ public class Engineer implements Serializable {
     private String experiences;
     private Integer age;
     private String title;
+    private Date createDate;
+    private Date updateDate;
 
     public Integer getId() {
         return id;
@@ -73,5 +76,21 @@ public class Engineer implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
     }
 }

@@ -56,6 +56,8 @@ public class EngineerDao {
         engineer.setImage(rs.getString("image"));
         engineer.setName(rs.getString("name"));
         engineer.setTitle(rs.getString("title"));
+        engineer.setCreateDate(rs.getDate("createDate"));
+        engineer.setUpdateDate(rs.getDate("updateDate"));
         return engineer;
     }
 }
