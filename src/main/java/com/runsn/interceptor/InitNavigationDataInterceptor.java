@@ -31,7 +31,7 @@ public class InitNavigationDataInterceptor implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
-        modelAndView = new ModelAndView();
+        if (modelAndView == null) modelAndView = new ModelAndView();
         modelAndView.addObject("services", DocumentDao.queryByTitle1code(1));
         modelAndView.addObject("requirementSolutions", groupData(DocumentDao.queryByTitle2code(2, 1)));
         modelAndView.addObject("bizSolutions", groupData(DocumentDao.queryByTitle2code(2, 2)));
