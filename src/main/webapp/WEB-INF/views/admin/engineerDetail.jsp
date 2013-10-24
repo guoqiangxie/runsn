@@ -37,16 +37,17 @@
     <div class="boxinfo"> <span class="name">图片上传：</span> <span class="text">
       <input id="uploader" type="button" class="btn"/>
       <div id="uploadMsg" style="background-color: red; display: none;">上传图片成功。</div>
-        <input id="image" name="image" type="hidden"/>
+        <input id="image" name="image" type="hidden" value="${engineer.image}"/>
       </span></div>
       <br>
     <div> <span class="name"></span><span class="text"><input name="" type="text" style="visibility: hidden;"/></span></div>
     <div> <span class="name"></span><span class="text"><input name="" type="text" style="visibility: hidden;"/></span></div>
-    <div> <span class="name">姓名：</span> <span class="text"><input name="name" type="text" /></span></div>
-    <div> <span class="name">年龄：</span> <span class="text"><input name="age" type="text" /></span></div>
-    <div> <span class="name">职称：</span> <span class="text"><input name="title" type="text" /></span></div>
-    <div class="boxinfo"> <span class="name">经历：</span> <span class="text"><input name="experiences" type="text" /></span></div>
-    <div class="boxinfo"> <span class="name">资质：</span> <span class="text"><input name="aptitude" type="text" /></span></div>
+    <div> <span class="name">姓名：</span> <span class="text"><input value="${engineer.name}" name="name" type="text" /></span></div>
+    <div> <span class="name">年龄：</span> <span class="text"><input value="${engineer.age}" name="age" type="text" /></span></div>
+    <div> <span class="name">职称：</span> <span class="text"><input value="${engineer.title}" name="title" type="text" /></span></div>
+    <div class="boxinfo"> <span class="name">经历：</span> <span class="text"><input value="${engineer.experiences}" name="experiences" type="text" /></span></div>
+    <div class="boxinfo"> <span class="name">资质：</span> <span class="text"><input value="${engineer.aptitude}" name="aptitude" type="text" /></span></div>
+      <input type="hidden" name="id" value="value="${engineer.id}" />
   </div>
   <div class="sure">
     <input type="submit" value="立即发布" />

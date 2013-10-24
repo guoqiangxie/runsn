@@ -47,6 +47,52 @@ public class EngineerDao {
         return result;
     }
 
+    public static Engineer query(int id) {
+        conn = ConnectionUtil.getConnection();
+        Engineer result = new Engineer();
+        try {
+            String sql = "select * from engineer where id=" + id;
+            st = conn.createStatement();
+
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                result = createEngineer(rs);
+            }
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("查询数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+        return result;
+    }
+
+    public static void delete(int id){
+        conn = ConnectionUtil.getConnection();
+        try {
+            String sql = "delete from engineer where id = " + id;
+            st = conn.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("删除数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+    }
+
     private static Engineer createEngineer(ResultSet rs) throws SQLException {
         Engineer engineer = new Engineer();
         engineer.setAge(rs.getInt("age"));

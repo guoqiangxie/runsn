@@ -168,7 +168,24 @@ public class AdminController {
 
     @RequestMapping("engineers.html")
     public ModelAndView engineers(ModelAndView modelAndView) {
-        modelAndView.setViewName("admin/indeximg");
+        modelAndView.addObject("engineers", EngineerDao.queryAll());
+        modelAndView.setViewName("admin/engineers");
+        return modelAndView;
+    }
+
+    @RequestMapping("engineerDetail/{engineerId}")
+    public ModelAndView engineerDetail(@PathVariable("engineerId") int engineerId, ModelAndView modelAndView) {
+        modelAndView.addObject("engineer", EngineerDao.query(engineerId));
+        modelAndView.setViewName("admin/engineerDetail");
+        return modelAndView;
+    }
+
+    @RequestMapping("deleteEngineer/{engineerId}")
+    public ModelAndView deleteEngineer(@PathVariable("engineerId") int engineerId, ModelAndView modelAndView) {
+        EngineerDao.delete(engineerId);
+        modelAndView.setViewName("/admin/result");
+        modelAndView.addObject("result", "成功啦");
+        modelAndView.addObject("message", "工程师资料删除成功");
         return modelAndView;
     }
 

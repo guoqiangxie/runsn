@@ -12,7 +12,7 @@ import java.sql.Date;
  * @version 1.0
  */
 public class Engineer implements Serializable {
-    private Integer id;
+    private Integer id = 0;
     private String name;
     private String aptitude;//资质
     private String image;
