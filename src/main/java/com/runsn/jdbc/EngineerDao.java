@@ -60,4 +60,38 @@ public class EngineerDao {
         engineer.setUpdateDate(rs.getDate("updateDate"));
         return engineer;
     }
+
+    public static Integer save(Engineer engineer) {
+        conn = ConnectionUtil.getConnection();
+        Integer result = null;
+        try {
+            String sql = "insert into engineer(name, age, title, aptitude, experiences, image, createDate, updateDate) values('"
+                    + engineer.getName() + "',"
+                    + engineer.getAge() + ",'"
+                    + engineer.getTitle() + "','"
+                    + engineer.getAptitude() + "','"
+                    + engineer.getExperiences() + "','"
+                    + engineer.getImage() + "','"
+                    + engineer.getCreateDate() + "','"
+                    + engineer.getUpdateDate() + "')";
+            st = conn.createStatement();
+            st.execute(sql);
+            ResultSet rs = st.getGeneratedKeys();
+            while (rs.next()) {
+                result = rs.getInt(1);
+            }
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("保存工程师数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+        return result;
+    }
 }

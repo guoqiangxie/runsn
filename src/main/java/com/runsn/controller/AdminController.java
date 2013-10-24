@@ -3,13 +3,17 @@ package com.runsn.controller;
 import com.runsn.dto.Document;
 import com.runsn.dto.DocumentDetail;
 import com.runsn.dto.DocumentType;
+import com.runsn.dto.Engineer;
 import com.runsn.jdbc.DocumentDao;
+import com.runsn.jdbc.EngineerDao;
 import com.runsn.jdbc.TypeDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -165,6 +169,30 @@ public class AdminController {
     @RequestMapping("engineers.html")
     public ModelAndView engineers(ModelAndView modelAndView) {
         modelAndView.setViewName("admin/indeximg");
+        return modelAndView;
+    }
+
+    @RequestMapping("submitEngineer")
+    public ModelAndView submitEngineer(ModelAndView modelAndView,
+                                       @RequestParam(value = "name") String name,
+                                       @RequestParam(value = "age") int age,
+                                       @RequestParam(value = "title") String title,
+                                       @RequestParam(value = "experiences") String experiences,
+                                       @RequestParam(value = "aptitude") String aptitude,
+                                       @RequestParam(value = "image") String image) {
+        Engineer engineer = new Engineer();
+        engineer.setName(name);
+        engineer.setAge(age);
+        engineer.setAptitude(aptitude);
+        engineer.setImage(image);
+        engineer.setTitle(title);
+        engineer.setExperiences(experiences);
+        engineer.setCreateDate(new Date(new java.util.Date().getTime()));
+        engineer.setUpdateDate(new Date(new java.util.Date().getTime()));
+        EngineerDao.save(engineer);
+        modelAndView.setViewName("/admin/result");
+        modelAndView.addObject("result", "成功啦");
+        modelAndView.addObject("message", "工程师资料提交成功");
         return modelAndView;
     }
 }

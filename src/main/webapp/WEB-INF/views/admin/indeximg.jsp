@@ -31,25 +31,29 @@
       <span><a href="main.html" class="on">中文</a></span> </div>
     <div class="c_main">
       
+      <form action="/admin/submitEngineer" method="POST" id="engineerForm">
   <div class="main1">
   <div class="box b10">
     <div class="boxinfo"> <span class="name">图片上传：</span> <span class="text">
       <input id="uploader" type="button" class="btn"/>
-      <input id="fileInput" type="text" name="file"/><br><br>
-      </span> <span class="tips">按尺寸上传960*120</span> </div>
-      <div class="boxinfo"><img id="photos" src="" alt=""></div>
-    <div class="boxinfo"> <span class="name">图片标题：</span> <span class="text">
-      <input class="b5" name="" type="text" />
-      </span> <span class="tips">不超过50个字</span></div>
-    <div class="boxinfo"> <span class="name">图片链接：</span> <span class="text">
-      <input class="b5" name="" type="text" />
-      </span> <span class="tips">填写正确的图片链接</span></div>
+      <div id="uploadMsg" style="background-color: red; display: none;">上传图片成功。</div>
+        <input id="image" name="image" type="hidden"/>
+      </span></div>
+      <br>
+    <div> <span class="name"></span><span class="text"><input name="" type="text" style="visibility: hidden;"/></span></div>
+    <div> <span class="name"></span><span class="text"><input name="" type="text" style="visibility: hidden;"/></span></div>
+    <div> <span class="name">姓名：</span> <span class="text"><input name="name" type="text" /></span></div>
+    <div> <span class="name">年龄：</span> <span class="text"><input name="age" type="text" /></span></div>
+    <div> <span class="name">职称：</span> <span class="text"><input name="title" type="text" /></span></div>
+    <div class="boxinfo"> <span class="name">经历：</span> <span class="text"><input name="experiences" type="text" /></span></div>
+    <div class="boxinfo"> <span class="name">资质：</span> <span class="text"><input name="aptitude" type="text" /></span></div>
   </div>
   <div class="sure">
-    <input name="" type="button" value="立即发布" />
+    <input type="submit" value="立即发布" />
   </div>
 </div>
-         
+      </form>
+
     </div>
     <div class="c_bottom"><span class="fl red"><span class="en gray"></span></span><span class="fr"><span class="en">Copyright © 2007-2013 软盛. All rights reserved.</span>　沪ICP备07020881号</span></div>
   </div>
@@ -69,9 +73,8 @@
             buttonText : '上传',
             onUploadSuccess:function(file, data, response) {
                 var data  = eval("(" + data + ")");
-                alert(data.url);
-                $("#photos").attr("src", data.url);
-//                alert("a"+fileObj.filePath);
+                $("#uploadMsg").show();
+                $("#image").val(data.url);
             }
         });
     });

@@ -44,11 +44,11 @@
         <h2>Runsn工程师资质</h2>
         <div class="tabBox">
           <ul class="tabs">
-              <c:forEach var="engineer" items="${engineer}" varStatus="status">
-                  <c:if test="${status == 0}">
+              <c:forEach var="engineer" items="${engineers}" varStatus="status">
+                  <c:if test="${status.index == 0}">
                       <li class="on">${engineer.name}</li>
                   </c:if>
-                  <c:if test="${status > 0 && status < 8}">
+                  <c:if test="${status.index > 0 && status.index < 8}">
                       <li>${engineer.name}</li>
                   </c:if>
               </c:forEach>
@@ -61,8 +61,8 @@
             <%--<li>曹伟6</li>--%>
             <%--<li>曹伟7</li>--%>
           </ul>
-            <c:forEach var="engineer" items="${engineer}" varStatus="status">
-                <c:if test="${status == 0}">
+            <c:forEach var="engineer" items="${engineers}" varStatus="status">
+                <c:if test="${status.index == 0}">
                     <div class="tabmain" style="display:block;">
                         <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" /> <b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
                             主要项目经历：${engineer.experiences}</div>
@@ -70,7 +70,7 @@
                         ${engineer.aptitude}
                     </div>
                 </c:if>
-                <c:if test="${status > 0 && status < 8}">
+                <c:if test="${status.index > 0 && status.index < 8}">
                     <div class="tabmain">
                     <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" /> <b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
                         主要项目经历：${engineer.experiences}</div>
@@ -96,11 +96,11 @@
         </div>
         <div class="tabBox">
           <ul class="tabs">
-              <c:forEach var="engineer" items="${engineer}" varStatus="status">
-                  <c:if test="${status == 8}">
+              <c:forEach var="engineer" items="${engineers}" varStatus="status">
+                  <c:if test="${status.index == 8}">
                       <li class="on">${engineer.name}</li>
                   </c:if>
-                  <c:if test="${status > 8 && status < 16}">
+                  <c:if test="${status.index > 8 && status.index < 16}">
                       <li>${engineer.name}</li>
                   </c:if>
               </c:forEach>
@@ -113,8 +113,8 @@
             <%--<li>曹伟6</li>--%>
             <%--<li>曹伟7</li>--%>
           </ul>
-            <c:forEach var="engineer" items="${engineer}" varStatus="status">
-            <c:if test="${status == 8}">
+            <c:forEach var="engineer" items="${engineers}" varStatus="status">
+            <c:if test="${status.index == 8}">
                 <div class="tabmain" style="display:block;">
                     <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" /> <b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
                         主要项目经历：${engineer.experiences}</div>
@@ -122,7 +122,7 @@
                         ${engineer.aptitude}
                 </div>
             </c:if>
-            <c:if test="${status > 8 && status < 16}">
+            <c:if test="${status.index > 8 && status.index < 16}">
             <div class="tabmain">
                 <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" /> <b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
                     主要项目经历：${engineer.experiences}</div>

@@ -1,7 +1,9 @@
 package com.runsn.controller;
 
+import com.runsn.jdbc.EngineerDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created with IntelliJ IDEA.
@@ -50,7 +52,9 @@ public class ServiceController {
     }
 
     @RequestMapping("service_7.html")
-    public String service_7() {
-        return "service_7";
+    public ModelAndView service_7(ModelAndView modelAndView) {
+        modelAndView.addObject("engineers", EngineerDao.queryAll());
+        modelAndView.setViewName("service_7");
+        return modelAndView;
     }
 }

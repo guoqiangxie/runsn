@@ -16,10 +16,9 @@
       <span class="menu m1">
       <b>服务</b>
       <c:forEach var="service2" items="${services}">
-          <c:if test="${service2.mainLevel==0}">
-              <a href="/template/${service2.id}">${service2.name}</a>
-          </c:if>
+          <a href="/template/${service2.id}">${service2.name}</a>
       </c:forEach>
+      <a href="/service_7.html">Runsn工程师资质</a>
       </span> </li>
             <li class="num2"><a href="/solution.html">解决方案</a>
       <span class="menu m2">
