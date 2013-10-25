@@ -18,12 +18,12 @@
     <div class="promain">
     <div class="prolist">
     <ul>
-    <li><h2>虚拟化基础类<span>Virtual base class</span></h2><a href="product_2.html"><img src="/img/pro_1.jpg" width="272" height="115" /></a></li>
-    <li><h2>数据存储类<span>Data storage class</span></h2><a href="product_2.html"><img src="/img/pro_2.jpg" width="272" height="115" /></a></li>
-    <li class="mr0"><h2>企业网络基础硬件类<span>Enterprise network hardware</span></h2><a href="product_2.html"><img src="/img/pro_3.jpg" width="272" height="115" /></a></li>
-    <li><h2>企业级无线覆盖交互类<span>Wireless coverage interaction class</span></h2><a href="product_2.html"><img src="/img/pro_4.jpg" width="272" height="115" /></a></li>
-    <li><h2>企业级数据安全类<span>The enterprise level data security security</span></h2><a href="product_2.html"><img src="/img/pro_5.jpg" width="272" height="115" /></a></li>
-    <li class="mr0"><h2>服务器及应用负载均衡类<span>Server and application of load balancing security</span></h2><a href="product_2.html"><img src="/img/pro_6.jpg" width="272" height="115" /></a></li>
+    <li><h2>虚拟化基础类<span>Virtual base class</span></h2><a href="productClass/1"><img src="/img/pro_1.jpg" width="272" height="115" /></a></li>
+    <li><h2>数据存储类<span>Data storage class</span></h2><a href="productClass/2"><img src="/img/pro_2.jpg" width="272" height="115" /></a></li>
+    <li class="mr0"><h2>企业网络基础硬件类<span>Enterprise network hardware</span></h2><a href="productClass/3"><img src="/img/pro_3.jpg" width="272" height="115" /></a></li>
+    <li><h2>企业级无线覆盖交互类<span>Wireless coverage interaction class</span></h2><a href="productClass/4"><img src="/img/pro_4.jpg" width="272" height="115" /></a></li>
+    <li><h2>企业级数据安全类<span>The enterprise level data security security</span></h2><a href="productClass/5"><img src="/img/pro_5.jpg" width="272" height="115" /></a></li>
+    <li class="mr0"><h2>服务器及应用负载均衡类<span>Server and application of load balancing security</span></h2><a href="productClass/6"><img src="/img/pro_6.jpg" width="272" height="115" /></a></li>
     </ul>
     </div>
     <div class="probrands tabBox" >
