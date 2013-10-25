@@ -42,17 +42,31 @@ $('.slidebox').imageSlide({
 	activeClass:'active'								
 });	
 
+//首页图片效果
+$(".homeimg li").hover(function(){
+	$(this).find("img").eq(1).hide();
+	$(this).find("img").eq(0).show();
+	},function(){
+	$(this).find("img").eq(0).hide();
+	$(this).find("img").eq(1).show();
+		});
+
 //导航菜单效果
 $(".nav li").hover(function(){
-	$(this).toggleClass("on");	
-	$(this).find(".menu").toggle();	
-});
+	$(this).addClass("on");	
+	$(this).find(".menu").show();	
+},function(){
+	$(this).removeClass("on");	
+	$(this).find(".menu").hide();
+	});
 $(".m2body a").hover(function () {
 	var tabs = $(this).parents(".m2body").children("a");
 	var panels = $(this).parents(".menu").find(".submenu");
 	var index = $.inArray(this, tabs);
 	panels.hide().eq(index).show();
-});
+},function(){
+	$(this).parents(".menu").find(".submenu").hide();
+	});
 
 //手风琴效果
 $(".collapse dt").click(function(){
