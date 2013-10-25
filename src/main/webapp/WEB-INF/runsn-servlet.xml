@@ -66,8 +66,7 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <!-- 表示符合/*这样的模式才拦截 -->
-            <mvc:mapping path="/*" />
-            <mvc:mapping path="/template/*" />
+            <mvc:mapping path="/**" />
             <bean class="com.runsn.interceptor.InitNavigationDataInterceptor" />
         </mvc:interceptor>
 

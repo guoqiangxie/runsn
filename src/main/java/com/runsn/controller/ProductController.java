@@ -31,6 +31,17 @@ public class ProductController {
         return modelAndView;
     }
 
+    @RequestMapping("productType/{brandId}/{typeId}")
+    public ModelAndView productType(@PathVariable("brandId") int brandId, @PathVariable("typeId") int typeId, ModelAndView modelAndView) {
+        List<ArrayList<Product>> productsList = groupProducts(ProductDao.queryByBrand(brandId));
+        for (ArrayList<Product> products : productsList) {
+            if (products.get(0).getTypeId() == typeId) modelAndView.addObject("product", products.get(0));
+        }
+        modelAndView.addObject("productsList", productsList);
+        modelAndView.setViewName("/productDetail");
+        return modelAndView;
+    }
+
     private List groupProducts(List<Product> products) {
         Set brandIds = new HashSet();
         for (Product product : products) {

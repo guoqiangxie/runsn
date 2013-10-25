@@ -53,7 +53,7 @@
                         <c:if test="${status2.index==0}">
                             <b>${type.brandName}<span>${type.brandDesc}</span></b>
                         </c:if>
-                        <a href="/productType/${type.typeId}">${type.typeName}</a>
+                        <a href="/productType/${type.brandId}/${type.typeId}">${type.typeName}</a>
                     </c:forEach>
                 </c:if>
             </c:forEach>
@@ -109,7 +109,7 @@
                         <c:if test="${status2.index==0}">
                             <b>${type.brandName}<span>${type.brandDesc}</span></b>
                         </c:if>
-                        <a href="/productType/${type.typeId}">${type.typeName}</a>
+                        <a href="/productType/${type.brandId}/${type.typeId}">${type.typeName}</a>
                     </c:forEach>
                 </c:if>
             </c:forEach>
