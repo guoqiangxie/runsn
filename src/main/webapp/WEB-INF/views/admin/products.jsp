@@ -29,16 +29,18 @@
         <div class="tmain b5 btop">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-              <th width="30%" >标题</th>
-              <th width="15%" >二级分类</th>
-              <th width="10%" >一级主页面</th>
+              <th width="30%" >产品名</th>
+              <th width="15%" >基础类</th>
+              <th width="15%" >品牌</th>
+              <th width="10%" >类型</th>
               <th width="12%" >操作</th>
             </tr>
-              <c:forEach var="service" items="${products}">
+              <c:forEach var="product" items="${products}">
                   <tr>
-                      <td><span class="info"><a href="/admin/solutionDetail/${service.documentId}" target="_blank">${service.document.title}</a></span></td>
-                      <td>${service.documentType.title2}</td>
-                      <td>${service.document.mainLevel==1?"是":""}</td>
+                      <td><span class="info"><a href="/admin/productDetail/${product.brandId}/${product.typeId}/${product.id}" target="_blank">${product.productName}</a></span></td>
+                      <td>${product.className}</td>
+                      <td>${product.brandName}</td>
+                      <td>${product.typeName}</td>
                       <td align="center"><a href="/admin/productDetail/${service.documentId}">修改</a> <a href="/admin/delete/${service.documentId}">删除</a></td>
                   </tr>
               </c:forEach>

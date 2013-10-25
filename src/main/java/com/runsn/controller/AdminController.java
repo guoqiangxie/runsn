@@ -6,6 +6,7 @@ import com.runsn.dto.DocumentType;
 import com.runsn.dto.Engineer;
 import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.EngineerDao;
+import com.runsn.jdbc.ProductDao;
 import com.runsn.jdbc.TypeDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -135,17 +136,7 @@ public class AdminController {
 
     @RequestMapping("products.html")
     public ModelAndView products(ModelAndView modelAndView) {
-        List<Document> documentList = DocumentDao.queryByTitle1code(3);
-        List<DocumentDetail> documentDetailList = new ArrayList<DocumentDetail>();
-        for (Document document : documentList) {
-            DocumentDetail documentDetail = new DocumentDetail();
-            documentDetail.setDocument(document);
-            documentDetail.setDocumentId(document.getId());
-            documentDetail.setTypeid(document.getTypeid());
-            documentDetail.setDocumentType(TypeDao.query(document.getTypeid()));
-            documentDetailList.add(documentDetail);
-        }
-        modelAndView.addObject("products", documentDetailList);
+        modelAndView.addObject("products", ProductDao.queryAll());
         modelAndView.setViewName("admin/products");
         return modelAndView;
     }
