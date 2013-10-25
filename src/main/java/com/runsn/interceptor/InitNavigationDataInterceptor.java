@@ -3,6 +3,7 @@ package com.runsn.interceptor;
 import com.runsn.dto.Document;
 import com.runsn.dto.DocumentDetail;
 import com.runsn.jdbc.DocumentDao;
+import com.runsn.jdbc.ProductDao;
 import com.runsn.jdbc.TypeDao;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -36,8 +37,8 @@ public class InitNavigationDataInterceptor implements HandlerInterceptor {
         modelAndView.addObject("requirementSolutions", groupData(DocumentDao.queryByTitle2code(2, 1)));
         modelAndView.addObject("bizSolutions", groupData(DocumentDao.queryByTitle2code(2, 2)));
         modelAndView.addObject("sizeSolutions", groupData(DocumentDao.queryByTitle2code(2, 3)));
-        modelAndView.addObject("requirementProducts", DocumentDao.queryByTitle2code(3, 1));
-        modelAndView.addObject("brandProducts", DocumentDao.queryByTitle2code(3, 2));
+        modelAndView.addObject("productClasss", ProductDao.queryAllClass());
+        modelAndView.addObject("productBrands", ProductDao.queryAllBrand());
         modelAndView.addObject("trains", DocumentDao.queryByTitle1code(4));
     }
 

@@ -126,12 +126,12 @@
       <%--<a href="solution_1.html">中小企业</a>--%>
       <%--<a href="solution_1.html">大型企业</a>--%>
       </span> </span> </li>
-            <li class="num3"><a href="product.html">产品</a>
+            <li class="num3"><a href="/product.html">产品</a>
       <span class="menu m3">
       <b>产品</b>
       <span class="col">需求</span>
-      <c:forEach var="requirementProduct" items="${requirementProducts}">
-              <a href="/template/${requirementProduct.id}">${requirementProduct.name}</a>
+      <c:forEach var="productClass" items="${productClasss}">
+          <a href="/productClass/${productClass.classId}">${productClass.className}</a>
       </c:forEach>
       <%--<a href="#">虚拟化基础架构建设</a>--%>
       <%--<a href="#">数据存储架构建设</a>--%>
@@ -140,8 +140,8 @@
       <%--<a href="#">企业级数据安全解决方案</a>--%>
       <%--<a href="#">服务器及应用负载均衡</a>--%>
       <span class="col">品牌</span>
-      <c:forEach var="brandProduct" items="${brandProducts}">
-          <a href="/template/${brandProduct.id}">${brandProduct.name}</a>
+      <c:forEach var="brand" items="${productBrands}">
+          <a href="/productClass/${brand.classId}">${brand.brandName}</a>
       </c:forEach>
       <%--<a href="#">Citrix</a>--%>
       <%--<a href="#">HP</a>--%>

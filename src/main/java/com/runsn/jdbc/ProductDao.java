@@ -50,6 +50,67 @@ public class ProductDao {
         return result;
     }
 
+    public static List<Product> queryAllClass() {
+        conn = ConnectionUtil.getConnection();
+        List<Product> result = new ArrayList<Product>();
+        try {
+            String sql = "select * " +
+                    " from productclass";
+            st = conn.createStatement();
+
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                Product product = new Product();
+                product.setClassId(rs.getInt("id"));
+                product.setClassName(rs.getString("className"));
+                result.add(product);
+            }
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("查询数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+        return result;
+    }
+
+    public static List<Product> queryAllBrand() {
+        conn = ConnectionUtil.getConnection();
+        List<Product> result = new ArrayList<Product>();
+        try {
+            String sql = "select * " +
+                    " from productbrand";
+            st = conn.createStatement();
+
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                Product product = new Product();
+                product.setBrandId(rs.getInt("id"));
+                product.setBrandName(rs.getString("brandName"));
+                product.setClassId(rs.getInt("classId"));
+                result.add(product);
+            }
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("查询数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+        return result;
+    }
+
     public static List<Product> queryByBrand(int brandId) {
         conn = ConnectionUtil.getConnection();
         List<Product> result = new ArrayList<Product>();
