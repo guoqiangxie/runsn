@@ -4,6 +4,7 @@ import com.runsn.dto.Document;
 import com.runsn.dto.DocumentDetail;
 import com.runsn.dto.DocumentType;
 import com.runsn.dto.Engineer;
+import com.runsn.dto.Product;
 import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.EngineerDao;
 import com.runsn.jdbc.ProductDao;
@@ -141,18 +142,16 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping("productDetail/{documentId}")
-    public ModelAndView productDetail(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
-        DocumentDetail documentDetail = new DocumentDetail();
-        Document document = DocumentDao.query(documentId);
-        if (document != null) {
-            DocumentType documentType = TypeDao.query(document.getTypeid());
-            documentDetail.setDocument(document);
-            documentDetail.setDocumentType(documentType);
-            documentDetail.setDocumentId(documentId);
-            documentDetail.setTypeid(documentType.getId());
-        }
-        modelAndView.addObject("documentDetail", documentDetail);
+    @RequestMapping("productDetail/{productId}")
+    public ModelAndView productDetail(@PathVariable("productId") int productId, ModelAndView modelAndView) {
+        Product product = ProductDao.query(productId);
+        List productClasses = ProductDao.queryAllClass();
+        List productBrands = ProductDao.queryAllBrand();
+        List productTypes = ProductDao.queryAllType();
+        modelAndView.addObject("product", product);
+        modelAndView.addObject("productClasses", productClasses);
+        modelAndView.addObject("productBrands", productBrands);
+        modelAndView.addObject("productTypes", productTypes);
         modelAndView.setViewName("admin/productDetail");
         return modelAndView;
     }

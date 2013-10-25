@@ -37,11 +37,11 @@
             </tr>
               <c:forEach var="product" items="${products}">
                   <tr>
-                      <td><span class="info"><a href="/admin/productDetail/${product.brandId}/${product.typeId}/${product.id}" target="_blank">${product.productName}</a></span></td>
+                      <td><span class="info"><a href="/admin/productDetail/${product.id}" target="_blank">${product.productName}</a></span></td>
                       <td>${product.className}</td>
                       <td>${product.brandName}</td>
                       <td>${product.typeName}</td>
-                      <td align="center"><a href="/admin/productDetail/${service.documentId}">修改</a> <a href="/admin/delete/${service.documentId}">删除</a></td>
+                      <td align="center"><a href="/admin/productDetail/${product.id}">修改</a> <a href="/admin/deleteProduct/${service.documentId}">删除</a></td>
                   </tr>
               </c:forEach>
           </table>
