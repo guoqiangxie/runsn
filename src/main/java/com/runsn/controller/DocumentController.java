@@ -94,7 +94,7 @@ public class DocumentController {
     }
 
     @RequestMapping(value = "/admin/submitSolution", method = RequestMethod.POST)
-    public ModelAndView submitSolution(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, @RequestParam(value = "keywords", required = false) String keywords, @RequestParam(value = "description", required = false) String description, @RequestParam(value = "title3code") int title3code, ModelAndView modelAndView) {
+    public ModelAndView submitSolution(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, @RequestParam(value = "keywords", required = false) String keywords, @RequestParam(value = "description", required = false) String description, @RequestParam(value = "title3code", required = false) int title3code, ModelAndView modelAndView) {
         Document document = DocumentDao.query(id);
         if (document == null) {
             try {

@@ -36,22 +36,20 @@
             <div class="txt">Description：
                 <input class="w500 b5" id="description" name="description" type="text" value="${documentDetail.document.description}"/>
             </div>
-            <c:if test="${documentDetail.documentId==0}">
-    <div class="txt">二级分类：
+    <div class="txt" <c:if test="${documentDetail.documentId!=0}">style="display:none;" </c:if>>二级分类：
         <select id="title2code" name="title2code" onchange="change();">
             <option value ="1" selected="selected">按业务需求分</option>
             <option value ="2">按行业分</option>
             <option value ="3">按公司规模分</option>
         </select>
     </div>
-    <div class="txt">三级分类：
+    <div class="txt" <c:if test="${documentDetail.documentId!=0}">style="display:none;" </c:if>>三级分类：
         <select id="title3code" name="title3code">
             <c:forEach var="type" items="${types}">
                 <option value ="${type.id}" class="title3option title2code_${type.title2code}" <c:if test="${type.title2code!=1}">style="display: none;"</c:if> >${type.title3}</option>
             </c:forEach>
         </select>
     </div>
-            </c:if>
      <div class="txt">
     <textarea id="content" name="content" cols="" rows="" class="bjq" >${documentDetail.document.content}</textarea>
     </div>

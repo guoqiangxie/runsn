@@ -25,7 +25,7 @@ public class DocumentDao {
     public static void save(Document document) throws Exception {
         conn = ConnectionUtil.getConnection();
         try {
-            String sql = "insert into documents (name, content, title, keywords, description, typeid, active, mainLevel, createDate, updateDate) values('" + document.getName() + "', '" + document.getContent() + "','" + document.getTitle() + "','" + document.getKeywords() + "','" + document.getDescription() + "'," + document.getTypeid() + "," + document.getActive() + "," + document.getMainLevel() + ",'"+document.getCreateDate()+"','"+document.getUpdateDate()+"')";
+            String sql = "insert into documents (name, content, title, keywords, description, typeid, active, mainLevel, createDate) values('" + document.getName() + "', '" + document.getContent() + "','" + document.getTitle() + "','" + document.getKeywords() + "','" + document.getDescription() + "'," + document.getTypeid() + "," + document.getActive() + "," + document.getMainLevel() + ",'"+document.getCreateDate()+"')";
             st = conn.createStatement();
 
             st.execute(sql);
@@ -54,8 +54,7 @@ public class DocumentDao {
                     + "',description='" + document.getDescription()
                     + "',typeid=" + document.getTypeid()
                     + ",active=" + document.getActive()
-                    + ",mainLevel=" + document.getMainLevel()
-                    + "',updateDate='" + document.getUpdateDate()
+                    + ",updateDate='" + document.getUpdateDate()
                     + "' where id=" + document.getId();
             st = conn.createStatement();
 
@@ -63,8 +62,8 @@ public class DocumentDao {
             st.close();
             conn.close();
         } catch (Exception e) {
-            System.out.println("更新页面数据失败。");
-            throw new Exception("更新页面数据失败。");
+            System.out.println("更新服务数据失败。");
+            throw new Exception("更新服务数据失败。");
         } finally {
             try {
                 st.close();

@@ -30,10 +30,5 @@
 </div>
 <script src="/js/jquery-1.7.1.min.js" type="text/javascript" charset="gb2312"></script>
 <script src="/js/yb.js" type="text/javascript" charset="gb2312"></script>
-<script type="text/javascript">
-    $(function () {
-        $(".1").addClass("on");
-    });
-</script>
 </body>
 </html>
