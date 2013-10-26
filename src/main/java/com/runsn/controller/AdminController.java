@@ -4,9 +4,11 @@ import com.runsn.dto.Document;
 import com.runsn.dto.DocumentDetail;
 import com.runsn.dto.DocumentType;
 import com.runsn.dto.Engineer;
+import com.runsn.dto.Lab;
 import com.runsn.dto.Product;
 import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.EngineerDao;
+import com.runsn.jdbc.LabDao;
 import com.runsn.jdbc.ProductDao;
 import com.runsn.jdbc.TypeDao;
 import org.springframework.stereotype.Controller;
@@ -132,6 +134,20 @@ public class AdminController {
         }
         modelAndView.addObject("solutions", documentDetailList);
         modelAndView.setViewName("admin/solutions");
+        return modelAndView;
+    }
+
+    @RequestMapping("labs.html")
+    public ModelAndView labs(ModelAndView modelAndView) {
+        modelAndView.addObject("labs", LabDao.queryAll());
+        modelAndView.setViewName("admin/labs");
+        return modelAndView;
+    }
+
+    @RequestMapping("labDetail/{labId}")
+    public ModelAndView labDetail(@PathVariable("labId") int labId, ModelAndView modelAndView) {
+        modelAndView.addObject("lab", LabDao.query(labId));
+        modelAndView.setViewName("admin/labDetail");
         return modelAndView;
     }
 
