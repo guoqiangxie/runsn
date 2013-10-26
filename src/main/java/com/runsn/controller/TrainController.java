@@ -1,7 +1,10 @@
 package com.runsn.controller;
 
+import com.runsn.jdbc.LabDao;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,6 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class TrainController {
+
+    @RequestMapping("applyCourse/{labId}")
+    public ModelAndView train(@PathVariable("labId") int labId, ModelAndView modelAndView) {
+        modelAndView.addObject("lab", LabDao.query(labId));
+        modelAndView.setViewName("/applyCourse");
+        return modelAndView;
+    }
 
     @RequestMapping("train.html")
     public String train() {
