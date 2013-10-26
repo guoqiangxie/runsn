@@ -37,6 +37,7 @@ public class TypeDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();
@@ -71,6 +72,7 @@ public class TypeDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();
@@ -97,6 +99,7 @@ public class TypeDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();
@@ -123,6 +126,7 @@ public class TypeDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();
@@ -149,6 +153,7 @@ public class TypeDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();
@@ -175,6 +180,7 @@ public class TypeDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();

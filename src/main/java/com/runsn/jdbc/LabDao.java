@@ -38,6 +38,7 @@ public class LabDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();
@@ -80,6 +81,7 @@ public class LabDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();
@@ -116,6 +118,7 @@ public class LabDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("保存课程数据失败。");
+            e.printStackTrace();
             throw new Exception();
         } finally {
             try {
@@ -148,6 +151,7 @@ public class LabDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("更新课程数据失败。");
+            e.printStackTrace();
             throw new Exception("更新课程数据失败。");
         } finally {
             try {
@@ -169,6 +173,7 @@ public class LabDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("删除数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();

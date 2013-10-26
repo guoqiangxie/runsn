@@ -33,6 +33,7 @@ public class DocumentDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("插入页面数据失败。");
+            e.printStackTrace();
             throw new Exception("插入页面数据失败.");
         } finally {
             try {
@@ -63,6 +64,7 @@ public class DocumentDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("更新服务数据失败。");
+            e.printStackTrace();
             throw new Exception("更新服务数据失败。");
         } finally {
             try {
@@ -89,6 +91,7 @@ public class DocumentDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();
@@ -110,6 +113,7 @@ public class DocumentDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("删除数据失败。");
+            e.printStackTrace();
             throw new Exception("删除数据失败。");
         } finally {
             try {
@@ -136,6 +140,7 @@ public class DocumentDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();
@@ -178,6 +183,7 @@ public class DocumentDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();
@@ -204,6 +210,7 @@ public class DocumentDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();
@@ -230,6 +237,7 @@ public class DocumentDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();

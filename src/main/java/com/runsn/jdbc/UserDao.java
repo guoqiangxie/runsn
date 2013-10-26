@@ -35,6 +35,7 @@ public class UserDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("用户查询数据失败。");
+            e.printStackTrace();
         } finally {
             try {
                 st.close();
