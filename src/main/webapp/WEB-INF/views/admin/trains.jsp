@@ -30,13 +30,11 @@
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <th width="59%" >标题</th>
-              <th width="10%" >一级主页面</th>
               <th width="12%" >操作</th>
             </tr>
               <c:forEach var="service" items="${trains}">
                   <tr>
                       <td><span class="info"><a href="/admin/trainDetail/${service.id}" target="_blank">${service.title}</a></span></td>
-                      <td>${service.mainLevel==1?"是":""}</td>
                       <td align="center"><a href="/admin/trainDetail/${service.id}">修改</a> <a href="/admin/delete/${service.id}">删除</a></td>
                   </tr>
               </c:forEach>
