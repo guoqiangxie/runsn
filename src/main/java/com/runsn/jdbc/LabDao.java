@@ -4,6 +4,7 @@ import com.runsn.dto.Engineer;
 import com.runsn.dto.Lab;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -26,7 +27,7 @@ public class LabDao {
         conn = ConnectionUtil.getConnection();
         List result = new ArrayList<Lab>();
         try {
-            String sql = "select * from lab";
+            String sql = "select * from lab where trainTime>'"+new Date(new java.util.Date().getTime())+"'";
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);

@@ -59,8 +59,10 @@ public class TrainController {
 
 
     @RequestMapping("train.html")
-    public String train() {
-        return "train";
+    public ModelAndView train(ModelAndView modelAndView) {
+        modelAndView.addObject("labs", LabDao.queryAll());
+        modelAndView.setViewName("train");
+        return modelAndView;
     }
 
     @RequestMapping("train_1.html")
