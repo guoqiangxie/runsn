@@ -2,9 +2,11 @@ package com.runsn.controller;
 
 import com.runsn.dto.Document;
 import com.runsn.dto.Engineer;
+import com.runsn.dto.Lab;
 import com.runsn.dto.Product;
 import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.EngineerDao;
+import com.runsn.jdbc.LabDao;
 import com.runsn.jdbc.ProductDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Date;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 /**
  * Created with IntelliJ IDEA.
@@ -140,6 +145,76 @@ public class DocumentController {
         }
         modelAndView.setViewName("/admin/result");
         return modelAndView;
+    }
+
+    @RequestMapping(value = "/admin/submitLab", method = RequestMethod.POST)
+    public ModelAndView submitLab(@RequestParam(value = "id") int id,
+                                  @RequestParam(value = "name") String name,
+                                  @RequestParam(value = "teacher") String teacher,
+                                  @RequestParam(value = "trainTime") String trainTime,
+                                  @RequestParam(value = "address") String address,
+                                  @RequestParam(value = "env") String env,
+                                  @RequestParam(value = "desc") String desc,
+                                  @RequestParam(value = "content") String content,
+                                  @RequestParam(value = "personNum") int personNum,
+                                  ModelAndView modelAndView) {
+        Lab lab = LabDao.query(id);
+        Timestamp timestamp = null;
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+            java.util.Date date = dateFormat.parse (trainTime);
+            timestamp = new Timestamp(date.getTime());
+        } catch (ParseException e) {
+            System.out.println("时间转换异常");
+        }
+        if (lab.getId() == 0) {
+            try {
+                LabDao.save(createLab(name, teacher, timestamp, address, env, desc, content, personNum));
+                modelAndView.addObject("result", "成功啦");
+                modelAndView.addObject("message", "您的信息已经添加成功");
+            } catch (Exception e) {
+                modelAndView.addObject("result", "失败啦");
+                modelAndView.addObject("message", "您的信息添加失败");
+            }
+        } else {
+            resetLab(name, teacher, timestamp, address, env, desc, content, personNum, lab);
+            try {
+                LabDao.update(lab);
+                modelAndView.addObject("result", "成功啦");
+                modelAndView.addObject("message", "您的信息已经更新成功");
+            } catch (Exception e) {
+                modelAndView.addObject("result", "失败啦");
+                modelAndView.addObject("message", "您的信息更新失败");
+            }
+        }
+        modelAndView.setViewName("/admin/result");
+        return modelAndView;
+    }
+
+    private Lab createLab(String name, String teacher, Timestamp trainTime, String address, String env, String desc, String content, int personNum) {
+        Lab newLab = new Lab();
+        newLab.setCreateDate(new Date(new java.util.Date().getTime()));
+        newLab.setTrainTime(trainTime);
+        newLab.setTeacher(teacher);
+        newLab.setPersonNum(personNum);
+        newLab.setAddress(address);
+        newLab.setContent(content);
+        newLab.setDesc(desc);
+        newLab.setEnv(env);
+        newLab.setName(name);
+        return newLab;
+    }
+
+    private void resetLab(String name, String teacher, Timestamp trainTime, String address, String env, String desc, String content, int personNum, Lab newLab) {
+        newLab.setUpdateDate(new Date(new java.util.Date().getTime()));
+        newLab.setTrainTime(trainTime);
+        newLab.setTeacher(teacher);
+        newLab.setPersonNum(personNum);
+        newLab.setAddress(address);
+        newLab.setContent(content);
+        newLab.setDesc(desc);
+        newLab.setEnv(env);
+        newLab.setName(name);
     }
 
     private void resetProduct(String productName, String productDesc, Product product) {

@@ -55,7 +55,6 @@ public class DocumentDao {
                     + "',typeid=" + document.getTypeid()
                     + ",active=" + document.getActive()
                     + ",mainLevel=" + document.getMainLevel()
-                    + ",createDate='" + document.getCreateDate()
                     + "',updateDate='" + document.getUpdateDate()
                     + "' where id=" + document.getId();
             st = conn.createStatement();

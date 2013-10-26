@@ -196,4 +196,18 @@ public class AdminController {
         return modelAndView;
     }
 
+    @RequestMapping("deleteLab/{labId}")
+    public ModelAndView deleteLab(@PathVariable("labId") int labId, ModelAndView modelAndView) {
+        try {
+            LabDao.delete(labId);
+            modelAndView.addObject("result", "成功啦");
+            modelAndView.addObject("message", "您的信息已经删除成功");
+        } catch (Exception e) {
+            modelAndView.addObject("result", "失败啦");
+            modelAndView.addObject("message", "您的信息删除失败");
+        }
+        modelAndView.setViewName("/admin/result");
+        return modelAndView;
+    }
+
 }

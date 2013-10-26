@@ -54,7 +54,7 @@ public class LabDao {
         lab.setAddress(rs.getString("address"));
         lab.setContent(rs.getString("content"));
         lab.setCreateDate(rs.getDate("createDate"));
-        lab.setDesc(rs.getString("desc"));
+        lab.setDesc(rs.getString("labDesc"));
         lab.setEnv(rs.getString("env"));
         lab.setName(rs.getString("name"));
         lab.setPersonNum(rs.getInt("personNum"));
@@ -88,5 +88,93 @@ public class LabDao {
             }
         }
         return lab;
+    }
+
+    public static Integer save(Lab lab) throws Exception {
+        conn = ConnectionUtil.getConnection();
+        Integer result = null;
+        try {
+            String sql = "insert into lab(name, personNum,teacher, trainTime,address, env,labDesc,content,createDate) values('"
+                    + lab.getName() + "',"
+                    + lab.getPersonNum() + ",'"
+                    + lab.getTeacher() + "','"
+                    + lab.getTrainTime() + "','"
+                    + lab.getAddress() + "','"
+                    + lab.getEnv() + "','"
+                    + lab.getDesc() + "','"
+                    + lab.getContent() + "','"
+                    + lab.getCreateDate()
+                    + "')";
+            st = conn.createStatement();
+            st.execute(sql);
+            ResultSet rs = st.getGeneratedKeys();
+            while (rs.next()) {
+                result = rs.getInt(1);
+            }
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("保存课程数据失败。");
+            throw new Exception();
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+        return result;
+    }
+
+    public static void update(Lab lab) throws Exception {
+        conn = ConnectionUtil.getConnection();
+        try {
+            String sql = "update lab set name='" + lab.getName()
+                    + "',content='" + lab.getContent()
+                    + "',personNum=" + lab.getPersonNum()
+                    + ",teacher='" + lab.getTeacher()
+                    + "',trainTime='" + lab.getTrainTime()
+                    + "',address='" + lab.getAddress()
+                    + "',env='" + lab.getEnv()
+                    + "',labDesc='" + lab.getDesc()
+                    + "',updateDate='" + lab.getUpdateDate()
+                    + "' where id=" + lab.getId();
+            st = conn.createStatement();
+
+            st.execute(sql);
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("更新课程数据失败。");
+            throw new Exception("更新课程数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+    }
+
+    public static void delete(int id){
+        conn = ConnectionUtil.getConnection();
+        try {
+            String sql = "delete from lab where id = " + id;
+            st = conn.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("删除数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
     }
 }

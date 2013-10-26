@@ -72,7 +72,7 @@
 
         <mvc:interceptor>
             <!-- 表示符合/*这样的模式才拦截 -->
-            <mvc:mapping path="/admin/*" />
+            <mvc:mapping path="/admin/**" />
             <bean class="com.runsn.interceptor.LoginInterceptor" />
         </mvc:interceptor>
     </mvc:interceptors>

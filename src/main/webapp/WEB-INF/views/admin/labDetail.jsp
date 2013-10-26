@@ -25,9 +25,9 @@
   <div class="tit">
     <h3>编辑课程内容</h3>
     <span></span></div>
-     <form action="/admin/submitProduct" method="POST" id="serviceForm">
+     <form action="/admin/submitLab" method="POST" id="serviceForm">
         <div class="tmain b5 btop">
-    <div class="txt">课程名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
+    <div class="txt">课程&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
       <input class="w500 b5" id="title" name="name" type="text" value="${lab.name}"/>
     </div>
             <div class="txt">人数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
@@ -68,47 +68,17 @@
 <script src="/js/my97datepicker/WdatePicker.js" type="text/javascript" charset="gb2312"></script>
 <script type="text/javascript">
     $(function () {
-        $(".4").addClass("on");
+        $(".6").addClass("on");
 
         $("#submitForm").click(function() {
             if ($("#title").val()==null || $("#title").val()=='' ||
                     $("#content").val()==null || $("#content").val()=='') {
-                alert("标题和内容不能为空");
+                alert("课程名和内容不能为空");
                 return;
             }
             $("#serviceForm").submit();
         });
     });
-
-    function changeClass() {
-        var selectClass = $("#classId").val();
-        var selectBrand = "";
-        $("#brandId option").hide();
-        $("#brandId option").selected = "";
-        $("#typeId option").hide();
-        $("#typeId option").selected = "";
-        $(".class" + selectClass).show();
-        $("#brandId .class"+selectClass).each(function(i) {
-            if(i==0) {
-                this.selected = "selected";
-                selectBrand = this.value;
-            }
-        });
-        $(".brand" + selectBrand).show();
-        $("#typeId .brand"+selectBrand).each(function(i) {
-            if(i==0) this.selected = "selected";
-        });
-    }
-
-    function changeBrand() {
-        $("#typeId option").hide();
-        $("#typeId option").selected = "";
-        var selectBrand = $("#brandId").val();
-        $(".brand" + selectBrand).show();
-        $("#typeId .brand"+selectBrand).each(function(i) {
-            if(i==0) this.selected = "selected";
-        });
-    }
 </script>
 </body>
 </html>
