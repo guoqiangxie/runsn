@@ -12,25 +12,27 @@
 <div class="w948">
     <div class="baoming">
         <div class="bd">
-            <h2>7.5Aruba动手实验室</h2>
+            <h2>${lab.name}</h2>
+            <form action="/apply" method="post">
+            <p><span>参会人姓名</span><input name="applyName" type="text"/></p>
 
-            <p><span>参会人姓名</span><input name="" type="text"/></p>
+            <p><span>联系电话</span><input name="phone" type="text"/></p>
 
-            <p><span>联系电话</span><input name="" type="text"/></p>
+            <p><span>邮件地址</span><input name="email" type="text"/></p>
 
-            <p><span>邮件地址</span><input name="" type="text"/></p>
+            <p><span>所在企业</span><input name="company" type="text"/></p>
 
-            <p><span>所在企业</span><input name="" type="text"/></p>
-
-            <p><span>职位</span><input name="" type="text"/></p>
+            <p><span>职位</span><input name="title" type="text"/></p>
 
             <p><span>课程名称</span>${lab.name}</p>
 
             <p><span>公司地址</span>
-                <textarea name="" class="w230"></textarea>
+                <textarea name="address" class="w230"></textarea>
             </p>
 
-            <p><span>&nbsp;</span><input name="" type="button" class="btn"/></p>
+            <p><span>&nbsp;</span><input name="" type="submit" class="btn"/></p>
+                <input type="hidden" value="${lab.id}" name="id">
+            </form>
         </div>
         <div class="tips"><b>培训报名人数：</b>${lab.personNum}人/班<br/>
             <b>软盛培训讲师：</b>${lab.teacher}<br/>

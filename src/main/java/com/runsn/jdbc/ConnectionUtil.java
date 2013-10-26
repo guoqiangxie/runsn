@@ -1,8 +1,5 @@
 package com.runsn.jdbc;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -14,17 +11,7 @@ import java.sql.DriverManager;
  *
  * @version 1.0
  */
-//@Component
 public class ConnectionUtil {
-//    @Value("${jdbc.driverClassName}")
-//    private static String driverClassName;
-//    @Value("${jdbc.jdbc.url}")
-//    private static String url;
-//    @Value("${jdbc.jdbc.username}")
-//    private static String username;
-//    @Value("${jdbc.password}")
-//    private static String password;
-
     /* 获取数据库连接的函数*/
     public static Connection getConnection() {
         Connection con = null;
