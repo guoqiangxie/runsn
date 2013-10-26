@@ -197,7 +197,7 @@ public class ProductDao {
 
     public static Product query(int id) {
         conn = ConnectionUtil.getConnection();
-        Product result = null;
+        Product result = new Product();
         try {
             String sql = "select *,p.id AS productId " +
                     " from productclass pc, productbrand pb, producttype pt,product p " +
@@ -240,5 +240,81 @@ public class ProductDao {
             product.setProductVersion(rs.getString("productVersion"));
         }
         return product;
+    }
+
+    public static Integer save(Product product) throws Exception {
+        conn = ConnectionUtil.getConnection();
+        Integer result = null;
+        try {
+            String sql = "insert into product(productName, typeId, productDesc, createDate) values('"
+                    + product.getProductName() + "',"
+                    + product.getTypeId() + ",'"
+                    + product.getProductDesc() + "','"
+                    + product.getCreateDate() + "')";
+            st = conn.createStatement();
+            st.execute(sql);
+            ResultSet rs = st.getGeneratedKeys();
+            while (rs.next()) {
+                result = rs.getInt(1);
+            }
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("保存产品数据失败。");
+            throw new Exception("保存产品数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+        return result;
+    }
+
+    public static void update(Product product) throws Exception {
+        conn = ConnectionUtil.getConnection();
+        try {
+            String sql = "update product set productName='" + product.getProductName()
+                    + "',productDesc='" + product.getProductDesc()
+                    + "',updateDate='" + product.getUpdateDate()
+                    + "' where id=" + product.getId();
+            st = conn.createStatement();
+
+            st.execute(sql);
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("更新产品数据失败。");
+            throw new Exception("更新产品数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+    }
+
+    public static void delete(int id){
+        conn = ConnectionUtil.getConnection();
+        try {
+            String sql = "delete from product where id = " + id;
+            st = conn.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("删除数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
     }
 }

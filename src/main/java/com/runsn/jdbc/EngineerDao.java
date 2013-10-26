@@ -107,7 +107,7 @@ public class EngineerDao {
         return engineer;
     }
 
-    public static Integer save(Engineer engineer) {
+    public static Integer save(Engineer engineer) throws Exception {
         conn = ConnectionUtil.getConnection();
         Integer result = null;
         try {
@@ -130,6 +130,7 @@ public class EngineerDao {
             conn.close();
         } catch (Exception e) {
             System.out.println("保存工程师数据失败。");
+            throw new Exception("保存工程师数据失败。");
         } finally {
             try {
                 st.close();
@@ -139,5 +140,34 @@ public class EngineerDao {
             }
         }
         return result;
+    }
+
+    public static void update(Engineer engineer) throws Exception {
+        conn = ConnectionUtil.getConnection();
+        try {
+            String sql = "update engineer set name='" + engineer.getName()
+                    + "',aptitude='" + engineer.getAptitude()
+                    + "',image='" + engineer.getImage()
+                    + "',experiences='" + engineer.getExperiences()
+                    + "',age=" + engineer.getAge()
+                    + ",title='" + engineer.getTitle()
+                    + "',updateDate='" + engineer.getUpdateDate()
+                    + "' where id=" + engineer.getId();
+            st = conn.createStatement();
+
+            st.execute(sql);
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("更新页面数据失败。");
+            throw new Exception("更新页面数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
     }
 }

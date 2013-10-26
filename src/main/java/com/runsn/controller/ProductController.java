@@ -31,6 +31,15 @@ public class ProductController {
         return modelAndView;
     }
 
+    @RequestMapping("admin/deleteProduct/{id}")
+    public ModelAndView deleteProduct(@PathVariable("id") int id, ModelAndView modelAndView) {
+        ProductDao.delete(id);
+        modelAndView.setViewName("/admin/result");
+        modelAndView.addObject("result", "成功啦");
+        modelAndView.addObject("message", "产品资料删除成功");
+        return modelAndView;
+    }
+
     @RequestMapping("productType/{brandId}/{typeId}")
     public ModelAndView productType(@PathVariable("brandId") int brandId, @PathVariable("typeId") int typeId, ModelAndView modelAndView) {
         List<ArrayList<Product>> productsList = groupProducts(ProductDao.queryByBrand(brandId));

@@ -7,8 +7,7 @@
 <meta http-equiv="Page-Enter" content="blendTrans(Duration=1)" />
 <meta http-equiv="Page-Exit" content="blendTrans(Duration=1)" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<link rel="Shortcut Icon" href="1.ico">
-<title>首页幻灯片 | 网站后台管理系统</title>
+<title>工程师资质 | 网站后台管理系统</title>
 <link href="/css/main.css" rel="stylesheet" type="text/css" />
 <link href="/css/indeximg.css" rel="stylesheet" type="text/css" />
 <link href="/css/uploadify.css" rel="stylesheet" type="text/css" />
@@ -47,7 +46,7 @@
     <div> <span class="name">职称：</span> <span class="text"><input value="${engineer.title}" name="title" type="text" /></span></div>
     <div class="boxinfo"> <span class="name">经历：</span> <span class="text"><input value="${engineer.experiences}" name="experiences" type="text" /></span></div>
     <div class="boxinfo"> <span class="name">资质：</span> <span class="text"><input value="${engineer.aptitude}" name="aptitude" type="text" /></span></div>
-      <input type="hidden" name="id" value="value="${engineer.id}" />
+      <input type="hidden" name="id" value="${engineer.id}" />
   </div>
   <div class="sure">
     <input type="submit" value="立即发布" />

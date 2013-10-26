@@ -28,8 +28,9 @@
      <form action="/admin/submitProduct" method="POST" id="serviceForm">
         <div class="tmain b5 btop">
     <div class="txt">标题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
-      <input class="w500 b5" id="title" name="title" type="text" value="${documentDetail.document.title}"/>
+      <input class="w500 b5" id="title" name="productName" type="text" value="${product.productName}"/>
     </div>
+            <c:if test="${product.id==0}">
     <div class="txt">基础类：
         <select id="classId" name="classId" onchange="changeClass();">
             <c:forEach var="productClass" items="${productClasses}">
@@ -56,15 +57,16 @@
                 <c:if test="${productType.brandId == selectBrand && selectType == 0}">
                     <c:set value="${productType.typeId}" var="selectType"></c:set>
                 </c:if>
-                <option class="class${productType.classId} brand${productType.brandId}" value ="${productType.typeId}" <c:if test="${productType.brandId!=selectBrand}">style="display: none;"</c:if> <c:if test="${productType.typeId==selectType}">selected="selected" </c:if> >${productType.typeName}</option>
+                <option class="brand${productType.brandId}" value ="${productType.typeId}" <c:if test="${productType.brandId!=selectBrand}">style="display: none;"</c:if> <c:if test="${productType.typeId==selectType}">selected="selected" </c:if> >${productType.typeName}</option>
             </c:forEach>
         </select>
     </div>
+            </c:if>
      <div class="txt">
-    <textarea id="content" name="content" cols="" rows="" class="bjq" >${documentDetail.document.content}</textarea>
+    <textarea id="content" name="productDesc" cols="" rows="" class="bjq" >${product.productDesc}</textarea>
     </div>
     <div class="sure">
-        <input id="id" name="id" value="${documentDetail.documentId}" type="hidden" />
+        <input id="id" name="id" value="${product.id}" type="hidden" />
       <input id="submitForm" type="button" value="立即发布" />
     </div>
   </div>
@@ -109,10 +111,30 @@
 
     function changeClass() {
         var selectClass = $("#classId").val();
+        var selectBrand = "";
         $("#brandId option").hide();
+        $("#brandId option").selected = "";
         $("#typeId option").hide();
+        $("#typeId option").selected = "";
         $(".class" + selectClass).show();
-        $("#brandId option").each(function(i) {
+        $("#brandId .class"+selectClass).each(function(i) {
+            if(i==0) {
+                this.selected = "selected";
+                selectBrand = this.value;
+            }
+        });
+        $(".brand" + selectBrand).show();
+        $("#typeId .brand"+selectBrand).each(function(i) {
+            if(i==0) this.selected = "selected";
+        });
+    }
+
+    function changeBrand() {
+        $("#typeId option").hide();
+        $("#typeId option").selected = "";
+        var selectBrand = $("#brandId").val();
+        $(".brand" + selectBrand).show();
+        $("#typeId .brand"+selectBrand).each(function(i) {
             if(i==0) this.selected = "selected";
         });
     }

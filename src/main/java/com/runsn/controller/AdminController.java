@@ -145,6 +145,7 @@ public class AdminController {
     @RequestMapping("productDetail/{productId}")
     public ModelAndView productDetail(@PathVariable("productId") int productId, ModelAndView modelAndView) {
         Product product = ProductDao.query(productId);
+        if (product == null) product = new Product();
         List productClasses = ProductDao.queryAllClass();
         List productBrands = ProductDao.queryAllBrand();
         List productTypes = ProductDao.queryAllType();
@@ -179,27 +180,4 @@ public class AdminController {
         return modelAndView;
     }
 
-    @RequestMapping("submitEngineer")
-    public ModelAndView submitEngineer(ModelAndView modelAndView,
-                                       @RequestParam(value = "name") String name,
-                                       @RequestParam(value = "age") int age,
-                                       @RequestParam(value = "title") String title,
-                                       @RequestParam(value = "experiences") String experiences,
-                                       @RequestParam(value = "aptitude") String aptitude,
-                                       @RequestParam(value = "image") String image) {
-        Engineer engineer = new Engineer();
-        engineer.setName(name);
-        engineer.setAge(age);
-        engineer.setAptitude(aptitude);
-        engineer.setImage(image);
-        engineer.setTitle(title);
-        engineer.setExperiences(experiences);
-        engineer.setCreateDate(new Date(new java.util.Date().getTime()));
-        engineer.setUpdateDate(new Date(new java.util.Date().getTime()));
-        EngineerDao.save(engineer);
-        modelAndView.setViewName("/admin/result");
-        modelAndView.addObject("result", "成功啦");
-        modelAndView.addObject("message", "工程师资料提交成功");
-        return modelAndView;
-    }
 }
