@@ -36,7 +36,7 @@
             </tr>
               <c:forEach var="engineer" items="${engineers}">
                   <tr>
-                      <td><span class="info"><a href="/admin/engineerDetail/${engineer.id}" target="_blank">${engineer.name}</a></span></td>
+                      <td><span class="info"><a href="/admin/engineerDetail/${engineer.id}">${engineer.name}</a></span></td>
                       <td>${engineer.age}</td>
                       <td>${engineer.title}</td>
                       <td align="center"><a href="/admin/engineerDetail/${engineer.id}">修改</a> <a href="/admin/deleteEngineer/${engineer.id}">删除</a></td>

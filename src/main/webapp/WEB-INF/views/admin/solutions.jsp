@@ -37,7 +37,7 @@
             </tr>
               <c:forEach var="service" items="${solutions}">
                   <tr>
-                      <td><span class="info"><a href="/admin/solutionDetail/${service.documentId}" target="_blank">${service.document.title}</a></span></td>
+                      <td><span class="info"><a href="/admin/solutionDetail/${service.documentId}">${service.document.title}</a></span></td>
                       <td>${service.documentType.title2}</td>
                       <td>${service.documentType.title3}</td>
                       <td>${service.document.createDate}</td>

@@ -36,7 +36,7 @@
             </tr>
               <c:forEach var="product" items="${products}">
                   <tr>
-                      <td><span class="info"><a href="/admin/productDetail/${product.id}" target="_blank">${product.productName}</a></span></td>
+                      <td><span class="info"><a href="/admin/productDetail/${product.id}">${product.productName}</a></span></td>
                       <td>${product.className}</td>
                       <td>${product.brandName}</td>
                       <td>${product.typeName}</td>
