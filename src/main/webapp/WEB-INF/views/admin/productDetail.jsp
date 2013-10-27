@@ -85,7 +85,7 @@
 <script type="text/javascript">
     $(function () {
         KindEditor.ready(function (K) {
-            K.create('textarea[name="content"]', {
+            K.create('textarea[name="productDesc"]', {
                 autoHeightMode: true,
                 uploadJson: '/upload_json',
                 afterCreate: function () {
@@ -101,7 +101,7 @@
 
         $("#submitForm").click(function() {
             if ($("#title").val()==null || $("#title").val()=='' ||
-                    $("#content").val()==null || $("#content").val()=='') {
+                    $("#productDesc").val()==null || $("#productDesc").val()=='') {
                 alert("标题和内容不能为空");
                 return;
             }
