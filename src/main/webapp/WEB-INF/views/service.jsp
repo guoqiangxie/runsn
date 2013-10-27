@@ -33,12 +33,12 @@
 <div class="recent">
 <h2>RECENT WORKS</h2>
 <ul>
-<li><a href="#" target="_blank" title=""><img src="/img/pre_7.jpg" width="270" height="182" alt="" border="0" /></a></li>
-<li><a href="#" target="_blank" title=""><img src="/img/pre_8.jpg" width="270" height="182" alt="" border="0" /></a></li>
-<li class="mr0"><a href="#" target="_blank" title=""><img src="/img/pre_9.jpg" width="270" height="182" alt="" border="0" /></a></li>
-<li><a href="#" target="_blank" title=""><img src="/img/pre_10.jpg" width="270" height="182" alt="" border="0" /></a></li>
-<li><a href="#" target="_blank" title=""><img src="/img/pre_11.jpg" width="270" height="182" alt="" border="0" /></a></li>
-<li class="mr0"><a href="#" target="_blank" title=""><img src="/img/pre_12.jpg" width="270" height="182" alt="" border="0" /></a></li>
+<li><a href="/service.html" target="_blank" title=""><img src="/img/pre_7.jpg" width="270" height="182" alt="" border="0" /></a></li>
+<li><a href="/solution.html" target="_blank" title=""><img src="/img/pre_8.jpg" width="270" height="182" alt="" border="0" /></a></li>
+<li class="mr0"><a href="/train.html" target="_blank" title=""><img src="/img/pre_9.jpg" width="270" height="182" alt="" border="0" /></a></li>
+<li><a href="/company.html" target="_blank" title=""><img src="/img/pre_10.jpg" width="270" height="182" alt="" border="0" /></a></li>
+<li><a href="/product.html" target="_blank" title=""><img src="/img/pre_11.jpg" width="270" height="182" alt="" border="0" /></a></li>
+<li class="mr0"><a href="/activity.html" target="_blank" title=""><img src="/img/pre_12.jpg" width="270" height="182" alt="" border="0" /></a></li>
 </ul>
 </div>
 <div class="q_menu">

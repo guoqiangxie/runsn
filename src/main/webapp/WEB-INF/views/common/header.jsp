@@ -160,7 +160,7 @@
             <li class="num4"><a href="/activity.html">主题活动</a>
       <span class="menu m4">
       <b>主题活动</b>
-      <a href="/activity.html">精彩促销</a>
+      <a href="/activity_3.html">精彩促销</a>
       <a href="/activity_1.html">厂商&amp;活动</a>
       <a href="/activity_2.html">邀请函</a> </span> </li>
             <li class="num5"><a href="/train.html">培训课堂</a>
@@ -177,7 +177,7 @@
       <a href="#">培训课程表</a>
       <a href="#">明星讲师</a>
       </span> </li>
-            <li class="num6"><a href="#">I Partner</a></li>
+            <li class="num6"><a href="/building.html">I Partner</a></li>
             <li class="num7"><a href="/company.html">公司</a>
       <span class="menu m7">
       <b>公司</b>

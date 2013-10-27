@@ -16,16 +16,16 @@
     <div class="sermain sPage1 proPage actmain2">
       <div class="sRight collapse">
         <dl>
-          <dt><b><a href="#">解决方案</a></b>Solution</dt>
+          <dt><b><a href="/solution.html">解决方案</a></b>Solution</dt>
         </dl>
         <dl>
-          <dt><b><a href="#">产品</a></b>Product</dt>
+          <dt><b><a href="/product.html">产品</a></b>Product</dt>
         </dl>
         <dl>
-          <dt><b><a href="#">培训课堂</a></b>Train</dt>
+          <dt><b><a href="/train.html">培训课堂</a></b>Train</dt>
         </dl>
         <dl>
-          <dt><b><a href="#">公司</a></b>Company</dt>
+          <dt><b><a href="/company.html">公司</a></b>Company</dt>
         </dl>
         <div class="tip4">
         <p><b>厂商&amp;活动</b></p>
@@ -41,23 +41,23 @@
         </div>
       </div>
       <div class="sLeft">
-      <div class="path"><a href="activity.html">主题活动</a> &gt; 精彩促销</div>
+      <div class="path"><a href="/activity.html">主题活动</a> &gt; 精彩促销</div>
       <div class="a_txt4"><h1>这里有你想要获取的企业动态</h1>
       公司活动精彩纷呈，优惠促销汹涌来袭，厂商活动汇聚一堂<br />
 为客户谋利，与厂商同发展，"共赢"是软盛所愿</div>
       <div class="imglist">
       <ul>
       <li>
-      <p><a href="activity_4.html"><img src="/img/act_10.jpg" width="264" height="173" /><span>本月Acrobat夸版本升级 软盛通知</span></a></p>
-      <p><a href="activity_4.html"><img src="/img/act_11.jpg" width="264" height="173" /><span>NetWorker与Avamar是如何集成并工作的</span></a></p>
+      <p><a href="/activity_4.html"><img src="/img/act_10.jpg" width="264" height="173" /><span>本月Acrobat夸版本升级 软盛通知</span></a></p>
+      <p><a href="/activity_4.html"><img src="/img/act_11.jpg" width="264" height="173" /><span>NetWorker与Avamar是如何集成并工作的</span></a></p>
       </li>
       <li>
-      <p><a href="activity_4.html"><img src="/img/act_12.jpg" width="264" height="173" /><span>驰聘网络，携手软盛体验非凡感受</span></a></p>
-      <p><a href="activity_4.html"><img src="/img/act_13.jpg" width="264" height="173" /><span>软盛带您领略Xen Desktop 7全球发布</span></a></p>
+      <p><a href="/activity_4.html"><img src="/img/act_12.jpg" width="264" height="173" /><span>驰聘网络，携手软盛体验非凡感受</span></a></p>
+      <p><a href="/activity_4.html"><img src="/img/act_13.jpg" width="264" height="173" /><span>软盛带您领略Xen Desktop 7全球发布</span></a></p>
       </li>
       <li class="backnone">
-      <p><a href="activity_4.html"><img src="/img/act_14.jpg" width="264" height="173" /><span>软盛让您了解Windows 8</span></a></p>
-      <p><a href="activity_4.html"><img src="/img/act_15.jpg" width="264" height="173" /><span>软盛提供您 imation INAS系列</span></a></p>
+      <p><a href="/activity_4.html"><img src="/img/act_14.jpg" width="264" height="173" /><span>软盛让您了解Windows 8</span></a></p>
+      <p><a href="/activity_4.html"><img src="/img/act_15.jpg" width="264" height="173" /><span>软盛提供您 imation INAS系列</span></a></p>
       </li>
       </ul>
       </div>

@@ -18,13 +18,13 @@
     </div>
     <h2>邀请函</h2>
     <ul class="a_img">
-    <li><a href="activity_3.html"><img src="/img/act_2.jpg" width="233" height="155" /></a>购F5产品满额，赢IPAD</li>
-    <li><a href="activity_3.html"><img src="/img/act_3.jpg" width="233" height="155" /></a>CITRIX桌面虚拟化产品 送"苹果"啦！</li>
-    <li class="mr0"><a href="activity_3.html"><img src="/img/act_4.jpg" width="233" height="155" /></a>购F5产品满额，赢IPAD</li>
+    <li><a href="/activity_3.html"><img src="/img/act_2.jpg" width="233" height="155" /></a>购F5产品满额，赢IPAD</li>
+    <li><a href="/activity_3.html"><img src="/img/act_3.jpg" width="233" height="155" /></a>CITRIX桌面虚拟化产品 送"苹果"啦！</li>
+    <li class="mr0"><a href="/activity_3.html"><img src="/img/act_4.jpg" width="233" height="155" /></a>购F5产品满额，赢IPAD</li>
     </ul>
     <div class="a_img2">
-    <p><a href="activity_1.html"><img src="/img/act_5.jpg" width="390" height="209" /></a><span>前沿动态，亲临现场共谱新知</span></p>
-    <p class="mr0"><a href="activity_2.html"><img src="/img/act_6.jpg" width="390" height="209" /></a><span>低价豪礼，提供最亲和力折扣</span></p>
+    <p><a href="/activity_1.html"><img src="/img/act_5.jpg" width="390" height="209" /></a><span>前沿动态，亲临现场共谱新知</span></p>
+    <p class="mr0"><a href="/activity_2.html"><img src="/img/act_6.jpg" width="390" height="209" /></a><span>低价豪礼，提供最亲和力折扣</span></p>
     </div>
    </div>
   </div>
