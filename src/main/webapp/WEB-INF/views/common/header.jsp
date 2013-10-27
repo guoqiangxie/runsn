@@ -16,7 +16,7 @@
       <span class="menu m1">
       <b>服务</b>
       <c:forEach var="service2" items="${services}">
-          <a href="/template/${service2.id}">${service2.name}</a>
+          <a href="/serviceTemplate/${service2.id}">${service2.name}</a>
       </c:forEach>
       <a href="/service_7.html">Runsn工程师资质</a>
       </span> </li>
