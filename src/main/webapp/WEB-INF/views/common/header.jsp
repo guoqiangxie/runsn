@@ -157,15 +157,15 @@
       <%--<a href="#">IMATION</a>--%>
       <%--<a href="#">综合产品线</a> --%>
       </span> </li>
-            <li class="num4"><a href="activity.html">主题活动</a>
+            <li class="num4"><a href="/activity.html">主题活动</a>
       <span class="menu m4">
-      <b>&gt;&gt;主题活动</b>
+      <b>主题活动</b>
       <a href="activity.html">精彩促销</a>
       <a href="activity_1.html">厂商&amp;活动</a>
       <a href="activity_2.html">邀请函</a> </span> </li>
-            <li class="num5"><a href="train.html">培训课堂</a>
+            <li class="num5"><a href="/train.html">培训课堂</a>
       <span class="menu m5">
-      <b>&gt;&gt;培训课堂</b>
+      <b>培训课堂</b>
           <%--<c:forEach var="train" items="${trains}">--%>
               <%--<c:if test="${train.mainLevel==0}">--%>
                 <%--<a href="/template/${train.id}">${train.name}</a>--%>
@@ -178,9 +178,9 @@
       <a href="#">明星讲师</a>
       </span> </li>
             <li class="num6"><a href="#">I Partner</a></li>
-            <li class="num7"><a href="company.html">公司</a>
+            <li class="num7"><a href="/company.html">公司</a>
       <span class="menu m7">
-      <b>&gt;&gt;公司</b>
+      <b>公司</b>
       <a href="#">为何选择runsn</a>
       <a href="#">关于软盛</a>
       <a href="#">成功用户</a>
