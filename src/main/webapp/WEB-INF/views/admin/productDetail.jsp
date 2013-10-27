@@ -102,7 +102,7 @@
 
         $("#submitForm").click(function() {
             if ($("#title").val()==null || $("#title").val()=='' ||
-                    $("#productDesc").val()==null || $("#productDesc").val()=='') {
+                    $("#content").val()==null || $("#content").val()=='') {
                 alert("标题和内容不能为空");
                 return;
             }
