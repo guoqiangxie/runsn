@@ -26,7 +26,7 @@
           <c:forEach var="requirementSolution" items="${requirementSolutions}">
               <span class="submenu">
                   <c:forEach var="documentDetail" items="${requirementSolution}">
-                          <a href="/template/${documentDetail.document.id}">${documentDetail.document.name}</a>
+                          <a href="/solutionTemplate/${documentDetail.document.id}">${documentDetail.document.name}</a>
                   </c:forEach>
               </span>
           </c:forEach>
@@ -34,7 +34,7 @@
           <c:forEach var="bizSolution" items="${bizSolutions}">
               <span class="submenu">
                   <c:forEach var="documentDetail" items="${bizSolution}">
-                          <a href="/template/${documentDetail.document.id}">${documentDetail.document.name}</a>
+                          <a href="/solutionTemplate/${documentDetail.document.id}">${documentDetail.document.name}</a>
                   </c:forEach>
               </span>
           </c:forEach>
@@ -42,7 +42,7 @@
             <c:forEach var="sizeSolution" items="${sizeSolutions}">
               <span class="submenu">
                   <c:forEach var="documentDetail" items="${sizeSolution}">
-                          <a href="/template/${documentDetail.document.id}">${documentDetail.document.name}</a>
+                          <a href="/solutionTemplate/${documentDetail.document.id}">${documentDetail.document.name}</a>
                   </c:forEach>
               </span>
             </c:forEach>

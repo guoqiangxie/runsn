@@ -83,7 +83,7 @@ public class AdminController {
             documentDetail.setDocumentType(documentType);
             documentDetail.setDocumentId(documentId);
             documentDetail.setTypeid(documentType.getId());
-        }
+        } else documentDetail.getDocument().setDefaultContent(1);
         modelAndView.addObject("documentDetail", documentDetail);
         modelAndView.setViewName("admin/serviceDetail");
         return modelAndView;
@@ -99,7 +99,7 @@ public class AdminController {
             documentDetail.setDocumentType(documentType);
             documentDetail.setDocumentId(documentId);
             documentDetail.setTypeid(documentType.getId());
-        }
+        } else documentDetail.getDocument().setDefaultContent(2);
         modelAndView.addObject("documentDetail", documentDetail);
         modelAndView.addObject("types", TypeDao.queryByTitle1code(2));
         modelAndView.setViewName("admin/solutionDetail");
