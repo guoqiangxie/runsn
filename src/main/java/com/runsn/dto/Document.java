@@ -151,7 +151,7 @@ public class Document implements Serializable {
             "<b style=\"color:#333;\">容灾</b><br />\n" +
             "软盛根据客户的具体需求，提供相应的数据级容灾和应用容灾的解决方案，并提供集软件和硬件为一体的一站式服务流程。\n" +
             "      </div>\n" +
-            "      <div class=\"tabmain\" style=\"padding:20px; display:none; line-height:23px; overflow:hidden;\">\n" +
+            "      <div class=\"tabmain\" style=\"padding:20px; line-height:23px; overflow:hidden;\">\n" +
             "      <p><b style=\"color:#333;\">全面的产品代理资质</b><br />\n" +
             "涉及企业私有云中全线产品的最高代理资质。（VMware企业级代理，EMC金牌代理，思科金牌代理等）<br /><br />\n" +
             "<b style=\"color:#333;\">资深的工程师团队</b><br />\n" +
