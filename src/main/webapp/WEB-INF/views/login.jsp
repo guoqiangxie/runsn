@@ -18,7 +18,7 @@
 <body>
 <div class="main">
 <input class="name" id="name" name="用户" value="" type="text" />
-<input class="password" id="password" name="密码" value="" type="text" />
+<input class="password" id="password" name="密码" value="" type="password" />
 <input class="btn"  name="登录" type="button" onclick="submit();"/><div style="color: red;display: none;" id="error"></div>
 </div>
 <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
