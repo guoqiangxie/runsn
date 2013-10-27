@@ -22,10 +22,10 @@
             <div class="sRight">
                 <div class="rightbox">
                     <ul class="r_menu">
-                        <li><a href="#">服务</a></li>
-                        <li><a href="#">产品</a></li>
-                        <li><a href="#">主题活动</a></li>
-                        <li><a href="#">公司</a></li>
+                        <li><a href="/service.html">服务</a></li>
+                        <li><a href="/product.html">产品</a></li>
+                        <li><a href="/activity.html">主题活动</a></li>
+                        <li><a href="/company.html">公司</a></li>
                     </ul>
                     <div class="solAd"><a href="#"><img src="/img/solution_icon2.png" width="155" height="126" /></a></div>
                 </div>
