@@ -9,7 +9,7 @@
                 </div>
                 <div class="other"><b class="MyRunsn">My runsn</b><a href="#" target="_blank">注册</a> | <a href="#" target="_blank">登录</a> | <a href="#" target="_blank">员工之家</a></div>
             </div>
-            <a href="index.jsp" class="logo" title="runsn软盛">runsn软盛</a> </div>
+            <a href="/" class="logo" title="runsn软盛">runsn软盛</a> </div>
         <ul class="nav">
             <li class="num1">
                 <a href="/service.html">服务</a>
@@ -160,9 +160,9 @@
             <li class="num4"><a href="/activity.html">主题活动</a>
       <span class="menu m4">
       <b>主题活动</b>
-      <a href="activity.html">精彩促销</a>
-      <a href="activity_1.html">厂商&amp;活动</a>
-      <a href="activity_2.html">邀请函</a> </span> </li>
+      <a href="/activity.html">精彩促销</a>
+      <a href="/activity_1.html">厂商&amp;活动</a>
+      <a href="/activity_2.html">邀请函</a> </span> </li>
             <li class="num5"><a href="/train.html">培训课堂</a>
       <span class="menu m5">
       <b>培训课堂</b>
@@ -171,8 +171,8 @@
                 <%--<a href="/template/${train.id}">${train.name}</a>--%>
               <%--</c:if>--%>
           <%--</c:forEach>--%>
-      <a href="#">新闻</a>
-      <a href="train_1.html">合作伙伴</a>
+      <a href="/train_2.html">新闻</a>
+      <a href="/train_1.html">合作伙伴</a>
       <a href="#">培训资质</a>
       <a href="#">培训课程表</a>
       <a href="#">明星讲师</a>
@@ -181,14 +181,14 @@
             <li class="num7"><a href="/company.html">公司</a>
       <span class="menu m7">
       <b>公司</b>
-      <a href="#">为何选择runsn</a>
-      <a href="#">关于软盛</a>
-      <a href="#">成功用户</a>
-      <a href="#">荣誉资质</a>
-      <a href="#">活动</a>
-      <a href="#">构建企业智慧云</a>
-      <a href="#">职业发展</a>
-      <a href="#">联系我们</a> </span> </li>
+      <a href="/company_1.html">为何选择runsn</a>
+      <a href="/company_2.html">关于软盛</a>
+      <a href="/company_3.html">成功用户</a>
+      <a href="/company.html">荣誉资质</a>
+      <a href="/company.html">活动</a>
+      <a href="/company.html">构建企业智慧云</a>
+      <a href="/company.html">职业发展</a>
+      <a href="/company_8.html">联系我们</a> </span> </li>
         </ul>
     </div>
 </div>
