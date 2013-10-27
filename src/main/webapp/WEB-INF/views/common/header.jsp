@@ -166,16 +166,16 @@
             <li class="num5"><a href="train.html">培训课堂</a>
       <span class="menu m5">
       <b>&gt;&gt;培训课堂</b>
-          <c:forEach var="train" items="${trains}">
-              <c:if test="${train.mainLevel==0}">
-                <a href="/template/${train.id}">${train.name}</a>
-              </c:if>
-          </c:forEach>
-      <%--<a href="#">新闻</a>--%>
-      <%--<a href="train_1.html">合作伙伴</a>--%>
-      <%--<a href="#">培训资质</a>--%>
-      <%--<a href="#">培训课程表</a>--%>
-      <%--<a href="#">明星讲师</a> --%>
+          <%--<c:forEach var="train" items="${trains}">--%>
+              <%--<c:if test="${train.mainLevel==0}">--%>
+                <%--<a href="/template/${train.id}">${train.name}</a>--%>
+              <%--</c:if>--%>
+          <%--</c:forEach>--%>
+      <a href="#">新闻</a>
+      <a href="train_1.html">合作伙伴</a>
+      <a href="#">培训资质</a>
+      <a href="#">培训课程表</a>
+      <a href="#">明星讲师</a>
       </span> </li>
             <li class="num6"><a href="#">I Partner</a></li>
             <li class="num7"><a href="company.html">公司</a>
