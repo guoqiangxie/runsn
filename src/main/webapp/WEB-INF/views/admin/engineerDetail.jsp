@@ -44,14 +44,14 @@
     <div> <span class="name">姓名：</span> <span class="text"><input value="${engineer.name}" name="name" type="text" /></span></div>
     <div> <span class="name">年龄：</span> <span class="text"><input value="${engineer.age}" name="age" type="text" /></span></div>
     <div> <span class="name">职称：</span> <span class="text"><input value="${engineer.title}" name="title" type="text" /></span></div>
-    <div class="boxinfo"> <span class="name">经历：</span> <span class="text"><input value="${engineer.experiences}" name="experiences" type="text" /></span></div>
-    <div class="boxinfo"> <span class="name">资质：</span> <span class="text"><input value="${engineer.aptitude}" name="aptitude" type="text" /></span></div>
+    <div> <span class="name">经历：</span> <span class="text"><input value="${engineer.experiences}" name="experiences" type="text" /></span></div>
+    <div> <span class="name">资质：</span> <span class="text"><input value="${engineer.aptitude}" name="aptitude" type="text" /></span></div>
       <input type="hidden" name="id" value="${engineer.id}" />
   </div>
   <div class="sure">
     <input type="submit" value="立即发布" />
   </div>
-</div>
+</div>5
       </form>
 
     </div>

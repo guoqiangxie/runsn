@@ -58,15 +58,14 @@ $(".nav li").hover(function(){
 },function(){
 	$(this).removeClass("on");	
 	$(this).find(".menu").hide();
+	$(this).find(".menu").find(".submenu").hide();
 	});
 $(".m2body a").hover(function () {
 	var tabs = $(this).parents(".m2body").children("a");
 	var panels = $(this).parents(".menu").find(".submenu");
 	var index = $.inArray(this, tabs);
 	panels.hide().eq(index).show();
-},function(){
-	$(this).parents(".menu").find(".submenu").hide();
-	});
+});
 
 //手风琴效果
 $(".collapse dt").click(function(){
