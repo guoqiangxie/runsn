@@ -27,42 +27,42 @@
 <div class="recent homeimg">
       <h2>RECENT WORKS</h2>
       <ul>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_13.jpg" 
+        <li><a href="/service.html" target="_blank" title=""><img src="/img/pre_13.jpg"
 
 width="270" height="182" alt="" border="0" class="hover n1" /><img 
 
 src="/img/pre_1.jpg" width="270" height="182" alt="" border="0" 
 
 class="img"/></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_2.jpg" 
+        <li><a href="/solution.html" target="_blank" title=""><img src="/img/pre_2.jpg"
 
 width="270" height="182" alt="" border="0" class="hover n2" /><img 
 
 src="/img/pre_14.jpg" width="270" height="182" alt="" border="0" 
 
 class="img"/></a></li>
-        <li class="mr0"><a href="#" target="_blank" title=""><img 
+        <li class="mr0"><a href="/train.html" target="_blank" title=""><img
 
 src="/img/pre_15.jpg" width="270" height="182" alt="" border="0" class="hover 
 
 n3" /><img src="/img/pre_3.jpg" width="270" height="182" alt="" border="0" 
 
 class="img"/></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_4.jpg" 
+        <li><a href="/company.html" target="_blank" title=""><img src="/img/pre_4.jpg"
 
 width="270" height="182" alt="" border="0" class="hover n4" /><img 
 
 src="/img/pre_16.jpg" width="270" height="182" alt="" border="0" 
 
 class="img"/></a></li>
-        <li><a href="#" target="_blank" title=""><img src="/img/pre_17.jpg" 
+        <li><a href="/product.html" target="_blank" title=""><img src="/img/pre_17.jpg"
 
 width="270" height="182" alt="" border="0" class="hover n5" /><img 
 
 src="/img/pre_5.jpg" width="270" height="182" alt="" border="0" 
 
 class="img"/></a></li>
-        <li class="mr0"><a href="#" target="_blank" title=""><img 
+        <li class="mr0"><a href="/activity.html" target="_blank" title=""><img
 
 src="/img/pre_6.jpg" width="270" height="182" alt="" border="0" class="hover 
 
