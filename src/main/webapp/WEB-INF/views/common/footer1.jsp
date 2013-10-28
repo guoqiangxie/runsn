@@ -24,7 +24,7 @@
     </dl>
     <dl class="bnone">
         <dt>相关链接</dt>
-        <dd><a href="#">联系我们</a></dd>
+        <dd><a href="/company_8.html">联系我们</a></dd>
         <dd><a href="#">VMware全球网站</a></dd>
         <dd><a href="#">关于我们</a></dd>
         <dd><a href="#">VMware活动</a></dd>
