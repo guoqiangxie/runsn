@@ -184,7 +184,7 @@
       <a href="/company_1.html">为何选择runsn</a>
       <a href="/company_2.html">关于软盛</a>
       <a href="/company_3.html">成功用户</a>
-      <a href="/company.html">荣誉资质</a>
+      <a href="/company_4.html">荣誉资质</a>
       <a href="/company.html">活动</a>
       <a href="/company.html">构建企业智慧云</a>
       <a href="/company.html">职业发展</a>
