@@ -43,13 +43,43 @@ $('.slidebox').imageSlide({
 });	
 
 //首页图片效果
-$(".homeimg li").hover(function(){
-	$(this).find("img").eq(1).hide();
-	$(this).find("img").eq(0).show();
+//$(".homeimg li").hover(function(){
+//	$(this).find("img").eq(1).hide();
+//	$(this).find("img").eq(0).show();
+//	},function(){
+//	$(this).find("img").eq(0).hide();
+//	$(this).find("img").eq(1).show();
+//});
+$(".homeimg a").eq(0).hover(function(){
+	$(this).find(".hover").animate({left:"0px",opacity:"1"},150);
 	},function(){
-	$(this).find("img").eq(0).hide();
-	$(this).find("img").eq(1).show();
-		});
+	$(this).find(".hover").animate({left:"-270px",opacity:"0"},150);
+});
+$(".homeimg a").eq(1).hover(function(){
+	$(this).find(".hover").animate({top:"0px",opacity:"1"},150);
+	},function(){
+	$(this).find(".hover").animate({top:"182px",opacity:"0"},150);
+});
+$(".homeimg a").eq(2).hover(function(){
+	$(this).find(".hover").animate({left:"0px",opacity:"1"},150);
+	},function(){
+	$(this).find(".hover").animate({left:"270px",opacity:"0"},150);
+});
+$(".homeimg a").eq(3).hover(function(){
+	$(this).find(".hover").animate({left:"0px",opacity:"1"},150);
+	},function(){
+	$(this).find(".hover").animate({left:"-270px",opacity:"0"},150);
+});
+$(".homeimg a").eq(4).hover(function(){
+	$(this).find(".hover").animate({top:"0px",opacity:"1"},150);
+	},function(){
+	$(this).find(".hover").animate({top:"-182px",opacity:"0"},150);
+});
+$(".homeimg a").eq(5).hover(function(){
+	$(this).find(".hover").animate({left:"0px",opacity:"1"},150);
+	},function(){
+	$(this).find(".hover").animate({left:"270px",opacity:"0"},150);
+});
 
 //导航菜单效果
 $(".nav li").hover(function(){
