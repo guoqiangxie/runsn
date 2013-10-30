@@ -131,7 +131,7 @@
       <b>产品</b>
       <span class="col">需求</span>
       <c:forEach var="productClass" items="${productClasss}">
-          <a href="/productClass/${productClass.classId}">${productClass.className}</a>
+          <a href="/productClass/${productClass.id}">${productClass.className}</a>
       </c:forEach>
       <%--<a href="#">虚拟化基础架构建设</a>--%>
       <%--<a href="#">数据存储架构建设</a>--%>
@@ -141,7 +141,8 @@
       <%--<a href="#">服务器及应用负载均衡</a>--%>
       <span class="col">品牌</span>
       <c:forEach var="brand" items="${productBrands}">
-          <a href="/productClass/${brand.classId}">${brand.brandName}</a>
+          <a href="#">${brand.brandName}</a>
+          <%--<a href="/productClass/${brand.classId}">${brand.brandName}</a>--%>
       </c:forEach>
       <%--<a href="#">Citrix</a>--%>
       <%--<a href="#">HP</a>--%>

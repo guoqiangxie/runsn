@@ -124,6 +124,8 @@ public class DocumentController {
     public ModelAndView submitProduct(@RequestParam(value = "id") int id,
                                       @RequestParam(value = "productName") String productName,
                                       @RequestParam(value = "productDesc") String productDesc,
+                                      @RequestParam(value = "classIds") String classIds,
+                                      @RequestParam(value = "brandId") Integer brandId,
                                       @RequestParam(value = "typeId", required = false) Integer typeId,
                                       @RequestParam(value = "title", required = false) String title,
                                       @RequestParam(value = "keywords", required = false) String keywords,
@@ -133,6 +135,7 @@ public class DocumentController {
         if (product.getId() == 0) {
             try {
                 ProductDao.save(createProduct(productName, productDesc, typeId, title, keywords, description));
+                ProductDao.updateBrand(classIds, brandId);
                 modelAndView.addObject("result", "成功啦");
                 modelAndView.addObject("message", "您的信息已经添加成功");
             } catch (Exception e) {
