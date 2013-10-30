@@ -118,7 +118,7 @@
                     classIds += $(this).val() + ",";
                 }
             });
-            if (classIds == "") {
+            if (classIds == "" && $("#brandId").length!=0) {
                 alert("基础类为必选项");
                 return;
             }
