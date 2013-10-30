@@ -121,11 +121,18 @@ public class DocumentController {
     }
 
     @RequestMapping(value = "/admin/submitProduct", method = RequestMethod.POST)
-    public ModelAndView submitProduct(@RequestParam(value = "id") int id, @RequestParam(value = "productName") String productName, @RequestParam(value = "productDesc") String productDesc, @RequestParam(value = "typeId", required = false) Integer typeId, ModelAndView modelAndView) {
+    public ModelAndView submitProduct(@RequestParam(value = "id") int id,
+                                      @RequestParam(value = "productName") String productName,
+                                      @RequestParam(value = "productDesc") String productDesc,
+                                      @RequestParam(value = "typeId", required = false) Integer typeId,
+                                      @RequestParam(value = "title", required = false) String title,
+                                      @RequestParam(value = "keywords", required = false) String keywords,
+                                      @RequestParam(value = "description", required = false) String description,
+                                      ModelAndView modelAndView) {
         Product product = ProductDao.query(id);
         if (product.getId() == 0) {
             try {
-                ProductDao.save(createProduct(productName, productDesc, typeId, product));
+                ProductDao.save(createProduct(productName, productDesc, typeId, title, keywords, description));
                 modelAndView.addObject("result", "成功啦");
                 modelAndView.addObject("message", "您的信息已经添加成功");
             } catch (Exception e) {
@@ -162,7 +169,7 @@ public class DocumentController {
         Timestamp timestamp = null;
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-            java.util.Date date = dateFormat.parse (trainTime);
+            java.util.Date date = dateFormat.parse(trainTime);
             timestamp = new Timestamp(date.getTime());
         } catch (ParseException e) {
             System.out.println("时间转换异常");
@@ -223,12 +230,15 @@ public class DocumentController {
         product.setUpdateDate(new Date(new java.util.Date().getTime()));
     }
 
-    private Product createProduct(String productName, String productDesc, Integer typeId, Product product) {
+    private Product createProduct(String productName, String productDesc, Integer typeId, String title, String keywords, String description) {
         Product model = new Product();
-       model.setTypeId(typeId);
-       model.setProductName(productName);
-       model.setProductDesc(productDesc);
-       model.setCreateDate(new Date(new java.util.Date().getTime()));
+        model.setTypeId(typeId);
+        model.setProductName(productName);
+        model.setProductDesc(productDesc);
+        model.setCreateDate(new Date(new java.util.Date().getTime()));
+        model.setTitle(title);
+        model.setKeywords(keywords);
+        model.setDescription(description);
         return model;
     }
 

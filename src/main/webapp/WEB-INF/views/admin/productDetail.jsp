@@ -27,7 +27,7 @@
     <span></span></div>
      <form action="/admin/submitProduct" method="POST" id="serviceForm">
         <div class="tmain b5 btop">
-    <div class="txt">标题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
+    <div class="txt">产品名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
       <input class="w500 b5" id="title" name="productName" type="text" value="${product.productName}"/>
     </div>
             <c:if test="${product.id==0}">
@@ -62,6 +62,15 @@
         </select>
     </div>
             </c:if>
+            <div class="txt">标题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
+                <input class="w500 b5"name="title" type="text" value="${product.title}"/>
+            </div>
+            <div class="txt">Keywords&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
+                <input class="w500 b5"name="keywords" type="text" value="${product.keywords}"/>
+            </div>
+            <div class="txt">Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
+                <input class="w500 b5"name="description" type="text" value="${product.description}"/>
+            </div>
      <div class="txt">
     <textarea id="content" name="productDesc" cols="" rows="" class="bjq" >${product.productDesc}</textarea>
     </div>
