@@ -27,25 +27,26 @@
     <span></span></div>
      <form action="/admin/submitProduct" method="POST" id="serviceForm">
         <div class="tmain b5 btop">
-    <div class="txt">标题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
+    <div class="txt">产品名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
       <input class="w500 b5" id="title" name="productName" type="text" value="${product.productName}"/>
     </div>
             <c:if test="${product.id==0}">
     <div class="txt">基础类：
-        <select id="classId" name="classId" onchange="changeClass();">
+        <%--<select id="classId" name="classId" onchange="changeClass();">--%>
             <c:forEach var="productClass" items="${productClasses}">
-                <option value ="${productClass.classId}" <c:if test="${productClass.classId==1}">selected="selected"</c:if> >${productClass.className}</option>
+                <input name="classId" type="checkbox" value="${productClass.id}" />${productClass.className}
+                <%--<option value ="${productClass.classId}" <c:if test="${productClass.classId==1}">selected="selected"</c:if> >${productClass.className}</option>--%>
             </c:forEach>
-        </select>
+        <%--</select>--%>
     </div>
     <div class="txt">品牌：
         <select id="brandId" name="brandId" onchange="changeBrand();">
             <c:set value="0" var="selectBrand"></c:set>
             <c:forEach var="productBrand" items="${productBrands}" varStatus="status">
-                <c:if test="${productBrand.classId == 1 && selectBrand == 0}">
+                <c:if test="${status.index == 0}">
                     <c:set value="${productBrand.brandId}" var="selectBrand"></c:set>
                 </c:if>
-                <option class="class${productBrand.classId}" value ="${productBrand.brandId}" <c:if test="${productBrand.classId!=1}">style="display: none;"</c:if> <c:if test="${productBrand.brandId == selectBrand}">selected="selected" </c:if> >${productBrand.brandName}</option>
+                <option value ="${productBrand.brandId}">${productBrand.brandName}</option>
             </c:forEach>
         </select>
     </div>
@@ -62,11 +63,21 @@
         </select>
     </div>
             </c:if>
+            <div class="txt">标题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
+                <input class="w500 b5"name="title" type="text" value="${product.title}"/>
+            </div>
+            <div class="txt">Keywords&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
+                <input class="w500 b5"name="keywords" type="text" value="${product.keywords}"/>
+            </div>
+            <div class="txt">Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
+                <input class="w500 b5"name="description" type="text" value="${product.description}"/>
+            </div>
      <div class="txt">
     <textarea id="content" name="productDesc" cols="" rows="" class="bjq" >${product.productDesc}</textarea>
     </div>
     <div class="sure">
         <input id="id" name="id" value="${product.id}" type="hidden" />
+        <input id="classIds" name="classIds" type="hidden" />
       <input id="submitForm" type="button" value="立即发布" />
     </div>
   </div>
@@ -101,6 +112,18 @@
         $(".4").addClass("on");
 
         $("#submitForm").click(function() {
+            var classIds = "";
+            $('input[name="classId"]').each(function() {
+                if ($(this).attr("checked")) {
+                    classIds += $(this).val() + ",";
+                }
+            });
+            if (classIds == "") {
+                alert("基础类为必选项");
+                return;
+            }
+            classIds = classIds.substring(0, classIds.length - 1);
+            $("#classIds").val(classIds);
             if ($("#title").val()==null || $("#title").val()=='' ||
                     $("#content").val()==null || $("#content").val()=='') {
                 alert("标题和内容不能为空");

@@ -1,6 +1,7 @@
 package com.runsn.jdbc;
 
 import com.runsn.dto.Product;
+import com.runsn.dto.ProductClass;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -27,7 +28,7 @@ public class ProductDao {
         try {
             String sql = "select pt.id AS typeId,pb.*,pt.* " +
                     " from productclass pc, productbrand pb, producttype pt " +
-                    " where pc.id=pb.classId and pb.id=pt.brandId " +
+                    " where find_in_set(pc.id, pb.classId) and pb.id=pt.brandId " +
                     " and pc.id= " + classId;
             st = conn.createStatement();
 
@@ -51,9 +52,9 @@ public class ProductDao {
         return result;
     }
 
-    public static List<Product> queryAllClass() {
+    public static List<ProductClass> queryAllClass() {
         conn = ConnectionUtil.getConnection();
-        List<Product> result = new ArrayList<Product>();
+        List<ProductClass> result = new ArrayList<ProductClass>();
         try {
             String sql = "select * " +
                     " from productclass";
@@ -61,10 +62,11 @@ public class ProductDao {
 
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                Product product = new Product();
-                product.setClassId(rs.getInt("id"));
-                product.setClassName(rs.getString("className"));
-                result.add(product);
+                ProductClass productClass = new ProductClass();
+                productClass.setId(rs.getInt("id"));
+                productClass.setClassName(rs.getString("className"));
+                productClass.setClassDesc(rs.getString("classDesc"));
+                result.add(productClass);
             }
             st.close();
             conn.close();
@@ -95,7 +97,6 @@ public class ProductDao {
                 Product product = new Product();
                 product.setBrandId(rs.getInt("id"));
                 product.setBrandName(rs.getString("brandName"));
-                product.setClassId(rs.getInt("classId"));
                 result.add(product);
             }
             st.close();
@@ -147,8 +148,8 @@ public class ProductDao {
         List<Product> result = new ArrayList<Product>();
         try {
             String sql = "select *,p.id AS productId " +
-                    " from productclass pc, productbrand pb, producttype pt,product p " +
-                    " where pc.id=pb.classId and pb.id=pt.brandId and pt.id = p.typeId " +
+                    " from productbrand pb, producttype pt,product p " +
+                    " where pb.id=pt.brandId and pt.id = p.typeId " +
                     " and pb.id= " + brandId;
             st = conn.createStatement();
 
@@ -177,8 +178,8 @@ public class ProductDao {
         List<Product> result = new ArrayList<Product>();
         try {
             String sql = "select *,p.id AS productId " +
-                    " from productclass pc, productbrand pb, producttype pt,product p " +
-                    " where pc.id=pb.classId and pb.id=pt.brandId and pt.id = p.typeId ";
+                    " from productbrand pb, producttype pt,product p " +
+                    " where pb.id=pt.brandId and pt.id = p.typeId ";
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -206,8 +207,8 @@ public class ProductDao {
         Product result = new Product();
         try {
             String sql = "select *,p.id AS productId " +
-                    " from productclass pc, productbrand pb, producttype pt,product p " +
-                    " where pc.id=pb.classId and pb.id=pt.brandId and pt.id = p.typeId and p.id = " + id;
+                    " from productbrand pb, producttype pt,product p " +
+                    " where pb.id=pt.brandId and pt.id = p.typeId and p.id = " + id;
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -237,11 +238,11 @@ public class ProductDao {
         product.setTypeId(rs.getInt("typeId"));
         product.setTypeName(rs.getString("typeName"));
         product.setBrandDesc(rs.getString("brandDesc"));
-        product.setClassId(rs.getInt("classId"));
+//        product.setClassId(rs.getInt("classId"));
         if (! isSimple) {
             product.setId(rs.getInt("productId"));
-            product.setClassName(rs.getString("className"));
-            product.setClassDesc(rs.getString("classDesc"));
+//            product.setClassName(rs.getString("className"));
+//            product.setClassDesc(rs.getString("classDesc"));
             product.setProductDesc(rs.getString("productDesc"));
             product.setProductName(rs.getString("productName"));
             product.setProductVersion(rs.getString("productVersion"));
@@ -253,11 +254,14 @@ public class ProductDao {
         conn = ConnectionUtil.getConnection();
         Integer result = null;
         try {
-            String sql = "insert into product(productName, typeId, productDesc, createDate) values('"
+            String sql = "insert into product(productName, typeId, productDesc, createDate, title, keywords, description) values('"
                     + product.getProductName() + "',"
                     + product.getTypeId() + ",'"
                     + product.getProductDesc() + "','"
-                    + product.getCreateDate() + "')";
+                    + product.getCreateDate() + "','"
+                    + product.getTitle() + "','"
+                    + product.getKeywords() + "','"
+                    + product.getDescription() + "')";
             st = conn.createStatement();
             st.execute(sql);
             ResultSet rs = st.getGeneratedKeys();
@@ -327,4 +331,29 @@ public class ProductDao {
             }
         }
     }
+
+    public static void updateBrand(String classIds, Integer brandId) throws Exception {
+        conn = ConnectionUtil.getConnection();
+        try {
+            String sql = "update productbrand set classId='" + classIds
+                    + "' where id=" + brandId;
+            st = conn.createStatement();
+
+            st.execute(sql);
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("更新品牌对应基础类数据失败。");
+            e.printStackTrace();
+            throw new Exception("更新对应基础类数据失败。");
+        } finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("连接未正常关闭。");
+            }
+        }
+    }
+
 }

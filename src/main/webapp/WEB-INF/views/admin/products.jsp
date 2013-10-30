@@ -29,7 +29,7 @@
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <th width="30%" >产品名</th>
-              <th width="15%" >基础类</th>
+              <%--<th width="15%" >基础类</th>--%>
               <th width="15%" >品牌</th>
               <th width="10%" >类型</th>
               <th width="12%" >操作</th>
@@ -37,7 +37,7 @@
               <c:forEach var="product" items="${products}">
                   <tr>
                       <td><span class="info"><a href="/admin/productDetail/${product.id}">${product.productName}</a></span></td>
-                      <td>${product.className}</td>
+                      <%--<td>${product.className}</td>--%>
                       <td>${product.brandName}</td>
                       <td>${product.typeName}</td>
                       <td align="center"><a href="/admin/productDetail/${product.id}">修改</a> <a href="/admin/deleteProduct/${product.id}">删除</a></td>
