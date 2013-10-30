@@ -80,7 +80,7 @@ public class DocumentDao {
         conn = ConnectionUtil.getConnection();
         Document document = null;
         try {
-            String sql = "select * from documents where active=1 and id = " + id;
+            String sql = "select * from documents where active=1 and id = " + id +" order by updateDate desc";
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);

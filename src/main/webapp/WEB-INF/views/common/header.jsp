@@ -187,7 +187,7 @@
       <a href="/company_4.html">荣誉资质</a>
       <a href="/company.html">活动</a>
       <a href="/company_5.html">构建企业智慧云</a>
-      <a href="/company.html">职业发展</a>
+      <a href="/company_6.html">职业发展</a>
       <a href="/company_8.html">联系我们</a> </span> </li>
         </ul>
     </div>
