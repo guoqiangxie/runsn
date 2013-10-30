@@ -40,7 +40,7 @@
 <div class="job_contact">
 <h3>简历投递方式：</h3>
 <div class="main">
-招聘邮箱：marketing@runsn.com 王先生<br />
+招聘邮箱：marketing@runsn.com 孙小姐<br />
 公司地址：上海市静安区万航渡路789号<br />
 <span class="ml64">金峰世纪大厦12/18楼</span><br />
 <span class="ml64">上海市浦东新区浦东南路999号</span><br />
