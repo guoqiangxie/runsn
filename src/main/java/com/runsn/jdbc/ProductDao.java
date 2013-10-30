@@ -28,7 +28,7 @@ public class ProductDao {
         try {
             String sql = "select pt.id AS typeId,pb.*,pt.* " +
                     " from productclass pc, productbrand pb, producttype pt " +
-                    " where pc.id in (pb.classId) and pb.id=pt.brandId " +
+                    " where find_in_set(pc.id, pb.classId) and pb.id=pt.brandId " +
                     " and pc.id= " + classId;
             st = conn.createStatement();
 
@@ -335,7 +335,7 @@ public class ProductDao {
     public static void updateBrand(String classIds, Integer brandId) throws Exception {
         conn = ConnectionUtil.getConnection();
         try {
-            String sql = "update productbrand set classIds='" + classIds
+            String sql = "update productbrand set classId='" + classIds
                     + "' where id=" + brandId;
             st = conn.createStatement();
 
