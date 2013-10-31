@@ -143,7 +143,7 @@ public class DocumentController {
                 modelAndView.addObject("message", "您的信息添加失败");
             }
         } else {
-            resetProduct(productName, productDesc, product);
+            resetProduct(productName, productDesc, title, keywords, description, product);
             try {
                 ProductDao.update(product);
                 modelAndView.addObject("result", "成功啦");
@@ -227,9 +227,12 @@ public class DocumentController {
         newLab.setName(name);
     }
 
-    private void resetProduct(String productName, String productDesc, Product product) {
+    private void resetProduct(String productName, String productDesc, String title, String keywords, String description, Product product) {
         product.setProductName(productName);
         product.setProductDesc(productDesc);
+        product.setTitle(title);
+        product.setKeywords(keywords);
+        product.setDescription(description);
         product.setUpdateDate(new Date(new java.util.Date().getTime()));
     }
 

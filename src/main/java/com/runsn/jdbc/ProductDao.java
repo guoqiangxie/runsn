@@ -198,6 +198,9 @@ public class ProductDao {
             product.setProductDesc(rs.getString("productDesc"));
             product.setProductName(rs.getString("productName"));
             product.setProductVersion(rs.getString("productVersion"));
+            product.setTitle(rs.getString("title"));
+            product.setKeywords(rs.getString("keywords"));
+            product.setDescription(rs.getString("description"));
         }
         return product;
     }
@@ -235,6 +238,9 @@ public class ProductDao {
         try {
             String sql = "update product set productName='" + product.getProductName()
                     + "',productDesc='" + product.getProductDesc()
+                    + "',title='" + product.getTitle()
+                    + "',keywords='" + product.getKeywords()
+                    + "',description='" + product.getDescription()
                     + "',updateDate='" + product.getUpdateDate()
                     + "' where id=" + product.getId();
             st = conn.createStatement();
