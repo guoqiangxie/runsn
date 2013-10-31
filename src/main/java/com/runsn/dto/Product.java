@@ -50,11 +50,11 @@ public class Product implements Serializable {
             "              </div>\n" +
             "              <div class=\"tabBox lh19\"  style=\"display:block; width:850px; margin-top:30px; position:relative; left:-175px;\">\n" +
             "                  <ul class=\"tabs\" style=\"background: url(/g/sermain_icon3.gif) repeat-x 0 21px; display:block; height:30px; padding-left:20px; width:850px;\">\n" +
-            "                      <li class=\"on\" style=\"background:url(/img/sermain_icon4.png) no-repeat; width:127px; float:left; margin-right:4px; text-align:center; padding-bottom:10px; line-height:23px; height:20px; display:block; overflow:hidden; color:#333; cursor:pointer; background-position:0 -30px; padding:0; height:30px; line-height:30px; color:#fff;\">系列10插槽机箱</li>\n" +
-            "                      <li style=\"background:url(/img/sermain_icon4.png) no-repeat; width:127px; float:left; margin-right:4px; text-align:center; padding-bottom:10px; line-height:23px; height:20px; display:block; overflow:hidden; color:#333; cursor:pointer;\">系列18插槽机箱</li>\n" +
-            "                      <li style=\"background:url(/img/sermain_icon4.png) no-repeat; width:127px; float:left; margin-right:4px; text-align:center; padding-bottom:10px; line-height:23px; height:20px; display:block; overflow:hidden; color:#333; cursor:pointer;\">高能效设计</li>\n" +
-            "                      <li style=\"background:url(/img/sermain_icon4.png) no-repeat; width:127px; float:left; margin-right:4px; text-align:center; padding-bottom:10px; line-height:23px; height:20px; display:block; overflow:hidden; color:#333; cursor:pointer;\">产品规格</li>\n" +
-            "                      <li style=\"background:url(/img/sermain_icon4.png) no-repeat; width:127px; float:left; margin-right:4px; text-align:center; padding-bottom:10px; line-height:23px; height:20px; display:block; overflow:hidden; color:#333; cursor:pointer;\">软件要求</li>\n" +
+            "                      <li class=\"on\">系列10插槽机箱</li>\n" +
+            "                      <li>系列18插槽机箱</li>\n" +
+            "                      <li>高能效设计</li>\n" +
+            "                      <li>产品规格</li>\n" +
+            "                      <li>软件要求</li>\n" +
             "                  </ul>\n" +
             "                  <div class=\"tabmain\" style=\"display:block;padding:20px; line-height:23px; overflow:hidden;\">\n" +
             "                      <p>拥有最多8个I/O模块插槽的Cisco Nexus 7000系列10插槽机箱最多支持256个万兆以太网或384个千兆以太网端口，能够满足大型部署的需求。\n" +

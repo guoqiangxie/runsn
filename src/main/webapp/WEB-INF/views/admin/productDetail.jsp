@@ -134,7 +134,7 @@
         });
 
         $("input[brandId='1']").each(function(i){
-              $("#typeId").append("<option value='$(this).attr('typeId')'>"+$(this).val()+"</option>");
+              $("#typeId").append("<option value="+$(this).attr("typeId")+">"+$(this).val()+"</option>");
         });
     });
 
@@ -162,7 +162,7 @@
         $("#typeId > option").remove();
         var selectBrand = $("#brandId").val();
         $("input[brandId="+selectBrand+"]").each(function(i){
-            $("#typeId").append("<option value="+$(this).attr('typeId')+">"+$(this).val()+"</option>");
+                $("#typeId").append("<option value="+$(this).attr('typeId')+ ">"+$(this).val()+"</option>");
         });
     }
 </script>

@@ -143,8 +143,8 @@ public class Document implements Serializable {
             "    \n" +
             "    <div class=\"tabBox\" style=\"display:block; width:850px; overflow:hidden; margin-top:30px;\">\n" +
             "      <ul class=\"tabs\" style=\"background: url(/img/sermain_icon3.gif) repeat-x 0 21px; display:block; height:30px; padding-left:20px; width:850px;\">\n" +
-            "        <li class=\"on\" style=\"background:url(/img/sermain_icon4.png) no-repeat; width:127px; float:left; margin-right:4px; text-align:center; padding-bottom:10px; line-height:23px; height:20px; display:block; overflow:hidden; color:#333; cursor:pointer; background-position:0 -30px; padding:0; height:30px; line-height:30px; color:#fff;\">服务内容</li>\n" +
-            "        <li style=\"background:url(/img/sermain_icon4.png) no-repeat; width:127px; float:left; margin-right:4px; text-align:center; padding-bottom:10px; line-height:23px; height:20px; display:block; overflow:hidden; color:#333; cursor:pointer;\">软盛优势</li>\n" +
+            "        <li class=\"on\">服务内容</li>\n" +
+            "        <li>软盛优势</li>\n" +
             "      </ul>\n" +
             "      <div class=\"tabmain\" style=\"display:block;padding:20px; line-height:23px; overflow:hidden;\"><b style=\"color:#333;\">数据备份</b><br />\n" +
             "软盛提供基于主流备份软件（Symantec BE，Symantec NBU，EMC network等）的，集成磁带，虚拟带库（EMC DD），传统磁盘阵列等介质的数备份服务。提供给客户一站式的软硬件一体化备份解决方案。<br /><br />\n" +
@@ -189,10 +189,10 @@ public class Document implements Serializable {
             "                        <h2 style=\"font-size:18px; color:#0ba29a; height:25px; line-height:25px; margin:18px 0;\">解决方案概述</h2>\n" +
             "                        <div class=\"tabBox\">\n" +
             "                            <ul class=\"tabs\" style=\"background: url(/img/sermain_icon3.gif) repeat-x 0 21px; display:block; height:30px; padding-left:20px; width:850px;padding-left:0; width:645px;\">\n" +
-            "                                <li class=\"on\" style=\"background:url(/img/sermain_icon4.png) no-repeat; width:127px; float:left; margin-right:4px; text-align:center; padding-bottom:10px; line-height:23px; height:20px; display:block; overflow:hidden; color:#333; cursor:pointer; background-position:0 -30px; padding:0; height:30px; line-height:30px; color:#fff;\">项目需求分析</li>\n" +
-            "                                <li style=\"background:url(/img/sermain_icon4.png) no-repeat; width:127px; float:left; margin-right:4px; text-align:center; padding-bottom:10px; line-height:23px; height:20px; display:block; overflow:hidden; color:#333; cursor:pointer;\">拓扑图</li>\n" +
-            "                                <li style=\"background:url(/img/sermain_icon4.png) no-repeat; width:127px; float:left; margin-right:4px; text-align:center; padding-bottom:10px; line-height:23px; height:20px; display:block; overflow:hidden; color:#333; cursor:pointer;\">方案简介</li>\n" +
-            "                                <li style=\"background:url(/img/sermain_icon4.png) no-repeat; width:127px; float:left; margin-right:4px; text-align:center; padding-bottom:10px; line-height:23px; height:20px; display:block; overflow:hidden; color:#333; cursor:pointer;\">Customer Benefits</li>\n" +
+            "                                <li class=\"on\">项目需求分析</li>\n" +
+            "                                <li>拓扑图</li>\n" +
+            "                                <li>方案简介</li>\n" +
+            "                                <li>Customer Benefits</li>\n" +
             "                            </ul>\n" +
             "                            <div class=\"tabmain\" style=\"display:block;padding:20px; line-height:23px; overflow:hidden;\">\n" +
             "                                <p style=\"text-align:center;\"><img src=\"/img/solution_pre1.png\" width=\"585\" height=\"381\" /></p>\n" +
