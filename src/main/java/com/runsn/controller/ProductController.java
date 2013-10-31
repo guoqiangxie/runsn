@@ -42,7 +42,7 @@ public class ProductController {
 
     @RequestMapping("productType/{brandId}/{typeId}")
     public ModelAndView productType(@PathVariable("brandId") int brandId, @PathVariable("typeId") int typeId, ModelAndView modelAndView) {
-        List<ArrayList<Product>> productsList = groupProducts(ProductDao.queryByBrand(brandId));
+        List<ArrayList<Product>> productsList = groupProductForType(ProductDao.queryByBrand(brandId));
         for (ArrayList<Product> products : productsList) {
             for (Product product : products) {
                 if (product.getTypeId() == typeId) {
@@ -58,7 +58,7 @@ public class ProductController {
 
     @RequestMapping("productDetail/{brandId}/{typeId}/{productId}")
     public ModelAndView productDetail(@PathVariable("brandId") int brandId, @PathVariable("typeId") int typeId, @PathVariable("productId") int productId, ModelAndView modelAndView) {
-        List<ArrayList<Product>> productsList = groupProducts(ProductDao.queryByBrand(brandId));
+        List<ArrayList<Product>> productsList = groupProductForType(ProductDao.queryByBrand(brandId));
         modelAndView.addObject("product", ProductDao.query(productId));
         modelAndView.addObject("productsList", productsList);
         modelAndView.setViewName("/productDetail");
@@ -77,6 +77,26 @@ public class ProductController {
             List list = new ArrayList();
             for (Product product : products) {
                 if (product.getBrandId() == brandId) {
+                    list.add(product);
+                }
+            }
+            result.add(list);
+        }
+        return result;
+    }
+
+    private List groupProductForType(List<Product> products) {
+        Set typeIds = new HashSet();
+        for (Product product : products) {
+            typeIds.add(product.getTypeId());
+        }
+        List result = new ArrayList();
+        Iterator iterator = typeIds.iterator();
+        while (iterator.hasNext()) {
+            Integer typeId = (Integer) iterator.next();
+            List list = new ArrayList();
+            for (Product product : products) {
+                if (product.getTypeId() == typeId) {
                     list.add(product);
                 }
             }
