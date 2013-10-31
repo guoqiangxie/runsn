@@ -51,7 +51,7 @@
   <div class="sure">
     <input type="submit" value="立即发布" />
   </div>
-</div>5
+</div>
       </form>
 
     </div>

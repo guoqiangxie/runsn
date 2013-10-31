@@ -23,7 +23,7 @@
 
  <div class="main2">
   <div class="tit">
-    <h3>编辑服务内容</h3>
+    <h3>编辑产品内容</h3>
     <span></span></div>
      <form action="/admin/submitProduct" method="POST" id="serviceForm">
         <div class="tmain b5 btop">
@@ -53,16 +53,17 @@
 
     <div class="txt">类型：
         <select id="typeId" name="typeId">
-            <c:set value="0" var="selectType"></c:set>
-            <c:forEach var="productType" items="${productTypes}">
-                <c:if test="${productType.brandId == selectBrand && selectType == 0}">
-                    <c:set value="${productType.typeId}" var="selectType"></c:set>
-                </c:if>
-                <option class="brand${productType.brandId}" value ="${productType.typeId}" <c:if test="${productType.brandId!=selectBrand}">style="display: none;"</c:if> <c:if test="${productType.typeId==selectType}">selected="selected" </c:if> >${productType.typeName}</option>
-            </c:forEach>
+
         </select>
     </div>
             </c:if>
+
+
+            <c:forEach var="productType" items="${productTypes}">
+                <input type="hidden" typeId="${productType.typeId}" brandId="${productType.brandId}" value ="${productType.typeName}">
+            </c:forEach>
+
+
             <div class="txt">标题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
                 <input class="w500 b5"name="title" type="text" value="${product.title}"/>
             </div>
@@ -131,6 +132,10 @@
             }
             $("#serviceForm").submit();
         });
+
+        $("input[brandId='1']").each(function(i){
+              $("#typeId").append("<option value='$(this).attr('typeId')'>"+$(this).val()+"</option>");
+        });
     });
 
     function changeClass() {
@@ -154,12 +159,10 @@
     }
 
     function changeBrand() {
-        $("#typeId option").hide();
-        $("#typeId option").selected = "";
+        $("#typeId > option").remove();
         var selectBrand = $("#brandId").val();
-        $(".brand" + selectBrand).show();
-        $("#typeId .brand"+selectBrand).each(function(i) {
-            if(i==0) this.selected = "selected";
+        $("input[brandId="+selectBrand+"]").each(function(i){
+            $("#typeId").append("<option value="+$(this).attr('typeId')+">"+$(this).val()+"</option>");
         });
     }
 </script>
