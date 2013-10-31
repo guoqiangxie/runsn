@@ -83,6 +83,7 @@ public class ProductDao {
                 Product product = new Product();
                 product.setBrandId(rs.getInt("id"));
                 product.setBrandName(rs.getString("brandName"));
+                product.setClassIds(rs.getString("classId"));
                 result.add(product);
             }
             st.close();

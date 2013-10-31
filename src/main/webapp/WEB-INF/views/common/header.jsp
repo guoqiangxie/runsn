@@ -141,8 +141,7 @@
       <%--<a href="#">服务器及应用负载均衡</a>--%>
       <span class="col">品牌</span>
       <c:forEach var="brand" items="${productBrands}">
-          <a href="#">${brand.brandName}</a>
-          <%--<a href="/productClass/${brand.classId}">${brand.brandName}</a>--%>
+          <a href="/productClass/${brand.firstClass}">${brand.brandName}</a>
       </c:forEach>
       <%--<a href="#">Citrix</a>--%>
       <%--<a href="#">HP</a>--%>

@@ -18,9 +18,7 @@ public class Product implements Serializable {
     private Integer brandId;
     private String brandName;
     private String brandDesc;
-//    private Integer classId;
-//    private String className;
-//    private String classDesc;
+    private String classIds;
     private String productDesc = "<div class=\"neirong\">\n" +
             "              <div style=\"width:480px; display:block;line-height:23px;\">\n" +
             "                  <div class=\"path\"><a href=\"product.html\">主页</a> &gt; <a href=\"product_1.html\">虚拟化基础</a> &gt; 思科</div>\n" +
@@ -200,5 +198,17 @@ public class Product implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getClassIds() {
+        return classIds;
+    }
+
+    public void setClassIds(String classIds) {
+        this.classIds = classIds;
+    }
+
+    public Integer getFirstClass() {
+        return Integer.valueOf(classIds.substring(0, 1));
     }
 }
