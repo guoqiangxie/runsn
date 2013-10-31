@@ -44,7 +44,12 @@ public class ProductController {
     public ModelAndView productType(@PathVariable("brandId") int brandId, @PathVariable("typeId") int typeId, ModelAndView modelAndView) {
         List<ArrayList<Product>> productsList = groupProducts(ProductDao.queryByBrand(brandId));
         for (ArrayList<Product> products : productsList) {
-            if (products.get(0).getTypeId() == typeId) modelAndView.addObject("product", products.get(0));
+            for (Product product : products) {
+                if (product.getTypeId() == typeId) {
+                    modelAndView.addObject("product", product);
+                    break;
+                }
+            }
         }
         modelAndView.addObject("productsList", productsList);
         modelAndView.setViewName("/productDetail");
@@ -54,13 +59,7 @@ public class ProductController {
     @RequestMapping("productDetail/{brandId}/{typeId}/{productId}")
     public ModelAndView productDetail(@PathVariable("brandId") int brandId, @PathVariable("typeId") int typeId, @PathVariable("productId") int productId, ModelAndView modelAndView) {
         List<ArrayList<Product>> productsList = groupProducts(ProductDao.queryByBrand(brandId));
-        for (ArrayList<Product> products : productsList) {
-            if (products.get(0).getTypeId() == typeId) {
-                for (Product product : products) {
-                    if (product.getId() == productId) modelAndView.addObject("product", product);
-                }
-            }
-        }
+        modelAndView.addObject("product", ProductDao.query(productId));
         modelAndView.addObject("productsList", productsList);
         modelAndView.setViewName("/productDetail");
         return modelAndView;
