@@ -37,13 +37,6 @@ public class EngineerDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }
@@ -64,13 +57,6 @@ public class EngineerDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }
@@ -86,13 +72,6 @@ public class EngineerDao {
         } catch (Exception e) {
             System.out.println("删除数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
     }
 
@@ -135,13 +114,6 @@ public class EngineerDao {
             System.out.println("保存工程师数据失败。");
             e.printStackTrace();
             throw new Exception("保存工程师数据失败。");
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }
@@ -166,13 +138,6 @@ public class EngineerDao {
             System.out.println("更新页面数据失败。");
             e.printStackTrace();
             throw new Exception("更新页面数据失败。");
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
     }
 }

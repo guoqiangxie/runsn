@@ -38,13 +38,6 @@ public class TypeDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return type;
     }
@@ -73,13 +66,6 @@ public class TypeDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }
@@ -100,13 +86,6 @@ public class TypeDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }
@@ -127,13 +106,6 @@ public class TypeDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }
@@ -154,13 +126,6 @@ public class TypeDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }
@@ -181,13 +146,6 @@ public class TypeDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return documentType;
     }

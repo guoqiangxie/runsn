@@ -35,13 +35,6 @@ public class DocumentDao {
             System.out.println("插入页面数据失败。");
             e.printStackTrace();
             throw new Exception("插入页面数据失败.");
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
     }
 
@@ -66,13 +59,6 @@ public class DocumentDao {
             System.out.println("更新服务数据失败。");
             e.printStackTrace();
             throw new Exception("更新服务数据失败。");
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
     }
 
@@ -92,13 +78,6 @@ public class DocumentDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return document;
     }
@@ -115,13 +94,6 @@ public class DocumentDao {
             System.out.println("删除数据失败。");
             e.printStackTrace();
             throw new Exception("删除数据失败。");
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
     }
 
@@ -141,13 +113,6 @@ public class DocumentDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }
@@ -184,13 +149,6 @@ public class DocumentDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }
@@ -211,13 +169,6 @@ public class DocumentDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }
@@ -238,13 +189,6 @@ public class DocumentDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }

@@ -36,13 +36,6 @@ public class UserDao {
         } catch (Exception e) {
             System.out.println("用户查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("用户连接未正常关闭。");
-            }
         }
         return user;
     }

@@ -39,13 +39,6 @@ public class LabDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }
@@ -82,13 +75,6 @@ public class LabDao {
         } catch (Exception e) {
             System.out.println("查询数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return lab;
     }
@@ -120,13 +106,6 @@ public class LabDao {
             System.out.println("保存课程数据失败。");
             e.printStackTrace();
             throw new Exception();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
         return result;
     }
@@ -153,13 +132,6 @@ public class LabDao {
             System.out.println("更新课程数据失败。");
             e.printStackTrace();
             throw new Exception("更新课程数据失败。");
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
     }
 
@@ -174,13 +146,6 @@ public class LabDao {
         } catch (Exception e) {
             System.out.println("删除数据失败。");
             e.printStackTrace();
-        } finally {
-            try {
-                st.close();
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("连接未正常关闭。");
-            }
         }
     }
 }
