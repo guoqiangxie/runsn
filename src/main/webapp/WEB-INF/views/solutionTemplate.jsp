@@ -46,6 +46,7 @@
 <script type="text/javascript">
     $(function () {
         $(".num${documentType.title1code}").addClass("active");
+        $(".${documentType.title2code}_${documentType.title3code}").addClass("on");
     });
 </script>
 </body>
