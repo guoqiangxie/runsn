@@ -1,13 +1,15 @@
 package com.runsn.jdbc;
 
 import com.runsn.dto.Document;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.sql.Date;
 import java.util.List;
 
 /**
@@ -25,7 +27,7 @@ public class DocumentDao {
     public static void save(Document document) throws Exception {
         conn = ConnectionUtil.getConnection();
         try {
-            String sql = "insert into documents (name, content, title, keywords, description, typeid, active, mainLevel, createDate) values('" + document.getName() + "', '" + document.getContent() + "','" + document.getTitle() + "','" + document.getKeywords() + "','" + document.getDescription() + "'," + document.getTypeid() + "," + document.getActive() + "," + document.getMainLevel() + ",'"+document.getCreateDate()+"')";
+            String sql = "insert into documents (name, content, title, keywords, description, typeid, active, mainLevel, createDate) values('" + document.getName() + "', '" + document.getContent() + "','" + document.getTitle() + "','" + document.getKeywords() + "','" + document.getDescription() + "'," + document.getTypeid() + "," + document.getActive() + "," + document.getMainLevel() + ",'" + document.getCreateDate() + "')";
             st = conn.createStatement();
 
             st.execute(sql);
@@ -63,23 +65,16 @@ public class DocumentDao {
     }
 
     public static Document query(int id) {
-        conn = ConnectionUtil.getConnection();
-        Document document = null;
-        try {
-            String sql = "select * from documents where active=1 and id = " + id +" order by updateDate desc";
-            st = conn.createStatement();
-
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                document = createDocument(rs);
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select * from documents where active=1 and id = " + id + " order by updateDate desc";
+        return jdbcTemplate.query(sql, new ResultSetExtractor<Document>() {
+            @Override
+            public Document extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                Document document = new Document();
+                while (resultSet.next()) document = createDocument(resultSet);
+                return document;
             }
-            st.close();
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("查询数据失败。");
-            e.printStackTrace();
-        }
-        return document;
+        });
     }
 
     public static void delete(int id) throws Exception {
@@ -95,26 +90,6 @@ public class DocumentDao {
             e.printStackTrace();
             throw new Exception("删除数据失败。");
         }
-    }
-
-    public static List<Document> queryByTypeid(int typeid) {
-        conn = ConnectionUtil.getConnection();
-        List result = new ArrayList();
-        try {
-            String sql = "select * from documents where active=1 and typeid = " + typeid;
-            st = conn.createStatement();
-
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                result.add(createDocument(rs));
-            }
-            st.close();
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("查询数据失败。");
-            e.printStackTrace();
-        }
-        return result;
     }
 
     private static Document createDocument(ResultSet rs) throws SQLException {
@@ -134,62 +109,32 @@ public class DocumentDao {
     }
 
     public static List<Document> queryByTitle1code(int title1code) {
-        conn = ConnectionUtil.getConnection();
-        List<Document> result = new ArrayList<Document>();
-        try {
-            String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code;
-            st = conn.createStatement();
-
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                result.add(createDocument(rs));
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code;
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<Document>>() {
+            @Override
+            public List<Document> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    result.add(createDocument(resultSet));
+                }
+                return result;
             }
-            st.close();
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("查询数据失败。");
-            e.printStackTrace();
-        }
-        return result;
+        });
     }
 
     public static List<Document> queryByTitle2code(int title1code, int title2code) {
-        conn = ConnectionUtil.getConnection();
-        List<Document> result = new ArrayList<Document>();
-        try {
-            String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code + " and t.title2code = " + title2code;
-            st = conn.createStatement();
-
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                result.add(createDocument(rs));
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code + " and t.title2code = " + title2code;
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<Document>>() {
+            @Override
+            public List<Document> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    result.add(createDocument(resultSet));
+                }
+                return result;
             }
-            st.close();
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("查询数据失败。");
-            e.printStackTrace();
-        }
-        return result;
-    }
-
-    public static List<Document> queryByTitle3code(int title1code, int title2code, int title3code) {
-        conn = ConnectionUtil.getConnection();
-        List<Document> result = new ArrayList<Document>();
-        try {
-            String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code + " and t.title2code = " + title2code + " and t.title3code = " + title3code;
-            st = conn.createStatement();
-
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                result.add(createDocument(rs));
-            }
-            st.close();
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("查询数据失败。");
-            e.printStackTrace();
-        }
-        return result;
+        });
     }
 }

@@ -2,6 +2,9 @@ package com.runsn.jdbc;
 
 import com.runsn.dto.Product;
 import com.runsn.dto.ProductClass;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -23,164 +26,124 @@ public class ProductDao {
     static Statement st;
 
     public static List<Product> queryTypeByClass(int classId) {
-        conn = ConnectionUtil.getConnection();
-        List<Product> result = new ArrayList<Product>();
-        try {
-            String sql = "select pt.id AS typeId,pb.*,pt.* " +
-                    " from productclass pc, productbrand pb, producttype pt " +
-                    " where find_in_set(pc.id, pb.classId) and pb.id=pt.brandId " +
-                    " and pc.id= " + classId;
-            st = conn.createStatement();
-
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                result.add(createProduct(rs, true));
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select pt.id AS typeId,pb.*,pt.* " +
+                " from productclass pc, productbrand pb, producttype pt " +
+                " where find_in_set(pc.id, pb.classId) and pb.id=pt.brandId " +
+                " and pc.id= " + classId;
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<Product>>() {
+            @Override
+            public List<Product> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    result.add(createProduct(resultSet, true));
+                }
+                return result;
             }
-            st.close();
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("查询数据失败。");
-            e.printStackTrace();
-        }
-        return result;
+        });
     }
 
     public static List<ProductClass> queryAllClass() {
-        conn = ConnectionUtil.getConnection();
-        List<ProductClass> result = new ArrayList<ProductClass>();
-        try {
-            String sql = "select * " +
-                    " from productclass";
-            st = conn.createStatement();
-
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                ProductClass productClass = new ProductClass();
-                productClass.setId(rs.getInt("id"));
-                productClass.setClassName(rs.getString("className"));
-                productClass.setClassDesc(rs.getString("classDesc"));
-                result.add(productClass);
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select * from productclass";
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<ProductClass>>() {
+            @Override
+            public List<ProductClass> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    ProductClass productClass = new ProductClass();
+                    productClass.setId(resultSet.getInt("id"));
+                    productClass.setClassName(resultSet.getString("className"));
+                    productClass.setClassDesc(resultSet.getString("classDesc"));
+                    result.add(productClass);
+                }
+                return result;
             }
-            st.close();
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("查询数据失败。");
-            e.printStackTrace();
-        }
-        return result;
+        });
     }
 
     public static List<Product> queryAllBrand() {
-        conn = ConnectionUtil.getConnection();
-        List<Product> result = new ArrayList<Product>();
-        try {
-            String sql = "select * " +
-                    " from productbrand";
-            st = conn.createStatement();
-
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                Product product = new Product();
-                product.setBrandId(rs.getInt("id"));
-                product.setBrandName(rs.getString("brandName"));
-                product.setClassIds(rs.getString("classId"));
-                result.add(product);
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select * from productbrand";
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<Product>>() {
+            @Override
+            public List<Product> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    Product product = new Product();
+                    product.setBrandId(resultSet.getInt("id"));
+                    product.setBrandName(resultSet.getString("brandName"));
+                    product.setClassIds(resultSet.getString("classId"));
+                    result.add(product);
+                }
+                return result;
             }
-            st.close();
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("查询数据失败。");
-            e.printStackTrace();
-        }
-        return result;
+        });
     }
 
     public static List<Product> queryAllType() {
-        conn = ConnectionUtil.getConnection();
-        List<Product> result = new ArrayList<Product>();
-        try {
-            String sql = "select *,pt.id AS typeId " +
-                    " from productbrand pb, producttype pt where pb.id=pt.brandId";
-            st = conn.createStatement();
-
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                result.add(createProduct(rs, true));
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select *,pt.id AS typeId from productbrand pb, producttype pt where pb.id=pt.brandId";
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<Product>>() {
+            @Override
+            public List<Product> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    result.add(createProduct(resultSet, true));
+                }
+                return result;
             }
-            st.close();
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("查询数据失败。");
-            e.printStackTrace();
-        }
-        return result;
+        });
     }
 
     public static List<Product> queryByBrand(int brandId) {
-        conn = ConnectionUtil.getConnection();
-        List<Product> result = new ArrayList<Product>();
-        try {
-            String sql = "select *,p.id AS productId " +
-                    " from productbrand pb, producttype pt,product p " +
-                    " where pb.id=pt.brandId and pt.id = p.typeId " +
-                    " and pb.id= " + brandId;
-            st = conn.createStatement();
-
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                result.add(createProduct(rs, false));
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select *,p.id AS productId " +
+                " from productbrand pb, producttype pt,product p " +
+                " where pb.id=pt.brandId and pt.id = p.typeId " +
+                " and pb.id= " + brandId;
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<Product>>() {
+            @Override
+            public List<Product> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    result.add(createProduct(resultSet, false));
+                }
+                return result;
             }
-            st.close();
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("查询数据失败。");
-            e.printStackTrace();
-        }
-        return result;
+        });
     }
 
     public static List<Product> queryAll() {
-        conn = ConnectionUtil.getConnection();
-        List<Product> result = new ArrayList<Product>();
-        try {
-            String sql = "select *,p.id AS productId " +
-                    " from productbrand pb, producttype pt,product p " +
-                    " where pb.id=pt.brandId and pt.id = p.typeId ";
-            st = conn.createStatement();
-
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                result.add(createProduct(rs, false));
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select *,p.id AS productId " +
+                " from productbrand pb, producttype pt,product p " +
+                " where pb.id=pt.brandId and pt.id = p.typeId ";
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<Product>>() {
+            @Override
+            public List<Product> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    result.add(createProduct(resultSet, false));
+                }
+                return result;
             }
-            st.close();
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("查询数据失败。");
-            e.printStackTrace();
-        }
-        return result;
+        });
     }
 
     public static Product query(int id) {
-        conn = ConnectionUtil.getConnection();
-        Product result = new Product();
-        try {
-            String sql = "select *,p.id AS productId " +
-                    " from productbrand pb, producttype pt,product p " +
-                    " where pb.id=pt.brandId and pt.id = p.typeId and p.id = " + id;
-            st = conn.createStatement();
-
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                result = createProduct(rs, false);
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select *,p.id AS productId " +
+                " from productbrand pb, producttype pt,product p " +
+                " where pb.id=pt.brandId and pt.id = p.typeId and p.id = " + id;
+        return jdbcTemplate.query(sql, new ResultSetExtractor<Product>() {
+            @Override
+            public Product extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                Product documentType = new Product();
+                while (resultSet.next()) documentType = createProduct(resultSet, false);
+                return documentType;
             }
-            st.close();
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("查询数据失败。");
-            e.printStackTrace();
-        }
-        return result;
+        });
     }
 
     private static Product createProduct(ResultSet rs, boolean isSimple) throws SQLException {
@@ -190,11 +153,8 @@ public class ProductDao {
         product.setTypeId(rs.getInt("typeId"));
         product.setTypeName(rs.getString("typeName"));
         product.setBrandDesc(rs.getString("brandDesc"));
-//        product.setClassId(rs.getInt("classId"));
-        if (! isSimple) {
+        if (!isSimple) {
             product.setId(rs.getInt("productId"));
-//            product.setClassName(rs.getString("className"));
-//            product.setClassDesc(rs.getString("classDesc"));
             product.setProductDesc(rs.getString("productDesc"));
             product.setProductName(rs.getString("productName"));
             product.setProductVersion(rs.getString("productVersion"));
@@ -255,7 +215,7 @@ public class ProductDao {
         }
     }
 
-    public static void delete(int id){
+    public static void delete(int id) {
         conn = ConnectionUtil.getConnection();
         try {
             String sql = "delete from product where id = " + id;

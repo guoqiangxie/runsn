@@ -1,7 +1,7 @@
 package com.runsn.jdbc;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,6 +19,8 @@ public class ConnectionUtil {
     private static String url;
     private static String username;
     private static String password;
+    private static DriverManagerDataSource driverManagerDataSource;
+    private static JdbcTemplate jdbcTemplate;
 
     /* 获取数据库连接的函数*/
     public static Connection getConnection() {
@@ -32,6 +34,19 @@ public class ConnectionUtil {
             System.out.println("数据库连接失败。" + e.getMessage());
         }
         return con;
+    }
+
+    public static JdbcTemplate getJdbcTemplate() {
+        if (jdbcTemplate != null) return jdbcTemplate;
+        if (driverManagerDataSource == null) driverManagerDataSource = new DriverManagerDataSource();
+        driverManagerDataSource.setDriverClassName(driverClassName);
+        driverManagerDataSource.setUrl(url);
+        driverManagerDataSource.setUsername(username);
+        driverManagerDataSource.setPassword(password);
+
+        if (jdbcTemplate == null) jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate.setDataSource(driverManagerDataSource);
+        return jdbcTemplate;
     }
 
     public static String getDriverClassName() {
