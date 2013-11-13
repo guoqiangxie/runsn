@@ -49,7 +49,7 @@ public class Product implements Serializable {
             "\n" +
             "              </div>\n" +
             "              <div class=\"tabBox lh19\"  style=\"display:block; width:850px; margin-top:30px; position:relative; left:-175px;\">\n" +
-            "                  <ul class=\"tabs\" style=\"background: url(/g/sermain_icon3.gif) repeat-x 0 21px; display:block; height:30px; padding-left:20px; width:850px;\">\n" +
+            "                  <ul class=\"tabs\" style=\"background: url(/img/sermain_icon3.gif) repeat-x 0 21px; display:block; height:30px; padding-left:20px; width:850px;\">\n" +
             "                      <li class=\"on\">系列10插槽机箱</li>\n" +
             "                      <li>系列18插槽机箱</li>\n" +
             "                      <li>高能效设计</li>\n" +

@@ -77,7 +77,7 @@ public class AdminController {
     public ModelAndView serviceDetail(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
         DocumentDetail documentDetail = new DocumentDetail();
         Document document = DocumentDao.query(documentId);
-        if (document != null) {
+        if (document != null&&document.getCreateDate()!=null) {
             DocumentType documentType = TypeDao.query(document.getTypeid());
             documentDetail.setDocument(document);
             documentDetail.setDocumentType(documentType);
@@ -93,7 +93,7 @@ public class AdminController {
     public ModelAndView solutionDetail(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
         DocumentDetail documentDetail = new DocumentDetail();
         Document document = DocumentDao.query(documentId);
-        if (document != null) {
+        if (document != null&&document.getCreateDate()!=null) {
             DocumentType documentType = TypeDao.query(document.getTypeid());
             documentDetail.setDocument(document);
             documentDetail.setDocumentType(documentType);

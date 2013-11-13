@@ -33,7 +33,7 @@ public class DocumentController {
     @RequestMapping(value = "/admin/submitService", method = RequestMethod.POST)
     public ModelAndView submitService(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "keywords", required = false) String keywords, @RequestParam(value = "description", required = false) String description, @RequestParam(value = "content") String content, ModelAndView modelAndView) {
         Document document = DocumentDao.query(id);
-        if (document == null) {
+        if (document == null||document.getCreateDate()==null) {
             try {
                 DocumentDao.save(createDocument(title, content, keywords, description, 1));
                 modelAndView.addObject("result", "成功啦");
@@ -69,7 +69,7 @@ public class DocumentController {
     @RequestMapping(value = "/admin/submitTrain", method = RequestMethod.POST)
     public ModelAndView submitTrain(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "keywords", required = false) String keywords, @RequestParam(value = "description", required = false) String description, @RequestParam(value = "content") String content, ModelAndView modelAndView) {
         Document document = DocumentDao.query(id);
-        if (document == null) {
+        if (document == null||document.getCreateDate()==null) {
             try {
                 DocumentDao.save(createDocument(title, content, keywords, description, 27));
                 modelAndView.addObject("result", "成功啦");
@@ -96,7 +96,7 @@ public class DocumentController {
     @RequestMapping(value = "/admin/submitSolution", method = RequestMethod.POST)
     public ModelAndView submitSolution(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content, @RequestParam(value = "keywords", required = false) String keywords, @RequestParam(value = "description", required = false) String description, @RequestParam(value = "title3code", required = false) int title3code, ModelAndView modelAndView) {
         Document document = DocumentDao.query(id);
-        if (document == null) {
+        if (document == null||document.getCreateDate()==null) {
             try {
                 DocumentDao.save(createDocument(title, content, keywords, description, title3code));
                 modelAndView.addObject("result", "成功啦");

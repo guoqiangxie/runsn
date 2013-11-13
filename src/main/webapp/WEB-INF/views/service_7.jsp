@@ -64,18 +64,24 @@
             <c:forEach var="engineer" items="${engineers}" varStatus="status">
                 <c:if test="${status.index == 0}">
                     <div class="tabmain" style="display:block;">
-                        <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" /> <b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
-                            主要项目经历：${engineer.experiences}</div>
-                        <h3>工程师资质</h3>
-                        ${engineer.aptitude}
+                        <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" />
+                            <div style="float:right;width:438px;text-align: left;"><b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
+                            主要项目经历：${engineer.experiences}
+                                <h3>工程师资质</h3>
+                                    ${engineer.aptitude}</div>
+                         </div>
                     </div>
+
                 </c:if>
                 <c:if test="${status.index > 0 && status.index < 8}">
                     <div class="tabmain">
-                    <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" /> <b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
-                        主要项目经历：${engineer.experiences}</div>
-                    <h3>工程师资质</h3>
-                        ${engineer.aptitude}
+                    <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" />
+                        <div style="float:right;width:438px;text-align: left;"><b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
+                        主要项目经历：${engineer.experiences}
+                            <h3>工程师资质</h3>
+                                ${engineer.aptitude}</div>
+
+                        </div></div>
                 </c:if>
             </c:forEach>
           <%--<div class="tabmain" style="display:block;">--%>
@@ -116,18 +122,23 @@
             <c:forEach var="engineer" items="${engineers}" varStatus="status">
             <c:if test="${status.index == 8}">
                 <div class="tabmain" style="display:block;">
-                    <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" /> <b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
-                        主要项目经历：${engineer.experiences}</div>
-                    <h3>工程师资质</h3>
-                        ${engineer.aptitude}
+                    <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" />
+                        <div style="float:right;width:438px;text-align: left;"><b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
+                            主要项目经历：${engineer.experiences}
+                            <h3>工程师资质</h3>
+                                ${engineer.aptitude}</div>
+                    </div>
                 </div>
             </c:if>
             <c:if test="${status.index > 8 && status.index < 16}">
-            <div class="tabmain">
-                <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" /> <b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
-                    主要项目经历：${engineer.experiences}</div>
-                <h3>工程师资质</h3>
-                    ${engineer.aptitude}
+                <div class="tabmain">
+                    <div class="info"> <img src="${engineer.image}" width="100" height="122" class="img" />
+                        <div style="float:right;width:438px;text-align: left;"><b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
+                            主要项目经历：${engineer.experiences}
+                            <h3>工程师资质</h3>
+                                ${engineer.aptitude}</div>
+                    </div>
+                </div>
                 </c:if>
                 </c:forEach>
           <%--<div class="tabmain" style="display:block;">--%>
