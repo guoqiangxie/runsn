@@ -27,6 +27,7 @@ public class ProductController {
     @RequestMapping("productClass/{classId}")
     public ModelAndView productClass(@PathVariable("classId") int classId, ModelAndView modelAndView) {
         modelAndView.addObject("typesList", groupProducts(ProductDao.queryTypeByClass(classId)));
+        modelAndView.addObject("productClass", ProductDao.queryClass(classId));
         modelAndView.setViewName("/productClassTemplate");
         return modelAndView;
     }

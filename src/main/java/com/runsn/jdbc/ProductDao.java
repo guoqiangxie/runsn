@@ -146,6 +146,29 @@ public class ProductDao {
         });
     }
 
+    public static ProductClass queryClass(int classId) {
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select * " +
+                " from productclass " +
+                " where id = " + classId;
+        return jdbcTemplate.query(sql, new ResultSetExtractor<ProductClass>() {
+            @Override
+            public ProductClass extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                ProductClass productClass = new ProductClass();
+                while (resultSet.next()) productClass = createProductClass(resultSet);
+                return productClass;
+            }
+        });
+    }
+
+    private static ProductClass createProductClass(ResultSet rs) throws SQLException {
+        ProductClass productClass = new ProductClass();
+        productClass.setId(rs.getInt("id"));
+        productClass.setClassName(rs.getString("className"));
+        productClass.setClassDesc(rs.getString("classDesc"));
+        return productClass;
+    }
+
     private static Product createProduct(ResultSet rs, boolean isSimple) throws SQLException {
         Product product = new Product();
         product.setBrandId(rs.getInt("brandId"));
