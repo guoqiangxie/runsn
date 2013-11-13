@@ -1,5 +1,6 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -54,42 +55,10 @@ jQuery(function(){
 <div id="bookslide">
 		<div id="bookslide-main">
 			<ul>
-				<li><img src="/img/tra_10.jpg" width="121" height="134" />
-                <b>杜卫华</b> 培训技能： MCITP（虚拟化，数据库管理，统一沟通）</li>
-                <li><img src="/img/tra_11.jpg" width="121" height="134" />
-                <b>郑松</b> 培训技能： SymantecSEP 、SymantecPGP 、SymantecDLP</li>
-                <li><img src="/img/tra_12.jpg" width="121" height="134" />
-                <b>张毅</b> 培训技能： Cisco、Nortel、HSC、Symantec SNAC</li>
-                <li><img src="/img/tra_10.jpg" width="121" height="134" />
-                <b>杜卫华</b> 培训技能： MCITP（虚拟化，数据库管理，统一沟通）</li>
-                <li><img src="/img/tra_11.jpg" width="121" height="134" />
-                <b>郑松</b> 培训技能： SymantecSEP 、SymantecPGP 、SymantecDLP</li>
-                <li><img src="/img/tra_12.jpg" width="121" height="134" />
-                <b>张毅</b> 培训技能： Cisco、Nortel、HSC、Symantec SNAC</li>
-                <li><img src="/img/tra_10.jpg" width="121" height="134" />
-                <b>杜卫华</b> 培训技能： MCITP（虚拟化，数据库管理，统一沟通）</li>
-                <li><img src="/img/tra_11.jpg" width="121" height="134" />
-                <b>郑松</b> 培训技能： SymantecSEP 、SymantecPGP 、SymantecDLP</li>
-                <li><img src="/img/tra_12.jpg" width="121" height="134" />
-                <b>张毅</b> 培训技能： Cisco、Nortel、HSC、Symantec SNAC</li>
-                <li><img src="/img/tra_10.jpg" width="121" height="134" />
-                <b>杜卫华</b> 培训技能： MCITP（虚拟化，数据库管理，统一沟通）</li>
-                <li><img src="/img/tra_11.jpg" width="121" height="134" />
-                <b>郑松</b> 培训技能： SymantecSEP 、SymantecPGP 、SymantecDLP</li>
-                <li><img src="/img/tra_12.jpg" width="121" height="134" />
-                <b>张毅</b> 培训技能： Cisco、Nortel、HSC、Symantec SNAC</li>
-                <li><img src="/img/tra_10.jpg" width="121" height="134" />
-                <b>杜卫华</b> 培训技能： MCITP（虚拟化，数据库管理，统一沟通）</li>
-                <li><img src="/img/tra_11.jpg" width="121" height="134" />
-                <b>郑松</b> 培训技能： SymantecSEP 、SymantecPGP 、SymantecDLP</li>
-                <li><img src="/img/tra_12.jpg" width="121" height="134" />
-                <b>张毅</b> 培训技能： Cisco、Nortel、HSC、Symantec SNAC</li>
-                <li><img src="/img/tra_10.jpg" width="121" height="134" />
-                <b>杜卫华</b> 培训技能： MCITP（虚拟化，数据库管理，统一沟通）</li>
-                <li><img src="/img/tra_11.jpg" width="121" height="134" />
-                <b>郑松</b> 培训技能： SymantecSEP 、SymantecPGP 、SymantecDLP</li>
-                <li><img src="/img/tra_12.jpg" width="121" height="134" />
-                <b>张毅</b> 培训技能： Cisco、Nortel、HSC、Symantec SNAC</li>
+                <c:forEach var="engineer" items="${starEngineers}">
+                    <li><img src="${engineer.image}" width="121" height="134" />
+                        <b>${engineer.name}</b> 培训技能： ${engineer.experiences}</li>
+                </c:forEach>
 			</ul>
   </div>
 		<div id="bscrollbar">

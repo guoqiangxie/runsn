@@ -84,6 +84,7 @@ public class EngineerDao {
         engineer.setImage(rs.getString("image"));
         engineer.setName(rs.getString("name"));
         engineer.setTitle(rs.getString("title"));
+        engineer.setStar(rs.getString("star"));
         engineer.setCreateDate(rs.getDate("createDate"));
         engineer.setUpdateDate(rs.getDate("updateDate"));
         return engineer;
@@ -93,13 +94,14 @@ public class EngineerDao {
         conn = ConnectionUtil.getConnection();
         Integer result = null;
         try {
-            String sql = "insert into engineer(name, age, title, aptitude, experiences, image, createDate, updateDate) values('"
+            String sql = "insert into engineer(name, age, title, aptitude, experiences, image, star, createDate, updateDate) values('"
                     + engineer.getName() + "',"
                     + engineer.getAge() + ",'"
                     + engineer.getTitle() + "','"
                     + engineer.getAptitude() + "','"
                     + engineer.getExperiences() + "','"
                     + engineer.getImage() + "','"
+                    + engineer.getStar() + "','"
                     + engineer.getCreateDate() + "','"
                     + engineer.getUpdateDate() + "')";
             st = conn.createStatement();
@@ -127,6 +129,7 @@ public class EngineerDao {
                     + "',experiences='" + engineer.getExperiences()
                     + "',age=" + engineer.getAge()
                     + ",title='" + engineer.getTitle()
+                    + "',star='" + engineer.getStar()
                     + "',updateDate='" + engineer.getUpdateDate()
                     + "' where id=" + engineer.getId();
             st = conn.createStatement();

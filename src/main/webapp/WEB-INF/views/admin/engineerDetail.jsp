@@ -1,5 +1,6 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -46,6 +47,7 @@
     <div> <span class="name">职称：</span> <span class="text"><input value="${engineer.title}" name="title" type="text" /></span></div>
     <div> <span class="name">经历：</span> <span class="text"><input value="${engineer.experiences}" name="experiences" type="text" /></span></div>
     <div> <span class="name">资质：</span> <span class="text"><input value="${engineer.aptitude}" name="aptitude" type="text" /></span></div>
+    <div> <span class="name">明星：</span> <span class="text"><input type="checkbox" name="star" <c:if test="${engineer.star == 'on'}">checked</c:if> /></span></div>
       <input type="hidden" name="id" value="${engineer.id}" />
   </div>
   <div class="sure">

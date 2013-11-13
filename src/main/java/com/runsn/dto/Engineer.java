@@ -21,6 +21,7 @@ public class Engineer implements Serializable {
     private String title;
     private Date createDate;
     private Date updateDate;
+    private String star;
 
     public Integer getId() {
         return id;
@@ -92,5 +93,13 @@ public class Engineer implements Serializable {
 
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
+    }
+
+    public String getStar() {
+        return star;
+    }
+
+    public void setStar(String star) {
+        this.star = star;
     }
 }
