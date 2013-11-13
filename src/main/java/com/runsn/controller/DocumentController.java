@@ -269,11 +269,12 @@ public class DocumentController {
                                        @RequestParam(value = "title") String title,
                                        @RequestParam(value = "experiences") String experiences,
                                        @RequestParam(value = "aptitude") String aptitude,
+                                       @RequestParam(value = "star", required = false, defaultValue = "") String star,
                                        @RequestParam(value = "image") String image) {
         Engineer engineer = EngineerDao.query(id);
         if (engineer.getId() == 0) {
             try {
-                EngineerDao.save(createEngineer(name, age, title, experiences, aptitude, image));
+                EngineerDao.save(createEngineer(name, age, title, experiences, aptitude, image, star));
                 modelAndView.addObject("result", "成功啦");
                 modelAndView.addObject("message", "工程师资料提交成功");
             } catch (Exception e) {
@@ -282,7 +283,7 @@ public class DocumentController {
             }
         } else {
             try {
-                resetEngineer(engineer, name, age, title, experiences, aptitude, image);
+                resetEngineer(engineer, name, age, title, experiences, aptitude, image, star);
                 EngineerDao.update(engineer);
                 modelAndView.addObject("result", "成功啦");
                 modelAndView.addObject("message", "工程师资料更新成功");
@@ -297,17 +298,18 @@ public class DocumentController {
         return modelAndView;
     }
 
-    private void resetEngineer(Engineer engineer, String name, int age, String title, String experiences, String aptitude, String image) {
+    private void resetEngineer(Engineer engineer, String name, int age, String title, String experiences, String aptitude, String image, String star) {
         engineer.setName(name);
         engineer.setAge(age);
         engineer.setAptitude(aptitude);
         engineer.setImage(image);
         engineer.setTitle(title);
+        engineer.setStar(star);
         engineer.setExperiences(experiences);
         engineer.setUpdateDate(new Date(new java.util.Date().getTime()));
     }
 
-    private Engineer createEngineer(String name, int age, String title, String experiences, String aptitude, String image) {
+    private Engineer createEngineer(String name, int age, String title, String experiences, String aptitude, String image, String star) {
         Engineer engineer = new Engineer();
         engineer.setName(name);
         engineer.setAge(age);
@@ -315,6 +317,7 @@ public class DocumentController {
         engineer.setImage(image);
         engineer.setTitle(title);
         engineer.setExperiences(experiences);
+        engineer.setStar(star);
         engineer.setCreateDate(new Date(new java.util.Date().getTime()));
         engineer.setUpdateDate(new Date(new java.util.Date().getTime()));
         return engineer;
