@@ -1,5 +1,6 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
+<%@ taglib uri="/WEB-INF/fn.tld" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -49,78 +50,36 @@
         <div class="m_l">
             <c:forEach var="types" items="${typesList}" varStatus="status1">
                 <c:if test="${status1.index%2==0}">
+                    <div class="mbox">
                     <c:forEach var="type" items="${types}" varStatus="status2">
                         <c:if test="${status2.index==0}">
                             <b>${type.brandName}<span>${type.brandDesc}</span></b>
                         </c:if>
                         <a href="/productType/${type.brandId}/${type.typeId}">${type.typeName}</a>
                     </c:forEach>
+                    </div>
+                <c:if test="${fn:length(types) > 8}">
+                        <span class="more">More</span>
+                    </c:if>
                 </c:if>
             </c:forEach>
-        <%--<b>Vmware <span>全球桌面到数据中心虚拟化解决方案</span></b>--%>
-        <%--<a href="product_3.html">vSphere</a>--%>
-        <%--<a href="product_3.html">vCloud Suite</a>--%>
-        <%--<a href="product_3.html">vCloud Director</a>--%>
-        <%--<a href="product_3.html">vSphere Storage Appliance</a>--%>
-        <%--<a href="product_3.html">Fusion</a>--%>
-        <%--<a href="product_3.html">Workstation</a>--%>
-        <%--<a href="product_3.html">Horizon Suite</a>--%>
-        <%--<a href="product_3.html">Horizon Workspace</a>--%>
-        <%--<a href="product_3.html">Horizon View</a>--%>
-        <%--<a href="product_3.html">Horizon Mirage</a>--%>
-        <%--<a href="product_3.html">vCenter Operations Manager for View </a>--%>
-        <%--<a href="product_3.html">Zimbra </a>--%>
-        <%--<a href="product_3.html">Socialcast by VMware</a>--%>
-        <%--<a href="product_3.html">vCloud Networking & Security</a>--%>
-        <%--<a href="product_3.html">vFabric Application Director</a>--%>
-        <%--<a href="product_3.html">vFabric Application Performance Manager</a>--%>
-        <%--<a href="product_3.html">vCenter Application Discovery Manager</a>--%>
-        <%--<a href="product_3.html">vCenter AppSpeed</a>--%>
-        <%--<a href="product_3.html">Studio</a>--%>
-        <%--<a href="product_3.html">vFabric Hyperic</a>--%>
-        <%--<a href="product_3.html">vSphere Hypervisor</a>--%>
-        <%--<a href="product_3.html">Server</a>--%>
-        <%--<a href="product_3.html">Player </a>--%>
-        <%--<a href="product_3.html">vCenter Converter </a>--%>
-        <%--<a href="product_3.html">vSphere Hypervisor</a>--%>
-        <%--<a href="product_3.html">vFabric Suite</a>--%>
-        <%--<a href="product_3.html">vFabric tc Server </a>--%>
-        <%--<a href="product_3.html">vFabric RabbitMQ</a>--%>
-        <%--<a href="product_3.html">vFabric GemFire</a>--%>
-        <%--<a href="product_3.html">vFabric SQLFire</a>--%>
-        <%--<a href="product_3.html">vFabric Data Director </a>--%>
-        <%--<a href="product_3.html">vFabric Postgres </a>--%>
-        <%--<a href="product_3.html">vFabric Web Server</a>--%>
-        <%--<a href="product_3.html">vFabric Enterprise Ready Server</a>--%>
-        <%--<a href="product_3.html">IT Business Management Suite</a>--%>
-        <%--<a href="product_3.html">vCenter Chargeback Manager</a>--%>
-        <%--<a href="product_3.html">Service Manager</a>--%>
-        <%--<a href="product_3.html">VMmark </a>--%>
-        <%--<a href="product_3.html">Capacity Planner </a>--%>
-        <%--<a href="product_3.html">Cisco Nexus 1000V</a>--%>
-        <%--<a href="product_3.html">VMware Compliance Checker for PCI </a>--%>
-        <%--<a href="product_3.html">VMware Compliance Checker for vSphere</a>--%>
-        <%--<a href="product_3.html">SUSE Linux Enterprise Server for VMware</a>--%>
         </div>
         <div class="m_r">
             <c:forEach var="types" items="${typesList}" varStatus="status1">
                 <c:if test="${status1.index%2==1}">
+                    <div class="mbox">
                     <c:forEach var="type" items="${types}" varStatus="status2">
                         <c:if test="${status2.index==0}">
                             <b>${type.brandName}<span>${type.brandDesc}</span></b>
                         </c:if>
                         <a href="/productType/${type.brandId}/${type.typeId}">${type.typeName}</a>
                     </c:forEach>
+                    </div>
+                    <c:if test="${fn:length(types) > 8}">
+                        <span class="more">More</span>
+                    </c:if>
                 </c:if>
             </c:forEach>
-        <%--<b>微软<span>全球桌面到数据中心虚拟化解决方案</span></b>--%>
-        <%--<a href="product_3.html">服务器应用软件</a>--%>
-        <%--<a href="product_3.html">应用软件</a>--%>
-        <%--<a href="product_3.html">操作系统</a>--%>
-        <%--<b>思杰<span>提供全球接入架构解决方案及服务</span></b>--%>
-        <%--<a href="product_3.html">应用虚拟化</a>--%>
-        <%--<a href="product_3.html">桌面虚拟化</a>--%>
-        <%--<a href="product_3.html">服务器虚拟化</a>--%>
         </div>
         </div>
         
