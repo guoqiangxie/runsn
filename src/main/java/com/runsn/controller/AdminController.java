@@ -1,4 +1,4 @@
-package com.runsn.controller;
+﻿package com.runsn.controller;
 
 import com.runsn.dto.Document;
 import com.runsn.dto.DocumentDetail;
@@ -55,7 +55,7 @@ public class AdminController {
     public ModelAndView trainDetail(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
         DocumentDetail documentDetail = new DocumentDetail();
         Document document = DocumentDao.query(documentId);
-        if (document != null) {
+        if (document.getId() == 0) {
             DocumentType documentType = TypeDao.query(document.getTypeid());
             documentDetail.setDocument(document);
             documentDetail.setDocumentType(documentType);
@@ -161,7 +161,7 @@ public class AdminController {
     @RequestMapping("productDetail/{productId}")
     public ModelAndView productDetail(@PathVariable("productId") int productId, ModelAndView modelAndView) {
         Product product = ProductDao.query(productId);
-        if (product == null) product = new Product();
+        if (product.getId() == 0) product = new Product();
         List productClasses = ProductDao.queryAllClass();
         List productBrands = ProductDao.queryAllBrand();
         List productTypes = ProductDao.queryAllType();
