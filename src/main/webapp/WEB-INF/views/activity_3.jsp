@@ -31,13 +31,13 @@
         <p><b>厂商&amp;活动</b></p>
         <h3>洞若观火</h3>
         <p>大牌云集，坐看业界风起云涌</p>
-        <a href="#"></a>
+        <a href="/activity_1.html"></a>
         </div>
         <div class="tip4 tip5">
         <p><b>邀请函</b></p>
         <h3>超乎所见</h3>
         <p>前沿动态，亲临现场共谱新知</p>
-        <a href="#"></a>
+        <a href="/activity_2.html"></a>
         </div>
       </div>
       <div class="sLeft">

@@ -14,22 +14,22 @@
   <div class="p25">
     <div class="sermain sPage1 tramain tramain2">
       <div class="sRight collapse">
-        <dl>
-          <dt><a href="#">解决方案</a></dt>
-        </dl>
-        
-        <dl>
-          <dt><a href="#">服务</a></dt>
-        </dl>
-        <dl>
-          <dt><a href="#">产品</a></dt>
-        </dl>
-        <dl>
-          <dt><a href="#">主题活动</a></dt>
-        </dl>
-        <dl>
-          <dt><a href="#">公司</a></dt>
-        </dl>
+          <dl>
+              <dt><a href="/solution.html">解决方案</a></dt>
+          </dl>
+
+          <dl>
+              <dt><a href="/service.html">服务</a></dt>
+          </dl>
+          <dl>
+              <dt><a href="/product.html">产品</a></dt>
+          </dl>
+          <dl>
+              <dt><a href="/activity.html">主题活动</a></dt>
+          </dl>
+          <dl>
+              <dt><a href="/company.html">公司</a></dt>
+          </dl>
         
         <div class="newlist">
         <h2>新闻列表</h2>
