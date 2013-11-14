@@ -1,4 +1,4 @@
-﻿package com.runsn.controller;
+package com.runsn.controller;
 
 import com.runsn.dto.Document;
 import com.runsn.dto.DocumentDetail;
