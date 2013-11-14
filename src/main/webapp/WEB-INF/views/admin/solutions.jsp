@@ -45,7 +45,7 @@
                       <td>${service.documentType.title3}</td>
                       <td>${service.document.createDate}</td>
                       <td>${service.document.updateDate}</td>
-                      <td align="center"><a href="/admin/solutionDetail/${service.documentId}">修改</a> <a href="/admin/delete/${service.documentId}" onclick="return confirm('是否将此信息删除?')">删除</a></td>
+                      <td align="center"><a href="/admin/solutionDetail/${service.documentId}">修改</a> <a href="/admin/delete/${service.documentId}" onclick="return confirm('是否将(${service.document.title})信息删除?')">删除</a></td>
                   </tr>
               </c:forEach>
           </table>

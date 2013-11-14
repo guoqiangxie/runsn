@@ -41,7 +41,7 @@
                       <td><span class="info"><a href="/admin/serviceDetail/${service.id}">${service.title}</a></span></td>
                       <td>${service.createDate}</td>
                       <td>${service.updateDate}</td>
-                      <td align="center"><a href="/admin/serviceDetail/${service.id}">修改</a> <a href="/admin/delete/${service.id}" onclick="return confirm('是否将此信息删除?')">删除</a></td>
+                      <td align="center"><a href="/admin/serviceDetail/${service.id}">修改</a> <a href="/admin/delete/${service.id}" onclick="return confirm('是否将(${service.title})信息删除?')">删除</a></td>
                   </tr>
               </c:forEach>
           </table>

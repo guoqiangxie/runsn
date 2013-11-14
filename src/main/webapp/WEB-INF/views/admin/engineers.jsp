@@ -42,7 +42,7 @@
                       <td><span class="info"><a href="/admin/engineerDetail/${engineer.id}">${engineer.name}</a></span></td>
                       <td>${engineer.age}</td>
                       <td>${engineer.title}</td>
-                      <td align="center"><a href="/admin/engineerDetail/${engineer.id}">修改</a> <a href="/admin/deleteEngineer/${engineer.id}" onclick="return confirm('是否将此信息删除?')">删除</a></td>
+                      <td align="center"><a href="/admin/engineerDetail/${engineer.id}">修改</a> <a href="/admin/deleteEngineer/${engineer.id}" onclick="return confirm('是否将(${engineer.name})信息删除?')">删除</a></td>
                   </tr>
               </c:forEach>
           </table>

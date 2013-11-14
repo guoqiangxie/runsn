@@ -44,7 +44,7 @@
                       <%--<td>${product.className}</td>--%>
                       <td>${product.brandName}</td>
                       <td>${product.typeName}</td>
-                      <td align="center"><a href="/admin/productDetail/${product.id}">修改</a> <a href="/admin/deleteProduct/${product.id}" onclick="return confirm('是否将此信息删除?')">删除</a></td>
+                      <td align="center"><a href="/admin/productDetail/${product.id}">修改</a> <a href="/admin/deleteProduct/${product.id}" onclick="return confirm('是否将(${product.productName})信息删除?')">删除</a></td>
                   </tr>
               </c:forEach>
           </table>
