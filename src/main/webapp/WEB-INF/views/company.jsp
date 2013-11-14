@@ -31,7 +31,7 @@
 	<p class="bnone">
     <b>荣誉资质</b>
     <span>对IT服务行业孜孜不倦地追求，使我们获得多项资质证书。<br />客户的肯定彰显我们的荣耀，更激励我们成长。</span>
-    <a href="/company_8.html">next</a>
+    <a href="/company_4.html">next</a>
     </p>
     </div>
     <div class="c_txt3">

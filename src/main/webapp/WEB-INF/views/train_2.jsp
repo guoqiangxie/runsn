@@ -50,7 +50,7 @@
         <div class="sAd"><img src="/img/tra_1.jpg" width="219" height="163" /></div>
       </div>
       <div class="sLeft">
-      <div class="path"><a href="#">培训课堂</a> &gt; 新闻</div>
+      <div class="path"><a href="/train.html">培训课堂</a> &gt; 新闻</div>
       <div class="newpage">
       <h2>思杰：做一个成功的中型公司</h2>
       <p>良性发展和良好的企业文化，才是一个成功的公司。<br /> 

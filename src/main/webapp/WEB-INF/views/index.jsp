@@ -28,14 +28,14 @@
             <a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>
             <a href="/train.html"><img src="/img/slide/05.jpg" width="928" height="370" /></a>
             <a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a>
-            <a href="/building.html"><img src="/img/ad.jpg" width="928" height="370" /></a></div>
+            <a href="/ad.html"><img src="/img/ad.jpg" width="928" height="370" /></a></div>
     </div>
   </div>
   <div class="p25">
 <div class="recent homeimg">
       <h2>RECENT WORKS</h2>
       <ul>
-        <li><a href="/service.html" target="_blank" title=""><img src="/img/pre_13.jpg"
+        <li><a href="/solutionTemplate/60" target="_blank" title=""><img src="/img/pre_13.jpg"
 
 width="270" height="182" alt="" border="0" class="hover n1" /><img 
 

@@ -33,7 +33,7 @@
 <div class="recent homeimg">
     <h2>RECENT WORKS</h2>
     <ul>
-        <li><a href="/solutionTemplate/71" target="_blank" title=""><img src="/img/pre_13.jpg"
+        <li><a href="/solutionTemplate/60" target="_blank" title=""><img src="/img/pre_13.jpg"
 
                                                                   width="270" height="182" alt="" border="0" class="hover n1" /><img
 

@@ -33,7 +33,7 @@
         <div class="sAd"><img src="/img/tra_1.jpg" width="219" height="163" /></div>
       </div>
       <div class="sLeft">
-      <div class="path"><a href="#">培训课堂</a> &gt; 合作伙伴</div>
+      <div class="path"><a href="/train.html">培训课堂</a> &gt; 合作伙伴</div>
       <ul class="huoban">
       <li><img src="/img/probrands_1.gif" width="90" height="86" /></li>
       <li><img src="/img/probrands_2.gif" width="90" height="86" /></li>
