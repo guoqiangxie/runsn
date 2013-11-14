@@ -146,6 +146,23 @@ public class ProductDao {
         });
     }
 
+    public static List<ProductClass> queryProductClassByBrandId(int brandId) {
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select pc.* " +
+                " from productclass pc, productbrand pb " +
+                " where find_in_set(pc.id, pb.classId) and pb.id="+brandId;
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<ProductClass>>() {
+            @Override
+            public List<ProductClass> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    result.add(createProductClass(resultSet));
+                }
+                return result;
+            }
+        });
+    }
+
     public static ProductClass queryClass(int classId) {
         JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
         String sql = "select * " +

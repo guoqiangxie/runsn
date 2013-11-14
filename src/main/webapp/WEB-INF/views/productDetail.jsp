@@ -30,7 +30,17 @@
        </ul>
        <div class="solAd"><a href="#"><img src="/img/pro_icon5.jpg" width="155" height="126" /></a></div>
        </div>
-      ${product.productDesc}
+              <a href="/product.html">主页</a> &gt;
+          <c:forEach var="class" items="${productClasses}" varStatus="status">
+              <c:if test="${status.index==0}">
+                <a href="/productClass/${class.id}">${class.className}</a>
+              </c:if>
+              <c:if test="${status.index!=0}">
+                 | <a href="/productClass/${class.id}">${class.className}</a>
+              </c:if>
+          </c:forEach>
+          &gt; ${product.productName}
+          ${product.productDesc}
         
       </div>
       <div class="sLeft collapse">
@@ -44,7 +54,10 @@
                     <span class="bj"></span>
                 </span></span>
             </c:forEach>
+        
         </div>
+       
+        
       </div>
     </div>
 

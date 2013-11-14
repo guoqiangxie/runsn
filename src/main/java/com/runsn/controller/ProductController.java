@@ -48,6 +48,7 @@ public class ProductController {
             for (Product product : products) {
                 if (product.getTypeId() == typeId) {
                     modelAndView.addObject("product", product);
+                    modelAndView.addObject("productClasses", ProductDao.queryProductClassByBrandId(product.getBrandId()));
                     break;
                 }
             }
@@ -60,7 +61,9 @@ public class ProductController {
     @RequestMapping("productDetail/{brandId}/{typeId}/{productId}")
     public ModelAndView productDetail(@PathVariable("brandId") int brandId, @PathVariable("typeId") int typeId, @PathVariable("productId") int productId, ModelAndView modelAndView) {
         List<ArrayList<Product>> productsList = groupProductForType(ProductDao.queryByBrand(brandId));
-        modelAndView.addObject("product", ProductDao.query(productId));
+        Product product = ProductDao.query(productId);
+        modelAndView.addObject("product", product);
+        modelAndView.addObject("productClasses", ProductDao.queryProductClassByBrandId(product.getBrandId()));
         modelAndView.addObject("productsList", productsList);
         modelAndView.setViewName("/productDetail");
         return modelAndView;
