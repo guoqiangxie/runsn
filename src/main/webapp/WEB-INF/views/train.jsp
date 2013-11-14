@@ -90,12 +90,12 @@
                     </div>
                 </div>
                 <div class="tbox1">
-                    <h4>课程表</h4>
+                    <h4><a name="a"></a>课程表</h4>
 
                     <div id='calendar'></div>
                 </div>
                 <div class="tbox1">
-                    <h4>课程表</h4>
+                    <h4><a name="b"></a>培训资质</h4>
 
                     <div class="imgslide  ">
                         <div class="sly imgbox2">
@@ -121,7 +121,7 @@
             </div>
         </div>
         <div class="star">
-            <h3>Runsn明星讲师</h3>
+            <h3><a name="c"></a>Runsn明星讲师</h3>
 
             <div class="s_main">
                 <iframe frameborder="no" scrolling=”no” allowtransparency="no" width="100%" height="450"

@@ -10,17 +10,17 @@
     </dl>
     <dl>
         <dt>主题活动</dt>
-        <dd><a href="/activity.html">促销活动</a></dd>
-        <dd><a href="/building.html">原厂信息</a></dd>
-        <dd><a href="/building.html">电子期刊</a></dd>
+        <dd><a href="/activity.html">精彩促销</a></dd>
+        <dd><a href="/activity_1.html">厂商&活动</a></dd>
+        <dd><a href="/activity_2.html">邀请函</a></dd>
     </dl>
     <dl>
         <dt>培训课堂</dt>
-        <dd><a href="#">新闻</a></dd>
+        <dd><a href="/train_2.html">新闻</a></dd>
         <dd><a href="train_1.html">合作伙伴</a></dd>
-        <dd><a href="#">培训资质</a></dd>
-        <dd><a href="#">培训课程表</a></dd>
-        <dd><a href="#">明星讲师</a></dd>
+        <dd><a href="/train.html#b">培训资质</a></dd>
+        <dd><a href="/train.html#a">培训课程表</a></dd>
+        <dd><a href="/train.html#c">明星讲师</a></dd>
     </dl>
     <dl class="bnone">
         <dt>公司</dt>
