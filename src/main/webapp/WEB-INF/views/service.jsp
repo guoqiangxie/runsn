@@ -40,7 +40,7 @@
                 src="/img/pre_1.jpg" width="270" height="182" alt="" border="0"
 
                 class="img"/></a></li>
-        <li><a href="/solution.html" target="_blank" title=""><img src="/img/pre_14.jpg"
+        <li><a href="/solutionTemplate/71" target="_blank" title=""><img src="/img/pre_14.jpg"
 
                                                                    width="270" height="182" alt="" border="0" class="hover n2" /><img
 
