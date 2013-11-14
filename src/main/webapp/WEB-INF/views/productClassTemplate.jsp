@@ -19,25 +19,28 @@
     <div class="sermain sPage1 proPage">
       <div class="sRight collapse">
         <dl>
-          <dt><a href="#">数据存储</a></dt>
+          <dt><a href="/productClass/1">虚拟化基础类</a></dt>
+        </dl>
+          <dl>
+          <dt><a href="/productClass/2">数据存储</a></dt>
         </dl>
         <dl>
-          <dt><a href="#">企业网络基础硬件</a></dt>
+          <dt><a href="/productClass/3">企业网络基础硬件</a></dt>
         </dl>
         <dl>
-          <dt><a href="#">企业级无线覆盖交互</a></dt>
+          <dt><a href="/productClass/4">企业级无线覆盖交互</a></dt>
         </dl>
         <dl>
-          <dt><a href="#">企业级数据安全</a></dt>
+          <dt><a href="/productClass/5">企业级数据安全</a></dt>
         </dl>
         <dl>
-          <dt><a href="#">服务器及应用负载均衡</a></dt>
+          <dt><a href="/productClass/6">服务器及应用负载均衡</a></dt>
         </dl>
         <dl>
-          <dt><a href="#">主题活动</a></dt>
+          <dt><a href="/activity.html">主题活动</a></dt>
         </dl>
         <dl>
-          <dt><a href="#">培训课堂</a></dt>
+          <dt><a href="/train.html">培训课堂</a></dt>
         </dl>
         <div class="sAd"><img src="/img/promain_pre1.jpg" width="219" height="163" /></div>
       </div>
