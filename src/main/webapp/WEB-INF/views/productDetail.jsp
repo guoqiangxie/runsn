@@ -30,7 +30,7 @@
        </ul>
        <div class="solAd"><a href="#"><img src="/img/pro_icon5.jpg" width="155" height="126" /></a></div>
        </div>
-          ${product.productDesc}
+      ${product.productDesc}
         
       </div>
       <div class="sLeft collapse">
@@ -44,97 +44,7 @@
                     <span class="bj"></span>
                 </span></span>
             </c:forEach>
-        <%--<span class="prolink">路由和交换--%>
-        <%--<span class="protip">--%>
-        <%--<a href="#">Cisco Nexus 7000 系列交换机</a>--%>
-        <%--<a href="#">Cisco Nexus 5000 系列交换机</a>--%>
-        <%--<a href="#">Cisco Nexus 4000 系列交换机</a>--%>
-        <%--<a href="#">Cisco Nexus 3000 系列交换机 (US)</a>--%>
-        <%--<a href="#">Cisco Nexus 2000 系列阵列扩展器</a>--%>
-        <%--<a href="#">Catalyst 6500 系列交换机</a>--%>
-        <%--<a href="#">Catalyst 4900M 系列交换机</a>--%>
-        <%--<a href="#">Catalyst 4500 系列交换机</a>--%>
-        <%--<a href="#">Catalyst 3750-X 和 3560-X 系列交换机</a>--%>
-        <%--<a href="#">Catalyst 3750-E 系列交换机</a>--%>
-        <%--<a href="#">Catalyst 3560-E 系列交换机</a>--%>
-        <%--<span class="bj"></span>--%>
-        <%--</span>--%>
-        <%--</span>--%>
-        <%--<span class="prolink">网络安全--%>
-        <%--<span class="protip">--%>
-        <%--<a href="#">文字333</a>--%>
-        <%--<a href="#">文字333</a>--%>
-        <%--<span class="bj"></span>--%>
-        <%--</span>--%>
-        <%--</span>--%>
-        <%----%>
-        <%--<span class="prolink">语音与IP通信--%>
-        <%--<span class="protip">--%>
-        <%--<a href="#">文字444</a>--%>
-        <%--<a href="#">文字444</a>--%>
-        <%--<span class="bj"></span>--%>
-        <%--</span>--%>
-        <%--</span>--%>
-        <%----%>
-        <%--<span class="prolink">无线网络--%>
-        <%--<span class="protip">--%>
-        <%--<a href="#">文字555</a>--%>
-        <%--<a href="#">文字555</a>--%>
-        <%--<span class="bj"></span>--%>
-        <%--</span>--%>
-        <%--</span>--%>
-        <%----%>
-        <%--<span class="prolink">数据中心--%>
-        <%--<span class="protip">--%>
-        <%--<a href="#">文字666</a>--%>
-        <%--<a href="#">文字666</a>--%>
-        <%--<span class="bj"></span>--%>
-        <%--</span>--%>
-        <%--</span>--%>
-        <%----%>
-        <%--<span class="prolink">板卡与模块--%>
-        <%--<span class="protip">--%>
-        <%--<a href="#">文字77</a>--%>
-        <%--<a href="#">文字777</a>--%>
-        <%--<span class="bj"></span>--%>
-        <%--</span>--%>
-        <%--</span>--%>
-        <%----%>
-        <%--<span class="prolink">光网络--%>
-        <%--<span class="protip">--%>
-        <%--<a href="#">文字888</a>--%>
-        <%--<a href="#">文字888</a>--%>
-        <%--<span class="bj"></span>--%>
-        <%--</span>--%>
-        <%--</span>--%>
-        <%----%>
-        <%--<span class="prolink">思科精睿--%>
-        <%--<span class="protip">--%>
-        <%--<a href="#">文字999</a>--%>
-        <%--<a href="#">文字999</a>--%>
-        <%--<span class="bj"></span>--%>
-        <%--</span>--%>
-        <%--</span>--%>
-        <%----%>
-        <%--<span class="prolink">UCS服务器--%>
-        <%--<span class="protip">--%>
-        <%--<a href="#">文字</a>--%>
-        <%--<a href="#">文字</a>--%>
-        <%--<span class="bj"></span>--%>
-        <%--</span>--%>
-        <%--</span>--%>
-        <%----%>
-        <%--<span class="prolink">视频会议--%>
-        <%--<span class="protip">--%>
-        <%--<a href="#">文字</a>--%>
-        <%--<a href="#">文字</a>--%>
-        <%--<span class="bj"></span>--%>
-        <%--</span>--%>
-        <%--</span>--%>
-        
         </div>
-       
-        
       </div>
     </div>
 
