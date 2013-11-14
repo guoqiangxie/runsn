@@ -7,3 +7,9 @@
 *.iml
 .idea/
 target/
+
+
+
+# 忽略dbg文件和dbg目录
+
+attached

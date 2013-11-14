@@ -13,6 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class ActivityController {
+
+    @RequestMapping("ad.html")
+    public String ad() {
+        return "ad";
+    }
+
     @RequestMapping("activity.html")
     public String activity() {
         return "activity";
