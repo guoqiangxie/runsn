@@ -18,7 +18,8 @@
         <li>3</li>
         <li>4</li>
         <li>5</li>
-        <li>7</li>
+        <li>6</li>
+          <li>7</li>
       </ul>
         <div class="fouce">
             <a href="/service.html" class="active"><img src="/img/slide/01.jpg" width="928" height="370" /></a>
@@ -26,7 +27,8 @@
             <a href="/product.html"><img src="/img/slide/03.jpg" width="928" height="370" /></a>
             <a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>
             <a href="/train.html"><img src="/img/slide/05.jpg" width="928" height="370" /></a>
-            <a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a> </div>
+            <a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a>
+            <a href="/ad.html"><img src="/img/ad.jpg" width="928" height="370" /></a></div>
     </div>
   </div>
   <div class="p25">
