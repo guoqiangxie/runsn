@@ -40,7 +40,7 @@
 <br /><img src="/img/c_pre4.jpg" width="522" height="178" /><br /><br /> </div>
     </div>
 
-      <%@include file="common/footer1.jsp"%>
+      <%@include file="common/footer2.jsp"%>
   </div>
 </div>
 <div class="footer">
