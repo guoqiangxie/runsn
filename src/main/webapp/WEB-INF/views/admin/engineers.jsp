@@ -26,6 +26,9 @@
         <div class="tit">
           <h3>工程师列表</h3>
           <span></span></div>
+          <div class="newsure">
+              <input id="addService" name="input" type="button" value="添加工程师" />
+          </div>
         <div class="tmain b5 btop">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -39,14 +42,12 @@
                       <td><span class="info"><a href="/admin/engineerDetail/${engineer.id}">${engineer.name}</a></span></td>
                       <td>${engineer.age}</td>
                       <td>${engineer.title}</td>
-                      <td align="center"><a href="/admin/engineerDetail/${engineer.id}">修改</a> <a href="/admin/deleteEngineer/${engineer.id}">删除</a></td>
+                      <td align="center"><a href="/admin/engineerDetail/${engineer.id}">修改</a> <a href="/admin/deleteEngineer/${engineer.id}" onclick="return confirm('是否将此信息删除?')">删除</a></td>
                   </tr>
               </c:forEach>
           </table>
         </div>
-        <div class="newsure">
-          <input id="addService" name="input" type="button" value="添加工程师" />
-        </div>
+
       </div>
       
     </div>

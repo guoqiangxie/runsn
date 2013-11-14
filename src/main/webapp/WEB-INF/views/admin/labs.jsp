@@ -26,6 +26,9 @@
         <div class="tit">
           <h3>课程列表</h3>
           <span></span></div>
+          <div class="newsure">
+              <input id="addService" name="input" type="button" value="添加课程" />
+          </div>
         <div class="tmain b5 btop">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -41,14 +44,12 @@
                       <td>${lab.teacher}</td>
                       <td>${lab.trainTimeStr}</td>
                       <td>${lab.personNum}</td>
-                      <td align="center"><a href="/admin/labDetail/${lab.id}">修改</a> <a href="/admin/deleteLab/${lab.id}">删除</a></td>
+                      <td align="center"><a href="/admin/labDetail/${lab.id}">修改</a> <a href="/admin/deleteLab/${lab.id}" onclick="return confirm('是否将此信息删除?')">删除</a></td>
                   </tr>
               </c:forEach>
           </table>
         </div>
-        <div class="newsure">
-          <input id="addService" name="input" type="button" value="添加课程" />
-        </div>
+
       </div>
       
     </div>

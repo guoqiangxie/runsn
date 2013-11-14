@@ -25,7 +25,11 @@
         <div class="tit">
           <h3>产品列表</h3>
           <span></span></div>
+          <div class="newsure">
+              <input id="addService" name="input" type="button" value="添加产品" />
+          </div>
         <div class="tmain b5 btop">
+
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <th width="30%" >产品名</th>
@@ -40,14 +44,12 @@
                       <%--<td>${product.className}</td>--%>
                       <td>${product.brandName}</td>
                       <td>${product.typeName}</td>
-                      <td align="center"><a href="/admin/productDetail/${product.id}">修改</a> <a href="/admin/deleteProduct/${product.id}">删除</a></td>
+                      <td align="center"><a href="/admin/productDetail/${product.id}">修改</a> <a href="/admin/deleteProduct/${product.id}" onclick="return confirm('是否将此信息删除?')">删除</a></td>
                   </tr>
               </c:forEach>
           </table>
         </div>
-        <div class="newsure">
-          <input id="addService" name="input" type="button" value="添加产品" />
-        </div>
+
       </div>
       
     </div>

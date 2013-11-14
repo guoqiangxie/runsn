@@ -25,6 +25,9 @@
         <div class="tit">
           <h3>解决方案列表</h3>
           <span></span></div>
+          <div class="newsure">
+              <input id="addService" name="input" type="button" value="添加解决方案" />
+          </div>
         <div class="tmain b5 btop">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -42,14 +45,12 @@
                       <td>${service.documentType.title3}</td>
                       <td>${service.document.createDate}</td>
                       <td>${service.document.updateDate}</td>
-                      <td align="center"><a href="/admin/solutionDetail/${service.documentId}">修改</a> <a href="/admin/delete/${service.documentId}">删除</a></td>
+                      <td align="center"><a href="/admin/solutionDetail/${service.documentId}">修改</a> <a href="/admin/delete/${service.documentId}" onclick="return confirm('是否将此信息删除?')">删除</a></td>
                   </tr>
               </c:forEach>
           </table>
         </div>
-        <div class="newsure">
-          <input id="addService" name="input" type="button" value="添加解决方案" />
-        </div>
+
       </div>
       
     </div>
