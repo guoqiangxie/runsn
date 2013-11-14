@@ -27,7 +27,7 @@
                         <li><a href="/activity.html">主题活动</a></li>
                         <li><a href="/company.html">公司</a></li>
                     </ul>
-                    <div class="solAd"><a href="#"><img src="/img/solution_icon2.png" width="155" height="126" /></a></div>
+                    <div class="solAd"><a href="mailto:marketing@runsn.com"><img src="/img/solution_icon2.png" width="155" height="126" /></a></div>
                 </div>
                 ${document.content}
             </div>
