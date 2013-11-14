@@ -31,11 +31,11 @@
 	<p class="bnone">
     <b>荣誉资质</b>
     <span>对IT服务行业孜孜不倦地追求，使我们获得多项资质证书。<br />客户的肯定彰显我们的荣耀，更激励我们成长。</span>
-    <a href="#">next</a>
+    <a href="/company_8.html">next</a>
     </p>
     </div>
     <div class="c_txt3">
-    <p><a href="#"><img src="/img/c_pre1.jpg" width="375" height="216" class="img" /></a>
+    <p><a href="/activity.html"><img src="/img/c_pre1.jpg" width="375" height="216" class="img" /></a>
     <b>软盛文化：</b>为者常成，行者常至，思者常达<br />
 <b>专业：</b>专业铸就品质，唯品质，方能不负信赖<br />
 <b>高效：</b>直面机遇与挑战，快速反应，妥善应对<br />
