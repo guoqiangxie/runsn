@@ -23,7 +23,7 @@
             ${document.content}
         </div>
 
-        <%@include file="common/footer1.jsp"%>
+        <%@include file="common/footer2.jsp"%>
     </div>
 </div>
 <div class="footer">

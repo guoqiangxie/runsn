@@ -28,7 +28,7 @@
     </div>
    </div>
   </div>
-  <div class="p25"><%@include file="common/footer1.jsp"%></div>
+  <div class="p25"><%@include file="common/footer2.jsp"%></div>
 </div>
 <div class="footer">
   <div class="w940"> Copyright &copy; 2007-2013 软盛. All rights reserved. 沪ICP备07020881号 </div>

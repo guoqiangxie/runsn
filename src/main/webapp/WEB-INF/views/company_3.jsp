@@ -218,7 +218,7 @@ ABB(中国)有限公司上海分公司<br />
       </div>
     </div>
     <br /><br />
-    <%@include file="common/footer1.jsp"%>
+    <%@include file="common/footer2.jsp"%>
   </div>
 </div>
 <div class="footer">

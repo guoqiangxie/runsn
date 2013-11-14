@@ -50,7 +50,7 @@
     </div>
     <div class="clear_float"></div>
     <br /><br />
-      <%@include file="common/footer1.jsp"%>
+      <%@include file="common/footer2.jsp"%>
   </div>
 </div>
 <div class="footer">

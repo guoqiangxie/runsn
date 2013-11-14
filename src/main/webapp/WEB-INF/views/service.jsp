@@ -21,19 +21,19 @@
     <li>7</li>
   </ul>
   <div class="fouce"> 
-  <a href="#" class="active"><img src="/img/slide/01.jpg" width="928" height="370" /></a>
-  <a href="#"><img src="/img/slide/02.jpg" width="928" height="370" /></a>
-  <a href="#"><img src="/img/slide/03.jpg" width="928" height="370" /></a>
-  <a href="#"><img src="/img/slide/04.jpg" width="928" height="370" /></a>
-  <a href="#"><img src="/img/slide/05.jpg" width="928" height="370" /></a>
-  <a href="#"><img src="/img/slide/06.jpg" width="928" height="370" /></a> </div>
+  <a href="/service.html" class="active"><img src="/img/slide/01.jpg" width="928" height="370" /></a>
+  <a href="/solution.html"><img src="/img/slide/02.jpg" width="928" height="370" /></a>
+  <a href="/product.html"><img src="/img/slide/03.jpg" width="928" height="370" /></a>
+  <a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>
+  <a href="/train.html"><img src="/img/slide/05.jpg" width="928" height="370" /></a>
+  <a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a> </div>
 </div>
 </div>
 <div class="p25">
 <div class="recent homeimg">
     <h2>RECENT WORKS</h2>
     <ul>
-        <li><a href="/service.html" target="_blank" title=""><img src="/img/pre_13.jpg"
+        <li><a href="/solutionTemplate/71" target="_blank" title=""><img src="/img/pre_13.jpg"
 
                                                                   width="270" height="182" alt="" border="0" class="hover n1" /><img
 
@@ -54,7 +54,7 @@
 n3" /><img src="/img/pre_3.jpg" width="270" height="182" alt="" border="0"
 
            class="img"/></a></li>
-        <li><a href="/company.html" target="_blank" title=""><img src="/img/pre_16.jpg"
+        <li><a href="/company_5.html" target="_blank" title=""><img src="/img/pre_16.jpg"
 
                                                                   width="270" height="182" alt="" border="0" class="hover n4" /><img
 

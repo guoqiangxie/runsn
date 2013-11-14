@@ -62,7 +62,7 @@ XenMobile MDM 是最创新、最安全的企业移动性管理解决方案。与
 </div>
     </div>
 
-      <%@include file="common/footer1.jsp"%>
+      <%@include file="common/footer2.jsp"%>
   </div>
 </div>
 <div class="footer">
