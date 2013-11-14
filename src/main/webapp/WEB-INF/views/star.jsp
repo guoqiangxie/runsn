@@ -56,7 +56,7 @@ jQuery(function(){
 		<div id="bookslide-main">
 			<ul>
                 <c:forEach var="engineer" items="${starEngineers}">
-                    <li><img src="${engineer.image}" width="121" height="134" />
+                    <li><a href="/service_7.html" target=_parent><img src="${engineer.image}" width="121" height="134" /></a>
                         <b>${engineer.name}</b> 培训技能： ${engineer.experiences}</li>
                 </c:forEach>
 			</ul>

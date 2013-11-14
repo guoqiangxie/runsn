@@ -31,20 +31,20 @@
         <div class="sermain sPage1 tramain">
             <div class="sRight collapse">
                 <dl>
-                    <dt><a href="#">解决方案</a></dt>
+                    <dt><a href="/solution.html">解决方案</a></dt>
                 </dl>
 
                 <dl>
-                    <dt><a href="#">服务</a></dt>
+                    <dt><a href="/service.html">服务</a></dt>
                 </dl>
                 <dl>
-                    <dt><a href="#">产品</a></dt>
+                    <dt><a href="/product.html">产品</a></dt>
                 </dl>
                 <dl>
-                    <dt><a href="#">主题活动</a></dt>
+                    <dt><a href="/activity.html">主题活动</a></dt>
                 </dl>
                 <dl>
-                    <dt><a href="#">公司</a></dt>
+                    <dt><a href="/company.html">公司</a></dt>
                 </dl>
 
                 <div class="newlist">
@@ -72,17 +72,17 @@
                     <div class="imgslide  ">
                         <div class="sly imgbox1">
                             <ul>
-                                <li><a href="#"><img src="/img/tra_2.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_3.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_4.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_5.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_2.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_3.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_4.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_2.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_3.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_4.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_5.jpg" width="110" height="89"/></a></li>
+                                <li><a href="/train_1.html"><img src="/img/tra_2.jpg" width="110" height="89"/></a></li>
+                                <li><a href="/train_1.html"><img src="/img/tra_3.jpg" width="110" height="89"/></a></li>
+                                <li><a href="/train_1.html"><img src="/img/tra_4.jpg" width="110" height="89"/></a></li>
+                                <li><a href="/train_1.html"><img src="/img/tra_5.jpg" width="110" height="89"/></a></li>
+                                <li><a href="/train_1.html"><img src="/img/tra_2.jpg" width="110" height="89"/></a></li>
+                                <li><a href="/train_1.html"><img src="/img/tra_3.jpg" width="110" height="89"/></a></li>
+                                <li><a href="/train_1.html"><img src="/img/tra_4.jpg" width="110" height="89"/></a></li>
+                                <li><a href="/train_1.html"><img src="/img/tra_2.jpg" width="110" height="89"/></a></li>
+                                <li><a href="/train_1.html"><img src="/img/tra_3.jpg" width="110" height="89"/></a></li>
+                                <li><a href="/train_1.html"><img src="/img/tra_4.jpg" width="110" height="89"/></a></li>
+                                <li><a href="/train_1.html"><img src="/img/tra_5.jpg" width="110" height="89"/></a></li>
                             </ul>
                         </div>
                         <span class="prev btn_p1"></span>

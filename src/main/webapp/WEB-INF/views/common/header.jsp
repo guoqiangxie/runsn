@@ -96,9 +96,9 @@
       <b>培训课堂</b>
       <a href="/train_2.html">新闻</a>
       <a href="/train_1.html">合作伙伴</a>
-      <a href="#b">培训资质</a>
-      <a href="#a">培训课程表</a>
-      <a href="#c">明星讲师</a>
+      <a href="/train.html#b">培训资质</a>
+      <a href="/train.html#a">培训课程表</a>
+      <a href="/train.html#c">明星讲师</a>
       </span> </li>
             <li class="num6"><a href="/building.html">I Partner</a></li>
             <li class="num7"><a href="/company.html">公司</a>
