@@ -19,12 +19,13 @@
                 <li>4</li>
                 <li>5</li>
             </ul>
-            <div class="fouce"><a href="#" class="active"><img src="/img/slide/05.jpg" width="928" height="370"/></a> <a
-                    href="#"><img src="/img/slide/01.jpg" width="928" height="370"/></a> <a href="#"><img
-                    src="/img/slide/02.jpg" width="928" height="370"/></a> <a href="#"><img src="/img/slide/03.jpg"
-                                                                                            width="928"
-                                                                                            height="370"/></a> <a
-                    href="#"><img src="/img/slide/04.jpg" width="928" height="370"/></a></div>
+            <div class="fouce">
+                <a href="/train.html" class="active"><img src="/img/slide/05.jpg" width="928" height="370" /></a>
+                <a href="/service.html"><img src="/img/slide/01.jpg" width="928" height="370" /></a>
+                <a href="/solution.html"><img src="/img/slide/02.jpg" width="928" height="370" /></a>
+                <a href="/product.html"><img src="/img/slide/03.jpg" width="928" height="370" /></a>
+                <a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>
+                <a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a> </div>
         </div>
     </div>
     <div class="p25">
