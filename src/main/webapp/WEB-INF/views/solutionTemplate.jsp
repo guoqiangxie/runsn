@@ -22,7 +22,7 @@
             <div class="sRight">
                 <div class="rightbox">
                     <ul class="r_menu">
-                        <li><a href="/service.html">服务</a></li>
+                        <li><a href="/serviceTemplate/60">服务</a></li>
                         <li><a href="/product.html">产品</a></li>
                         <li><a href="/activity.html">主题活动</a></li>
                         <li><a href="/company.html">公司</a></li>

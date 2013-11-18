@@ -3,8 +3,8 @@
 <div class="q_menu">
     <dl>
         <dt>软盛特色</dt>
-        <dd><a href="/service.html">服务</a></dd>
-        <dd><a href="/solution.html">解决方案</a></dd>
+        <dd><a href="/serviceTemplate/60">服务</a></dd>
+        <dd><a href="/solutionTemplate/71">解决方案</a></dd>
         <dd><a href="/product.html">产品</a></dd>
         <dd><a href="/building.html">IPARTNER</a></dd>
     </dl>

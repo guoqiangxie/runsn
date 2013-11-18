@@ -39,7 +39,7 @@
                  | <a href="/productClass/${class.id}">${class.className}</a>
               </c:if>
           </c:forEach>
-          &gt; ${product.productName}
+          &gt; ${product.brandName}
           ${product.productDesc}
         
       </div>

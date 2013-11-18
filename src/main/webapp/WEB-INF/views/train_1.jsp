@@ -15,11 +15,11 @@
     <div class="sermain sPage1 tramain">
       <div class="sRight collapse">
           <dl>
-              <dt><a href="/solution.html">解决方案</a></dt>
+              <dt><a href="/solutionTemplate/71">解决方案</a></dt>
           </dl>
 
           <dl>
-              <dt><a href="/service.html">服务</a></dt>
+              <dt><a href="/serviceTemplate/60">服务</a></dt>
           </dl>
           <dl>
               <dt><a href="/product.html">产品</a></dt>
@@ -35,18 +35,18 @@
       <div class="sLeft">
       <div class="path"><a href="/train.html">培训课堂</a> &gt; 合作伙伴</div>
       <ul class="huoban">
-      <li><img src="/img/probrands_1.gif" width="90" height="86" /></li>
-      <li><img src="/img/probrands_2.gif" width="90" height="86" /></li>
-      <li><img src="/img/probrands_3.gif" width="90" height="86" /></li>
-      <li><img src="/img/probrands_4.gif" width="90" height="86" /></li>
-      <li><img src="/img/probrands_5.gif" width="90" height="86" /></li>
-      <li><img src="/img/probrands_6.gif" width="90" height="86" /></li>
-      <li><img src="/img/probrands_7.gif" width="90" height="86" /></li>
-      <li><img src="/img/probrands_8.gif" width="90" height="86" /></li>
-      <li><img src="/img/probrands_9.gif" width="90" height="86" /></li>
-      <li><img src="/img/probrands_10.gif" width="90" height="86" /></li>
-      <li><img src="/img/probrands_11.gif" width="90" height="86" /></li>
-      <li><img src="/img/probrands_12.gif" width="90" height="86" /></li>
+      <li><a href="http://www.vmware.com/cn" target="_blank"><img src="/img/probrands_1.gif" width="90" height="86" /></a></li>
+      <li><a href="http://www.microsoft.com/zh-cn/default.aspx" target="_blank"><img src="/img/probrands_2.gif" width="90" height="86" /></a></li>
+      <li><a href="http://china.emc.com/index.htm" target="_blank"><img src="/img/probrands_3.gif" width="90" height="86" /></a></li>
+      <li><a href="http://www.citrix.com.cn/" target="_blank"><img src="/img/probrands_4.gif" width="90" height="86" /></a></li>
+      <li><a href="http://www.adobe.com/cn/" target="_blank"><img src="/img/probrands_5.gif" width="90" height="86" /></a></li>
+      <li><a href="http://www.symantec.com/zh/cn/index.jsp?site=home" target="_blank"><img src="/img/probrands_6.gif" width="90" height="86" /></a></li>
+      <li><a href="http://www.arubanetworks.com.cn/#3" target="_blank"><img src="/img/probrands_7.gif" width="90" height="86" /></a></li>
+      <li><a href="http://www.cisco.com/web/CN/index.html" target="_blank"><img src="/img/probrands_8.gif" width="90" height="86" /></a></li>
+      <li><a href="http://www8.hp.com/cn/zh/home.html" target="_blank"><img src="/img/probrands_9.gif" width="90" height="86" /></a></li>
+      <li><a href="http://www.informatica.com/cn/" target="_blank"><img src="/img/probrands_10.gif" width="90" height="86" /></a></li>
+      <li><a href="http://www.juniper.net/cn/zh/" target="_blank"><img src="/img/probrands_11.gif" width="90" height="86" /></a></li>
+      <li><a href="" target="_blank"><img src="/img/probrands_12.gif" width="90" height="86" /></a></li>
       </ul>
       </div>
     </div>

@@ -48,13 +48,14 @@
         <td><a href="http://talent.adweek.com/gallery/Everyday-Health-Diabetes-What-Now/10495133" target="_blank"><img src="img/img_12.jpg" width="928" height="476" /></a></td>
     </tr>
 </table>
+    <div class="p25" style="margin:0 auto">
+        <%@include file="common/footer1.jsp"%>
     </div>
-  <div class="p25" style="margin:0 auto">
-      <%@include file="common/footer1.jsp"%>
-  </div>
+    </div>
+
 </div>
 <div class="footer">
-  <div class="w940"> Copyright &copy; 2007-2013 软盛. All rights reserved. 沪ICP备07020881号 </div>
+  <div class="w940"> Copyright &copy; i2007-2013 软盛. All rights reserved. 沪ICP备07020881号 </div>
 </div>
 <%@include file="common/weibo.jsp"%>
 <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>

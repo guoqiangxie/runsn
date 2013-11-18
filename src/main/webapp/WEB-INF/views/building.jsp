@@ -16,7 +16,7 @@
     <form action="" method="get" class="bd">
     <input name="" type="text" class="inputText" title="Your E-Mail Address" /><input name="" type="button" class="btn" />
     </form>
-    <a href="/service.html">返回上一页</a>
+    <a href="/serviceTemplate/60">返回上一页</a>
     </div>    
     </div>
     <div class="clear_float"></div>

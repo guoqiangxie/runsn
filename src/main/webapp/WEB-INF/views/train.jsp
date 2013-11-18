@@ -21,8 +21,8 @@
             </ul>
             <div class="fouce">
                 <a href="/train.html" class="active"><img src="/img/slide/05.jpg" width="928" height="370" /></a>
-                <a href="/service.html"><img src="/img/slide/01.jpg" width="928" height="370" /></a>
-                <a href="/solution.html"><img src="/img/slide/02.jpg" width="928" height="370" /></a>
+                <a href="/serviceTemplate/60"><img src="/img/slide/01.jpg" width="928" height="370" /></a>
+                <a href="/solutionTemplate/71"><img src="/img/slide/02.jpg" width="928" height="370" /></a>
                 <a href="/product.html"><img src="/img/slide/03.jpg" width="928" height="370" /></a>
                 <a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>
                 <a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a> </div>
@@ -32,11 +32,11 @@
         <div class="sermain sPage1 tramain">
             <div class="sRight collapse">
                 <dl>
-                    <dt><a href="/solution.html">解决方案</a></dt>
+                    <dt><a href="/solutionTemplate/71">解决方案</a></dt>
                 </dl>
 
                 <dl>
-                    <dt><a href="/service.html">服务</a></dt>
+                    <dt><a href="/serviceTemplate/60">服务</a></dt>
                 </dl>
                 <dl>
                     <dt><a href="/product.html">产品</a></dt>

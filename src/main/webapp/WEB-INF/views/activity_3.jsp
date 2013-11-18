@@ -16,7 +16,7 @@
     <div class="sermain sPage1 proPage actmain2">
       <div class="sRight collapse">
         <dl>
-          <dt><b><a href="/solution.html">解决方案</a></b>Solution</dt>
+          <dt><b><a href="/solutionTemplate/71">解决方案</a></b>Solution</dt>
         </dl>
         <dl>
           <dt><b><a href="/product.html">产品</a></b>Product</dt>

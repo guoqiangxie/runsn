@@ -12,7 +12,7 @@
             <a href="/" class="logo" title="runsn软盛">runsn软盛</a> </div>
         <ul class="nav">
             <li class="num1">
-                <a href="/service.html">服务</a>
+                <a href="/serviceTemplate/60">服务</a>
       <span class="menu m1">
       <b>服务</b>
       <c:forEach var="service2" items="${services}">
@@ -20,7 +20,7 @@
       </c:forEach>
       <a href="/service_7.html">Runsn工程师资质</a>
       </span> </li>
-            <li class="num2"><a href="/solution.html">解决方案</a>
+            <li class="num2"><a href="/solutionTemplate/71">解决方案</a>
       <span class="menu m2">
       <span class="r_menu">
           <c:forEach var="requirementSolution" items="${requirementSolutions}">

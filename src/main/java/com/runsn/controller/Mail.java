@@ -23,13 +23,13 @@ public class Mail {
     private String host;
     private String username;
     private String password;
-    private String mail_head_name = "恭喜您 , 报名成功！";
-    private String mail_head_value = "恭喜您 , 报名成功！";
+    private String mail_head_name = "报名邮件";
+    private String mail_head_value = "报名邮件";
     private String mail_to;
     private String mail_from;
-    private String mail_subject = "恭喜您 , 报名成功！";
+    private String mail_subject = "报名邮件";
     private String mail_body;
-    private String personalName = "我的邮件";
+    private String personalName = "报名邮件";
 
     public Mail(String host, String username, String password, String mail_from, String mail_to, String mail_body) {
         this.host = host;

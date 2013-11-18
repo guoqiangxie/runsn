@@ -27,7 +27,7 @@ public class LabDao {
         conn = ConnectionUtil.getConnection();
         List result = new ArrayList<Lab>();
         try {
-            String sql = "select * from lab where trainTime>'"+new Date(new java.util.Date().getTime())+"'";
+            String sql = "select * from lab";
             st = conn.createStatement();
 
             ResultSet rs = st.executeQuery(sql);

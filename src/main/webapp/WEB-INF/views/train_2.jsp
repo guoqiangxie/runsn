@@ -15,11 +15,11 @@
     <div class="sermain sPage1 tramain tramain2">
       <div class="sRight collapse">
           <dl>
-              <dt><a href="/solution.html">解决方案</a></dt>
+              <dt><a href="/solutionTemplate/71">解决方案</a></dt>
           </dl>
 
           <dl>
-              <dt><a href="/service.html">服务</a></dt>
+              <dt><a href="/serviceTemplate/60">服务</a></dt>
           </dl>
           <dl>
               <dt><a href="/product.html">产品</a></dt>

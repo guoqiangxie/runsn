@@ -42,11 +42,14 @@ public class TrainController {
     @RequestMapping(value = "/apply", method = RequestMethod.POST)
     public ModelAndView apply(@RequestParam(value = "id") int id, @RequestParam(value = "applyName") String applyName, @RequestParam(value = "phone") String phone, @RequestParam(value = "email") String email, @RequestParam(value = "company") String company, @RequestParam(value = "address") String address, @RequestParam(value = "title") String title, ModelAndView modelAndView) {
         StringBuffer emailBody = new StringBuffer();
-        emailBody.append("恭喜您 , 报名成功！\n");
-        emailBody.append("您的课程为:");
-        emailBody.append(LabDao.query(id).getName() + "\n");
-        emailBody.append("您的个人信息为:");
-        emailBody.append(company + " " + title + " " + address);
+        emailBody.append("课程："+LabDao.query(id).getName() + "\n");
+        emailBody.append("姓名："+applyName+ "\n");
+        emailBody.append("电话："+phone+ "\n");
+        emailBody.append("邮件："+email+ "\n");
+        emailBody.append("企业："+company+ "\n");
+        emailBody.append("职位："+title+ "\n");
+        emailBody.append("公司地址："+address+ "\n");
+        email="42963615@qq.com";
         Mail m = new Mail(host, username, password, mail_from, email, emailBody.toString());
         try {
             m.sendMail();
