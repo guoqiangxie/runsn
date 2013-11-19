@@ -49,7 +49,7 @@ public class TrainController {
         emailBody.append("企业："+company+ "\n");
         emailBody.append("职位："+title+ "\n");
         emailBody.append("公司地址："+address+ "\n");
-        email="42963615@qq.com";
+        email="marketing@runsn.com";
         Mail m = new Mail(host, username, password, mail_from, email, emailBody.toString());
         try {
             m.sendMail();
