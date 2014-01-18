@@ -30,7 +30,7 @@
        </ul>
        <div class="solAd"><a href="#"><img src="/img/pro_icon5.jpg" width="155" height="126" /></a></div>
        </div>
-              <a href="/product.html">主页</a> &gt;
+              <a href="/product.html">产品</a> &gt;
           <c:forEach var="class" items="${productClasses}" varStatus="status">
               <c:if test="${status.index==0}">
                 <a href="/productClass/${class.id}">${class.className}</a>
