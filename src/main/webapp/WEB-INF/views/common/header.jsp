@@ -82,7 +82,7 @@
       </c:forEach>
       <span class="col">品牌</span>
       <c:forEach var="brand" items="${productBrands}">
-          <a href="/productClass/${brand.firstClass}">${brand.brandName}</a>
+          <a href="/productClass/${brand.firstClass}/${brand.brandId}">${brand.brandName}</a>
       </c:forEach>
       </span> </li>
             <li class="num4"><a href="/activity.html">主题活动</a>

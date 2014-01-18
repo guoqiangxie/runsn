@@ -32,6 +32,16 @@ public class ProductController {
         return modelAndView;
     }
 
+    @RequestMapping("productClass/{classId}/{brandId}")
+    public ModelAndView productClass(@PathVariable("classId") int classId, @PathVariable("brandId") int brandId, ModelAndView modelAndView) {
+        List<List<Product>> types = groupProducts(ProductDao.queryTypeByBrand(brandId));
+        modelAndView.addObject("typesList", types);
+        modelAndView.addObject("productClass", ProductDao.queryClass(classId));
+        modelAndView.addObject("brandName", (types.size() == 0 ? null : types.get(0).get(0).getBrandName() ));
+        modelAndView.setViewName("/productClassTemplate");
+        return modelAndView;
+    }
+
     @RequestMapping("admin/deleteProduct/{id}")
     public ModelAndView deleteProduct(@PathVariable("id") int id, ModelAndView modelAndView) {
         ProductDao.delete(id);
