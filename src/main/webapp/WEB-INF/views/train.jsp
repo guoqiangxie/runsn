@@ -101,18 +101,18 @@
                     <div class="imgslide  ">
                         <div class="sly imgbox2">
                             <ul>
-                                <li><a href="#"><img src="/img/tra_6.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_7.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_8.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_9.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_6.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_7.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_8.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_9.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_6.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_7.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_8.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_9.jpg" width="110" height="89"/></a></li>
+                                <li><img src="/img/tra_6.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_7.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_8.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_9.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_6.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_7.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_8.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_9.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_6.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_7.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_8.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_9.jpg" width="110" height="89"/></li>
                             </ul>
                         </div>
                         <span class="prev btn_p2"></span>
