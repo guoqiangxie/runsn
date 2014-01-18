@@ -14,12 +14,10 @@
         <dd><a href="/train.html" target="_blank"><img src="/img/sermain_pre1.png" width="230" height="68" /></a></dd>
     </dl>
     <dl>
-        <dt><b>主题活动</b> Themed Events</dt>
-        <dd><a href="/activity.html" target="_blank"><img src="/img/sermain_pre1.png" width="230" height="68" /></a></dd>
+        <dt><a href="/activity.html"><b>主题活动</b> Themed Events</a></dt>
     </dl>
     <dl>
-        <dt><b>公司</b> Company</dt>
-        <dd><a href="/company.html" target="_blank"><img src="/img/sermain_pre1.png" width="230" height="68" /></a></dd>
+        <dt><a href="/company.html"><b>公司</b> Company</a></dt>
     </dl>
     <div class="sAd"><a href="#"><img src="/img/sermain_pre1.jpg" width="219" height="163" /></a></div>
 </div>
