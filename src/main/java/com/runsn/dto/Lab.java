@@ -19,6 +19,7 @@ public class Lab implements Serializable {
     private Integer id = 0;
     private String name;
     private int personNum;
+    private int appliedPersonNum;
     private String teacher;
     private String address;
     private String env;
@@ -50,6 +51,14 @@ public class Lab implements Serializable {
 
     public void setPersonNum(int personNum) {
         this.personNum = personNum;
+    }
+
+    public int getAppliedPersonNum() {
+        return appliedPersonNum;
+    }
+
+    public void setAppliedPersonNum(int appliedPersonNum) {
+        this.appliedPersonNum = appliedPersonNum;
     }
 
     public String getTeacher() {

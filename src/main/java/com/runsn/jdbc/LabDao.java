@@ -1,10 +1,8 @@
 package com.runsn.jdbc;
 
-import com.runsn.dto.Engineer;
 import com.runsn.dto.Lab;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -56,6 +54,7 @@ public class LabDao {
         lab.setTeacher(rs.getString("teacher"));
         lab.setTrainTime(rs.getTimestamp("trainTime"));
         lab.setUpdateDate(rs.getDate("updateDate"));
+        lab.setAppliedPersonNum(rs.getInt("appliedPersonNum"));
         return lab;
     }
 
@@ -83,7 +82,7 @@ public class LabDao {
         conn = ConnectionUtil.getConnection();
         Integer result = null;
         try {
-            String sql = "insert into lab(name, personNum,teacher, trainTime,address, env,labDesc,content,createDate) values('"
+            String sql = "insert into lab(name, personNum,teacher, trainTime,address, env,labDesc,content,createDate,appliedPersonNum) values('"
                     + lab.getName() + "',"
                     + lab.getPersonNum() + ",'"
                     + lab.getTeacher() + "','"
@@ -92,8 +91,7 @@ public class LabDao {
                     + lab.getEnv() + "','"
                     + lab.getDesc() + "','"
                     + lab.getContent() + "','"
-                    + lab.getCreateDate()
-                    + "')";
+                    + lab.getCreateDate() + "', 0)";
             st = conn.createStatement();
             st.execute(sql);
             ResultSet rs = st.getGeneratedKeys();
@@ -135,7 +133,23 @@ public class LabDao {
         }
     }
 
-    public static void delete(int id){
+    public static void addAppliedPersonNum(Lab lab) throws Exception {
+        conn = ConnectionUtil.getConnection();
+        try {
+            String sql = "update lab set appliedPersonNum=appliedPersonNum+1 where id=" + lab.getId();
+            st = conn.createStatement();
+
+            st.execute(sql);
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("更新课程报名人数失败。");
+            e.printStackTrace();
+            throw new Exception("更新课程报名人数失败。");
+        }
+    }
+
+    public static void delete(int id) {
         conn = ConnectionUtil.getConnection();
         try {
             String sql = "delete from lab where id = " + id;

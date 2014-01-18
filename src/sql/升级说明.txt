@@ -1,0 +1,9 @@
+步骤：
+
+1. 执行以下数据库脚本
+
+ALTER TABLE lab ADD appliedPersonNum int;
+
+UPDATE lab set appliedPersonNum=0;
+
+2. 更新代码

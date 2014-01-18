@@ -1,5 +1,6 @@
 package com.runsn.controller;
 
+import com.runsn.dto.Lab;
 import com.runsn.jdbc.LabDao;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -41,18 +42,26 @@ public class TrainController {
 
     @RequestMapping(value = "/apply", method = RequestMethod.POST)
     public ModelAndView apply(@RequestParam(value = "id") int id, @RequestParam(value = "applyName") String applyName, @RequestParam(value = "phone") String phone, @RequestParam(value = "email") String email, @RequestParam(value = "company") String company, @RequestParam(value = "address") String address, @RequestParam(value = "title") String title, ModelAndView modelAndView) {
+        Lab lab = LabDao.query(id);
+        if (lab.getPersonNum() - lab.getAppliedPersonNum() <= 0) {
+            modelAndView.addObject("lab", lab);
+            modelAndView.addObject("error", "对不起，报名人数已满。");
+            modelAndView.setViewName("/applyCourse");
+            return modelAndView;
+        }
         StringBuffer emailBody = new StringBuffer();
-        emailBody.append("课程："+LabDao.query(id).getName() + "\n");
-        emailBody.append("姓名："+applyName+ "\n");
-        emailBody.append("电话："+phone+ "\n");
-        emailBody.append("邮件："+email+ "\n");
-        emailBody.append("企业："+company+ "\n");
-        emailBody.append("职位："+title+ "\n");
-        emailBody.append("公司地址："+address+ "\n");
-        email="marketing@runsn.com";
+        emailBody.append("课程：" + lab.getName() + "\n");
+        emailBody.append("姓名：" + applyName + "\n");
+        emailBody.append("电话：" + phone + "\n");
+        emailBody.append("邮件：" + email + "\n");
+        emailBody.append("企业：" + company + "\n");
+        emailBody.append("职位：" + title + "\n");
+        emailBody.append("公司地址：" + address + "\n");
+        email = "marketing@runsn.com";
         Mail m = new Mail(host, username, password, mail_from, email, emailBody.toString());
         try {
             m.sendMail();
+            LabDao.addAppliedPersonNum(lab);
             modelAndView.setViewName("/train_4");
         } catch (Exception e) {
             modelAndView.setViewName("/train_5");
