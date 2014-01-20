@@ -22,11 +22,11 @@
       <div class="sRight">
       <div class="zizhi2">
        <ul>
-       <li><a class="fancybox" href="/img/zz_7.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_7.jpg" />
+       <li><a class="fancybox" href="/img/zz_7d.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_7.jpg" />
        <p class="bg"><b>Microsoft</b>Fastest Growth<br />最快成长奖</p></li>
-       <li><a class="fancybox" href="/img/zz_8.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_8.jpg" />
+       <li><a class="fancybox" href="/img/zz_8d.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_8.jpg" />
        <p class="bg"><b>Microsoft</b>Fastest Growth<br />最快成长奖</p></li>
-       <li><a class="fancybox" href="/img/zz_9.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_9.jpg" />
+       <li><a class="fancybox" href="/img/zz_9d.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_9.jpg" />
        <p class="bg"><b>Microsoft</b>Fastest Growth<br />最快成长奖</p></li>
        </ul>
        </div>
@@ -35,17 +35,17 @@
       <div class="sLeft">
       <div class="zizhi">
        <ul>
-       <li><a class="fancybox" href="/img/zz_1.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_1.jpg" width="138" height="215" />
+       <li><a class="fancybox" href="/img/zz_1d.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_1.jpg" width="138" height="215" />
        <p class="bg"><b>Microsoft</b>Fastest Growth<br />最快成长奖</p></li>
-       <li><a class="fancybox" href="/img/zz_2.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_2.jpg" width="138" height="215" />
+       <li><a class="fancybox" href="/img/zz_2d.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_2.jpg" width="138" height="215" />
        <p class="bg"><b>Imation</b>Best Contribution<br />最佳贡献奖</p></li>
-       <li><a class="fancybox" href="/img/zz_3.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_3.jpg" width="138" height="215" />
+       <li><a class="fancybox" href="/img/zz_3d.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_3.jpg" width="138" height="215" />
        <p class="bg"><b>Microsoft</b>Outstanding Partner<br />优秀合作奖</p></li>
-       <li><a class="fancybox" href="/img/zz_4.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_4.jpg" width="138" height="215" />
+       <li><a class="fancybox" href="/img/zz_4d.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_4.jpg" width="138" height="215" />
        <p class="bg bg2"><b>Symantec</b>Elite Partner<br />合作伙伴精锐奖</p></li>
-       <li><a class="fancybox" href="/img/zz_5.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_5.jpg" width="138" height="215" />
+       <li><a class="fancybox" href="/img/zz_5d.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_5.jpg" width="138" height="215" />
        <p class="bg bg2"><b>EMC</b>Special Contribution<br />特殊贡献奖</p></li>
-       <li><a class="fancybox" href="/img/zz_6.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_6.jpg" width="138" height="215" />
+       <li><a class="fancybox" href="/img/zz_6d.jpg" data-fancybox-group="gallery" title=""></a><img src="/img/zz_6.jpg" width="138" height="215" />
        <p class="bg bg2"><b>Windows</b>Windows Best Sales<br />Windows销售奖</p></li>
        </ul>
        </div>
