@@ -171,7 +171,7 @@
                 </c:forEach>
             ]
         });
-
+//        $('#calendar').fullCalendar( 'gotoDate', 2014, 5);
 
     });
 </script>
