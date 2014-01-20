@@ -1,15 +1,17 @@
-<%@page pageEncoding="UTF-8"%>
+<%@page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="header">
     <div class="w940">
         <div class="topmain">
             <div class="r_top">
                 <div class="search">
-                    <input name="" type="text" class="inputText" title="search" />
+                    <input name="" type="text" class="inputText" title="search"/>
                 </div>
-                <div class="other"><b class="MyRunsn">My runsn</b><a href="#" target="_blank">注册</a> | <a href="#" target="_blank">登录</a></div>
+                <div class="other"><b class="MyRunsn">My runsn</b><a href="#" target="_blank">注册</a> | <a href="#"
+                                                                                                          target="_blank">登录</a>
+                </div>
             </div>
-            <a href="/" class="logo" title="runsn软盛">runsn软盛</a> </div>
+            <a href="/" class="logo" title="runsn软盛">runsn软盛</a></div>
         <ul class="nav">
             <li class="num1">
                 <a href="/serviceTemplate/60">服务</a>
@@ -19,14 +21,14 @@
           <a href="/serviceTemplate/${service2.id}">${service2.name}</a>
       </c:forEach>
       <a href="/service_7.html">Runsn工程师资质</a>
-      </span> </li>
+      </span></li>
             <li class="num2"><a href="/solutionTemplate/71">解决方案</a>
       <span class="menu m2">
       <span class="r_menu">
           <c:forEach var="requirementSolution" items="${requirementSolutions}">
               <span class="submenu">
                   <c:forEach var="documentDetail" items="${requirementSolution}">
-                          <a href="/solutionTemplate/${documentDetail.document.id}">${documentDetail.document.name}</a>
+                      <a href="/solutionTemplate/${documentDetail.document.id}">${documentDetail.document.name}</a>
                   </c:forEach>
               </span>
           </c:forEach>
@@ -34,7 +36,7 @@
           <c:forEach var="bizSolution" items="${bizSolutions}">
               <span class="submenu">
                   <c:forEach var="documentDetail" items="${bizSolution}">
-                          <a href="/solutionTemplate/${documentDetail.document.id}">${documentDetail.document.name}</a>
+                      <a href="/solutionTemplate/${documentDetail.document.id}">${documentDetail.document.name}</a>
                   </c:forEach>
               </span>
           </c:forEach>
@@ -42,7 +44,7 @@
             <c:forEach var="sizeSolution" items="${sizeSolutions}">
               <span class="submenu">
                   <c:forEach var="documentDetail" items="${sizeSolution}">
-                          <a href="/solutionTemplate/${documentDetail.document.id}">${documentDetail.document.name}</a>
+                      <a href="/solutionTemplate/${documentDetail.document.id}">${documentDetail.document.name}</a>
                   </c:forEach>
               </span>
             </c:forEach>
@@ -72,7 +74,7 @@
                   </c:if>
               </c:forEach>
           </c:forEach>
-      </span> </span> </li>
+      </span> </span></li>
             <li class="num3"><a href="/product.html">产品</a>
       <span class="menu m3">
       <b>产品</b>
@@ -84,13 +86,13 @@
       <c:forEach var="brand" items="${productBrands}">
           <a href="/productClass/${brand.firstClass}/${brand.brandId}">${brand.brandName}</a>
       </c:forEach>
-      </span> </li>
+      </span></li>
             <li class="num4"><a href="/activity.html">主题活动</a>
       <span class="menu m4">
       <b>主题活动</b>
       <a href="/activity.html">精彩促销</a>
       <a href="/activity_1.html">厂商&amp;活动</a>
-      <a href="/activity_2.html">邀请函</a> </span> </li>
+      <a href="/activity_2.html">邀请函</a> </span></li>
             <li class="num5"><a href="/train.html">培训课堂</a>
       <span class="menu m5">
       <b>培训课堂</b>
@@ -99,7 +101,7 @@
       <a href="/train.html#b">培训资质</a>
       <a href="/train.html#a">培训课程表</a>
       <a href="/train.html#c">明星讲师</a>
-      </span> </li>
+      </span></li>
             <li class="num6"><a href="/building.html">I Partner</a></li>
             <li class="num7"><a href="/company.html">公司</a>
       <span class="menu m7">
@@ -111,7 +113,12 @@
       <%--<a href="/company.html">活动</a>--%>
       <%--<a href="/company_5.html">构建企业智慧云</a>--%>
       <a href="/company_6.html">职业发展</a>
-      <a href="/company_8.html">联系我们</a> </span> </li>
+      <a href="/company_8.html">联系我们</a> </span></li>
         </ul>
     </div>
 </div>
+
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa29b7d4a4a8d848b7406c5b6409fc736' type='text/javascript'%3E%3C/script%3E"));
+</script>
