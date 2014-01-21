@@ -171,7 +171,9 @@
                 </c:forEach>
             ]
         });
-//        $('#calendar').fullCalendar( 'gotoDate', 2014, 5);
+        <c:if test="${linkYear!=null}">
+            $('#calendar').fullCalendar( 'gotoDate', ${linkYear}, ${linkMonth-1});
+        </c:if>
 
     });
 </script>

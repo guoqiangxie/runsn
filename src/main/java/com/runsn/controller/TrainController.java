@@ -71,8 +71,14 @@ public class TrainController {
 
 
     @RequestMapping("train.html")
-    public ModelAndView train(ModelAndView modelAndView) {
+    public ModelAndView train(ModelAndView modelAndView,
+                              @RequestParam(required = false, defaultValue = "0") int linkYear,
+                              @RequestParam(required = false, defaultValue = "0") int linkMonth) {
         modelAndView.addObject("labs", LabDao.queryAll());
+        if (linkYear != 0 && linkMonth != 0) {
+            modelAndView.addObject("linkYear", linkYear);
+            modelAndView.addObject("linkMonth", linkMonth);
+        }
         modelAndView.setViewName("train");
         return modelAndView;
     }
