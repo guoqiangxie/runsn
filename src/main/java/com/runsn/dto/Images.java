@@ -35,6 +35,7 @@ public class Images implements Serializable {
     private String imageName;
     private String imageUrl;
     private String imageDesc;
+    private String linkUrl;
     private int imageType;
     private int imageDetailType;
     private int linkYear;
@@ -48,6 +49,14 @@ public class Images implements Serializable {
         this.linkMonth = linkMonth;
         this.imageUrl = imageUrl;
         this.imageType = 1;
+        this.createDate = new Date(new java.util.Date().getTime());
+    }
+
+    public Images(String linkUrl, String imageUrl, int imageType, int imageDetailType) {
+        this.linkUrl = linkUrl;
+        this.imageUrl = imageUrl;
+        this.imageType = imageType;
+        this.imageDetailType = imageDetailType;
         this.createDate = new Date(new java.util.Date().getTime());
     }
 
@@ -137,5 +146,13 @@ public class Images implements Serializable {
 
     public void setEngineerId(Integer engineerId) {
         this.engineerId = engineerId;
+    }
+
+    public String getLinkUrl() {
+        return linkUrl;
+    }
+
+    public void setLinkUrl(String linkUrl) {
+        this.linkUrl = linkUrl;
     }
 }

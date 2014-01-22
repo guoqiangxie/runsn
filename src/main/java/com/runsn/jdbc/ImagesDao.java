@@ -41,6 +41,23 @@ public class ImagesDao {
         });
     }
 
+    public static Images queryImagesByTypeAndDetailType(int imageType, int imageDetailType) {
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select i.* " +
+                " from images i " +
+                " where i.imageType="+imageType + " and i.imageDetailType=" + imageDetailType;
+        return jdbcTemplate.query(sql, new ResultSetExtractor<Images>() {
+            @Override
+            public Images extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                Images result = new Images();
+                while (resultSet.next()) {
+                    result = createImage(resultSet);
+                }
+                return result;
+            }
+        });
+    }
+
     private static Images createImage(ResultSet resultSet) throws SQLException {
         Images image = new Images();
         image.setId(resultSet.getInt("id"));
@@ -54,6 +71,7 @@ public class ImagesDao {
         image.setImageUrl(resultSet.getString("imageUrl"));
         image.setLinkMonth(resultSet.getInt("linkMonth"));
         image.setLinkYear(resultSet.getInt("linkYear"));
+        image.setLinkUrl(resultSet.getString("linkUrl"));
         return image;
     }
 
@@ -61,7 +79,7 @@ public class ImagesDao {
         conn = ConnectionUtil.getConnection();
         Integer result = null;
         try {
-            String sql = "insert into images(imageName, imageUrl, imageDesc, imageType, imageDetailType, linkYear, linkMonth, engineerId, createDate) values('"
+            String sql = "insert into images(imageName, imageUrl, imageDesc, imageType, imageDetailType, linkYear, linkMonth, engineerId, createDate, linkUrl) values('"
                     + image.getImageName() + "','"
                     + image.getImageUrl() + "','"
                     + image.getImageDesc() + "',"
@@ -70,7 +88,8 @@ public class ImagesDao {
                     + image.getLinkYear() + ","
                     + image.getLinkMonth() + ","
                     + image.getEngineerId() + ",'"
-                    + image.getCreateDate() + "')";
+                    + image.getCreateDate() + "','"
+                    + image.getLinkUrl() + "')";
             st = conn.createStatement();
             st.execute(sql);
             ResultSet rs = st.getGeneratedKeys();

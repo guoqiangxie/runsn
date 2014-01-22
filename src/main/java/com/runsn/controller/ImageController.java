@@ -24,7 +24,7 @@ import java.util.List;
 public class ImageController {
 
     @RequestMapping("image_rightCourse.html")
-    public ModelAndView engineers(ModelAndView modelAndView) {
+    public ModelAndView image_rightCourse(ModelAndView modelAndView) {
         List<Images> imagesList = ImagesDao.queryImagesByType(1);
         modelAndView.addObject("rightCourse1", imagesList.get(0));
         modelAndView.addObject("rightCourse2", imagesList.get(1));
@@ -49,6 +49,70 @@ public class ImageController {
             ImagesDao.save(new Images(linkYear1, linkMonth1, imageUrl1));
             ImagesDao.save(new Images(linkYear2, linkMonth2, imageUrl2));
             ImagesDao.save(new Images(linkYear3, linkMonth3, imageUrl3));
+            return "您的信息已经添加成功";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "您的信息添加失败";
+        }
+    }
+
+    @RequestMapping("image_indexPageMiddle.html")
+    public ModelAndView image_indexPageMiddle(ModelAndView modelAndView) {
+        modelAndView.addObject("middleImage11", ImagesDao.queryImagesByTypeAndDetailType(2, 11));
+        modelAndView.addObject("middleImage12", ImagesDao.queryImagesByTypeAndDetailType(2, 12));
+        modelAndView.addObject("middleImage21", ImagesDao.queryImagesByTypeAndDetailType(2, 21));
+        modelAndView.addObject("middleImage22", ImagesDao.queryImagesByTypeAndDetailType(2, 22));
+        modelAndView.addObject("middleImage31", ImagesDao.queryImagesByTypeAndDetailType(2, 31));
+        modelAndView.addObject("middleImage32", ImagesDao.queryImagesByTypeAndDetailType(2, 32));
+        modelAndView.addObject("middleImage41", ImagesDao.queryImagesByTypeAndDetailType(2, 41));
+        modelAndView.addObject("middleImage42", ImagesDao.queryImagesByTypeAndDetailType(2, 42));
+        modelAndView.addObject("middleImage51", ImagesDao.queryImagesByTypeAndDetailType(2, 51));
+        modelAndView.addObject("middleImage52", ImagesDao.queryImagesByTypeAndDetailType(2, 52));
+        modelAndView.addObject("middleImage61", ImagesDao.queryImagesByTypeAndDetailType(2, 61));
+        modelAndView.addObject("middleImage62", ImagesDao.queryImagesByTypeAndDetailType(2, 62));
+        modelAndView.setViewName("admin/image_indexPageMiddle");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/submitIndexPageMiddle", method = RequestMethod.POST)
+    @ResponseBody
+    public String submitIndexPageMiddle(@RequestParam(value = "linkUrl1") String linkUrl1,
+                                    @RequestParam(value = "imageUrl11") String imageUrl11,
+                                    @RequestParam(value = "imageUrl12") String imageUrl12,
+                                    @RequestParam(value = "linkUrl2") String linkUrl2,
+                                    @RequestParam(value = "imageUrl21") String imageUrl21,
+                                    @RequestParam(value = "imageUrl22") String imageUrl22,
+                                    @RequestParam(value = "linkUrl3") String linkUrl3,
+                                    @RequestParam(value = "imageUrl31") String imageUrl31,
+                                    @RequestParam(value = "imageUrl32") String imageUrl32,
+                                    @RequestParam(value = "linkUrl4") String linkUrl4,
+                                    @RequestParam(value = "imageUrl41") String imageUrl41,
+                                    @RequestParam(value = "imageUrl42") String imageUrl42,
+                                    @RequestParam(value = "linkUrl5") String linkUrl5,
+                                    @RequestParam(value = "imageUrl51") String imageUrl51,
+                                    @RequestParam(value = "imageUrl52") String imageUrl52,
+                                    @RequestParam(value = "linkUrl6") String linkUrl6,
+                                    @RequestParam(value = "imageUrl61") String imageUrl61,
+                                    @RequestParam(value = "imageUrl62") String imageUrl62) {
+        try {
+            ImagesDao.deleteByType(2);
+            ImagesDao.save(new Images(linkUrl1, imageUrl11, 2, 11));
+            ImagesDao.save(new Images(linkUrl1, imageUrl12, 2, 12));
+
+            ImagesDao.save(new Images(linkUrl2, imageUrl21, 2, 21));
+            ImagesDao.save(new Images(linkUrl2, imageUrl22, 2, 22));
+
+            ImagesDao.save(new Images(linkUrl3, imageUrl31, 2, 31));
+            ImagesDao.save(new Images(linkUrl3, imageUrl32, 2, 32));
+
+            ImagesDao.save(new Images(linkUrl4, imageUrl41, 2, 41));
+            ImagesDao.save(new Images(linkUrl4, imageUrl42, 2, 42));
+
+            ImagesDao.save(new Images(linkUrl5, imageUrl51, 2, 51));
+            ImagesDao.save(new Images(linkUrl5, imageUrl52, 2, 52));
+
+            ImagesDao.save(new Images(linkUrl6, imageUrl61, 2, 61));
+            ImagesDao.save(new Images(linkUrl6, imageUrl62, 2, 62));
             return "您的信息已经添加成功";
         } catch (Exception e) {
             e.printStackTrace();
