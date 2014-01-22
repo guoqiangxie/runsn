@@ -22,9 +22,9 @@
       <div class="sRight" >
        <div class="rightbox">
        <ul class="r_menu">
-       <li><a href="#">白皮书</a></li>
-       <li><a href="#">演示</a></li>
-       <li><a href="#">成功案例</a></li>
+       <li><a href="${image1.linkUrl}">${image1.imageName}</a></li>
+       <li><a href="${image2.linkUrl}">${image2.imageName}</a></li>
+       <li><a href="${image3.linkUrl}">${image3.imageName}</a></li>
        <li><a href="#">主题活动</a></li>
        <li><a href="#">培训课堂</a></li>
        </ul>

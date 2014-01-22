@@ -14,6 +14,7 @@ import java.sql.Date;
 public class Images implements Serializable {
     public static int IMAGE_TYPE_1 = 1; //右侧课程导航 3张图片
     public static int IMAGE_TYPE_2 = 2; //首页六宫格位置 12张图片
+    public static int IMAGE_TYPE_3 = 3; //产品详细页右侧导航链接
 
 
     public static int IMAGE_DETAIL_TYPE_11 = 11; //左上1
@@ -43,6 +44,13 @@ public class Images implements Serializable {
     private Integer engineerId;
 
     public Images(){}
+
+    public  Images(String imageName, String linkUrl) {
+        this.imageName = imageName;
+        this.linkUrl = linkUrl;
+        this.createDate = new Date(new java.util.Date().getTime());
+        this.imageType = 3;
+    }
 
     public Images(int linkYear, int linkMonth, String imageUrl) {
         this.linkYear = linkYear;

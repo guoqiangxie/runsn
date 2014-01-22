@@ -119,4 +119,34 @@ public class ImageController {
             return "您的信息添加失败";
         }
     }
+
+    @RequestMapping("image_productLeftLink.html")
+    public ModelAndView image_productLeftLink(ModelAndView modelAndView) {
+        List<Images> imagesList = ImagesDao.queryImagesByType(3);
+        modelAndView.addObject("image1", imagesList.get(0));
+        modelAndView.addObject("image2", imagesList.get(1));
+        modelAndView.addObject("image3", imagesList.get(2));
+        modelAndView.setViewName("admin/image_productLeftLink");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/submitProductLeftLink", method = RequestMethod.POST)
+    @ResponseBody
+    public String submitRightCourse(@RequestParam(value = "linkUrl1") String linkUrl1,
+                                    @RequestParam(value = "imageName1") String imageName1,
+                                    @RequestParam(value = "linkUrl2") String linkUrl2,
+                                    @RequestParam(value = "imageName2") String imageName2,
+                                    @RequestParam(value = "linkUrl3") String linkUrl3,
+                                    @RequestParam(value = "imageName3") String imageName3) {
+        try {
+            ImagesDao.deleteByType(3);
+            ImagesDao.save(new Images(imageName1, linkUrl1));
+            ImagesDao.save(new Images(imageName2, linkUrl2));
+            ImagesDao.save(new Images(imageName3, linkUrl3));
+            return "您的信息已经添加成功";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "您的信息添加失败";
+        }
+    }
 }
