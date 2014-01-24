@@ -23,7 +23,7 @@
     <li class="mr0"><a href="activity_3.html"><img src="/img/act_4.jpg" width="233" height="155" /></a>购F5产品满额，赢IPAD</li>
     </ul>
     <div class="a_img2">
-    <p><a href="/activity_1.html"><img src="/img/act_5.jpg" width="390" height="209" /></a><span>前沿动态，亲临现场共谱新知</span></p>
+    <p><a href="/activity.html"><img src="/img/act_17.jpg" width="390" height="209" /></a><span>精彩促销，活动连连</span></p>
     <p class="mr0"><a href="/activity_2.html"><img src="/img/act_6.jpg" width="390" height="209" /></a><span>低价豪礼，提供最亲和力折扣</span></p>
     </div>
    </div>
