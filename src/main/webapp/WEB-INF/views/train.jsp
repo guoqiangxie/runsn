@@ -17,15 +17,15 @@
                 <li>2</li>
                 <li>3</li>
                 <li>4</li>
-                <li>5</li>
             </ul>
             <div class="fouce">
-                <a href="/train.html" class="active"><img src="/img/slide/05.jpg" width="928" height="370" /></a>
-                <a href="/serviceTemplate/60"><img src="/img/slide/01.jpg" width="928" height="370" /></a>
-                <a href="/solutionTemplate/71"><img src="/img/slide/02.jpg" width="928" height="370" /></a>
-                <a href="/product.html"><img src="/img/slide/03.jpg" width="928" height="370" /></a>
-                <a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>
-                <a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a> </div>
+                <a href="${image1.linkUrl}" class="active"><img src="${image1.imageUrl}" width="928" height="370" /></a>
+                <a href="${image2.linkUrl}"><img src="${image2.imageUrl}" width="928" height="370" /></a>
+                <a href="${image3.linkUrl}"><img src="${image3.imageUrl}" width="928" height="370" /></a>
+                <a href="${image4.linkUrl}"><img src="${image4.imageUrl}" width="928" height="370" /></a>
+                <%--<a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>--%>
+                <%--<a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a> --%>
+            </div>
         </div>
     </div>
     <div class="p25">

@@ -28,7 +28,7 @@ public class ImagesDao {
         JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
         String sql = "select i.* " +
                 " from images i " +
-                " where i.imageType="+imageType + " order by linkYear, linkMonth";
+                " where i.imageType="+imageType + " order by linkYear, linkMonth,imageDetailType";
         return jdbcTemplate.query(sql, new ResultSetExtractor<List<Images>>() {
             @Override
             public List<Images> extractData(ResultSet resultSet) throws SQLException, DataAccessException {

@@ -149,4 +149,42 @@ public class ImageController {
             return "您的信息添加失败";
         }
     }
+
+    @RequestMapping("image_trainTop.html")
+    public ModelAndView image_trainTop(ModelAndView modelAndView) {
+        List<Images> imagesList = ImagesDao.queryImagesByType(4);
+        modelAndView.addObject("image1", imagesList.get(0));
+        modelAndView.addObject("image2", imagesList.get(1));
+        modelAndView.addObject("image3", imagesList.get(2));
+        modelAndView.addObject("image4", imagesList.get(3));
+        modelAndView.setViewName("admin/image_trainTop");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/submitTrainTop", method = RequestMethod.POST)
+    @ResponseBody
+    public String submitRightCourse(@RequestParam(value = "linkUrl1") String linkUrl1,
+                                    @RequestParam(value = "imageUrl1") String imageUrl1,
+                                    @RequestParam(value = "showOrder1") int showOrder1,
+                                    @RequestParam(value = "linkUrl2") String linkUrl2,
+                                    @RequestParam(value = "imageUrl2") String imageUrl2,
+                                    @RequestParam(value = "showOrder2") int showOrder2,
+                                    @RequestParam(value = "linkUrl3") String linkUrl3,
+                                    @RequestParam(value = "imageUrl3") String imageUrl3,
+                                    @RequestParam(value = "showOrder3") int showOrder3,
+                                    @RequestParam(value = "linkUrl4") String linkUrl4,
+                                    @RequestParam(value = "imageUrl4") String imageUrl4,
+                                    @RequestParam(value = "showOrder4") int showOrder4) {
+        try {
+            ImagesDao.deleteByType(4);
+            ImagesDao.save(new Images(imageUrl1, linkUrl1, showOrder1));
+            ImagesDao.save(new Images(imageUrl2, linkUrl2, showOrder2));
+            ImagesDao.save(new Images(imageUrl3, linkUrl3, showOrder3));
+            ImagesDao.save(new Images(imageUrl4, linkUrl4, showOrder4));
+            return "您的信息已经添加成功";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "您的信息添加失败";
+        }
+    }
 }

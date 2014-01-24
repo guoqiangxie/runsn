@@ -1,6 +1,8 @@
 package com.runsn.controller;
 
+import com.runsn.dto.Images;
 import com.runsn.dto.Lab;
+import com.runsn.jdbc.ImagesDao;
 import com.runsn.jdbc.LabDao;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -79,6 +83,11 @@ public class TrainController {
             modelAndView.addObject("linkYear", linkYear);
             modelAndView.addObject("linkMonth", linkMonth);
         }
+        List<Images> imagesList = ImagesDao.queryImagesByType(4);
+        modelAndView.addObject("image1", imagesList.get(0));
+        modelAndView.addObject("image2", imagesList.get(1));
+        modelAndView.addObject("image3", imagesList.get(2));
+        modelAndView.addObject("image4", imagesList.get(3));
         modelAndView.setViewName("train");
         return modelAndView;
     }
