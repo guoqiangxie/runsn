@@ -22,8 +22,8 @@
           <li>7</li>
       </ul>
         <div class="fouce">
-            <a href="/ad.html" class="active"><img src="/img/ad.jpg" width="928" height="370" /></a>
-        <a href="/serviceTemplate/60" ><img src="/img/slide/01.jpg" width="928" height="370" /></a>
+        <a href="/serviceTemplate/60" class="active"><img src="/img/slide/01.jpg" width="928" height="370" /></a>
+            <a href="/ad.html"><img src="/img/ad.jpg" width="928" height="370" /></a>
             <a href="/solutionTemplate/71"><img src="/img/slide/02.jpg" width="928" height="370" /></a>
             <a href="/product.html"><img src="/img/slide/03.jpg" width="928" height="370" /></a>
             <a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>
