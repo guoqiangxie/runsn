@@ -4,7 +4,7 @@
     <div class="w940">
         <div class="topmain">
             <div class="r_top">
-                <div class="search">
+                <div class="search" onclick="window.location.href = '/search';">
                     <input name="" type="text" class="inputText" title="search"/>
                 </div>
                 <div class="other"><b class="MyRunsn">My runsn</b><a href="#" target="_blank">注册</a> | <a href="#"

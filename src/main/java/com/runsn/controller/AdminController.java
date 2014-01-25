@@ -3,8 +3,6 @@ package com.runsn.controller;
 import com.runsn.dto.Document;
 import com.runsn.dto.DocumentDetail;
 import com.runsn.dto.DocumentType;
-import com.runsn.dto.Engineer;
-import com.runsn.dto.Lab;
 import com.runsn.dto.Product;
 import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.EngineerDao;
@@ -15,10 +13,8 @@ import com.runsn.jdbc.TypeDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 

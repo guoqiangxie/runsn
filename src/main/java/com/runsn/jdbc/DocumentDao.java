@@ -123,6 +123,23 @@ public class DocumentDao {
         });
     }
 
+    public static List<Document> queryByTitle1codeAndWords(int title1code, String words) {
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code
+                + " and (d.title like '%" + words + "%' or d.content like '%" + words + "%')"
+                + " order by d.updateDate desc, createDate desc";
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<Document>>() {
+            @Override
+            public List<Document> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    result.add(createDocument(resultSet));
+                }
+                return result;
+            }
+        });
+    }
+
     public static List<Document> queryByTitle2code(int title1code, int title2code) {
         JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
         String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code + " and t.title2code = " + title2code;
