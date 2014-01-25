@@ -2,6 +2,7 @@ package com.runsn.dto;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,6 +23,7 @@ public class Engineer implements Serializable {
     private Date createDate;
     private Date updateDate;
     private String star;
+    private List<Images> aptitudeImages;
 
     public Integer getId() {
         return id;
@@ -101,5 +103,13 @@ public class Engineer implements Serializable {
 
     public void setStar(String star) {
         this.star = star;
+    }
+
+    public List<Images> getAptitudeImages() {
+        return aptitudeImages;
+    }
+
+    public void setAptitudeImages(List<Images> aptitudeImages) {
+        this.aptitudeImages = aptitudeImages;
     }
 }

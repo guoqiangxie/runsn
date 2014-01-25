@@ -119,4 +119,35 @@ public class ImagesDao {
             e.printStackTrace();
         }
     }
+
+    public static void deleteByTypeAndEngineer(int imageType, Integer engineerId) {
+        conn = ConnectionUtil.getConnection();
+        try {
+            String sql = "delete from images where imageType = " + imageType + " and engineerId=" + engineerId;
+            st = conn.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("删除数据失败。");
+            e.printStackTrace();
+        }
+    }
+
+    public static List<Images> queryImagesByTypeAndEngineer(int imageType, int engineerId) {
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select i.* " +
+                " from images i " +
+                " where i.imageType="+imageType + " and i.engineerId=" + engineerId + " order by i.imageDetailType";
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<Images>>() {
+            @Override
+            public List<Images> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List<Images> result = new ArrayList<Images>();
+                while (resultSet.next()) {
+                    result.add(createImage(resultSet));
+                }
+                return result;
+            }
+        });
+    }
 }

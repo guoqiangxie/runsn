@@ -2,16 +2,19 @@ package com.runsn.controller;
 
 import com.runsn.dto.Document;
 import com.runsn.dto.Engineer;
+import com.runsn.dto.Images;
 import com.runsn.dto.Lab;
 import com.runsn.dto.Product;
 import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.EngineerDao;
+import com.runsn.jdbc.ImagesDao;
 import com.runsn.jdbc.LabDao;
 import com.runsn.jdbc.ProductDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Date;
@@ -262,40 +265,44 @@ public class DocumentController {
     }
 
     @RequestMapping("/admin/submitEngineer")
-    public ModelAndView submitEngineer(ModelAndView modelAndView,
-                                       @RequestParam(value = "id") Integer id,
+    @ResponseBody
+    public String submitEngineer(@RequestParam(value = "id") Integer id,
                                        @RequestParam(value = "name") String name,
                                        @RequestParam(value = "age") int age,
                                        @RequestParam(value = "title") String title,
                                        @RequestParam(value = "experiences") String experiences,
-                                       @RequestParam(value = "aptitude") String aptitude,
                                        @RequestParam(value = "star", required = false, defaultValue = "") String star,
-                                       @RequestParam(value = "image") String image) {
+                                       @RequestParam(value = "image") String image,
+                                       @RequestParam(value = "aptitudes") String aptitudes) {
         Engineer engineer = EngineerDao.query(id);
+        String[] aptitudesArray = aptitudes.split(";");
         if (engineer.getId() == 0) {
             try {
-                EngineerDao.save(createEngineer(name, age, title, experiences, aptitude, image, star));
-                modelAndView.addObject("result", "成功啦");
-                modelAndView.addObject("message", "工程师资料提交成功");
+                Integer engineerId = EngineerDao.save(createEngineer(name, age, title, experiences, null, image, star));
+                for (int i = 1; i <= aptitudesArray.length; i ++) {
+                    String aptitude = aptitudesArray[i-1];
+                    if (aptitude != null || !aptitude.equals("")) ImagesDao.save(new Images(aptitude, engineerId, i));
+                }
+                return "您的信息已经添加成功";
             } catch (Exception e) {
-                modelAndView.addObject("result", "失败啦");
-                modelAndView.addObject("message", "您的信息更新失败");
+                e.printStackTrace();
+                return "您的信息添加失败";
             }
         } else {
             try {
-                resetEngineer(engineer, name, age, title, experiences, aptitude, image, star);
+                resetEngineer(engineer, name, age, title, experiences, null, image, star);
                 EngineerDao.update(engineer);
-                modelAndView.addObject("result", "成功啦");
-                modelAndView.addObject("message", "工程师资料更新成功");
+                ImagesDao.deleteByTypeAndEngineer(5, engineer.getId());
+                for (int i = 1; i <= aptitudesArray.length; i ++) {
+                    String aptitude = aptitudesArray[i-1];
+                    if (aptitude != null || !aptitude.equals("")) ImagesDao.save(new Images(aptitude, engineer.getId(), i));
+                }
+                return "您的信息已经添加成功";
             } catch (Exception e) {
-                modelAndView.addObject("result", "失败啦");
-                modelAndView.addObject("message", "工程师资料更新失败");
+                e.printStackTrace();
+                return "您的信息添加失败";
             }
         }
-        modelAndView.setViewName("/admin/result");
-        modelAndView.addObject("result", "成功啦");
-        modelAndView.addObject("message", "工程师资料提交成功");
-        return modelAndView;
     }
 
     private void resetEngineer(Engineer engineer, String name, int age, String title, String experiences, String aptitude, String image, String star) {

@@ -16,6 +16,7 @@ public class Images implements Serializable {
     public static int IMAGE_TYPE_2 = 2; //首页六宫格位置 12张图片
     public static int IMAGE_TYPE_3 = 3; //产品详细页右侧导航链接
     public static int IMAGE_TYPE_4 = 4; //培训课堂滚动图片
+    public static int IMAGE_TYPE_5 = 5; //工程师资质图片
 
     public static int IMAGE_DETAIL_TYPE_11 = 11; //左上1
     public static int IMAGE_DETAIL_TYPE_12 = 12; //左上2
@@ -34,6 +35,22 @@ public class Images implements Serializable {
     public static int IMAGE_DETAIL_TYPE_2 = 2;
     public static int IMAGE_DETAIL_TYPE_3 = 3;
     public static int IMAGE_DETAIL_TYPE_4 = 4;
+//    public static int IMAGE_DETAIL_TYPE_5 = 5;
+//    public static int IMAGE_DETAIL_TYPE_6 = 6;
+//    public static int IMAGE_DETAIL_TYPE_7 = 7;
+//    public static int IMAGE_DETAIL_TYPE_8 = 8;
+//    public static int IMAGE_DETAIL_TYPE_9 = 9;
+//    public static int IMAGE_DETAIL_TYPE_10 =10;
+//    public static int IMAGE_DETAIL_TYPE_11= 11;
+//    public static int IMAGE_DETAIL_TYPE_12= 12;
+//    public static int IMAGE_DETAIL_TYPE_13= 13;
+//    public static int IMAGE_DETAIL_TYPE_14= 14;
+//    public static int IMAGE_DETAIL_TYPE_15= 15;
+//    public static int IMAGE_DETAIL_TYPE_16= 16;
+//    public static int IMAGE_DETAIL_TYPE_17= 17;
+//    public static int IMAGE_DETAIL_TYPE_18= 18;
+//    public static int IMAGE_DETAIL_TYPE_19= 19;
+//    public static int IMAGE_DETAIL_TYPE_20= 20;
 
     private Integer id = 0;
     private Date createDate;
@@ -50,11 +67,19 @@ public class Images implements Serializable {
 
     public Images(){}
 
-    public  Images(String imageName, String linkUrl) {
+    public Images(String imageName, String linkUrl) {
         this.imageName = imageName;
         this.linkUrl = linkUrl;
         this.createDate = new Date(new java.util.Date().getTime());
         this.imageType = 3;
+    }
+
+    public Images(String imageUrl, Integer engineerId, int imageDetailType) {
+        this.imageUrl = imageUrl;
+        this.engineerId = engineerId;
+        this.createDate = new Date(new java.util.Date().getTime());
+        this.imageType = 5;
+        this.imageDetailType = imageDetailType;
     }
 
     public  Images(String imageUrl, String linkUrl, int showOrder) {

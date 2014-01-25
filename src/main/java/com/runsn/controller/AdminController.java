@@ -8,6 +8,7 @@ import com.runsn.dto.Lab;
 import com.runsn.dto.Product;
 import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.EngineerDao;
+import com.runsn.jdbc.ImagesDao;
 import com.runsn.jdbc.LabDao;
 import com.runsn.jdbc.ProductDao;
 import com.runsn.jdbc.TypeDao;
@@ -183,6 +184,7 @@ public class AdminController {
     @RequestMapping("engineerDetail/{engineerId}")
     public ModelAndView engineerDetail(@PathVariable("engineerId") int engineerId, ModelAndView modelAndView) {
         modelAndView.addObject("engineer", EngineerDao.query(engineerId));
+        modelAndView.addObject("aptitudeImages", ImagesDao.queryImagesByTypeAndEngineer(5, engineerId));
         modelAndView.setViewName("admin/engineerDetail");
         return modelAndView;
     }
