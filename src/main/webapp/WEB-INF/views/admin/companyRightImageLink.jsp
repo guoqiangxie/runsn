@@ -1,0 +1,124 @@
+<%@page contentType="text/html;charset=UTF-8"  language="java" %>
+<%@page pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Page-Enter" content="blendTrans(Duration=1)" />
+<meta http-equiv="Page-Exit" content="blendTrans(Duration=1)" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>公司主页图片 | 网站后台管理系统</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/css/news.css" rel="stylesheet" type="text/css" />
+    <link href="/css/uploadify.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .uploadify-button {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+        }
+        .uploadify:hover .uploadify-button {
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <%@include file="left.jsp"%>
+  <div class="content">
+    <div class="c_top">
+      <h2>网站后台管理系统</h2>
+      <span><a href="main.html" class="on">中文</a></span> </div>
+    <div class="c_main">
+      
+ <div class="main2">
+  <div class="tit">
+    <h3>编辑内容</h3>
+    <span></span></div>
+     <form action="/admin/submitCompanyRight" method="POST" id="serviceForm">
+        <div class="tmain b5 btop">
+            <div class="boxinfo"> <span class="name">图片上传：</span> <span class="text">
+      <input id="uploader1" type="button" class="btn"/>
+      <div id="uploadMsg1" style="background-color: red; display: none;">上传图片成功。</div>
+        <input id="imageUrl" name="imageUrl" type="hidden" value="${rightImage.imageUrl}"/>
+      </span></div>
+            <div> <span class="name"></span><span class="text"><input name="" type="text" style="visibility: hidden;"/></span></div>
+            <div> <span class="name"></span><span class="text"><input name="" type="text" style="visibility: hidden;"/></span></div>
+            <div> <span class="name"></span><span class="text"><input name="" type="text" style="visibility: hidden;"/></span></div>
+    <div class="txt">标题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：
+      <input class="w500 b5" id="title" name="title" type="text" value="${documentDetail.document.title}"/>
+    </div>
+            <div class="txt">Keywords&nbsp;&nbsp;&nbsp;：
+                <input class="w500 b5" id="keywords" name="keywords" type="text" value="${documentDetail.document.keywords}"/>
+            </div>
+            <div class="txt">Description：
+                <input class="w500 b5" id="description" name="description" type="text" value="${documentDetail.document.description}"/>
+            </div>
+     <div class="txt">
+    <textarea id="content" name="content" cols="" rows="" class="bjq" >${documentDetail.document.content}</textarea>
+    </div>
+    <div class="sure">
+        <input id="id" name="id" value="${documentDetail.document.id}" type="hidden" />
+      <input id="submitForm" type="button" value="立即发布" />
+    </div>
+  </div>
+    </form>
+</div>
+      
+    </div>
+    <div class="c_bottom"><span class="fl red"><span class="en gray"></span></span><span class="fr"><span class="en">Copyright © 2007-2013 软盛. All rights reserved.</span>　沪ICP备07020881号</span></div>
+  </div>
+</div>
+<script src="/js/jquery-1.7.1.min.js" type="text/javascript" charset="gb2312"></script>
+<script src="/js/yb.js" type="text/javascript" charset="gb2312"></script>
+<link rel="stylesheet" href="/js/kindedit/themes/default/default.css"/>
+<script charset="utf-8" src="/js/kindedit/kindeditor-min.js"></script>
+<script charset="utf-8" src="/js/kindedit/lang/zh_CN.js"></script>
+<script src="/js/jquery.uploadify.js" type="text/javascript" charset="gb2312"></script>
+<script type="text/javascript">
+    $(function () {
+        KindEditor.ready(function (K) {
+            K.create('textarea[name="content"]', {
+                autoHeightMode: true,
+                filterMode: false,
+                uploadJson: '/upload_json',
+                afterCreate: function () {
+                    this.loadPlugin('autoheight');
+                },
+                afterBlur: function() {
+                    this.sync();
+                }
+            });
+        });
+        $(".16").addClass("on");
+
+        $("#uploader1").uploadify({
+            height        : 24,
+            swf           : '/js/uploadify.swf',
+            uploader      : '/upload_json',
+            width         : 32,
+            buttonText : '上传1',
+            onUploadSuccess:function(file, data, response) {
+                var data  = eval("(" + data + ")");
+                $("#uploadMsg1").show();
+                $("#imageUrl").val(data.url);
+            }
+        });
+
+        $("#submitForm").click(function() {
+            if ($("#imageUrl").val()==null || $("#imageUrl").val()=='') {
+                alert("图片没有上传。");
+                return;
+            }
+            if ($("#title").val()==null || $("#title").val()=='' ||
+                    $("#content").val()==null || $("#content").val()=='') {
+                alert("标题和内容不能为空");
+                return;
+            }
+            $("#serviceForm").submit();
+        });
+    });
+</script>
+</body>
+</html>

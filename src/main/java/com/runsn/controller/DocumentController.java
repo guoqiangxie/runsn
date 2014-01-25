@@ -87,6 +87,68 @@ public class DocumentController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/admin/submitCompanyLeft", method = RequestMethod.POST)
+    public ModelAndView submitCompanyLeft(@RequestParam(value = "imageUrl") String imageUrl, @RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "keywords", required = false) String keywords, @RequestParam(value = "description", required = false) String description, @RequestParam(value = "content") String content, ModelAndView modelAndView) {
+        Document document = DocumentDao.query(id);
+        if (document == null||document.getCreateDate()==null) {
+            try {
+                DocumentDao.save(createDocument(title, content, keywords, description, 29));
+                ImagesDao.deleteByType(9);
+                ImagesDao.save(new Images(imageUrl, 9));
+                modelAndView.addObject("result", "成功啦");
+                modelAndView.addObject("message", "您的信息已经添加成功");
+            } catch (Exception e) {
+                modelAndView.addObject("result", "失败啦");
+                modelAndView.addObject("message", "您的信息添加失败");
+            }
+        } else {
+            resetDocument(title, keywords, description, content, document);
+            try {
+                DocumentDao.update(document);
+                ImagesDao.deleteByType(9);
+                ImagesDao.save(new Images(imageUrl, 9));
+                modelAndView.addObject("result", "成功啦");
+                modelAndView.addObject("message", "您的信息已经更新成功");
+            } catch (Exception e) {
+                modelAndView.addObject("result", "失败啦");
+                modelAndView.addObject("message", "您的信息更新失败");
+            }
+        }
+        modelAndView.setViewName("/admin/result");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/admin/submitCompanyRight", method = RequestMethod.POST)
+    public ModelAndView submitCompanyRight(@RequestParam(value = "imageUrl") String imageUrl, @RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "keywords", required = false) String keywords, @RequestParam(value = "description", required = false) String description, @RequestParam(value = "content") String content, ModelAndView modelAndView) {
+        Document document = DocumentDao.query(id);
+        if (document == null||document.getCreateDate()==null) {
+            try {
+                DocumentDao.save(createDocument(title, content, keywords, description, 30));
+                ImagesDao.deleteByType(10);
+                ImagesDao.save(new Images(imageUrl, 10));
+                modelAndView.addObject("result", "成功啦");
+                modelAndView.addObject("message", "您的信息已经添加成功");
+            } catch (Exception e) {
+                modelAndView.addObject("result", "失败啦");
+                modelAndView.addObject("message", "您的信息添加失败");
+            }
+        } else {
+            resetDocument(title, keywords, description, content, document);
+            try {
+                DocumentDao.update(document);
+                ImagesDao.deleteByType(10);
+                ImagesDao.save(new Images(imageUrl, 10));
+                modelAndView.addObject("result", "成功啦");
+                modelAndView.addObject("message", "您的信息已经更新成功");
+            } catch (Exception e) {
+                modelAndView.addObject("result", "失败啦");
+                modelAndView.addObject("message", "您的信息更新失败");
+            }
+        }
+        modelAndView.setViewName("/admin/result");
+        return modelAndView;
+    }
+
     private void resetDocument(String title, String keywords, String description, String content, Document document) {
         document.setTitle(title);
         document.setName(title);

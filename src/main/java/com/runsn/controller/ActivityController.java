@@ -1,10 +1,14 @@
 package com.runsn.controller;
 
+import com.runsn.dto.Document;
+import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.ImagesDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,8 +22,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class ActivityController {
 
     @RequestMapping("ad.html")
-    public String ad() {
-        return "ad";
+    public ModelAndView ad(ModelAndView modelAndView) {
+        List<Document> documents = DocumentDao.queryByTitle1code(6);
+        modelAndView.addObject("leftDocument", documents.size() > 0 ? documents.get(0) : new Document());
+        modelAndView.setViewName("ad");
+        return modelAndView;
     }
 
     @RequestMapping("activity.html")

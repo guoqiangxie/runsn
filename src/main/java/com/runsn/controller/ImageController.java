@@ -1,7 +1,12 @@
 package com.runsn.controller;
 
+import com.runsn.dto.Document;
+import com.runsn.dto.DocumentDetail;
+import com.runsn.dto.DocumentType;
 import com.runsn.dto.Images;
+import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.ImagesDao;
+import com.runsn.jdbc.TypeDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,12 +29,50 @@ import java.util.List;
 public class ImageController {
 
     @RequestMapping("image_rightCourse.html")
-         public ModelAndView image_rightCourse(ModelAndView modelAndView) {
+     public ModelAndView image_rightCourse(ModelAndView modelAndView) {
         List<Images> imagesList = ImagesDao.queryImagesByType(1);
         modelAndView.addObject("rightCourse1", imagesList.get(0));
         modelAndView.addObject("rightCourse2", imagesList.get(1));
         modelAndView.addObject("rightCourse3", imagesList.get(2));
         modelAndView.setViewName("admin/image_rightCourse");
+        return modelAndView;
+    }
+
+    @RequestMapping("companyLeftImageLink.html")
+    public ModelAndView companyLeftImageLink(ModelAndView modelAndView) {
+        List<Images> imagesList = ImagesDao.queryImagesByType(9);
+        DocumentDetail documentDetail = new DocumentDetail();
+        List<Document> documents = DocumentDao.queryByTitle1code(6);
+        Document document = (documents.size() > 0 ? documents.get(0) : new Document());
+        if (document != null && document.getCreateDate()!=null) {
+            DocumentType documentType = TypeDao.query(document.getTypeid());
+            documentDetail.setDocument(document);
+            documentDetail.setDocumentType(documentType);
+            documentDetail.setDocumentId(document.getId());
+            documentDetail.setTypeid(documentType.getId());
+        } else documentDetail.getDocument().setDefaultContent(6);
+        modelAndView.addObject("documentDetail", documentDetail);
+        modelAndView.addObject("leftImage", (imagesList.size() > 0 ? imagesList.get(0) : new Images()));
+        modelAndView.setViewName("admin/companyLeftImageLink");
+        return modelAndView;
+    }
+
+    @RequestMapping("companyRightImageLink.html")
+    public ModelAndView companyRightImageLink(ModelAndView modelAndView) {
+        List<Images> imagesList = ImagesDao.queryImagesByType(10);
+        DocumentDetail documentDetail = new DocumentDetail();
+        List<Document> documents = DocumentDao.queryByTitle1code(7);
+        Document document = (documents.size() > 0 ? documents.get(0) : new Document());
+        if (document != null && document.getCreateDate()!=null) {
+            DocumentType documentType = TypeDao.query(document.getTypeid());
+            documentDetail.setDocument(document);
+            documentDetail.setDocumentType(documentType);
+            documentDetail.setDocumentId(document.getId());
+            documentDetail.setTypeid(documentType.getId());
+        } else documentDetail.getDocument().setDefaultContent(7);
+        modelAndView.addObject("documentDetail", documentDetail);
+        modelAndView.addObject("rightImage", (imagesList.size() > 0 ? imagesList.get(0) : new Images()));
+        modelAndView.setViewName("admin/companyRightImageLink");
         return modelAndView;
     }
 
