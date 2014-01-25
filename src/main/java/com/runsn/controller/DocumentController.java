@@ -60,6 +60,33 @@ public class DocumentController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/admin/submitNews", method = RequestMethod.POST)
+    public ModelAndView submitNews(@RequestParam(value = "id") int id, @RequestParam(value = "title") String title, @RequestParam(value = "keywords", required = false) String keywords, @RequestParam(value = "description", required = false) String description, @RequestParam(value = "content") String content, ModelAndView modelAndView) {
+        Document document = DocumentDao.query(id);
+        if (document == null||document.getCreateDate()==null) {
+            try {
+                DocumentDao.save(createDocument(title, content, keywords, description, 28));
+                modelAndView.addObject("result", "成功啦");
+                modelAndView.addObject("message", "您的信息已经添加成功");
+            } catch (Exception e) {
+                modelAndView.addObject("result", "失败啦");
+                modelAndView.addObject("message", "您的信息添加失败");
+            }
+        } else {
+            resetDocument(title, keywords, description, content, document);
+            try {
+                DocumentDao.update(document);
+                modelAndView.addObject("result", "成功啦");
+                modelAndView.addObject("message", "您的信息已经更新成功");
+            } catch (Exception e) {
+                modelAndView.addObject("result", "失败啦");
+                modelAndView.addObject("message", "您的信息更新失败");
+            }
+        }
+        modelAndView.setViewName("/admin/result");
+        return modelAndView;
+    }
+
     private void resetDocument(String title, String keywords, String description, String content, Document document) {
         document.setTitle(title);
         document.setName(title);

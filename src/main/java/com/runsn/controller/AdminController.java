@@ -39,9 +39,16 @@ public class AdminController {
     }
 
     @RequestMapping("services.html")
-    public ModelAndView news(ModelAndView modelAndView) {
+    public ModelAndView services(ModelAndView modelAndView) {
         modelAndView.addObject("services", DocumentDao.queryByTitle1code(1));
         modelAndView.setViewName("admin/services");
+        return modelAndView;
+    }
+
+    @RequestMapping("news.html")
+    public ModelAndView news(ModelAndView modelAndView) {
+        modelAndView.addObject("news", DocumentDao.queryByTitle1code(5));
+        modelAndView.setViewName("admin/news");
         return modelAndView;
     }
 
@@ -87,6 +94,22 @@ public class AdminController {
         } else documentDetail.getDocument().setDefaultContent(1);
         modelAndView.addObject("documentDetail", documentDetail);
         modelAndView.setViewName("admin/serviceDetail");
+        return modelAndView;
+    }
+
+    @RequestMapping("newsDetail/{documentId}")
+    public ModelAndView newsDetail(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
+        DocumentDetail documentDetail = new DocumentDetail();
+        Document document = DocumentDao.query(documentId);
+        if (document != null&&document.getCreateDate()!=null) {
+            DocumentType documentType = TypeDao.query(document.getTypeid());
+            documentDetail.setDocument(document);
+            documentDetail.setDocumentType(documentType);
+            documentDetail.setDocumentId(documentId);
+            documentDetail.setTypeid(documentType.getId());
+        } else documentDetail.getDocument().setDefaultContent(5);
+        modelAndView.addObject("documentDetail", documentDetail);
+        modelAndView.setViewName("admin/newDetail");
         return modelAndView;
     }
 

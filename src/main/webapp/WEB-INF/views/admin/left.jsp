@@ -14,6 +14,7 @@
         <li class="8"><a href="/admin/image/image_indexPageMiddle.html">首页中间图片</a></li>
         <li class="9"><a href="/admin/image/image_productLeftLink.html">产品右侧链接</a></li>
         <li class="10"><a href="/admin/image/image_trainTop.html">培训课堂焦点图片</a></li>
+        <li class="11"><a href="/admin/news.html">新闻</a></li>
         <%--<li class="7"><a href="/admin/dudao.html">现场督导</a></li>--%>
         <%--<li class="8"><a href="/admin/contact.html">联系我们</a></li>--%>
         <!--<li <a href="job.html">>人才招聘</a></li>-->

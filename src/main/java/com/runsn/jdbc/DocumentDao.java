@@ -110,7 +110,7 @@ public class DocumentDao {
 
     public static List<Document> queryByTitle1code(int title1code) {
         JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
-        String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code;
+        String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code + " order by d.updateDate desc, createDate desc";
         return jdbcTemplate.query(sql, new ResultSetExtractor<List<Document>>() {
             @Override
             public List<Document> extractData(ResultSet resultSet) throws SQLException, DataAccessException {

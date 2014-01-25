@@ -1,7 +1,9 @@
 package com.runsn.controller;
 
+import com.runsn.dto.Document;
 import com.runsn.dto.Images;
 import com.runsn.dto.Lab;
+import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.ImagesDao;
 import com.runsn.jdbc.LabDao;
 import org.springframework.beans.factory.annotation.Value;
@@ -99,7 +101,8 @@ public class TrainController {
 
     @RequestMapping("train_2.html")
     public String train_2() {
-        return "train_2";
+        List<Document> news = DocumentDao.queryByTitle1code(5);
+        return "redirect:/newsTemplate/" + news.get(0).getId();
     }
 
     @RequestMapping("train_3.html")

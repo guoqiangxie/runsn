@@ -6,6 +6,8 @@ ALTER TABLE lab ADD appliedPersonNum int;
 
 UPDATE lab set appliedPersonNum=0;
 
+insert documenttype 新闻 id=28 type1=5
+
 
 2. 新增images表，需要初始化数据
 
