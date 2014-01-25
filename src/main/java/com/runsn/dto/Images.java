@@ -17,6 +17,9 @@ public class Images implements Serializable {
     public static int IMAGE_TYPE_3 = 3; //产品详细页右侧导航链接
     public static int IMAGE_TYPE_4 = 4; //培训课堂滚动图片
     public static int IMAGE_TYPE_5 = 5; //工程师资质图片
+    public static int IMAGE_TYPE_6 = 6; //主题活动-精彩促销图片
+    public static int IMAGE_TYPE_7 = 7; //主题活动-厂商&活动图片
+    public static int IMAGE_TYPE_8 = 8; //主题活动-邀请函图片
 
     public static int IMAGE_DETAIL_TYPE_11 = 11; //左上1
     public static int IMAGE_DETAIL_TYPE_12 = 12; //左上2
@@ -100,6 +103,22 @@ public class Images implements Serializable {
 
     public Images(String linkUrl, String imageUrl, int imageType, int imageDetailType) {
         this.linkUrl = linkUrl;
+        this.imageUrl = imageUrl;
+        this.imageType = imageType;
+        this.imageDetailType = imageDetailType;
+        this.createDate = new Date(new java.util.Date().getTime());
+    }
+
+    public Images(String linkUrl, String imageUrl, int imageType, int imageDetailType, String imageDesc) {
+        this.linkUrl = linkUrl;
+        this.imageUrl = imageUrl;
+        this.imageType = imageType;
+        this.imageDetailType = imageDetailType;
+        this.imageDesc = imageDesc;
+        this.createDate = new Date(new java.util.Date().getTime());
+    }
+
+    public Images(String imageUrl, int imageType, int imageDetailType) {
         this.imageUrl = imageUrl;
         this.imageType = imageType;
         this.imageDetailType = imageDetailType;

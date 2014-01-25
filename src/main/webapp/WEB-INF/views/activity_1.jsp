@@ -18,9 +18,9 @@
     </div>
     <h2>厂商&amp;活动</h2>
     <ul class="a_img">
-    <li><a href="/activity_3.html"><img src="/img/act_2.jpg" width="233" height="155" /></a>购F5产品满额，赢IPAD</li>
-    <li><a href="/activity_3.html"><img src="/img/act_3.jpg" width="233" height="155" /></a>CITRIX桌面虚拟化产品 送"苹果"啦！</li>
-    <li class="mr0"><a href="activity_3.html"><img src="/img/act_4.jpg" width="233" height="155" /></a>购F5产品满额，赢IPAD</li>
+        <li><a href="/activity/7"><img src="${middleImage11.imageUrl}" width="233" height="155" /></a>${middleImage11.imageDesc}</li>
+        <li><a href="/activity/7"><img src="${middleImage21.imageUrl}" width="233" height="155" /></a>${middleImage21.imageDesc}</li>
+        <li class="mr0"><a href="/activity/7"><img src="${middleImage31.imageUrl}" width="233" height="155" /></a>${middleImage31.imageDesc}</li>
     </ul>
     <div class="a_img2">
     <p><a href="/activity.html"><img src="/img/act_17.jpg" width="390" height="209" /></a><span>精彩促销，活动连连</span></p>

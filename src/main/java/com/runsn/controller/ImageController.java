@@ -24,12 +24,47 @@ import java.util.List;
 public class ImageController {
 
     @RequestMapping("image_rightCourse.html")
-    public ModelAndView image_rightCourse(ModelAndView modelAndView) {
+         public ModelAndView image_rightCourse(ModelAndView modelAndView) {
         List<Images> imagesList = ImagesDao.queryImagesByType(1);
         modelAndView.addObject("rightCourse1", imagesList.get(0));
         modelAndView.addObject("rightCourse2", imagesList.get(1));
         modelAndView.addObject("rightCourse3", imagesList.get(2));
         modelAndView.setViewName("admin/image_rightCourse");
+        return modelAndView;
+    }
+
+    @RequestMapping("image_activity1.html")
+    public ModelAndView image_activity1(ModelAndView modelAndView) {
+        initActivityModel(modelAndView, 6);
+        return modelAndView;
+    }
+
+    private void initActivityModel(ModelAndView modelAndView, int imageType) {
+        modelAndView.addObject("imageType", imageType);
+        modelAndView.addObject("middleImage11", ImagesDao.queryImagesByTypeAndDetailType(imageType, 11));
+        modelAndView.addObject("middleImage12", ImagesDao.queryImagesByTypeAndDetailType(imageType, 12));
+        modelAndView.addObject("middleImage21", ImagesDao.queryImagesByTypeAndDetailType(imageType, 21));
+        modelAndView.addObject("middleImage22", ImagesDao.queryImagesByTypeAndDetailType(imageType, 22));
+        modelAndView.addObject("middleImage31", ImagesDao.queryImagesByTypeAndDetailType(imageType, 31));
+        modelAndView.addObject("middleImage32", ImagesDao.queryImagesByTypeAndDetailType(imageType, 32));
+        modelAndView.addObject("middleImage41", ImagesDao.queryImagesByTypeAndDetailType(imageType, 41));
+        modelAndView.addObject("middleImage42", ImagesDao.queryImagesByTypeAndDetailType(imageType, 42));
+        modelAndView.addObject("middleImage51", ImagesDao.queryImagesByTypeAndDetailType(imageType, 51));
+        modelAndView.addObject("middleImage52", ImagesDao.queryImagesByTypeAndDetailType(imageType, 52));
+        modelAndView.addObject("middleImage61", ImagesDao.queryImagesByTypeAndDetailType(imageType, 61));
+        modelAndView.addObject("middleImage62", ImagesDao.queryImagesByTypeAndDetailType(imageType, 62));
+        modelAndView.setViewName("admin/image_activity");
+    }
+
+    @RequestMapping("image_activity2.html")
+    public ModelAndView image_activity2(ModelAndView modelAndView) {
+        initActivityModel(modelAndView, 7);
+        return modelAndView;
+    }
+
+    @RequestMapping("image_activity3.html")
+    public ModelAndView image_activity3(ModelAndView modelAndView) {
+        initActivityModel(modelAndView, 8);
         return modelAndView;
     }
 
@@ -113,6 +148,55 @@ public class ImageController {
 
             ImagesDao.save(new Images(linkUrl6, imageUrl61, 2, 61));
             ImagesDao.save(new Images(linkUrl6, imageUrl62, 2, 62));
+            return "您的信息已经添加成功";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "您的信息添加失败";
+        }
+    }
+
+    @RequestMapping(value = "/submitActivityImages", method = RequestMethod.POST)
+    @ResponseBody
+    public String submitActivityImages(@RequestParam(value = "imageType") int imageType,
+                                        @RequestParam(value = "imageDesc1") String imageDesc1,
+                                        @RequestParam(value = "imageUrl11") String imageUrl11,
+                                        @RequestParam(value = "imageUrl12") String imageUrl12,
+                                        @RequestParam(value = "imageDesc2") String imageDesc2,
+                                        @RequestParam(value = "imageUrl21") String imageUrl21,
+                                        @RequestParam(value = "imageUrl22") String imageUrl22,
+                                        @RequestParam(value = "imageDesc3") String imageDesc3,
+                                        @RequestParam(value = "imageUrl31") String imageUrl31,
+                                        @RequestParam(value = "imageUrl32") String imageUrl32,
+                                        @RequestParam(value = "imageDesc4") String imageDesc4,
+                                        @RequestParam(value = "imageUrl41") String imageUrl41,
+                                        @RequestParam(value = "imageUrl42") String imageUrl42,
+                                        @RequestParam(value = "imageDesc5") String imageDesc5,
+                                        @RequestParam(value = "imageUrl51") String imageUrl51,
+                                        @RequestParam(value = "imageUrl52") String imageUrl52,
+                                        @RequestParam(value = "imageDesc6") String imageDesc6,
+                                        @RequestParam(value = "imageUrl61") String imageUrl61,
+                                        @RequestParam(value = "imageUrl62") String imageUrl62) {
+        try {
+            ImagesDao.deleteByType(imageType);
+
+            int id1 = ImagesDao.save(new Images(imageUrl12, imageType, 12));
+            ImagesDao.save(new Images("/activityDetail/"+id1, imageUrl11, imageType, 11, imageDesc1));
+
+            int id2 = ImagesDao.save(new Images(imageUrl22, imageType, 22));
+            ImagesDao.save(new Images("/activityDetail/"+id2, imageUrl21, imageType, 21, imageDesc2));
+
+            int id3 = ImagesDao.save(new Images(imageUrl32, imageType, 32));
+            ImagesDao.save(new Images("/activityDetail/"+id3, imageUrl31, imageType, 31, imageDesc3));
+
+            int id4 = ImagesDao.save(new Images(imageUrl42, imageType, 42));
+            ImagesDao.save(new Images("/activityDetail/"+id4, imageUrl41, imageType, 41, imageDesc4));
+
+            int id5 = ImagesDao.save(new Images(imageUrl52, imageType, 52));
+            ImagesDao.save(new Images("/activityDetail/"+id5, imageUrl51, imageType, 51, imageDesc5));
+
+            int id6 = ImagesDao.save(new Images(imageUrl62, imageType, 62));
+            ImagesDao.save(new Images("/activityDetail/"+id6, imageUrl61, imageType, 61, imageDesc6));
+
             return "您的信息已经添加成功";
         } catch (Exception e) {
             e.printStackTrace();

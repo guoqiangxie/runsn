@@ -58,6 +58,24 @@ public class ImagesDao {
         });
     }
 
+    public static Images get(int id) {
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select i.* " +
+                " from images i " +
+                " where i.id=" + id;
+        return jdbcTemplate.query(sql, new ResultSetExtractor<Images>() {
+            @Override
+            public Images extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                Images result = new Images();
+                while (resultSet.next()) {
+                    result = createImage(resultSet);
+                }
+                return result;
+            }
+        });
+    }
+
+
     private static Images createImage(ResultSet resultSet) throws SQLException {
         Images image = new Images();
         image.setId(resultSet.getInt("id"));
