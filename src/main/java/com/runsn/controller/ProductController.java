@@ -84,9 +84,9 @@ public class ProductController {
         modelAndView.addObject("productsList", productsList);
 
         List<Images> imagesList = ImagesDao.queryImagesByType(3);
-        modelAndView.addObject("image1", imagesList.get(0));
-        modelAndView.addObject("image2", imagesList.get(1));
-        modelAndView.addObject("image3", imagesList.get(2));
+        modelAndView.addObject("image1", imagesList.size() > 0 ? imagesList.get(0) : new Images());
+        modelAndView.addObject("image2", imagesList.size() > 1 ? imagesList.get(1) : new Images());
+        modelAndView.addObject("image3", imagesList.size() > 2 ? imagesList.get(2) : new Images());
         modelAndView.setViewName("/productDetail");
         return modelAndView;
     }
