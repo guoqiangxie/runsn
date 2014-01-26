@@ -31,9 +31,9 @@ public class ImageController {
     @RequestMapping("image_rightCourse.html")
      public ModelAndView image_rightCourse(ModelAndView modelAndView) {
         List<Images> imagesList = ImagesDao.queryImagesByType(1);
-        modelAndView.addObject("rightCourse1", imagesList.get(0));
-        modelAndView.addObject("rightCourse2", imagesList.get(1));
-        modelAndView.addObject("rightCourse3", imagesList.get(2));
+        modelAndView.addObject("rightCourse1", imagesList.size() > 0 ? imagesList.get(0) : new Images());
+        modelAndView.addObject("rightCourse2", imagesList.size() > 1 ? imagesList.get(1) : new Images());
+        modelAndView.addObject("rightCourse3", imagesList.size() > 2 ? imagesList.get(2) : new Images());
         modelAndView.setViewName("admin/image_rightCourse");
         return modelAndView;
     }
