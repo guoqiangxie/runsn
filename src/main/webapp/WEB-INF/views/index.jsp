@@ -1,5 +1,6 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -22,13 +23,16 @@
           <li>7</li>
       </ul>
         <div class="fouce">
-        <a href="/serviceTemplate/60" class="active"><img src="/img/slide/01.jpg" width="928" height="370" /></a>
-            <a href="/ad.html"><img src="/img/ad.jpg" width="928" height="370" /></a>
-            <a href="/solutionTemplate/71"><img src="/img/slide/02.jpg" width="928" height="370" /></a>
-            <a href="/product.html"><img src="/img/slide/03.jpg" width="928" height="370" /></a>
-            <a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>
-            <a href="/train.html"><img src="/img/slide/05.jpg" width="928" height="370" /></a>
-            <a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a>  </div>
+            <c:forEach var="image" items="${topImages}" varStatus="status">
+                <a href="${image.linkUrl}" <c:if test="${status.index == 0}">class="active"</c:if>><img src="${image.imageUrl}" width="928" height="370" /></a>
+            </c:forEach>
+        <%--<a href="/serviceTemplate/60" class="active"><img src="/img/slide/01.jpg" width="928" height="370" /></a>--%>
+            <%--<a href="/ad.html"><img src="/img/ad.jpg" width="928" height="370" /></a>--%>
+            <%--<a href="/solutionTemplate/71"><img src="/img/slide/02.jpg" width="928" height="370" /></a>--%>
+            <%--<a href="/product.html"><img src="/img/slide/03.jpg" width="928" height="370" /></a>--%>
+            <%--<a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>--%>
+            <%--<a href="/train.html"><img src="/img/slide/05.jpg" width="928" height="370" /></a>--%>
+            <%--<a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a>  </div>--%>
     </div>
   </div>
   <div class="p25">

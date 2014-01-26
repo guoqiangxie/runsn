@@ -20,6 +20,7 @@
         <li class="14"><a href="/admin/image/image_activity3.html">邀请函图片</a></li>
         <li class="15"><a href="/admin/image/companyLeftImageLink.html">公司左侧图片及链接页面</a></li>
         <li class="16"><a href="/admin/image/companyRightImageLink.html">公司右侧图片及链接页面</a></li>
+        <li class="17"><a href="/admin/image/image_indexTop.html">首页滑动焦点图</a></li>
         <%--<li class="7"><a href="/admin/dudao.html">现场督导</a></li>--%>
         <%--<li class="8"><a href="/admin/contact.html">联系我们</a></li>--%>
         <!--<li <a href="job.html">>人才招聘</a></li>-->

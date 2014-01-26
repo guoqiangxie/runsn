@@ -29,6 +29,7 @@ public class IndexController {
         modelAndView.addObject("middleImage52", ImagesDao.queryImagesByTypeAndDetailType(2, 52));
         modelAndView.addObject("middleImage61", ImagesDao.queryImagesByTypeAndDetailType(2, 61));
         modelAndView.addObject("middleImage62", ImagesDao.queryImagesByTypeAndDetailType(2, 62));
+        modelAndView.addObject("topImages", ImagesDao.queryImagesByType(11));
 
         modelAndView.setViewName("index");
         return modelAndView;

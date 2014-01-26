@@ -22,6 +22,7 @@ public class Images implements Serializable {
     public static int IMAGE_TYPE_8 = 8; //主题活动-邀请函图片
     public static int IMAGE_TYPE_9 = 9; //公司 左侧 图片
     public static int IMAGE_TYPE_10 = 10; //公司 右侧 图片
+    public static int IMAGE_TYPE_11 = 11; //首页滑动焦点图片
 
     public static int IMAGE_DETAIL_TYPE_11 = 11; //左上1
     public static int IMAGE_DETAIL_TYPE_12 = 12; //左上2
@@ -87,12 +88,12 @@ public class Images implements Serializable {
         this.imageDetailType = imageDetailType;
     }
 
-    public  Images(String imageUrl, String linkUrl, int showOrder) {
+    public  Images(int imageType, String imageUrl, String linkUrl, int showOrder) {
         this.imageUrl = imageUrl;
         this.linkUrl = linkUrl;
         this.imageDetailType = showOrder;
         this.createDate = new Date(new java.util.Date().getTime());
-        this.imageType = 4;
+        this.imageType = imageType;
     }
 
     public Images(int linkYear, int linkMonth, String imageUrl) {

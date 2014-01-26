@@ -280,11 +280,25 @@ public class ImageController {
     @RequestMapping("image_trainTop.html")
     public ModelAndView image_trainTop(ModelAndView modelAndView) {
         List<Images> imagesList = ImagesDao.queryImagesByType(4);
-        modelAndView.addObject("image1", imagesList.get(0));
-        modelAndView.addObject("image2", imagesList.get(1));
-        modelAndView.addObject("image3", imagesList.get(2));
-        modelAndView.addObject("image4", imagesList.get(3));
+        modelAndView.addObject("image1", imagesList.size() > 0 ? imagesList.get(0):new Images());
+        modelAndView.addObject("image2", imagesList.size() > 1 ? imagesList.get(1):new Images());
+        modelAndView.addObject("image3", imagesList.size() > 2 ? imagesList.get(2):new Images());
+        modelAndView.addObject("image4", imagesList.size() > 3 ? imagesList.get(3):new Images());
         modelAndView.setViewName("admin/image_trainTop");
+        return modelAndView;
+    }
+
+    @RequestMapping("image_indexTop.html")
+    public ModelAndView image_indexTop(ModelAndView modelAndView) {
+        List<Images> imagesList = ImagesDao.queryImagesByType(11);
+        modelAndView.addObject("image1", imagesList.size() > 0 ? imagesList.get(0):new Images());
+        modelAndView.addObject("image2", imagesList.size() > 1 ? imagesList.get(1):new Images());
+        modelAndView.addObject("image3", imagesList.size() > 2 ? imagesList.get(2):new Images());
+        modelAndView.addObject("image4", imagesList.size() > 3 ? imagesList.get(3):new Images());
+        modelAndView.addObject("image5", imagesList.size() > 4 ? imagesList.get(4):new Images());
+        modelAndView.addObject("image6", imagesList.size() > 5 ? imagesList.get(5):new Images());
+        modelAndView.addObject("image7", imagesList.size() > 6 ? imagesList.get(6):new Images());
+        modelAndView.setViewName("admin/image_indexTop");
         return modelAndView;
     }
 
@@ -304,10 +318,49 @@ public class ImageController {
                                     @RequestParam(value = "showOrder4") int showOrder4) {
         try {
             ImagesDao.deleteByType(4);
-            ImagesDao.save(new Images(imageUrl1, linkUrl1, showOrder1));
-            ImagesDao.save(new Images(imageUrl2, linkUrl2, showOrder2));
-            ImagesDao.save(new Images(imageUrl3, linkUrl3, showOrder3));
-            ImagesDao.save(new Images(imageUrl4, linkUrl4, showOrder4));
+            ImagesDao.save(new Images(4, imageUrl1, linkUrl1, showOrder1));
+            ImagesDao.save(new Images(4, imageUrl2, linkUrl2, showOrder2));
+            ImagesDao.save(new Images(4, imageUrl3, linkUrl3, showOrder3));
+            ImagesDao.save(new Images(4, imageUrl4, linkUrl4, showOrder4));
+            return "您的信息已经添加成功";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "您的信息添加失败";
+        }
+    }
+
+    @RequestMapping(value = "/submitIndexTop", method = RequestMethod.POST)
+    @ResponseBody
+    public String submitRightCourse(@RequestParam(value = "linkUrl1") String linkUrl1,
+                                    @RequestParam(value = "imageUrl1") String imageUrl1,
+                                    @RequestParam(value = "showOrder1") int showOrder1,
+                                    @RequestParam(value = "linkUrl2") String linkUrl2,
+                                    @RequestParam(value = "imageUrl2") String imageUrl2,
+                                    @RequestParam(value = "showOrder2") int showOrder2,
+                                    @RequestParam(value = "linkUrl3") String linkUrl3,
+                                    @RequestParam(value = "imageUrl3") String imageUrl3,
+                                    @RequestParam(value = "showOrder3") int showOrder3,
+                                    @RequestParam(value = "linkUrl4") String linkUrl4,
+                                    @RequestParam(value = "imageUrl4") String imageUrl4,
+                                    @RequestParam(value = "showOrder4") int showOrder4,
+                                    @RequestParam(value = "linkUrl5") String linkUrl5,
+                                    @RequestParam(value = "imageUrl5") String imageUrl5,
+                                    @RequestParam(value = "showOrder5") int showOrder5,
+                                    @RequestParam(value = "linkUrl6") String linkUrl6,
+                                    @RequestParam(value = "imageUrl6") String imageUrl6,
+                                    @RequestParam(value = "showOrder6") int showOrder6,
+                                    @RequestParam(value = "linkUrl7") String linkUrl7,
+                                    @RequestParam(value = "imageUrl7") String imageUrl7,
+                                    @RequestParam(value = "showOrder7") int showOrder7) {
+        try {
+            ImagesDao.deleteByType(11);
+            ImagesDao.save(new Images(11, imageUrl1, linkUrl1, showOrder1));
+            ImagesDao.save(new Images(11, imageUrl2, linkUrl2, showOrder2));
+            ImagesDao.save(new Images(11, imageUrl3, linkUrl3, showOrder3));
+            ImagesDao.save(new Images(11, imageUrl4, linkUrl4, showOrder4));
+            ImagesDao.save(new Images(11, imageUrl5, linkUrl5, showOrder5));
+            ImagesDao.save(new Images(11, imageUrl6, linkUrl6, showOrder6));
+            ImagesDao.save(new Images(11, imageUrl7, linkUrl7, showOrder7));
             return "您的信息已经添加成功";
         } catch (Exception e) {
             e.printStackTrace();
