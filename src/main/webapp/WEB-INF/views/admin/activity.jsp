@@ -26,7 +26,7 @@
           <h3>活动列表</h3>
           <span></span></div>
           <div class="newsure">
-              <input id="addService" name="input" type="button" value="添加活动" />
+              <input id="addService" name="input" type="button" value="添加" />
           </div>
         <div class="tmain b5 btop">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
