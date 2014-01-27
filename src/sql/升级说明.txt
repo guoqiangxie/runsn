@@ -1,0 +1,37 @@
+步骤：
+
+1. 执行以下数据库脚本
+
+ALTER TABLE lab ADD appliedPersonNum int;
+
+UPDATE lab set appliedPersonNum=0;
+
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `createDate` datetime NOT NULL,
+  `updateDate` datetime DEFAULT NULL,
+  `imageUrl` varchar(200) NOT NULL,
+  `imageDesc` varchar(1000) DEFAULT NULL,
+  `imageType` int(2) NOT NULL,
+  `linkYear` int(4) DEFAULT NULL,
+  `linkMonth` int(2) DEFAULT NULL,
+  `engineerId` int(11) DEFAULT NULL,
+  `imageName` varchar(50) DEFAULT NULL,
+  `imageDetailType` int(2) DEFAULT NULL,
+  `linkUrl` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+
+INSERT INTO `document_type` VALUES ('28', '新闻', '5', null, null, null, null, '1');
+INSERT INTO `document_type` VALUES ('29', '公司左侧图片链接地址', '6', null, null, null, null, '1');
+INSERT INTO `document_type` VALUES ('30', '公司右侧图片链接地址', '7', null, null, null, null, '1');
+
+
+-----------------------------------------------
+ALTER TABLE images ADD documentId int;
+
+INSERT INTO `document_type` VALUES ('31', '精彩促销-详情', '8', null, null, null, null, '1');
+INSERT INTO `document_type` VALUES ('32', '厂商&活动-详情', '9', null, null, null, null, '1');
+INSERT INTO `document_type` VALUES ('33', '邀请函-详情', '10', null, null, null, null, '1');

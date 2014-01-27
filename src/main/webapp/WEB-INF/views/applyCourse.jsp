@@ -68,6 +68,8 @@
         });
 
         $(".num5").addClass("active");
+
+        if ('${error}'!='') alert('${error}');
     });
 </script>
 </body>

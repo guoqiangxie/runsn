@@ -1,6 +1,8 @@
 package com.runsn.controller;
 
+import com.runsn.dto.Images;
 import com.runsn.dto.Product;
+import com.runsn.jdbc.ImagesDao;
 import com.runsn.jdbc.ProductDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +34,16 @@ public class ProductController {
         return modelAndView;
     }
 
+    @RequestMapping("productClass/{classId}/{brandId}")
+    public ModelAndView productClass(@PathVariable("classId") int classId, @PathVariable("brandId") int brandId, ModelAndView modelAndView) {
+        List<List<Product>> types = groupProducts(ProductDao.queryTypeByBrand(brandId));
+        modelAndView.addObject("typesList", types);
+        modelAndView.addObject("productClass", ProductDao.queryClass(classId));
+        modelAndView.addObject("brandName", (types.size() == 0 ? null : types.get(0).get(0).getBrandName() ));
+        modelAndView.setViewName("/productClassTemplate");
+        return modelAndView;
+    }
+
     @RequestMapping("admin/deleteProduct/{id}")
     public ModelAndView deleteProduct(@PathVariable("id") int id, ModelAndView modelAndView) {
         ProductDao.delete(id);
@@ -54,6 +66,11 @@ public class ProductController {
             }
         }
         modelAndView.addObject("productsList", productsList);
+
+        List<Images> imagesList = ImagesDao.queryImagesByType(3);
+        modelAndView.addObject("image1", imagesList.size() > 0 ? imagesList.get(0) : new Images());
+        modelAndView.addObject("image2", imagesList.size() > 1 ? imagesList.get(1) : new Images());
+        modelAndView.addObject("image3", imagesList.size() > 2 ? imagesList.get(2) : new Images());
         modelAndView.setViewName("/productDetail");
         return modelAndView;
     }
@@ -65,6 +82,11 @@ public class ProductController {
         modelAndView.addObject("product", product);
         modelAndView.addObject("productClasses", ProductDao.queryProductClassByBrandId(product.getBrandId()));
         modelAndView.addObject("productsList", productsList);
+
+        List<Images> imagesList = ImagesDao.queryImagesByType(3);
+        modelAndView.addObject("image1", imagesList.size() > 0 ? imagesList.get(0) : new Images());
+        modelAndView.addObject("image2", imagesList.size() > 1 ? imagesList.get(1) : new Images());
+        modelAndView.addObject("image3", imagesList.size() > 2 ? imagesList.get(2) : new Images());
         modelAndView.setViewName("/productDetail");
         return modelAndView;
     }

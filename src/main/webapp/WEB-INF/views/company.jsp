@@ -35,13 +35,13 @@
     </p>
     </div>
     <div class="c_txt3">
-    <p><a href="/ad.html"><img src="/img/c_pre1.jpg" width="375" height="216" class="img" /></a>
+    <p><a href="/ad.html"><img src="${leftImage.imageUrl}" width="375" height="216" class="img" /></a>
     <b>软盛文化：</b>为者常成，行者常至，思者常达<br />
 <b>专业：</b>专业铸就品质，唯品质，方能不负信赖<br />
 <b>高效：</b>直面机遇与挑战，快速反应，妥善应对<br />
 <b>创新：</b>臻于创新，始终焕发活力，是企业财富的源泉 
     </p>
-    <p class="mr0"><a href="company_5.html"><img src="/img/c_pre2.jpg" width="375" height="216" class="img" /></a>
+    <p class="mr0"><a href="company_5.html"><img src="${rightImage.imageUrl}" width="375" height="216" class="img" /></a>
     <b>包容：</b>开放、平等、互动，心有多宽，世界就有多大<br />
 <b>使命感：</b>终身学习，自我发展，良好职业道德提升对客户责任感<br />
 <b>共赢：</b>与客户建立优势互补、互惠互利的伙伴关系，达成与客户、员工、全社会发展受益共同体

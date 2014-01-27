@@ -24,13 +24,18 @@ public class DocumentDao {
     static Connection conn;
     static Statement st;
 
-    public static void save(Document document) throws Exception {
+    public static Integer save(Document document) throws Exception {
         conn = ConnectionUtil.getConnection();
+        Integer result = null;
         try {
             String sql = "insert into documents (name, content, title, keywords, description, typeid, active, mainLevel, createDate) values('" + document.getName() + "', '" + document.getContent() + "','" + document.getTitle() + "','" + document.getKeywords() + "','" + document.getDescription() + "'," + document.getTypeid() + "," + document.getActive() + "," + document.getMainLevel() + ",'" + document.getCreateDate() + "')";
             st = conn.createStatement();
 
             st.execute(sql);
+            ResultSet rs = st.getGeneratedKeys();
+            while (rs.next()) {
+                result = rs.getInt(1);
+            }
             st.close();
             conn.close();
         } catch (Exception e) {
@@ -38,6 +43,7 @@ public class DocumentDao {
             e.printStackTrace();
             throw new Exception("插入页面数据失败.");
         }
+        return result;
     }
 
     public static void update(Document document) throws Exception {
@@ -110,7 +116,24 @@ public class DocumentDao {
 
     public static List<Document> queryByTitle1code(int title1code) {
         JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
-        String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code;
+        String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code + " order by d.updateDate desc, createDate desc";
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<Document>>() {
+            @Override
+            public List<Document> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    result.add(createDocument(resultSet));
+                }
+                return result;
+            }
+        });
+    }
+
+    public static List<Document> queryByTitle1codeAndWords(int title1code, String words) {
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select d.* from documents d inner join document_type t on t.id=d.typeid where d.active=1 and t.active=1 and t.title1code = " + title1code
+                + " and (d.title like '%" + words + "%' or d.content like '%" + words + "%')"
+                + " order by d.updateDate desc, createDate desc";
         return jdbcTemplate.query(sql, new ResultSetExtractor<List<Document>>() {
             @Override
             public List<Document> extractData(ResultSet resultSet) throws SQLException, DataAccessException {

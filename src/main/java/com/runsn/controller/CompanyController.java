@@ -1,7 +1,14 @@
 package com.runsn.controller;
 
+import com.runsn.dto.Document;
+import com.runsn.dto.Images;
+import com.runsn.jdbc.DocumentDao;
+import com.runsn.jdbc.ImagesDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,8 +22,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CompanyController {
 
     @RequestMapping("company.html")
-    public String company() {
-        return "company";
+    public ModelAndView company(ModelAndView modelAndView) {
+        List<Images> leftImagesList = ImagesDao.queryImagesByType(9);
+        Images leftImage = leftImagesList.size() > 0 ? leftImagesList.get(0) : new Images();
+        List<Images> rightImagesList = ImagesDao.queryImagesByType(10);
+        Images rightImage = rightImagesList.size() > 0 ? rightImagesList.get(0) : new Images();
+        modelAndView.addObject("leftImage", leftImage);
+        modelAndView.addObject("rightImage", rightImage);
+        modelAndView.setViewName("company");
+        return modelAndView;
     }
 
     @RequestMapping("company_1.html")
@@ -37,8 +51,11 @@ public class CompanyController {
         return "company_4";
     }
     @RequestMapping("company_5.html")
-    public String company_5() {
-        return "company_5";
+    public ModelAndView company_5(ModelAndView modelAndView) {
+        List<Document> documents = DocumentDao.queryByTitle1code(7);
+        modelAndView.addObject("rightDocument", documents.size() > 0 ? documents.get(0) : new Document());
+        modelAndView.setViewName("company_5");
+        return modelAndView;
     }
     @RequestMapping("company_6.html")
     public String company_6() {

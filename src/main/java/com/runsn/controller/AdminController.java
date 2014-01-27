@@ -3,21 +3,19 @@ package com.runsn.controller;
 import com.runsn.dto.Document;
 import com.runsn.dto.DocumentDetail;
 import com.runsn.dto.DocumentType;
-import com.runsn.dto.Engineer;
-import com.runsn.dto.Lab;
+import com.runsn.dto.Images;
 import com.runsn.dto.Product;
 import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.EngineerDao;
+import com.runsn.jdbc.ImagesDao;
 import com.runsn.jdbc.LabDao;
 import com.runsn.jdbc.ProductDao;
 import com.runsn.jdbc.TypeDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,9 +36,24 @@ public class AdminController {
     }
 
     @RequestMapping("services.html")
-    public ModelAndView news(ModelAndView modelAndView) {
+    public ModelAndView services(ModelAndView modelAndView) {
         modelAndView.addObject("services", DocumentDao.queryByTitle1code(1));
         modelAndView.setViewName("admin/services");
+        return modelAndView;
+    }
+
+    @RequestMapping("news.html")
+    public ModelAndView news(ModelAndView modelAndView) {
+        modelAndView.addObject("news", DocumentDao.queryByTitle1code(5));
+        modelAndView.setViewName("admin/news");
+        return modelAndView;
+    }
+
+    @RequestMapping("activity/{imageType}")
+    public ModelAndView activity(@PathVariable("imageType") int imageType, ModelAndView modelAndView) {
+        modelAndView.addObject("activities", ImagesDao.queryImagesByType(imageType));
+        modelAndView.addObject("imageType", imageType);
+        modelAndView.setViewName("admin/activity");
         return modelAndView;
     }
 
@@ -89,6 +102,37 @@ public class AdminController {
         return modelAndView;
     }
 
+    @RequestMapping("newsDetail/{documentId}")
+    public ModelAndView newsDetail(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
+        DocumentDetail documentDetail = new DocumentDetail();
+        Document document = DocumentDao.query(documentId);
+        if (document != null&&document.getCreateDate()!=null) {
+            DocumentType documentType = TypeDao.query(document.getTypeid());
+            documentDetail.setDocument(document);
+            documentDetail.setDocumentType(documentType);
+            documentDetail.setDocumentId(documentId);
+            documentDetail.setTypeid(documentType.getId());
+        } else documentDetail.getDocument().setDefaultContent(5);
+        modelAndView.addObject("documentDetail", documentDetail);
+        modelAndView.setViewName("admin/newDetail");
+        return modelAndView;
+    }
+
+    @RequestMapping("activityDetail/{imageType}/{imageId}")
+    public ModelAndView activityDetail(@PathVariable("imageType") int imageType, @PathVariable("imageId") int imageId, ModelAndView modelAndView) {
+        Images image = new Images();
+        Document document = new Document();
+        if (imageId != 0) {
+            image = ImagesDao.get(imageId);
+            document = DocumentDao.query(image.getDocumentId());
+        }
+        modelAndView.addObject("activityDocument", document);
+        modelAndView.addObject("activityImage", image);
+        modelAndView.addObject("imageType", imageType);
+        modelAndView.setViewName("admin/activityDetail");
+        return modelAndView;
+    }
+
     @RequestMapping("solutionDetail/{documentId}")
     public ModelAndView solutionDetail(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
         DocumentDetail documentDetail = new DocumentDetail();
@@ -110,6 +154,22 @@ public class AdminController {
     public ModelAndView delete(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
         try {
             DocumentDao.delete(documentId);
+            modelAndView.addObject("result", "成功啦");
+            modelAndView.addObject("message", "您的信息已经删除成功");
+        } catch (Exception e) {
+            modelAndView.addObject("result", "失败啦");
+            modelAndView.addObject("message", "您的信息删除失败");
+        }
+        modelAndView.setViewName("/admin/result");
+        return modelAndView;
+    }
+
+    @RequestMapping("deleteActivity/{activityImageId}")
+    public ModelAndView deleteActivity(@PathVariable("activityImageId") int activityImageId, ModelAndView modelAndView) {
+        try {
+            Images image = ImagesDao.get(activityImageId);
+            DocumentDao.delete(image.getDocumentId());
+            ImagesDao.delete(activityImageId);
             modelAndView.addObject("result", "成功啦");
             modelAndView.addObject("message", "您的信息已经删除成功");
         } catch (Exception e) {
@@ -183,6 +243,7 @@ public class AdminController {
     @RequestMapping("engineerDetail/{engineerId}")
     public ModelAndView engineerDetail(@PathVariable("engineerId") int engineerId, ModelAndView modelAndView) {
         modelAndView.addObject("engineer", EngineerDao.query(engineerId));
+        modelAndView.addObject("aptitudeImages", ImagesDao.queryImagesByTypeAndEngineer(5, engineerId));
         modelAndView.setViewName("admin/engineerDetail");
         return modelAndView;
     }

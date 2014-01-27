@@ -1,5 +1,6 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -22,61 +23,46 @@
           <li>7</li>
       </ul>
         <div class="fouce">
-            <a href="/ad.html" class="active"><img src="/img/ad.jpg" width="928" height="370" /></a>
-        <a href="/serviceTemplate/60" ><img src="/img/slide/01.jpg" width="928" height="370" /></a>
-            <a href="/solutionTemplate/71"><img src="/img/slide/02.jpg" width="928" height="370" /></a>
-            <a href="/product.html"><img src="/img/slide/03.jpg" width="928" height="370" /></a>
-            <a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>
-            <a href="/train.html"><img src="/img/slide/05.jpg" width="928" height="370" /></a>
-            <a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a>  </div>
+            <c:forEach var="image" items="${topImages}" varStatus="status">
+                <a href="${image.linkUrl}" <c:if test="${status.index == 0}">class="active"</c:if>><img src="${image.imageUrl}" width="928" height="370" /></a>
+            </c:forEach>
+        <%--<a href="/serviceTemplate/60" class="active"><img src="/img/slide/01.jpg" width="928" height="370" /></a>--%>
+            <%--<a href="/ad.html"><img src="/img/ad.jpg" width="928" height="370" /></a>--%>
+            <%--<a href="/solutionTemplate/71"><img src="/img/slide/02.jpg" width="928" height="370" /></a>--%>
+            <%--<a href="/product.html"><img src="/img/slide/03.jpg" width="928" height="370" /></a>--%>
+            <%--<a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>--%>
+            <%--<a href="/train.html"><img src="/img/slide/05.jpg" width="928" height="370" /></a>--%>
+            <%--<a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a>  </div>--%>
     </div>
   </div>
   <div class="p25">
 <div class="recent homeimg">
       <h2>RECENT WORKS</h2>
       <ul>
-        <li><a href="/serviceTemplate/60" target="_blank" title=""><img src="/img/pre_13.jpg"
-
-width="270" height="182" alt="" border="0" class="hover n1" /><img 
-
-src="/img/pre_1.jpg" width="270" height="182" alt="" border="0"
-
-class="img"/></a></li>
-        <li><a href="/solutionTemplate/71" target="_blank" title=""><img src="/img/pre_14.jpg"
-
-width="270" height="182" alt="" border="0" class="hover n2" /><img 
-
-src="/img/pre_2.jpg" width="270" height="182" alt="" border="0"
-
-class="img"/></a></li>
-        <li class="mr0"><a href="/train.html" target="_blank" title=""><img
-
-src="/img/pre_15.jpg" width="270" height="182" alt="" border="0" class="hover
-
-n3" /><img src="/img/pre_3.jpg" width="270" height="182" alt="" border="0"
-
-class="img"/></a></li>
-        <li><a href="/company_5.html" target="_blank" title=""><img src="/img/pre_16.jpg"
-
-width="270" height="182" alt="" border="0" class="hover n4" /><img 
-
-src="/img/pre_4.jpg" width="270" height="182" alt="" border="0"
-
-class="img"/></a></li>
-        <li><a href="/product.html" target="_blank" title=""><img src="/img/pre_17.jpg"
-
-width="270" height="182" alt="" border="0" class="hover n5" /><img 
-
-src="/img/pre_5.jpg" width="270" height="182" alt="" border="0"
-
-class="img"/></a></li>
-        <li class="mr0"><a href="/activity.html" target="_blank" title=""><img
-
-src="/img/pre_18.jpg" width="270" height="182" alt="" border="0" class="hover
-
-n6"/><img src="/img/pre_6.jpg" width="270" height="182" alt="" border="0"
-
-class="img"/></a></li>
+        <li><a href="${middleImage11.linkUrl}" target="_blank" title="">
+            <img src="${middleImage12.imageUrl}" width="270" height="182" alt="" border="0" class="hover n1" />
+            <img src="${middleImage11.imageUrl}" width="270" height="182" alt="" border="0" class="img"/></a>
+        </li>
+        <li><a href="${middleImage21.linkUrl}" target="_blank" title="">
+            <img src="${middleImage22.imageUrl}" width="270" height="182" alt="" border="0" class="hover n2" />
+            <img src="${middleImage21.imageUrl}" width="270" height="182" alt="" border="0" class="img"/></a>
+        </li>
+        <li class="mr0"><a href="${middleImage31.linkUrl}" target="_blank" title="">
+            <img src="${middleImage32.imageUrl}" width="270" height="182" alt="" border="0" class="hover n3" />
+            <img src="${middleImage31.imageUrl}" width="270" height="182" alt="" border="0" class="img"/></a>
+        </li>
+        <li><a href="${middleImage41.linkUrl}" target="_blank" title="">
+            <img src="${middleImage42.imageUrl}" width="270" height="182" alt="" border="0" class="hover n4" />
+            <img src="${middleImage41.imageUrl}" width="270" height="182" alt="" border="0" class="img"/></a>
+        </li>
+        <li><a href="${middleImage51.linkUrl}" target="_blank" title="">
+            <img src="${middleImage52.imageUrl}" width="270" height="182" alt="" border="0" class="hover n5" />
+            <img src="${middleImage51.imageUrl}" width="270" height="182" alt="" border="0" class="img"/></a>
+        </li>
+        <li class="mr0"><a href="${middleImage61.linkUrl}" target="_blank" title="">
+            <img src="${middleImage62.imageUrl}" width="270" height="182" alt="" border="0" class="hover n6"/>
+            <img src="${middleImage61.imageUrl}" width="270" height="182" alt="" border="0" class="img"/></a>
+        </li>
       </ul>
     </div>
     <div class="clear_float"></div>

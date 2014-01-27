@@ -43,6 +43,24 @@ public class ProductDao {
         });
     }
 
+    public static List<Product> queryTypeByBrand(int brandId) {
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select pt.id AS typeId,pb.*,pt.* " +
+                " from productbrand pb, producttype pt " +
+                " where pb.id=pt.brandId " +
+                " and pb.id= " + brandId;
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<Product>>() {
+            @Override
+            public List<Product> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    result.add(createProduct(resultSet, true));
+                }
+                return result;
+            }
+        });
+    }
+
     public static List<ProductClass> queryAllClass() {
         JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
         String sql = "select * from productclass";
@@ -119,6 +137,24 @@ public class ProductDao {
         String sql = "select *,p.id AS productId " +
                 " from productbrand pb, producttype pt,product p " +
                 " where pb.id=pt.brandId and pt.id = p.typeId ";
+        return jdbcTemplate.query(sql, new ResultSetExtractor<List<Product>>() {
+            @Override
+            public List<Product> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List result = new ArrayList();
+                while (resultSet.next()) {
+                    result.add(createProduct(resultSet, false));
+                }
+                return result;
+            }
+        });
+    }
+
+    public static List<Product> queryAllByWords(String words) {
+        JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
+        String sql = "select *,p.id AS productId " +
+                " from productbrand pb, producttype pt,product p " +
+                " where pb.id=pt.brandId and pt.id = p.typeId " +
+                "and (p.title like '%" + words + "%' or p.productDesc like '%" + words + "%')";
         return jdbcTemplate.query(sql, new ResultSetExtractor<List<Product>>() {
             @Override
             public List<Product> extractData(ResultSet resultSet) throws SQLException, DataAccessException {

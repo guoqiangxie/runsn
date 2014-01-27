@@ -17,15 +17,15 @@
                 <li>2</li>
                 <li>3</li>
                 <li>4</li>
-                <li>5</li>
             </ul>
             <div class="fouce">
-                <a href="/train.html" class="active"><img src="/img/slide/05.jpg" width="928" height="370" /></a>
-                <a href="/serviceTemplate/60"><img src="/img/slide/01.jpg" width="928" height="370" /></a>
-                <a href="/solutionTemplate/71"><img src="/img/slide/02.jpg" width="928" height="370" /></a>
-                <a href="/product.html"><img src="/img/slide/03.jpg" width="928" height="370" /></a>
-                <a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>
-                <a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a> </div>
+                <a href="${image1.linkUrl}" class="active"><img src="${image1.imageUrl}" width="928" height="370" /></a>
+                <a href="${image2.linkUrl}"><img src="${image2.imageUrl}" width="928" height="370" /></a>
+                <a href="${image3.linkUrl}"><img src="${image3.imageUrl}" width="928" height="370" /></a>
+                <a href="${image4.linkUrl}"><img src="${image4.imageUrl}" width="928" height="370" /></a>
+                <%--<a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>--%>
+                <%--<a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a> --%>
+            </div>
         </div>
     </div>
     <div class="p25">
@@ -101,18 +101,18 @@
                     <div class="imgslide  ">
                         <div class="sly imgbox2">
                             <ul>
-                                <li><a href="#"><img src="/img/tra_6.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_7.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_8.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_9.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_6.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_7.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_8.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_9.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_6.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_7.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_8.jpg" width="110" height="89"/></a></li>
-                                <li><a href="#"><img src="/img/tra_9.jpg" width="110" height="89"/></a></li>
+                                <li><img src="/img/tra_6.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_7.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_8.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_9.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_6.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_7.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_8.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_9.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_6.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_7.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_8.jpg" width="110" height="89"/></li>
+                                <li><img src="/img/tra_9.jpg" width="110" height="89"/></li>
                             </ul>
                         </div>
                         <span class="prev btn_p2"></span>
@@ -171,7 +171,9 @@
                 </c:forEach>
             ]
         });
-
+        <c:if test="${linkYear!=null}">
+            $('#calendar').fullCalendar( 'gotoDate', ${linkYear}, ${linkMonth-1});
+        </c:if>
 
     });
 </script>

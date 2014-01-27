@@ -48,7 +48,7 @@
       <div class="center">传统IT厂商纷纷投身于虚拟化的热潮中。他们的远见在于：虚拟服务器、虚拟应用和虚拟桌面，都可以以更低的成本通过数据中心有效地进行管理。
 <br />虚拟化技术具有诸多短期优势。这不仅仅意味着用户可以节省不少硬件的开支，而且可以在更低成本、不需要太多空间的基础上实现增长。</div>
       <div class="txtlist tl2">
-        <h3><a href="/product.html">产品</a> &gt; ${productClass.className}</h3>
+        <h3><a href="/product.html">产品</a> &gt; ${brandName == null ? productClass.className : brandName}</h3>
         <div class="main">
         <div class="m_l">
             <c:forEach var="types" items="${typesList}" varStatus="status1">
