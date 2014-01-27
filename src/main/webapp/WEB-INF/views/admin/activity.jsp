@@ -67,7 +67,7 @@
             $(".14").addClass("on");
         }
         $("#addService").click(function() {
-            window.location.href = "admin/activityDetail/${imageType}/0";
+            window.location.href = "/admin/activityDetail/${imageType}/0";
         });
     });
 </script>

@@ -100,6 +100,8 @@ public class DocumentController {
             int documentIdInDB = DocumentDao.save(createDocument(imageDesc, null, null, null, typeId));
             if (imageId != 0) ImagesDao.delete(imageId);
             ImagesDao.save(new Images(imageType, documentIdInDB, imageDesc, imageUrl));
+            modelAndView.addObject("result", "成功啦");
+            modelAndView.addObject("message", "您的信息已经添加成功");
         } catch (Exception e) {
             modelAndView.addObject("result", "失败啦");
             modelAndView.addObject("message", "您的信息更新失败");
