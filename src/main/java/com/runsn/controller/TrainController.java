@@ -90,6 +90,7 @@ public class TrainController {
         modelAndView.addObject("image2", imagesList.size() > 1 ? imagesList.get(1) : new Images());
         modelAndView.addObject("image3", imagesList.size() > 2 ? imagesList.get(2) : new Images());
         modelAndView.addObject("image4", imagesList.size() > 3 ? imagesList.get(3) : new Images());
+        modelAndView.addObject("news", DocumentDao.queryByTitle1code(5));
         modelAndView.setViewName("train");
         return modelAndView;
     }

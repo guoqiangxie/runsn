@@ -1,5 +1,6 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -34,18 +35,10 @@
         <div class="newlist">
         <h2>新闻列表</h2>
         <ul>
-        <li><a href="train_2.html">虚拟投影：名人复活玩“穿越”背后玩法</a></li>
-        <li><a href="train_2.html">最发达的充电技术——特斯拉充电桩</a></li>
-        <li><a href="train_2.html">扎克伯格：I最怕人失 我的英雄</a></li>
-        <li><a href="train_2.html">梅耶尔：加盟雅，公司移动团队十倍</a></li>
-        <li><a href="train_2.html">手机导航进代风玻璃成显示屏</a></li>
-        <li><a href="train_2.html">麦当劳测试移高下售卖效率</a></li>
-        <li><a href="train_2.html">激进投资者伊当前够便宜 闭着眼买</a></li>
-        <li><a href="train_2.html">梅耶尔：加盟司移动团队十倍</a></li>
-        <li><a href="train_2.html">手机导航进入新时代：玻璃成显示屏</a></li>
-        <li><a href="train_2.html">麦当劳测试移动此提高线下售卖效率</a></li>
+            <c:forEach var="new" items="${news}" varStatus="status">
+                <li><a href="/newsTemplate/${new.id}">${new.title}</a></li>
+            </c:forEach>
         </ul>
-        <a href="#" class="more">&gt;MORE</a>
         </div>
         <div class="sAd"><img src="/img/tra_1.jpg" width="219" height="163" /></div>
       </div>
