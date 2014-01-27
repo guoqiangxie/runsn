@@ -61,7 +61,7 @@
               </c:if>
               <c:if test="${status.index%2 == 0 && fn:length(activityImages) -1 == status.index}">
                   <li><p><a href="/activityDetail/${image.documentId}"><img src="${image.imageUrl}" width="264" height="173" /><span>${image.imageDesc}</span></a></p>
-                      <p><a href="#"><img src="#" width="264" height="173" /><span></span></a></p></li>
+                      <p></p></li>
               </c:if>
               <c:if test="${status.index%2 == 1}">
                  <p><a href="/activityDetail/${image.documentId}"><img src="${image.imageUrl}" width="264" height="173" /><span>${image.imageDesc}</span></a></p></li>
