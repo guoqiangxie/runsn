@@ -27,8 +27,7 @@ public class NewsTemplateController {
 
     @RequestMapping("/{documentId}")
     public ModelAndView show(@PathVariable("documentId") int documentId, ModelAndView model) {
-        Document document = DocumentDao.query(documentId);
-        model.addObject("document", document);
+        model.addObject("document", DocumentDao.query(documentId));
         model.addObject("news", DocumentDao.queryByTitle1code(5));
         model.setViewName("/newsTemplate");
         return model;

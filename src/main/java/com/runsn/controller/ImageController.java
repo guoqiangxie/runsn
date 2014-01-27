@@ -250,9 +250,9 @@ public class ImageController {
     @RequestMapping("image_productLeftLink.html")
     public ModelAndView image_productLeftLink(ModelAndView modelAndView) {
         List<Images> imagesList = ImagesDao.queryImagesByType(3);
-        modelAndView.addObject("image1", imagesList.get(0));
-        modelAndView.addObject("image2", imagesList.get(1));
-        modelAndView.addObject("image3", imagesList.get(2));
+        modelAndView.addObject("image1", imagesList.size() > 0 ? imagesList.get(0) : new Images());
+        modelAndView.addObject("image2", imagesList.size() > 1 ? imagesList.get(1) : new Images());
+        modelAndView.addObject("image3", imagesList.size() > 2 ? imagesList.get(2) : new Images());
         modelAndView.setViewName("admin/image_productLeftLink");
         return modelAndView;
     }

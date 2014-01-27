@@ -23,10 +23,8 @@ public class SolutionTemplateController {
 
     @RequestMapping("/{documentId}")
     public ModelAndView show(@PathVariable("documentId") int documentId, ModelAndView model) {
-        Document document = DocumentDao.query(documentId);
-        DocumentType documentType = TypeDao.query(document.getTypeid());
-        model.addObject("document", document);
-        model.addObject("documentType", documentType);
+        model.addObject("document", DocumentDao.query(documentId));
+        model.addObject("documentType", TypeDao.query(DocumentDao.query(documentId).getTypeid()));
         model.setViewName("/solutionTemplate");
         return model;
     }
