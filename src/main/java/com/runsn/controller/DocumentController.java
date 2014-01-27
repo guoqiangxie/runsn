@@ -97,7 +97,7 @@ public class DocumentController {
         if (imageType == 8) typeId = 33;
         try {
             if (documentId != 0) DocumentDao.delete(documentId);
-            int documentIdInDB = DocumentDao.save(createDocument(imageDesc, null, null, null, typeId));
+            int documentIdInDB = DocumentDao.save(createDocument(imageDesc, content, null, null, typeId));
             if (imageId != 0) ImagesDao.delete(imageId);
             ImagesDao.save(new Images(imageType, documentIdInDB, imageDesc, imageUrl));
             modelAndView.addObject("result", "成功啦");

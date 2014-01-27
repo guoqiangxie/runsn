@@ -15,8 +15,8 @@
     <div class="caption caption4">
     </div>
     <div class="sermain sPage1 proPage actmain3">
-      <div class="path"><a href="activity/6">主题活动</a> &gt; <a href="activity/${activityDetailImage.imageType}"><c:if test="${activityDetailImage.imageType == 6}">精彩促销</c:if><c:if test="${activityDetailImage.imageType == 7}">厂商&活动</c:if><c:if test="${activityDetailImage.imageType == 8}">邀请函</c:if></a></div>
-      <div class="center"><img src="${activityDetail.content}" width="848" height="901" /></div>
+      <div class="path"><a href="activity/6">主题活动</a> &gt;${activityDetail.title}</div>
+      ${activityDetail.content}
     </div>
 
       <%@include file="common/footer2.jsp"%>
