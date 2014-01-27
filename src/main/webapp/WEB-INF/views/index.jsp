@@ -32,7 +32,9 @@
             <%--<a href="/product.html"><img src="/img/slide/03.jpg" width="928" height="370" /></a>--%>
             <%--<a href="/activity.html"><img src="/img/slide/04.jpg" width="928" height="370" /></a>--%>
             <%--<a href="/train.html"><img src="/img/slide/05.jpg" width="928" height="370" /></a>--%>
+
             <%--<a href="/company.html"><img src="/img/slide/06.jpg" width="928" height="370" /></a>  </div>--%>
+            </div>
     </div>
   </div>
   <div class="p25">
