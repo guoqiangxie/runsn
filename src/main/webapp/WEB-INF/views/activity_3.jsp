@@ -1,6 +1,7 @@
 <%@page contentType="text/html;charset=UTF-8"  language="java" %>
 <%@page pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="/WEB-INF/fn.tld" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -54,18 +55,18 @@
 为客户谋利，与厂商同发展，"共赢"是软盛所愿</div>
       <div class="imglist">
       <ul>
-      <li>
-      <p><a href="${middleImage11.linkUrl}"><img src="${middleImage11.imageUrl}" width="264" height="173" /><span>${middleImage11.imageDesc}</span></a></p>
-      <p><a href="${middleImage21.linkUrl}"><img src="${middleImage21.imageUrl}" width="264" height="173" /><span>${middleImage21.imageDesc}</span></a></p>
-      </li>
-      <li>
-          <p><a href="${middleImage31.linkUrl}"><img src="${middleImage31.imageUrl}" width="264" height="173" /><span>${middleImage31.imageDesc}</span></a></p>
-          <p><a href="${middleImage41.linkUrl}"><img src="${middleImage41.imageUrl}" width="264" height="173" /><span>${middleImage41.imageDesc}</span></a></p>
-      </li>
-      <li class="backnone">
-          <p><a href="${middleImage51.linkUrl}"><img src="${middleImage51.imageUrl}" width="264" height="173" /><span>${middleImage51.imageDesc}</span></a></p>
-          <p><a href="${middleImage61.linkUrl}"><img src="${middleImage61.imageUrl}" width="264" height="173" /><span>${middleImage61.imageDesc}</span></a></p>
-      </li>
+          <c:forEach var="image" items="${activityImages}" varStatus="status">
+              <c:if test="${status.index%2 == 0 && fn:length(activityImages) -1 != status.index}">
+                <li><p><a href="/activityDetail/${image.documentId}"><img src="${image.imageUrl}" width="264" height="173" /><span>${image.imageDesc}</span></a></p>
+              </c:if>
+              <c:if test="${status.index%2 == 0 && fn:length(activityImages) -1 == status.index}">
+                  <li><p><a href="/activityDetail/${image.documentId}"><img src="${image.imageUrl}" width="264" height="173" /><span>${image.imageDesc}</span></a></p>
+                      <p><a href="#"><img src="#" width="264" height="173" /><span></span></a></p></li>
+              </c:if>
+              <c:if test="${status.index%2 == 1}">
+                 <p><a href="/activityDetail/${image.documentId}"><img src="${image.imageUrl}" width="264" height="173" /><span>${image.imageDesc}</span></a></p></li>
+              </c:if>
+          </c:forEach>
       </ul>
       </div>
       <div class="clear_float"></div>

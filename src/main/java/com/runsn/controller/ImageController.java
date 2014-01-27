@@ -76,41 +76,6 @@ public class ImageController {
         return modelAndView;
     }
 
-    @RequestMapping("image_activity1.html")
-    public ModelAndView image_activity1(ModelAndView modelAndView) {
-        initActivityModel(modelAndView, 6);
-        return modelAndView;
-    }
-
-    private void initActivityModel(ModelAndView modelAndView, int imageType) {
-        modelAndView.addObject("imageType", imageType);
-        modelAndView.addObject("middleImage11", ImagesDao.queryImagesByTypeAndDetailType(imageType, 11));
-        modelAndView.addObject("middleImage12", ImagesDao.queryImagesByTypeAndDetailType(imageType, 12));
-        modelAndView.addObject("middleImage21", ImagesDao.queryImagesByTypeAndDetailType(imageType, 21));
-        modelAndView.addObject("middleImage22", ImagesDao.queryImagesByTypeAndDetailType(imageType, 22));
-        modelAndView.addObject("middleImage31", ImagesDao.queryImagesByTypeAndDetailType(imageType, 31));
-        modelAndView.addObject("middleImage32", ImagesDao.queryImagesByTypeAndDetailType(imageType, 32));
-        modelAndView.addObject("middleImage41", ImagesDao.queryImagesByTypeAndDetailType(imageType, 41));
-        modelAndView.addObject("middleImage42", ImagesDao.queryImagesByTypeAndDetailType(imageType, 42));
-        modelAndView.addObject("middleImage51", ImagesDao.queryImagesByTypeAndDetailType(imageType, 51));
-        modelAndView.addObject("middleImage52", ImagesDao.queryImagesByTypeAndDetailType(imageType, 52));
-        modelAndView.addObject("middleImage61", ImagesDao.queryImagesByTypeAndDetailType(imageType, 61));
-        modelAndView.addObject("middleImage62", ImagesDao.queryImagesByTypeAndDetailType(imageType, 62));
-        modelAndView.setViewName("admin/image_activity");
-    }
-
-    @RequestMapping("image_activity2.html")
-    public ModelAndView image_activity2(ModelAndView modelAndView) {
-        initActivityModel(modelAndView, 7);
-        return modelAndView;
-    }
-
-    @RequestMapping("image_activity3.html")
-    public ModelAndView image_activity3(ModelAndView modelAndView) {
-        initActivityModel(modelAndView, 8);
-        return modelAndView;
-    }
-
     @RequestMapping(value = "/submitRightCourse", method = RequestMethod.POST)
     @ResponseBody
     public String submitRightCourse(@RequestParam(value = "linkYear1") int linkYear1,

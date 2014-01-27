@@ -29,4 +29,9 @@ INSERT INTO `document_type` VALUES ('29', '公司左侧图片链接地址', '6',
 INSERT INTO `document_type` VALUES ('30', '公司右侧图片链接地址', '7', null, null, null, null, '1');
 
 
-3. 更新代码
+-----------------------------------------------
+ALTER TABLE images ADD documentId int;
+
+INSERT INTO `document_type` VALUES ('31', '精彩促销-详情', '8', null, null, null, null, '1');
+INSERT INTO `document_type` VALUES ('32', '厂商&活动-详情', '9', null, null, null, null, '1');
+INSERT INTO `document_type` VALUES ('33', '邀请函-详情', '10', null, null, null, null, '1');

@@ -24,13 +24,18 @@ public class DocumentDao {
     static Connection conn;
     static Statement st;
 
-    public static void save(Document document) throws Exception {
+    public static Integer save(Document document) throws Exception {
         conn = ConnectionUtil.getConnection();
+        Integer result = null;
         try {
             String sql = "insert into documents (name, content, title, keywords, description, typeid, active, mainLevel, createDate) values('" + document.getName() + "', '" + document.getContent() + "','" + document.getTitle() + "','" + document.getKeywords() + "','" + document.getDescription() + "'," + document.getTypeid() + "," + document.getActive() + "," + document.getMainLevel() + ",'" + document.getCreateDate() + "')";
             st = conn.createStatement();
 
             st.execute(sql);
+            ResultSet rs = st.getGeneratedKeys();
+            while (rs.next()) {
+                result = rs.getInt(1);
+            }
             st.close();
             conn.close();
         } catch (Exception e) {
@@ -38,6 +43,7 @@ public class DocumentDao {
             e.printStackTrace();
             throw new Exception("插入页面数据失败.");
         }
+        return result;
     }
 
     public static void update(Document document) throws Exception {

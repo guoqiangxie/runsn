@@ -80,6 +80,7 @@ public class ImagesDao {
         Images image = new Images();
         image.setId(resultSet.getInt("id"));
         image.setEngineerId(resultSet.getInt("engineerId"));
+        image.setDocumentId(resultSet.getInt("documentId"));
         image.setCreateDate(resultSet.getDate("createDate"));
         image.setUpdateDate(resultSet.getDate("updateDate"));
         image.setImageDesc(resultSet.getString("imageDesc"));
@@ -97,7 +98,7 @@ public class ImagesDao {
         conn = ConnectionUtil.getConnection();
         Integer result = null;
         try {
-            String sql = "insert into images(imageName, imageUrl, imageDesc, imageType, imageDetailType, linkYear, linkMonth, engineerId, createDate, linkUrl) values('"
+            String sql = "insert into images(imageName, imageUrl, imageDesc, imageType, imageDetailType, linkYear, linkMonth, engineerId, documentId, createDate, linkUrl) values('"
                     + image.getImageName() + "','"
                     + image.getImageUrl() + "','"
                     + image.getImageDesc() + "',"
@@ -105,7 +106,8 @@ public class ImagesDao {
                     + image.getImageDetailType() + ","
                     + image.getLinkYear() + ","
                     + image.getLinkMonth() + ","
-                    + image.getEngineerId() + ",'"
+                    + image.getEngineerId() + ","
+                    + image.getDocumentId() + ",'"
                     + image.getCreateDate() + "','"
                     + image.getLinkUrl() + "')";
             st = conn.createStatement();
@@ -117,9 +119,9 @@ public class ImagesDao {
             st.close();
             conn.close();
         } catch (Exception e) {
-            System.out.println("保存右侧课程导航栏数据失败。");
+            System.out.println("保存数据失败。");
             e.printStackTrace();
-            throw new Exception("保存右侧课程导航栏数据失败。");
+            throw new Exception("保存数据失败。");
         }
         return result;
     }
@@ -128,6 +130,20 @@ public class ImagesDao {
         conn = ConnectionUtil.getConnection();
         try {
             String sql = "delete from images where imageType = " + imageType;
+            st = conn.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("删除数据失败。");
+            e.printStackTrace();
+        }
+    }
+
+    public static void delete(int imageId) {
+        conn = ConnectionUtil.getConnection();
+        try {
+            String sql = "delete from images where id = " + imageId;
             st = conn.createStatement();
             st.executeUpdate(sql);
             st.close();

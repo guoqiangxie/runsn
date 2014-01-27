@@ -1,6 +1,7 @@
 package com.runsn.controller;
 
 import com.runsn.dto.Document;
+import com.runsn.dto.Images;
 import com.runsn.jdbc.DocumentDao;
 import com.runsn.jdbc.ImagesDao;
 import org.springframework.stereotype.Controller;
@@ -31,27 +32,30 @@ public class ActivityController {
 
     @RequestMapping("activity.html")
     public ModelAndView activity(ModelAndView modelAndView) {
-        modelAndView.addObject("middleImage11", ImagesDao.queryImagesByTypeAndDetailType(6, 11));
-        modelAndView.addObject("middleImage21", ImagesDao.queryImagesByTypeAndDetailType(6, 21));
-        modelAndView.addObject("middleImage31", ImagesDao.queryImagesByTypeAndDetailType(6, 31));
+        List<Images> imagesList = ImagesDao.queryImagesByType(6);
+        modelAndView.addObject("middleImage11", imagesList.size() > 0 ? imagesList.get(0) : new Images());
+        modelAndView.addObject("middleImage21", imagesList.size() > 1 ? imagesList.get(1) : new Images());
+        modelAndView.addObject("middleImage31", imagesList.size() > 2 ? imagesList.get(2) : new Images());
         modelAndView.setViewName("activity");
         return modelAndView;
     }
 
     @RequestMapping("activity_1.html")
     public ModelAndView activity_1(ModelAndView modelAndView) {
-        modelAndView.addObject("middleImage11", ImagesDao.queryImagesByTypeAndDetailType(7, 11));
-        modelAndView.addObject("middleImage21", ImagesDao.queryImagesByTypeAndDetailType(7, 21));
-        modelAndView.addObject("middleImage31", ImagesDao.queryImagesByTypeAndDetailType(7, 31));
+        List<Images> imagesList = ImagesDao.queryImagesByType(7);
+        modelAndView.addObject("middleImage11", imagesList.size() > 0 ? imagesList.get(0) : new Images());
+        modelAndView.addObject("middleImage21", imagesList.size() > 1 ? imagesList.get(1) : new Images());
+        modelAndView.addObject("middleImage31", imagesList.size() > 2 ? imagesList.get(2) : new Images());
         modelAndView.setViewName("activity_1");
         return modelAndView;
     }
 
     @RequestMapping("activity_2.html")
     public ModelAndView activity_2(ModelAndView modelAndView) {
-        modelAndView.addObject("middleImage11", ImagesDao.queryImagesByTypeAndDetailType(8, 11));
-        modelAndView.addObject("middleImage21", ImagesDao.queryImagesByTypeAndDetailType(8, 21));
-        modelAndView.addObject("middleImage31", ImagesDao.queryImagesByTypeAndDetailType(8, 31));
+        List<Images> imagesList = ImagesDao.queryImagesByType(8);
+        modelAndView.addObject("middleImage11", imagesList.size() > 0 ? imagesList.get(0) : new Images());
+        modelAndView.addObject("middleImage21", imagesList.size() > 1 ? imagesList.get(1) : new Images());
+        modelAndView.addObject("middleImage31", imagesList.size() > 2 ? imagesList.get(2) : new Images());
         modelAndView.setViewName("activity_2");
         return modelAndView;
     }
@@ -64,19 +68,14 @@ public class ActivityController {
     @RequestMapping("activity/{type}")
     public ModelAndView activityByType(@PathVariable("type") int imageType, ModelAndView modelAndView) {
         modelAndView.addObject("imageType", imageType);
-        modelAndView.addObject("middleImage11", ImagesDao.queryImagesByTypeAndDetailType(imageType, 11));
-        modelAndView.addObject("middleImage21", ImagesDao.queryImagesByTypeAndDetailType(imageType, 21));
-        modelAndView.addObject("middleImage31", ImagesDao.queryImagesByTypeAndDetailType(imageType, 31));
-        modelAndView.addObject("middleImage41", ImagesDao.queryImagesByTypeAndDetailType(imageType, 41));
-        modelAndView.addObject("middleImage51", ImagesDao.queryImagesByTypeAndDetailType(imageType, 51));
-        modelAndView.addObject("middleImage61", ImagesDao.queryImagesByTypeAndDetailType(imageType, 61));
+        modelAndView.addObject("activityImages", ImagesDao.queryImagesByType(imageType));
         modelAndView.setViewName("activity_3");
         return modelAndView;
     }
 
-    @RequestMapping("activityDetail/{id}")
-    public ModelAndView activity_3(@PathVariable("id") int imageId, ModelAndView modelAndView) {
-        modelAndView.addObject("activityDetailImage", ImagesDao.get(imageId));
+    @RequestMapping("activityDetail/{documentId}")
+    public ModelAndView activity_4(@PathVariable("documentId") int documentId, ModelAndView modelAndView) {
+        modelAndView.addObject("activityDetail", DocumentDao.query(documentId));
         modelAndView.setViewName("activity_4");
         return modelAndView;
     }
