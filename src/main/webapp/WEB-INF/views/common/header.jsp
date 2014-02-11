@@ -7,9 +7,9 @@
                 <div class="search" onclick="window.location.href = '/search';">
                     <input name="" type="text" class="inputText" title="search"/>
                 </div>
-                <div class="other"><b class="MyRunsn">My runsn</b><a href="#" target="_blank">注册</a> | <a href="#"
-                                                                                                          target="_blank">登录</a>
-                </div>
+                <%--<div class="other"><b class="MyRunsn">My runsn</b><a href="#" target="_blank">注册</a> | <a href="#"--%>
+                                                                                                          <%--target="_blank">登录</a>--%>
+                <%--</div>--%>
             </div>
             <a href="/" class="logo" title="runsn软盛">runsn软盛</a></div>
         <ul class="nav">
