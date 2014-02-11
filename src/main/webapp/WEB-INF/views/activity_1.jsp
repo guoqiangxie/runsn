@@ -23,7 +23,7 @@
         <li class="mr0"><a href="/activity/7"><img src="${middleImage31.imageUrl}" width="233" height="155" /></a>${middleImage31.imageDesc}</li>
     </ul>
     <div class="a_img2">
-    <p><a href="/activity.html"><img src="/img/act_17.jpg" width="390" height="209" /></a><span>精彩促销，活动连连</span></p>
+    <p><a href="/activity.html"><img src="/img/act_17.jpg" width="390" height="209" /></a><span>精彩促销，心如明镜</span></p>
     <p class="mr0"><a href="/activity_2.html"><img src="/img/act_6.jpg" width="390" height="209" /></a><span>低价豪礼，提供最亲和力折扣</span></p>
     </div>
    </div>

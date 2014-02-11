@@ -31,8 +31,8 @@
         </dl>
         <div class="tip4" <c:if test="${imageType == 6}">style="display: none;"</c:if>>
         <p><b>精彩促销</b></p>
-        <h3>活动连连</h3>
-        <p>精彩活动，引导业界创意无限</p>
+        <h3>心如明镜</h3>
+        <p>低价豪礼，提供最亲和力折扣</p>
         <a href="/activity/6"></a>
         </div>
           <div class="tip4" <c:if test="${imageType == 7}">style="display: none;"</c:if>>
