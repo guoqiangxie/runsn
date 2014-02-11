@@ -25,8 +25,8 @@
        <li><a href="${image1.linkUrl}">${image1.imageName}</a></li>
        <li><a href="${image2.linkUrl}">${image2.imageName}</a></li>
        <li><a href="${image3.linkUrl}">${image3.imageName}</a></li>
-       <li><a href="#">主题活动</a></li>
-       <li><a href="#">培训课堂</a></li>
+       <li><a href="/activity.html">主题活动</a></li>
+       <li><a href="/train.html">培训课堂</a></li>
        </ul>
        <div class="solAd"><a href="#"><img src="/img/pro_icon5.jpg" width="155" height="126" /></a></div>
        </div>
