@@ -104,7 +104,7 @@
       </span></li>
             <li class="num6"><a href="/building.html">I Partner</a></li>
             <li class="num7"><a href="/company.html">公司</a>
-      <span class="menu m7">
+      <span class="menu m7" style="height: 171px;">
       <b>公司</b>
       <a href="/company_1.html">为何选择runsn</a>
       <a href="/company_2.html">关于软盛</a>
