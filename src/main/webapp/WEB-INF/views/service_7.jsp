@@ -38,7 +38,9 @@
                             <div style="float:right;width:438px;text-align: left;"><b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
                             主要项目经历：${engineer.experiences}
                                 <h3>工程师资质</h3>
-                                <div class="imgslide  ">
+
+                                <c:if test="${!empty engineer.aptitudeImages}">
+                                <div class="imgslide"  style="left: -119px;">
                                     <div class="sly imgbox1">
                                         <ul>
                                             <c:forEach var="aptitudeImage" items="${engineer.aptitudeImages}" varStatus="status">
@@ -48,7 +50,10 @@
                                     </div>
                                     <span class="prev btn_p1"></span>
                                     <span class="next btn_n1"></span>
-                                </div></div>
+                                </div>
+                                   </c:if>
+
+                            </div>
                          </div>
                     </div>
                 </c:if>
@@ -58,17 +63,22 @@
                         <div style="float:right;width:438px;text-align: left;"><b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
                         主要项目经历：${engineer.experiences}
                             <h3>工程师资质</h3>
-                            <div class="imgslide  ">
-                                <div class="sly imgbox1">
+
+                            <c:if test="${!empty engineer.aptitudeImages}">
+                            <div class="imgslide" style="left: -119px;">
+                                <div class="sly imgbox2">
                                     <ul>
                                         <c:forEach var="aptitudeImage" items="${engineer.aptitudeImages}" varStatus="status">
                                             <li><img src="${aptitudeImage.imageUrl}" width="110" height="89"/></li>
                                         </c:forEach>
                                     </ul>
                                 </div>
-                                <span class="prev btn_p1"></span>
-                                <span class="next btn_n1"></span>
-                            </div></div>
+                                <span class="prev btn_p2"></span>
+                                <span class="next btn_n2"></span>
+                            </div>
+                            </c:if>
+
+                        </div>
 
                         </div></div>
                 </c:if>
@@ -92,17 +102,19 @@
                         <div style="float:right;width:438px;text-align: left;"><b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
                             主要项目经历：${engineer.experiences}
                             <h3>工程师资质</h3>
-                            <div class="imgslide  ">
-                                <div class="sly imgbox1">
+                            <c:if test="${!empty engineer.aptitudeImages}">
+                            <div class="imgslide" style="left: -119px;">
+                                <div class="sly imgbox3">
                                     <ul>
                                         <c:forEach var="aptitudeImage" items="${engineer.aptitudeImages}" varStatus="status">
                                             <li><img src="${aptitudeImage.imageUrl}" width="110" height="89"/></li>
                                         </c:forEach>
                                     </ul>
                                 </div>
-                                <span class="prev btn_p1"></span>
-                                <span class="next btn_n1"></span>
-                            </div></div>
+                                <span class="prev btn_p3"></span>
+                                <span class="next btn_n3"></span>
+                            </div>
+                            </c:if></div>
                     </div>
                 </div>
             </c:if>
@@ -112,17 +124,19 @@
                         <div style="float:right;width:438px;text-align: left;"><b>${engineer.name}&nbsp;&nbsp;&nbsp;&nbsp;${engineer.title}</b> 年龄：${engineer.age}岁<br />
                             主要项目经历：${engineer.experiences}
                             <h3>工程师资质</h3>
-                            <div class="imgslide  ">
-                                <div class="sly imgbox1">
+                            <c:if test="${!empty engineer.aptitudeImages}">
+                            <div class="imgslide" style="left: -119px;">
+                                <div class="sly imgbox4">
                                     <ul>
                                         <c:forEach var="aptitudeImage" items="${engineer.aptitudeImages}" varStatus="status">
                                             <li><img src="${aptitudeImage.imageUrl}" width="110" height="89"/></li>
                                         </c:forEach>
                                     </ul>
                                 </div>
-                                <span class="prev btn_p1"></span>
-                                <span class="next btn_n1"></span>
-                            </div></div>
+                                <span class="prev btn_p4"></span>
+                                <span class="next btn_n4"></span>
+                            </div>
+                                </c:if></div>
                     </div>
                 </div>
                 </c:if>
@@ -139,9 +153,27 @@
 <%@include file="common/weibo.jsp"%>
 <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="/js/runsn.js"></script>
+<script type="text/javascript" src="/js/imgslide.js"></script>
 <script type="text/javascript">
     $(function () {
         $(".num5").addClass("active");
+        $(".imgbox1").jCarouselLite({
+            btnNext: ".btn_n1",
+            btnPrev: ".btn_p1"
+        });
+
+        $(".imgbox2").jCarouselLite({
+            btnNext: ".btn_n2",
+            btnPrev: ".btn_p2"
+        });
+        $(".imgbox3").jCarouselLite({
+            btnNext: ".btn_n3",
+            btnPrev: ".btn_p3"
+        });
+        $(".imgbox4").jCarouselLite({
+            btnNext: ".btn_n4",
+            btnPrev: ".btn_p4"
+        });
     });
 </script>
 </body>
