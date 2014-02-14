@@ -157,6 +157,25 @@
 <script type="text/javascript">
     $(function () {
         $(".num5").addClass("active");
+        $(".tabs li").click(function(){
+            $(".imgbox1").jCarouselLite({
+                btnNext: ".btn_n1",
+                btnPrev: ".btn_p1"
+            });
+
+            $(".imgbox2").jCarouselLite({
+                btnNext: ".btn_n2",
+                btnPrev: ".btn_p2"
+            });
+            $(".imgbox3").jCarouselLite({
+                btnNext: ".btn_n3",
+                btnPrev: ".btn_p3"
+            });
+            $(".imgbox4").jCarouselLite({
+                btnNext: ".btn_n4",
+                btnPrev: ".btn_p4"
+            });
+        });
         $(".imgbox1").jCarouselLite({
             btnNext: ".btn_n1",
             btnPrev: ".btn_p1"
